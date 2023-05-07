@@ -39,7 +39,7 @@ function Nav1() {
               </a>
             </li>
             <li>
-              <Link href="/aboutus" className=" font-semibold">
+              <Link href="/about" className=" font-semibold">
                 About Us
               </Link>
             </li>
@@ -65,7 +65,7 @@ function Nav1() {
             </li>
             <li className="h-[42px] w-[120px] bg-[#1CABD3] rounded-[39px] flex items-center justify-center">
               <a
-                href=""
+                href="/contact"
                 className=" text-white text-[15px] leading-[18.15px] font-semibold"
               >
                 Contact Us

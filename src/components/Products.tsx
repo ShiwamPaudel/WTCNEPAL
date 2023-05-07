@@ -49,7 +49,7 @@ const Products = () => {
       <div className="grid md:grid-cols-4 grid-cols-1 gap-x-[30px] gap-y-[35px] mt-[68px]">
       {
         data.map((item:any,index:number)=>(
-            <div className="border cursor-pointer flex items-center justify-end  flex-col gap-[35px] pb-[44px] pt-[10px] ">
+            <div key={index} className="border cursor-pointer flex items-center justify-end  flex-col gap-[35px] pb-[44px] pt-[10px] ">
                 <img src={item?.img} alt="" className="cursor-pointer hover:scale-[105%] transition duration-300 ease-out"/>
                 <h2 className=" text-[#003760] text-[16px] leading-[20.08px] font-semibold">{item?.name}</h2>
             </div>

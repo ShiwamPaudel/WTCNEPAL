@@ -30,7 +30,7 @@ const AboutUs = () => {
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-[34px] mt-[40px]">
-            <div className="about_box bg-[#007EC5]/[0.05] cursor-pointer">
+            <div className="about_box bg-[#007EC5]/[0.05] cursor-pointer hover:scale-[105%] transition duration-300 ease-out">
               <h2 className="text-[#007EC5] text-[44.8px] leading-[67.2px]">
                 23
               </h2>
@@ -38,7 +38,7 @@ const AboutUs = () => {
                 Years Experience
               </p>
             </div>
-            <div className="about_box bg-[#00A023]/[0.05] cursor-pointer">
+            <div className="about_box bg-[#00A023]/[0.05] cursor-pointer hover:scale-[105%] transition duration-300 ease-out">
               <h2 className="text-[#00A023] text-[44.8px] leading-[67.2px]">
               400+
               </h2>
@@ -46,7 +46,7 @@ const AboutUs = () => {
                 Visa Gran ted{" "}
               </p>
             </div>
-            <div className="about_box bg-[#FF7F0A]/[0.05] cursor-pointer">
+            <div className="about_box bg-[#FF7F0A]/[0.05] cursor-pointer hover:scale-[105%] transition duration-300 ease-out">
               <h2 className="text-[#FF7F0A] text-[44.8px] leading-[67.2px]">
                 98%
               </h2>

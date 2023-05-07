@@ -64,7 +64,7 @@ function Test2() {
       <div className="md:w-[53vw]">
         <Slider {...settings}>
           {data.map((item: any, index) => (
-            <div className="w-full cursor-pointer ">
+            <div className="w-full cursor-pointer " key={index}>
               <div className=" h-[456px] bg-[#FFFFFF] w-full xl:w-[95%] term rounded-[10px]">
                 <div className="flex flex-row">
                   <div className="w-[58px] h-[58px] ml-[35px] mt-[32px] ">

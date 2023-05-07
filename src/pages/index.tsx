@@ -84,7 +84,7 @@ export default function Home() {
       <Head>
         <title>WEB TRADING CONCERN PVT.LTD</title>
       </Head>
-      <Nav1 />
+
       <Navbar />
       <AboutUs />
       <Products/>
