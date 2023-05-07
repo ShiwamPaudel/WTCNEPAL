@@ -12,6 +12,8 @@ import News from "@/components/News";
 import Fotter from "@/components/Fotter";
 import Products from "@/components/Products";
 import BootomFooter from "@/components/BootomFooter";
+import Nav1 from "@/components/Nav1";
+import Partnered1 from "@/components/Partnerned1";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -82,6 +84,7 @@ export default function Home() {
       <Head>
         <title>WEB TRADING CONCERN PVT.LTD</title>
       </Head>
+      <Nav1 />
       <Navbar />
       <AboutUs />
       <Products/>
@@ -92,7 +95,7 @@ export default function Home() {
       {/* <Testimonial /> */}
       <Requestcall />
       <PartneredUniverities img={"/../assets/nepal.png"} title={"We Valuable Customers"} partner={"CUSTOMERS"} description={"We have always been praised by our valuable customers. “Satisfaction” of our customers comes first. Some of our valuable customers but not limited includes:"} />
-      <Partnered data={data2} slide={10} height={'79px'} style={'contain'}/>
+      <Partnered1 data={data2} slide={10} height={'79px'} style={'contain'}/>
       <News />
       <Fotter />
       <BootomFooter/>

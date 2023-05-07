@@ -4,7 +4,7 @@ import Slide2 from "./Slide2";
 const Navbar = () => {
   return (
     <>
-      <Nav1 />
+   
       <Slide2 />
     </>
   );
