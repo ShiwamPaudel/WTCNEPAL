@@ -62,18 +62,18 @@ function Nav1() {
               </Link>
 
               {about && (
-                <div className="absolute top-[18px] left-0  w-[199px] h-[126px] z-40 space-y-[10px]">
-                  <div className="bg-white border   absolute top-[8px] h-[100%] w-full pt-[15px] pl-[15px]">
-                    <li className="text-[15px] hover:text-[#1CABD3] transition-colors duration-300 ease-out font-semibold cursor-pointer">
+                <div className="absolute top-[18px] left-0    w-[199px] h-[126px] z-40 space-y-[10px]">
+                  <div className="bg-white  border-t-[4px] border-t-[#1CABD3]   absolute top-[27px] h-[100%] w-full ">
+                    <li className="text-[15px] hover:text-[#1CABD3] bg-black/[0.9] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer">
                       <Link href="/about">About Web Trading</Link>
                     </li>
-                    <li className="text-[15px] mt-[8px] hover:text-[#1CABD3] transition-colors duration-300 ease-out font-semibold whitespace-pre cursor-pointer">
+                    <li className="text-[15px]   bg-black/[0.9] text-white py-[20px] px-[15px] hover:text-[#1CABD3] transition-colors duration-300 ease-out font-semibold whitespace-pre cursor-pointer">
                       <Link href="">Meet our CEO</Link>
                     </li>
-                    <li className="text-[15px] mt-[8px] hover:text-[#1CABD3] transition-colors duration-300 ease-out font-semibold whitespace-pre cursor-pointer">
+                    <li className="text-[15px]   bg-black/[0.9] text-white py-[20px] px-[15px] hover:text-[#1CABD3] transition-colors duration-300 ease-out font-semibold whitespace-pre cursor-pointer">
                       <Link href="/team">Our Team</Link>
                     </li>
-                    <li className="text-[15px] mt-[8px] hover:text-[#1CABD3] transition-colors duration-300 ease-out font-semibold whitespace-pre cursor-pointer">
+                    <li className="text-[15px]   bg-black/[0.9] text-white py-[20px] px-[15px] hover:text-[#1CABD3] transition-colors duration-300 ease-out font-semibold whitespace-pre cursor-pointer">
                       <Link href="">Our Network</Link>
                     </li>
                   </div>
@@ -82,26 +82,27 @@ function Nav1() {
             </li>
             <li>
               <Link
-                href="/news"
-                className=" font-semibold hover:text-[#1CABD3] transition-colors duration-300 ease-out"
+                href="/ielts"
+                className="font-semibold hover:text-[#1CABD3] transition-colors duration-300 ease-out"
               >
-                News & Event
+                Products 
               </Link>
             </li>
             <li>
               <Link
-                href="/ielts"
-                className="font-semibold hover:text-[#1CABD3] transition-colors duration-300 ease-out"
+                href="/news"
+                className=" font-semibold hover:text-[#1CABD3] transition-colors duration-300 ease-out"
               >
-                Product Category
+                News & Events
               </Link>
             </li>
+           
             <li>
               <Link
                 href=""
                 className="font-semibold hover:text-[#1CABD3] transition-colors duration-300 ease-out"
               >
-                Career
+                Careers
               </Link>
             </li>
             <li>
@@ -109,7 +110,7 @@ function Nav1() {
                 href="/contact"
                 className=" font-semibold hover:text-[#1CABD3] transition-colors duration-300 ease-out"
               >
-                Contact Us
+                Contact 
               </Link>
             </li>
             <li className="h-[42px] w-[120px] bg-[#1CABD3] rounded-[39px] flex items-center justify-center">
@@ -117,7 +118,7 @@ function Nav1() {
                 href=""
                 className=" text-white text-[15px] leading-[18.15px] font-semibold"
               >
-                Check Mail
+                Check Email
               </Link>
             </li>
           </ul>
