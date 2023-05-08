@@ -42,7 +42,7 @@ const Products = () => {
         <h2 className="text-[#7A8A9E] text-[13px] leading-[15.23px] font-medium">
           PRODUCTS
         </h2>
-        <h1 className="text-[36px] font-extrabold leading-[42.19px] text-center">
+        <h1 className="text-[36px] font-extrabold leading-[42.19px] text-center uppercase">
           Products That We Offer
         </h1>
       </div>

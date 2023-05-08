@@ -10,7 +10,7 @@ function Requestcall() {
             <h3 className="font-Work font-bold text-[13px] leading-[15.25px] tracking-[0.085px] text-[white] ">
             TESTIMONIALS
             </h3>
-            <h2 className="font-IBM font-extrabold max-w-[444px] text-[33px] md:text-[48px] leading-[44px] md:leading-[47px] text-[white] pt-[4px]">
+            <h2 className="font-IBM uppercase font-extrabold max-w-[464px] text-[33px] md:text-[48px] leading-[44px] md:leading-[47px] text-[white] pt-[4px]">
             Lorem ipsum want us to call you ?
             </h2>
             <p className="font-Work font-normal text-[16px] leading-[18px] text-[white] pr-[35px] w-[338px] mt-[26px] md:w-[385px] 2xl:w-[545px]">

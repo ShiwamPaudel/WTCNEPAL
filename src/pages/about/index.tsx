@@ -1,5 +1,6 @@
 import AboutBanner from "@/components/AboutBanner";
 import AboutUs from "@/components/AboutUs";
+import OurVision from "@/components/OurVision";
 import Partnered from "@/components/Partnered";
 import PartneredUniverities from "@/components/PartneredUniverities";
 import Testimonial from "@/components/Testimonial";
@@ -33,7 +34,8 @@ const index = () => {
     <>
       <AboutBanner title="About Us"/>
       <AboutUs />
-      <PartneredUniverities
+      <OurVision/>
+      {/* <PartneredUniverities
         img={"/../assets/globe.png"}
         title={"We Represent"}
         partner={"OUR PARTNERS"}
@@ -43,7 +45,7 @@ const index = () => {
       />
       <Partnered data={data} slide={6} height={"125px"} style={"cover"} />
       <Testimonial />
-    
+     */}
 
     
     </>

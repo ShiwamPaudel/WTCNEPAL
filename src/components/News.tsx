@@ -9,7 +9,7 @@ function News() {
       <h3 className="font-Work font-bold text-[13px] leading-[15.25px] tracking-[0.085em] text-[#007EC5] pt-[139.96px] text-center">
         BLOGS
       </h3>
-      <h2 className="font-IBM font-medium text-[34px] md:text-[36px] leading-[47px] text-[#0D1250] pt-[3px] text-center">
+      <h2 className="font-IBM uppercase font-medium text-[34px] md:text-[36px] leading-[47px] text-[#0D1250] pt-[3px] text-center">
         Latest News & Events
       </h2>
 
