@@ -53,7 +53,7 @@ const Team = () => {
       </div>
       <div className="grid md:grid-cols-4 grid-cols-1 px-[50px] mt-[80px] gap-[40px] pb-[50px]">
         {team.map((item: any, index: number) => (
-          <div className="border cursor-pointer group rounded-[3px] hover:scale-[103%] transition duration-150 ease-out">
+          <div key={index} className="border cursor-pointer group rounded-[3px] hover:scale-[103%] transition duration-150 ease-out">
             <div className="h-[288px]">
               <img
                 src={item?.img}

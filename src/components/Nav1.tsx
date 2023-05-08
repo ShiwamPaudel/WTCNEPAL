@@ -3,27 +3,33 @@ import Link from "next/link";
 import Dramenu from "./Dramenu";
 function Nav1() {
   const [about, SetAbout] = useState(false);
+  const [product,setProduct] = useState(false);
 
   const handleDropDown = () => {
     SetAbout(!about);
   };
-  const handleDropDownHide =()=>{
-    SetAbout(false)
-
-  }
+  const handleDropDownHide = () => {
+    SetAbout(false);
+  };
+  const handleProduct = () => {
+    setProduct(!about);
+  };
+  const handleProductHide = () => {
+    setProduct(false);
+  };
   return (
     <>
       <div className="container mx-auto lg:hidden">
         <div className=" flex flex-row justify-between items-center  px-[15px] md:px-0 ">
           <div className="w-[115px] h-[63px] ">
-            <a href="/">
+            <Link href="/">
               {" "}
               <img
                 src="/../assets/logo.png"
                 alt="avatar"
                 className="w-full h-full object-contain"
               />
-            </a>
+            </Link>
           </div>
           <Dramenu />
         </div>
@@ -43,57 +49,106 @@ function Nav1() {
         <div className="">
           <ul className="flex flex-row items-center font-[inter] gap-[40px] font-normal text-[15px] uppercase leading-[14.52px] text-[#000000]">
             <li>
-              <Link href="/" className="font-semibold  hover:text-[#1CABD3] transition-colors duration-150 ease-out">
+              <Link
+                href="/"
+                className="font-semibold  hover:text-[#1CABD3] transition-colors duration-150 ease-out"
+              >
                 Home
               </Link>
             </li>
-            <li onMouseEnter={handleDropDown} onMouseLeave={handleDropDownHide} className="relative">
-              <Link href="/about" className=" font-semibold hover:text-[#1CABD3] transition-colors duration-300 ease-out">
-                About Us
+            <li
+              onMouseEnter={handleDropDown}
+              onMouseLeave={handleDropDownHide}
+              className="relative"
+            >
+              <Link
+                href="/about"
+                className=" font-semibold hover:text-[#1CABD3] transition-colors duration-300 ease-out"
+              >
+                Company
               </Link>
 
               {about && (
-                <div className="absolute top-[14px] left-0  w-[150px] h-[56px] z-40 space-y-[10px]">
-                  <div className="bg-white border   absolute top-[3px] h-[100%] w-full pt-[10px] pl-[15px]">
-                    <li className="text-[15px] hover:text-[#1CABD3] transition-colors duration-300 ease-out font-semibold cursor-pointer">
-                      Company
+                <div className="absolute top-[18px] left-0    w-[199px] h-[126px] z-40 space-y-[10px]">
+                  <div className="bg-white  border-t-[4px] border-t-[#1CABD3]   absolute top-[27px] h-[100%] w-full ">
+                    <li className="text-[15px] border-b-[0.5px] border-b-[gray] hover:text-[#1CABD3] bg-black/[0.9] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer">
+                      <Link href="/about">About Web Trading</Link>
                     </li>
-                    <li className="text-[15px] mt-[6px] hover:text-[#1CABD3] transition-colors duration-300 ease-out font-semibold whitespace-pre cursor-pointer">
-                      <Link href="/team">
-                      Our Team
-                      </Link>
+                    <li className="text-[15px]   border-b-[0.5px] border-b-[gray]  bg-black/[0.9] text-white py-[20px] px-[15px] hover:text-[#1CABD3] transition-colors duration-300 ease-out font-semibold whitespace-pre cursor-pointer">
+                      <Link href="">Meet our CEO</Link>
+                    </li>
+                    <li className="text-[15px]  border-b-[0.5px] border-b-[gray]  bg-black/[0.9] text-white py-[20px] px-[15px] hover:text-[#1CABD3] transition-colors duration-300 ease-out font-semibold whitespace-pre cursor-pointer">
+                      <Link href="/team">Our Team</Link>
+                    </li>
+                    <li className="text-[15px]   bg-black/[0.9] text-white py-[20px] px-[15px] hover:text-[#1CABD3] transition-colors duration-300 ease-out font-semibold whitespace-pre cursor-pointer">
+                      <Link href="">Our Network</Link>
+                    </li>
+                  </div>
+                </div>
+              )}
+            </li>
+            <li onMouseEnter={handleProduct}
+              onMouseLeave={handleProductHide}
+              className="relative">
+              <Link
+                href="/ielts"
+                className="font-semibold hover:text-[#1CABD3] transition-colors duration-300 ease-out"
+              >
+                Products 
+              </Link>
+
+
+              {product && (
+                <div className="absolute top-[18px] left-0    w-[399px] h-[126px] z-40 space-y-[10px]">
+                  <div className="bg-white  border-t-[4px] border-t-[#1CABD3]   absolute top-[27px] h-[100%] w-full ">
+                    <li className="text-[15px] border-b-[0.5px] border-b-[gray] hover:text-[#1CABD3] bg-black/[0.9] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer">
+                      <Link href="/about">Diagnostic Equipments/ Reagent kits</Link>
+                    </li>
+                    <li className="text-[15px]   border-b-[0.5px] border-b-[gray]  bg-black/[0.9] text-white py-[20px] px-[15px] hover:text-[#1CABD3] transition-colors duration-300 ease-out font-semibold whitespace-pre cursor-pointer">
+                      <Link href="">Disinfectant and House Keeping</Link>
+                    </li>
+                    <li className="text-[15px]  border-b-[0.5px] border-b-[gray]  bg-black/[0.9] text-white py-[20px] px-[15px] hover:text-[#1CABD3] transition-colors duration-300 ease-out font-semibold whitespace-pre cursor-pointer">
+                      <Link href="/team">Dermatology (Skin care & beauty) Products</Link>
+                    </li>
+                    <li className="text-[15px]   bg-black/[0.9] text-white py-[20px] px-[15px] hover:text-[#1CABD3] transition-colors duration-300 ease-out font-semibold whitespace-pre cursor-pointer">
+                      <Link href="">Medical And Critical Care Devices</Link>
                     </li>
                   </div>
                 </div>
               )}
             </li>
             <li>
-              <Link href="" className=" font-semibold hover:text-[#1CABD3] transition-colors duration-300 ease-out">
-                News & Event
+              <Link
+                href="/news"
+                className=" font-semibold hover:text-[#1CABD3] transition-colors duration-300 ease-out"
+              >
+                News & Events
+              </Link>
+            </li>
+           
+            <li>
+              <Link
+                href=""
+                className="font-semibold hover:text-[#1CABD3] transition-colors duration-300 ease-out"
+              >
+                Careers
               </Link>
             </li>
             <li>
-              <Link href="/ielts" className="font-semibold hover:text-[#1CABD3] transition-colors duration-300 ease-out">
-                Product Category
+              <Link
+                href="/contact"
+                className=" font-semibold hover:text-[#1CABD3] transition-colors duration-300 ease-out"
+              >
+                Contact 
               </Link>
-            </li>
-            <li>
-              <a href="" className="font-semibold hover:text-[#1CABD3] transition-colors duration-300 ease-out">
-                Career
-              </a>
-            </li>
-            <li>
-              <a href="" className=" font-semibold hover:text-[#1CABD3] transition-colors duration-300 ease-out">
-                Check Mail
-              </a>
             </li>
             <li className="h-[42px] w-[120px] bg-[#1CABD3] rounded-[39px] flex items-center justify-center">
-              <a
-                href="/contact"
+              <Link
+                href=""
                 className=" text-white text-[15px] leading-[18.15px] font-semibold"
               >
-                Contact Us
-              </a>
+                Check Email
+              </Link>
             </li>
           </ul>
         </div>

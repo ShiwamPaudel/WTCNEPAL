@@ -1,7 +1,5 @@
 import AboutBanner from "@/components/AboutBanner";
 import AboutUs from "@/components/AboutUs";
-import BootomFooter from "@/components/BootomFooter";
-import Fotter from "@/components/Fotter";
 import Partnered from "@/components/Partnered";
 import PartneredUniverities from "@/components/PartneredUniverities";
 import Testimonial from "@/components/Testimonial";
@@ -45,8 +43,7 @@ const index = () => {
       />
       <Partnered data={data} slide={6} height={"125px"} style={"cover"} />
       <Testimonial />
-      <Fotter />
-      <BootomFooter/>
+    
 
     
     </>
