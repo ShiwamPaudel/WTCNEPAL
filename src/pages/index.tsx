@@ -97,8 +97,7 @@ export default function Home() {
       <PartneredUniverities img={"/../assets/nepal.png"} title={"We Valuable Customers"} partner={"CUSTOMERS"} description={"We have always been praised by our valuable customers. “Satisfaction” of our customers comes first. Some of our valuable customers but not limited includes:"} />
       <Partnered1 data={data2} slide={10} height={'79px'} style={'contain'}/>
       <News />
-      <Fotter />
-      <BootomFooter/>
+  
     </>
   );
 }

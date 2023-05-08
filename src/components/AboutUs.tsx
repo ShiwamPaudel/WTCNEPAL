@@ -1,4 +1,5 @@
 import React from "react";
+import CountUp from 'react-countup';
 
 const AboutUs = () => {
   return (
@@ -32,7 +33,7 @@ const AboutUs = () => {
           <div className="grid md:grid-cols-3 gap-[34px] mt-[40px]">
             <div className="about_box bg-[#007EC5]/[0.05] cursor-pointer hover:scale-[105%] transition duration-300 ease-out">
               <h2 className="text-[#007EC5] text-[44.8px] leading-[67.2px]">
-                23
+              <CountUp end={100} enableScrollSpy />
               </h2>
               <p className="text-[#434343] text-[16px] leading-[24px] font-semibold">
                 Years Experience
@@ -40,7 +41,7 @@ const AboutUs = () => {
             </div>
             <div className="about_box bg-[#00A023]/[0.05] cursor-pointer hover:scale-[105%] transition duration-300 ease-out">
               <h2 className="text-[#00A023] text-[44.8px] leading-[67.2px]">
-              400+
+              <CountUp end={400} enableScrollSpy />+
               </h2>
               <p className="text-[#434343] text-[16px] leading-[24px] font-semibold">
                 Visa Gran ted{" "}
@@ -48,7 +49,7 @@ const AboutUs = () => {
             </div>
             <div className="about_box bg-[#FF7F0A]/[0.05] cursor-pointer hover:scale-[105%] transition duration-300 ease-out">
               <h2 className="text-[#FF7F0A] text-[44.8px] leading-[67.2px]">
-                98%
+              <CountUp end={98} enableScrollSpy />%
               </h2>
               <p className="text-[#434343] text-[16px] leading-[24px] font-semibold">
                 Admission Success{" "}
