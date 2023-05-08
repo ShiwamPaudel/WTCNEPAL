@@ -4,6 +4,7 @@ import { IoIosArrowBack } from "react-icons/io";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import CountUp from 'react-countup';
 
 function SampleNextArrow(props:any) {
   const { className, style, onClick } = props;
@@ -48,7 +49,7 @@ function Slide2() {
           />
           <div className=" hidden md:flex items-center gap-[92px] text-white absolute left-[50%] transform translate-x-[-50%] bottom-[10%]">
             <div className="">
-              <h1 className="text-[92.31px] font-semibold leading-[78.46px] ">23</h1>
+              <h1 className="text-[92.31px] font-semibold leading-[78.46px] "><CountUp end={23} enableScrollSpy /></h1>
               <p className="text-[24px] font-semibold text-center ">YEARS OF <br /> EXPERTIES</p>
             </div>
             <div>
