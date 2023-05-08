@@ -244,7 +244,7 @@ function Nav1() {
                 Contact
               </Link>
             </li>
-            <li className="h-[42px] w-[120px] bg-[#1CABD3] rounded-[39px] flex items-center ml-[70px] justify-center">
+            <li className="h-[42px] w-[128px] bg-[#1CABD3] rounded-[39px] flex items-center ml-[70px] justify-center">
               <Link
                 href=""
                 className=" text-white text-[15px] leading-[18.15px] font-semibold"
