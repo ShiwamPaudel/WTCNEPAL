@@ -3,7 +3,8 @@ import Link from "next/link";
 import Dramenu from "./Dramenu";
 function Nav1() {
   const [about, SetAbout] = useState(false);
-  const [product,setProduct] = useState(false);
+  const [product, setProduct] = useState(false);
+  const [sub, setSub] = useState(false);
 
   const handleDropDown = () => {
     SetAbout(!about);
@@ -17,6 +18,14 @@ function Nav1() {
   const handleProductHide = () => {
     setProduct(false);
   };
+
+
+  const handleSubmenu =()=>{
+setSub(!sub);
+  }
+  const handleSubmenuHide =()=>{
+    setSub(false)
+  }
   return (
     <>
       <div className="container mx-auto lg:hidden">
@@ -70,47 +79,79 @@ function Nav1() {
 
               {about && (
                 <div className="absolute top-[18px] left-0    w-[199px] h-[126px] z-40 space-y-[10px]">
-                  <div className="bg-white  border-t-[4px] border-t-[#1CABD3]   absolute top-[27px] h-[100%] w-full ">
-                    <li className="text-[15px] border-b-[0.5px] border-b-[gray] hover:text-[#1CABD3] bg-black/[0.9] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer">
+                  <div className="bg-white  border-t-[4px] border-t-[black]   absolute top-[27px] h-[100%] w-full ">
+                    <li className="text-[14px] border-b-[0.5px] border-b-[white]/[0.5] hover:text-[black] bg-[#1CABD3] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer">
                       <Link href="/about">About Web Trading</Link>
                     </li>
-                    <li className="text-[15px]   border-b-[0.5px] border-b-[gray]  bg-black/[0.9] text-white py-[20px] px-[15px] hover:text-[#1CABD3] transition-colors duration-300 ease-out font-semibold whitespace-pre cursor-pointer">
+                    <li className="text-[14px]   border-b-[0.5px] border-b-[white]/[0.5]  bg-[#1CABD3] text-white py-[20px] px-[15px] hover:text-[black] transition-colors duration-300 ease-out font-semibold whitespace-pre cursor-pointer">
                       <Link href="">Meet our CEO</Link>
                     </li>
-                    <li className="text-[15px]  border-b-[0.5px] border-b-[gray]  bg-black/[0.9] text-white py-[20px] px-[15px] hover:text-[#1CABD3] transition-colors duration-300 ease-out font-semibold whitespace-pre cursor-pointer">
+                    <li className="text-[14px]  border-b-[0.5px] border-b-[white]/[0.5]  bg-[#1CABD3] text-white py-[20px] px-[15px] hover:text-[black] transition-colors duration-300 ease-out font-semibold whitespace-pre cursor-pointer">
                       <Link href="/team">Our Team</Link>
                     </li>
-                    <li className="text-[15px]   bg-black/[0.9] text-white py-[20px] px-[15px] hover:text-[#1CABD3] transition-colors duration-300 ease-out font-semibold whitespace-pre cursor-pointer">
+                    <li className="text-[14px]   bg-[#1CABD3] text-white py-[20px] px-[15px] hover:text-[black] transition-colors duration-300 ease-out font-semibold whitespace-pre cursor-pointer">
                       <Link href="">Our Network</Link>
                     </li>
                   </div>
                 </div>
               )}
             </li>
-            <li onMouseEnter={handleProduct}
+            <li
+              onMouseEnter={handleProduct}
               onMouseLeave={handleProductHide}
-              className="relative">
+              className="relative"
+            >
               <Link
                 href="/ielts"
                 className="font-semibold hover:text-[#1CABD3] transition-colors duration-300 ease-out"
               >
-                Products 
+                Products
               </Link>
-
 
               {product && (
                 <div className="absolute top-[18px] left-0    w-[399px] h-[126px] z-40 space-y-[10px]">
-                  <div className="bg-white  border-t-[4px] border-t-[#1CABD3]   absolute top-[27px] h-[100%] w-full ">
-                    <li className="text-[15px] border-b-[0.5px] border-b-[gray] hover:text-[#1CABD3] bg-black/[0.9] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer">
-                      <Link href="/about">Diagnostic Equipments/ Reagent kits</Link>
+                  <div className="bg-white  border-t-[4px] border-t-[black]   absolute top-[27px] h-[100%] w-full ">
+                    <li onMouseEnter={handleSubmenu} onMouseLeave={handleSubmenuHide} className="text-[14px] relative border-b-[0.5px] border-b-[white] hover:text-[black] bg-[#1CABD3] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer">
+                      <Link href="/about">
+                        Diagnostic Equipments/ Reagent kits
+                      </Link>
+
+                      {sub && (
+                        <div className="absolute top-[0px] left-[100%]    w-[399px] h-[126px] z-40 space-y-[10px]">
+                          <div className="bg-white border-l-[0.5px] border-l-[white]  border-t-[4px] border-t-[black]   absolute top-[10px] h-[100%] w-full ">
+                            <li className="text-[14px]  border-b-[0.5px] border-b-[white] hover:text-[black] bg-[#1CABD3] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer">
+                              <Link href="/about">
+                                Diagnostic Equipments/ Reagent kits
+                              </Link>
+                            </li>
+                            <li className="text-[14px]   border-b-[0.5px] border-b-[white]  bg-[#1CABD3]/[0.9] text-white py-[20px] px-[15px] hover:text-[black] transition-colors duration-300 ease-out font-semibold whitespace-pre cursor-pointer">
+                              <Link href="">
+                                Disinfectant and House Keeping
+                              </Link>
+                            </li>
+                            <li className="text-[14px]  border-b-[0.5px] border-b-[white]  bg-[#1CABD3]/[0.9] text-white py-[20px] px-[15px] hover:text-[black] transition-colors duration-300 ease-out font-semibold whitespace-pre cursor-pointer">
+                              <Link href="/team">
+                                Dermatology (Skin care & beauty) Products
+                              </Link>
+                            </li>
+                            <li className="text-[14px]   bg-[#1CABD3]/[0.9] text-white py-[20px] px-[15px] hover:text-[black] transition-colors duration-300 ease-out font-semibold whitespace-pre cursor-pointer">
+                              <Link href="">
+                                Medical And Critical Care Devices
+                              </Link>
+                            </li>
+                          </div>
+                        </div>
+                      )}
                     </li>
-                    <li className="text-[15px]   border-b-[0.5px] border-b-[gray]  bg-black/[0.9] text-white py-[20px] px-[15px] hover:text-[#1CABD3] transition-colors duration-300 ease-out font-semibold whitespace-pre cursor-pointer">
+                    <li className="text-[14px]   border-b-[0.5px] border-b-[white]  bg-[#1CABD3] text-white py-[20px] px-[15px] hover:text-[black] transition-colors duration-300 ease-out font-semibold whitespace-pre cursor-pointer">
                       <Link href="">Disinfectant and House Keeping</Link>
                     </li>
-                    <li className="text-[15px]  border-b-[0.5px] border-b-[gray]  bg-black/[0.9] text-white py-[20px] px-[15px] hover:text-[#1CABD3] transition-colors duration-300 ease-out font-semibold whitespace-pre cursor-pointer">
-                      <Link href="/team">Dermatology (Skin care & beauty) Products</Link>
+                    <li className="text-[15px]  border-b-[0.5px] border-b-[white]  bg-[#1CABD3] text-white py-[20px] px-[15px] hover:text-[black] transition-colors duration-300 ease-out font-semibold whitespace-pre cursor-pointer">
+                      <Link href="/team">
+                        Dermatology (Skin care & beauty) Products
+                      </Link>
                     </li>
-                    <li className="text-[15px]   bg-black/[0.9] text-white py-[20px] px-[15px] hover:text-[#1CABD3] transition-colors duration-300 ease-out font-semibold whitespace-pre cursor-pointer">
+                    <li className="text-[15px]   bg-[#1CABD3] text-white py-[20px] px-[15px] hover:text-[black] transition-colors duration-300 ease-out font-semibold whitespace-pre cursor-pointer">
                       <Link href="">Medical And Critical Care Devices</Link>
                     </li>
                   </div>
@@ -125,7 +166,7 @@ function Nav1() {
                 News & Events
               </Link>
             </li>
-           
+
             <li>
               <Link
                 href=""
@@ -139,10 +180,10 @@ function Nav1() {
                 href="/contact"
                 className=" font-semibold hover:text-[#1CABD3] transition-colors duration-300 ease-out"
               >
-                Contact 
+                Contact
               </Link>
             </li>
-            <li className="h-[42px] w-[120px] bg-[#1CABD3] rounded-[39px] flex items-center justify-center">
+            <li className="h-[42px] w-[120px] bg-[#1CABD3] rounded-[39px] flex items-center ml-[80px] justify-center">
               <Link
                 href=""
                 className=" text-white text-[15px] leading-[18.15px] font-semibold"

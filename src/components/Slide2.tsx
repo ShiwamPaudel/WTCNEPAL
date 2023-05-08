@@ -37,7 +37,7 @@ function SamplePrevArrow(props: any) {
 function Slide2() {
   const settings = {
     dots: false,
-    autoplay: false,
+    autoplay: true,
     infinite: true,
     speed: 500,
     arrows: true,
