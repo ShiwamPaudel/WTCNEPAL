@@ -33,7 +33,8 @@ const AboutUs = () => {
           <div className="grid md:grid-cols-3 gap-[34px] mt-[40px]">
             <div className="about_box bg-[#007EC5]/[0.05] cursor-pointer hover:scale-[105%] transition duration-300 ease-out">
               <h2 className="text-[#007EC5] text-[44.8px] leading-[67.2px]">
-              <CountUp end={100} enableScrollSpy />
+              {/* <CountUp end={100} enableScrollSpy /> */}
+              100
               </h2>
               <p className="text-[#434343] text-[16px] leading-[24px] font-semibold">
                 Years Experience
@@ -41,7 +42,8 @@ const AboutUs = () => {
             </div>
             <div className="about_box bg-[#00A023]/[0.05] cursor-pointer hover:scale-[105%] transition duration-300 ease-out">
               <h2 className="text-[#00A023] text-[44.8px] leading-[67.2px]">
-              <CountUp end={400} enableScrollSpy />+
+              {/* <CountUp end={400} enableScrollSpy />+ */}
+              400+
               </h2>
               <p className="text-[#434343] text-[16px] leading-[24px] font-semibold">
                 Visa Gran ted{" "}
@@ -49,7 +51,8 @@ const AboutUs = () => {
             </div>
             <div className="about_box bg-[#FF7F0A]/[0.05] cursor-pointer hover:scale-[105%] transition duration-300 ease-out">
               <h2 className="text-[#FF7F0A] text-[44.8px] leading-[67.2px]">
-              <CountUp end={98} enableScrollSpy />%
+              {/* <CountUp end={98} enableScrollSpy />% */}
+              98%
               </h2>
               <p className="text-[#434343] text-[16px] leading-[24px] font-semibold">
                 Admission Success{" "}

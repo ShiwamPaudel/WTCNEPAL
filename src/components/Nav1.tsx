@@ -16,14 +16,14 @@ function Nav1() {
       <div className="container mx-auto lg:hidden">
         <div className=" flex flex-row justify-between items-center  px-[15px] md:px-0 ">
           <div className="w-[115px] h-[63px] ">
-            <a href="/">
+            <Link href="/">
               {" "}
               <img
                 src="/../assets/logo.png"
                 alt="avatar"
                 className="w-full h-full object-contain"
               />
-            </a>
+            </Link>
           </div>
           <Dramenu />
         </div>
@@ -78,22 +78,22 @@ function Nav1() {
               </Link>
             </li>
             <li>
-              <a href="" className="font-semibold hover:text-[#1CABD3] transition-colors duration-300 ease-out">
+              <Link href="" className="font-semibold hover:text-[#1CABD3] transition-colors duration-300 ease-out">
                 Career
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="" className=" font-semibold hover:text-[#1CABD3] transition-colors duration-300 ease-out">
+              <Link href="" className=" font-semibold hover:text-[#1CABD3] transition-colors duration-300 ease-out">
                 Check Mail
-              </a>
+              </Link>
             </li>
             <li className="h-[42px] w-[120px] bg-[#1CABD3] rounded-[39px] flex items-center justify-center">
-              <a
+              <Link
                 href="/contact"
                 className=" text-white text-[15px] leading-[18.15px] font-semibold"
               >
                 Contact Us
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
