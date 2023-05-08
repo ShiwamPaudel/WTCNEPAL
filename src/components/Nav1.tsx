@@ -138,12 +138,20 @@ function Nav1() {
                     onMouseLeave={handleSubmenuHide}
                     className="bg-white  border-t-[4px] border-t-[black]   absolute top-[27px] h-[100%] w-full "
                   >
-                    {menu.map((item: any, index: number) => (
+                   
                       <>
                         <li className="text-[15px] relative border-b-[0.5px] capitalize border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#1CABD3] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer">
-                          <Link href="/about">{item.name}</Link>
+                          <Link href="/about">Diagnostic Equipments/ Reagent kits</Link>
                         </li>
-
+                        <li className="text-[15px] relative border-b-[0.5px] capitalize border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#1CABD3] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer">
+                          <Link href="/about">Disinfectant and House Keeping</Link>
+                        </li>
+                        <li className="text-[15px] relative border-b-[0.5px] capitalize border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#1CABD3] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer">
+                          <Link href="/about"> Dermatology (Skin care & beauty) Products</Link>
+                        </li>
+                        <li className="text-[15px] relative border-b-[0.5px] capitalize border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#1CABD3] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer">
+                          <Link href="/about">Medical And Critical Care Devices</Link>
+                        </li>
                         {sub && (
                           <div className="absolute top-[0px] left-[100%]    w-[399px] h-[126px] z-40 space-y-[10px]">
                             <div
@@ -172,7 +180,7 @@ function Nav1() {
                           </div>
                         )}
                       </>
-                    ))}
+                 
 
                    
                   </div>

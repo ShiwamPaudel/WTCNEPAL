@@ -14,7 +14,7 @@ function SampleNextArrow(props: any) {
         src="/../assets/arrow2.png"
         alt=""
         onClick={onClick}
-        className="rotate-180 cursor-pointer"
+        className="rotate-180 cursor-pointer opacity-[0.5] hover:opacity-100"
       />
     </div>
   );
@@ -27,7 +27,7 @@ function SamplePrevArrow(props: any) {
       <img
         src="/../assets/arrow2.png"
         alt=""
-        className=" cursor-pointer"
+        className=" cursor-pointer "
         onClick={onClick}
       />
     </div>
@@ -69,13 +69,17 @@ function Slide2() {
       {
         data.map((item:any,index:number)=>(
           <div className=" h-[300px] xl:h-[687px] relative 2xl:h-[800px]">
+
+            <div className="h-[100%] w-full absolute top-0 left-0 cover">
+
+            </div>
              <img
             src={item.img}
-            className="w-full h-[100%] object-cover"
+            className="w-full h-[100%] "
             alt=""
              />
             <div className=" hidden md:flex items-center gap-[92px] text-white absolute left-[50%] transform translate-x-[-50%] bottom-[10%]">
-            <div className="hidden">
+            <div className="">
               <h1 className="text-[92.31px] font-semibold leading-[78.46px] ">
                 23
               </h1>
@@ -85,7 +89,7 @@ function Slide2() {
               </p>
             </div>
             <div className="">
-              <p className="text-[20px] text-center font-semibold leading-[30px] w-[815px]">
+              <p className="text-[20px] text-start font-semibold leading-[30px] w-[815px]">
                {item.caption}
               </p>
             </div>
