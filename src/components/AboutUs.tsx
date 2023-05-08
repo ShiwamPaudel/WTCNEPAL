@@ -1,33 +1,25 @@
 import React from "react";
 import CountUp from 'react-countup';
+import Link from "next/link";
 
 const AboutUs = () => {
   return (
     <div className="pt-[80px] pb-[80px]">
       <div className="container mx-auto md:flex gap-[93px] px-[15px] md:px-0 ">
-        <div className="basis-[60%]">
+        <div className="basis-[50%]">
           <h2 className="text-[#7A8A9E] text-[13px] leading-[15.25px] tracking-[0.085em] font-bold">
             ABOUT US
           </h2>
-          <h1 className="text-[#003760] text-[38px] leading-[46.8px] font-extrabold  mt-[8px]">
+          <h1 className="text-[#003760] text-[38px] leading-[46.8px] font-extrabold uppercase  mt-[8px]">
             Web Trading Concern Pvt. Ltd.
           </h1>
           <div className="w-full">
             <p className="text-[#696969] text-[15px] leading-[22.5px] font-normal w-full mt-[21px]">
-              Established in 2001 AD, Web Trading Concern Pvt. Ltd is a reputed
-              leading Medical, Lab and Health equipment supplier in Nepal
-              providing services to reputed government and private Hospitals,
-              healthcare institutions, 5 star Hotels, airport, shopping malls
-              and development sectors in Nepal.
+            Web Trading Concern Pvt. Ltd is a renowned medical equipment supplier in Nepal that provides healthcare solutions to government and private hospitals, healthcare institutions, 5-star hotels, airports, shopping malls, and development sectors. We partner with top multinational manufacturing companies such as Eppendorf BioSystems, Avantor, Asclepion, i-sens, Improve Diversey, DiaSorin, Dermaindia, Bowin, Gesan, Newster, NeoMedica, and Meling to deliver high-quality medical and health equipment.
             </p>
             <p className="text-[#696969] text-[15px] leading-[22.5px] font-normal  w-full mt-[18px]">
-              Web Trading Concern Pvt. Ltd provides a range of healthcare
-              solutions by delivering products from top multinational
-              manufacturing company in the field of diagnostics and medical
-              support services. It has developed a reputation for excellence and
-              has rapidly become the most trusted medical and Health equipment
-              supplier in Nepal in terms of reliability and fastest service with
-              a simple aim: the pursuit of uncompromising quality.
+            Our commitment to providing the best healthcare solutions has earned us a reputation for excellence in Nepal. Our reliable and fast services have made us the most dependable supplier of medical equipment in Nepal. At Web Trading Concern Pvt. Ltd, customer satisfaction is our top priority, and we take pride in our loyal customer base.
+We cater to leading government and private hospitals, healthcare institutions, 5-star hotels, airports, shopping malls, and development sectors in Nepal. We strive to expand our reach and cater to the needs of new customers across Nepal. Choose Web Trading Concern Pvt. Ltd for <span className="font-semibold text-[#0101CC] cursor-pointer"><Link href="/about"> Read more.....</Link> </span>
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-[34px] mt-[40px]">
@@ -46,7 +38,7 @@ const AboutUs = () => {
               400+
               </h2>
               <p className="text-[#434343] text-[16px] leading-[24px] font-semibold">
-                Visa Gran ted{" "}
+                Customers{" "}
               </p>
             </div>
             <div className="about_box bg-[#FF7F0A]/[0.05] cursor-pointer hover:scale-[105%] transition duration-300 ease-out">
@@ -55,13 +47,13 @@ const AboutUs = () => {
               98%
               </h2>
               <p className="text-[#434343] text-[16px] leading-[24px] font-semibold">
-                Admission Success{" "}
+              Rpeated Customers{" "}
               </p>
             </div>
           </div>
         </div>
-        <div className="basis-[40%] mt-[40px] md:mt-0 flex items-center justify-center">
-          <img src="/../assets/biglogo.png" alt="" />
+        <div className="basis-[45%] mt-[40px] md:mt-0 flex items-center justify-center">
+          <img src="/../assets/home_image.jpg" alt="" />
         </div>
       </div>
     </div>

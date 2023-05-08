@@ -5,6 +5,7 @@ function Nav1() {
   const [about, SetAbout] = useState(false);
   const [product, setProduct] = useState(false);
   const [sub, setSub] = useState(false);
+  const [sub2, setSub2] = useState(false);
 
   const handleDropDown = () => {
     SetAbout(!about);
@@ -13,19 +14,72 @@ function Nav1() {
     SetAbout(false);
   };
   const handleProduct = () => {
-    setProduct(!about);
+    setProduct(true);
   };
   const handleProductHide = () => {
     setProduct(false);
   };
 
+  const handleSubmenu = () => {
+    setSub(true);
+  };
+  const handleSubmenuHide = () => {
+    setSub(false);
+  };
+  const handleSubmenu2 = () => {
+    setSub2(true);
+  };
+  const handleSubmenuHide2 = () => {
+    setSub2(false);
+  };
 
-  const handleSubmenu =()=>{
-setSub(!sub);
-  }
-  const handleSubmenuHide =()=>{
-    setSub(false)
-  }
+  let menu = [
+    {
+      name: " Diagnostic Equipments/ Reagent kits",
+    },
+    {
+      name: " Disinfectant and House Keeping",
+    },
+    {
+      name: "  Dermatology (Skin care & beauty) Products",
+    },
+    {
+      name: " Medical And Critical Care Devices<",
+    },
+  ];
+  let submenu2 = [
+    {
+      name: "Biochemistry Instruments and Reagents",
+    },
+    {
+      name: " Blood Gas & Electrolyte Analyzer",
+    },
+    {
+      name: "Glucometer",
+    },
+    {
+      name: "  Hematology Instruments and Reagents",
+    },
+    {
+      name: " Liquid, Sample and Cell Handling",
+    },
+    {
+      name: "Immunoassay Analyzers",
+    },
+    {
+      name: " ELISA and Flexible C. Difficile Testing",
+    },
+    {
+      name: "Vacutainer and View Finder",
+    },
+    {
+      name: "Histopathology Instruments",
+    },
+    {
+      name: "Protein Analyzer",
+    },
+  ];
+
   return (
     <>
       <div className="container mx-auto lg:hidden">
@@ -66,6 +120,66 @@ setSub(!sub);
               </Link>
             </li>
             <li
+              onMouseEnter={handleProduct}
+              onMouseLeave={handleProductHide}
+              className="relative"
+            >
+              <Link
+                href="/ielts"
+                className="font-semibold hover:text-[#1CABD3] transition-colors duration-300 ease-out"
+              >
+                Products
+              </Link>
+
+              {product && (
+                <div className="absolute top-[18px] left-0    w-[399px] h-[126px] z-40 space-y-[10px]">
+                  <div
+                    onMouseEnter={handleSubmenu}
+                    onMouseLeave={handleSubmenuHide}
+                    className="bg-white  border-t-[4px] border-t-[black]   absolute top-[27px] h-[100%] w-full "
+                  >
+                    {menu.map((item: any, index: number) => (
+                      <>
+                        <li className="text-[15px] relative border-b-[0.5px] capitalize border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#1CABD3] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer">
+                          <Link href="/about">{item.name}</Link>
+                        </li>
+
+                        {sub && (
+                          <div className="absolute top-[0px] left-[100%]    w-[399px] h-[126px] z-40 space-y-[10px]">
+                            <div
+                              onMouseEnter={handleSubmenu2}
+                              onMouseLeave={handleSubmenuHide2}
+                              className="bg-white border-l-[0.5px] border-l-[white]  border-t-[4px] border-t-[black]   absolute top-[10px] h-[100%] w-full "
+                            >
+                              {submenu2.map((item: any, index: number) => (
+                                <>
+                                  <li className="text-[15px] relative  capitalize border-b-[0.5px] border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#1CABD3] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer">
+                                    <Link href="/about">{item.name}</Link>
+                                  </li>
+                                  {sub2 && (
+                                    <div className="absolute top-[5px] left-[100%]    w-[199px] h-[126px] z-40 space-y-[10px]">
+                                      <div className="  border-t-[4px] border-t-[black]   absolute top-[0px] h-[100%] w-full ">
+                                        <li className="text-[15px] border-b-[0.5px] capitalize border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#1CABD3] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer">
+                                          <Link href="/about">BioSystems</Link>
+                                        </li>
+                                      </div>
+                                    </div>
+                                  )}
+                                </>
+                              ))}
+                             
+                            </div>
+                          </div>
+                        )}
+                      </>
+                    ))}
+
+                   
+                  </div>
+                </div>
+              )}
+            </li>
+            <li
               onMouseEnter={handleDropDown}
               onMouseLeave={handleDropDownHide}
               className="relative"
@@ -96,68 +210,7 @@ setSub(!sub);
                 </div>
               )}
             </li>
-            <li
-              onMouseEnter={handleProduct}
-              onMouseLeave={handleProductHide}
-              className="relative"
-            >
-              <Link
-                href="/ielts"
-                className="font-semibold hover:text-[#1CABD3] transition-colors duration-300 ease-out"
-              >
-                Products
-              </Link>
 
-              {product && (
-                <div className="absolute top-[18px] left-0    w-[399px] h-[126px] z-40 space-y-[10px]">
-                  <div className="bg-white  border-t-[4px] border-t-[black]   absolute top-[27px] h-[100%] w-full ">
-                    <li onMouseEnter={handleSubmenu} onMouseLeave={handleSubmenuHide} className="text-[14px] relative border-b-[0.5px] border-b-[white] hover:text-[black] bg-[#1CABD3] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer">
-                      <Link href="/about">
-                        Diagnostic Equipments/ Reagent kits
-                      </Link>
-
-                      {sub && (
-                        <div className="absolute top-[0px] left-[100%]    w-[399px] h-[126px] z-40 space-y-[10px]">
-                          <div className="bg-white border-l-[0.5px] border-l-[white]  border-t-[4px] border-t-[black]   absolute top-[10px] h-[100%] w-full ">
-                            <li className="text-[14px]  border-b-[0.5px] border-b-[white] hover:text-[black] bg-[#1CABD3] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer">
-                              <Link href="/about">
-                                Diagnostic Equipments/ Reagent kits
-                              </Link>
-                            </li>
-                            <li className="text-[14px]   border-b-[0.5px] border-b-[white]  bg-[#1CABD3]/[0.9] text-white py-[20px] px-[15px] hover:text-[black] transition-colors duration-300 ease-out font-semibold whitespace-pre cursor-pointer">
-                              <Link href="">
-                                Disinfectant and House Keeping
-                              </Link>
-                            </li>
-                            <li className="text-[14px]  border-b-[0.5px] border-b-[white]  bg-[#1CABD3]/[0.9] text-white py-[20px] px-[15px] hover:text-[black] transition-colors duration-300 ease-out font-semibold whitespace-pre cursor-pointer">
-                              <Link href="/team">
-                                Dermatology (Skin care & beauty) Products
-                              </Link>
-                            </li>
-                            <li className="text-[14px]   bg-[#1CABD3]/[0.9] text-white py-[20px] px-[15px] hover:text-[black] transition-colors duration-300 ease-out font-semibold whitespace-pre cursor-pointer">
-                              <Link href="">
-                                Medical And Critical Care Devices
-                              </Link>
-                            </li>
-                          </div>
-                        </div>
-                      )}
-                    </li>
-                    <li className="text-[14px]   border-b-[0.5px] border-b-[white]  bg-[#1CABD3] text-white py-[20px] px-[15px] hover:text-[black] transition-colors duration-300 ease-out font-semibold whitespace-pre cursor-pointer">
-                      <Link href="">Disinfectant and House Keeping</Link>
-                    </li>
-                    <li className="text-[15px]  border-b-[0.5px] border-b-[white]  bg-[#1CABD3] text-white py-[20px] px-[15px] hover:text-[black] transition-colors duration-300 ease-out font-semibold whitespace-pre cursor-pointer">
-                      <Link href="/team">
-                        Dermatology (Skin care & beauty) Products
-                      </Link>
-                    </li>
-                    <li className="text-[15px]   bg-[#1CABD3] text-white py-[20px] px-[15px] hover:text-[black] transition-colors duration-300 ease-out font-semibold whitespace-pre cursor-pointer">
-                      <Link href="">Medical And Critical Care Devices</Link>
-                    </li>
-                  </div>
-                </div>
-              )}
-            </li>
             <li>
               <Link
                 href="/news"
@@ -183,7 +236,7 @@ setSub(!sub);
                 Contact
               </Link>
             </li>
-            <li className="h-[42px] w-[120px] bg-[#1CABD3] rounded-[39px] flex items-center ml-[80px] justify-center">
+            <li className="h-[42px] w-[120px] bg-[#1CABD3] rounded-[39px] flex items-center ml-[70px] justify-center">
               <Link
                 href=""
                 className=" text-white text-[15px] leading-[18.15px] font-semibold"

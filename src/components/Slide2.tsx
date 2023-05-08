@@ -46,45 +46,36 @@ function Slide2() {
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
   };
+
+ let data =[
+  {
+    img:"/../assets/mainbanner1.jpg",
+    caption:"Fully automated immunoassay analyzer - LIAISON® XL - DiaSorin - for clinical diagnostic / chemiluminescence / plasma"
+  },
+  {
+    img:"/../assets/mainbanner2.jpg",
+    caption:"BA400 is a clinical chemistry and turbidimetry analyzer designed to offer the best performance to laboratories looking towards achieving the highest efficiency with optimal operating costs."
+  },
+  {
+    img:"/../assets/mainbanner3.jpg",
+    caption:"The sterilizing unit is designed for on-site installation in up to 300 beds hospitals. The sturdy design allows the sterilizer to work for several shifts, each lasting 35-40 minutes."
+  }
+ ]
+
   return (
     <div className="w-full overflow-x-hidden">
-      <Slider {...settings} className="slide2 ">
-        <div className="h-[300px] xl:h-[687px] 2xl:h-[800px] relative">
-          <img
-            src="/../assets/bg.png"
+      <Slider {...settings} className=" ">
+   
+      {
+        data.map((item:any,index:number)=>(
+          <div className=" h-[300px] xl:h-[687px] relative 2xl:h-[800px]">
+             <img
+            src={item.img}
             className="w-full h-[100%] object-cover"
             alt=""
-          />
-          <div className=" hidden md:flex items-center gap-[92px] text-white absolute left-[50%] transform translate-x-[-50%] bottom-[10%]">
-            <div className="">
-              <h1 className="text-[92.31px] font-semibold leading-[78.46px] ">
-                {/* <CountUp end={23} enableScrollSpy /> */}
-                23
-              </h1>
-              <p className="text-[24px] font-semibold text-center ">
-                YEARS OF <br /> EXPERTIES
-              </p>
-            </div>
-            <div>
-              <p className="text-[20px] font-semibold leading-[30px] w-[815px]">
-                Welcome to our comprehensive range of cutting-edge medical
-                equipment. With our unwavering commitment to excellence, we
-                strive to empower healthcare professionals by providing
-                state-of-the-art tools and technologies. Discover innovative
-                solutions that enhance patient care, optimize diagnoses, and
-                revolutionize the healthcare industry.s
-              </p>
-            </div>
-          </div>
-        </div>
-        <div className=" h-[300px] xl:h-[687px] 2xl:h-[800px]">
-          <img
-            src="/../assets/bg.png"
-            className="w-full h-[100%] object-cover"
-            alt=""
-          />
-          <div className=" hidden md:flex items-center gap-[92px] text-white absolute left-[50%] transform translate-x-[-50%] bottom-[10%]">
-            <div className="">
+             />
+            <div className=" hidden md:flex items-center gap-[92px] text-white absolute left-[50%] transform translate-x-[-50%] bottom-[10%]">
+            <div className="hidden">
               <h1 className="text-[92.31px] font-semibold leading-[78.46px] ">
                 23
               </h1>
@@ -93,18 +84,17 @@ function Slide2() {
                 <br /> EXPERTIES
               </p>
             </div>
-            <div>
-              <p className="text-[20px] font-semibold leading-[30px] w-[815px]">
-                Welcome to our comprehensive range of cutting-edge medical
-                equipment. With our unwavering commitment to excellence, we
-                strive to empower healthcare professionals by providing
-                state-of-the-art tools and technologies. Discover innovative
-                solutions that enhance patient care, optimize diagnoses, and
-                revolutionize the healthcare industry.s
+            <div className="">
+              <p className="text-[20px] text-center font-semibold leading-[30px] w-[815px]">
+               {item.caption}
               </p>
             </div>
           </div>
         </div>
+        ))
+      }
+
+        
       </Slider>
     </div>
   );
