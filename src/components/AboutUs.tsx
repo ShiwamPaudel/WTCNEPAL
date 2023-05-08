@@ -5,7 +5,7 @@ import Link from "next/link";
 const AboutUs = () => {
   return (
     <div className="pt-[80px] pb-[80px]">
-      <div className="container mx-auto md:flex gap-[93px] px-[15px] md:px-0 ">
+      <div className="container 2xl:max-w-[1180px] mx-auto md:flex gap-[93px] px-[15px] md:px-0 ">
         <div className="basis-[50%]">
           <h2 className="text-[#7A8A9E] text-[13px] leading-[15.25px] tracking-[0.085em] font-bold">
             ABOUT US

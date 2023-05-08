@@ -63,12 +63,12 @@ function Slide2() {
  ]
 
   return (
-    <div className="w-full overflow-x-hidden">
+    <div className="w-full  overflow-x-hidden">
       <Slider {...settings} className=" ">
    
       {
         data.map((item:any,index:number)=>(
-          <div className=" h-[300px] xl:h-[687px] relative 2xl:h-[800px]">
+          <div className=" h-[300px] xl:h-[687px] relative ">
 
             <div className="h-[100%] w-full absolute top-0 left-0 cover">
 
