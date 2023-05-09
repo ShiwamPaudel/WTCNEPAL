@@ -32,8 +32,8 @@ const SingleNews = () => {
     <>
       <AboutBanner title="News & Events" />
 
-      <div className="container 2xl:max-w-[1180px] flex gap-[40px] mx-auto py-[80px] ">
-        <div className="basis-[70%] border p-[20px]">
+      <div className="container px-[15px] md:px-0 flex-wrap md:flex-nowrap 2xl:max-w-[1180px] flex gap-[40px] mx-auto py-[80px] ">
+        <div className="md:basis-[70%]  border p-[20px]">
           <div className="h-[300px]">
             <img
               src="/../assets/news.jpg"
@@ -84,7 +84,7 @@ const SingleNews = () => {
             </div>
           </div>
         </div>
-        <div className="basis-[30%] border">
+        <div className="md:basis-[30%] border">
           <div className="pt-[15px] px-[20px]">
             <h2 className="text-[20px] font-semibold uppercase">search</h2>
             <div className=" flex items-center h-[50px] mt-[20px]">

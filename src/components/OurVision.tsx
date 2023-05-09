@@ -3,9 +3,9 @@ import React from "react";
 const OurVision = () => {
   let data = [];
   return (
-    <div className="container mx-auto  py-[80px]">
-      <div className="flex items-center justify-center gap-[40px] h-[240px] px-[200px]">
-        <div className="border hover:scale-[103%] transition duration-300 ease-out cursor-pointer shadow-lg bg-[#1CABD3] text-white rounded-[3px] flex-1 px-[80px] h-[100%] flex items-center justify-start flex-col gap-[15px] py-[20px]">
+    <div className="container mx-auto  py-[80px] px-[15px] md:px-0">
+      <div className="flex md:flex-row flex-col items-center justify-center md:gap-[40px] gap-[20px] h-[260px] md:px-[200px]">
+        <div className="border hover:scale-[103%] transition duration-300 ease-out cursor-pointer shadow-lg bg-[#1CABD3] text-white rounded-[3px] flex-1 md:px-[80px] px-[15px] h-[100%] flex items-center justify-start flex-col gap-[15px] py-[20px]">
           <h1 className="text-[25px] font-semibold border-b-[2px]">Vision</h1>
           <p className="text-center text-[16px] ">
             Our vision is to become the leading healthcare solutions provider in
@@ -13,7 +13,7 @@ const OurVision = () => {
             expertise.
           </p>
         </div>
-        <div className="border hover:scale-[103%] transition duration-300 ease-out cursor-pointer shadow-lg bg-[#1CABD3] text-white rounded-[3px] flex-1 h-[100%] flex items-center justify-start flex-col gap-[15px] px-[80px] py-[20px]">
+        <div className="border hover:scale-[103%] transition duration-300 ease-out  cursor-pointer shadow-lg bg-[#1CABD3] text-white rounded-[3px] flex-1 h-[100%] flex items-center justify-start flex-col gap-[15px] px-[18px] md:px-[80px] py-[20px]">
           <h1 className="text-[25px] font-semibold border-b-[2px]">Mission</h1>
           <p className="text-center text-[16px] ">
             At Web Trading Concern Pvt. Ltd, we are committed to delivering
@@ -24,8 +24,8 @@ const OurVision = () => {
           </p>
         </div>
       </div>
-      <div className="mt-[40px] px-[200px] cursor-pointer">
-        <div className="border hover:scale-[103%] transition duration-300 ease-out shadow-lg bg-[#1CABD3] text-white rounded-[3px] flex items-center justify-center flex-col py-[20px] px-[80px]">
+      <div className="md:mt-[40px] mt-[135px] md:px-[200px] cursor-pointer">
+        <div className="border hover:scale-[103%] transition duration-300 ease-out shadow-lg bg-[#1CABD3] text-white rounded-[3px] flex items-center justify-center flex-col py-[20px] px-[15px] md:px-[80px]">
           <h1 className="text-[25px] font-semibold border-b-[2px]">Values</h1>
           <p className="text-center text-[16px]  my-[15px]">
             Our core values guide our actions and decisions as we strive to
