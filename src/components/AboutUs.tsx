@@ -47,7 +47,7 @@ We cater to leading government and private hospitals, healthcare institutions, 5
               98%
               </h2>
               <p className="text-[#434343] text-[16px] leading-[24px] font-semibold">
-              Rpeated Customers{" "}
+              Repeated Customers{" "}
               </p>
             </div>
           </div>
