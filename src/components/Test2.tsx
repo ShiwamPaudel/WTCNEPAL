@@ -41,15 +41,15 @@ function Test2() {
   let data = [
     {
       img: "/../assets/testimonial1.png",
-      name: "Richard Anderson",
-      position: "MBA, Australia",
-      desc: "  The desire to study abroad comes with its own set of complications and moving forward can be very tedious. With Education Foundation, I was easily able to step forward as a high-school graduate with some much-needed support. From the selection of the right college to my visa preparation, everything was so hassle-free. I thank the friendly personnel at Coastline for providing me the stepping-stone I needed to excel.",
+      name: "Dr. DB Lama",
+      position: "MBBS, MD, MSP",
+      desc: "  Working with Web Trading Concern Pvt. Ltd. has been a game-changer for our medical facility. Their extensive range of high-quality equipment has allowed us to enhance the level of care we provide to our patients. The team's expertise, prompt service, and dedication to customer satisfaction have exceeded our expectations.",
     },
     {
       img: "/../assets/testimonial2.png",
-      name: "Richard Anderson",
-      position: "MBA, Australia",
-      desc: "  The desire to study abroad comes with its own set of complications and moving forward can be very tedious. With Education Foundation, I was easily able to step forward as a high-school graduate with some much-needed support. From the selection of the right college to my visa preparation, everything was so hassle-free. I thank the friendly personnel at Coastline for providing me the stepping-stone I needed to excel.",
+      name: "Dr. Mamta Shrestha",
+      position: "MBBS, MD",
+      desc: "  As a medical research facility, we rely heavily on advanced equipment to conduct our studies. [Your Company Name] has been instrumental in providing us with cutting-edge technology that has significantly enhanced our research capabilities. Their exceptional customer service and ongoing support have made them an invaluable partner in our scientific endeavors.",
     },
     {
       img: "/../assets/testimonial1.png",
@@ -61,7 +61,7 @@ function Test2() {
 
   return (
     <div className="w-full ">
-      <div className="md:w-[35vw]">
+      <div className="md:w-[36vw]">
         <Slider {...settings}>
           {data.map((item: any, index) => (
             <div className="w-full cursor-pointer " key={index}>
@@ -94,7 +94,7 @@ function Test2() {
                 <img
                   src="/../assets/coma2.svg"
                   alt="avatar"
-                  className="w-[30px] h-[30px] ml-[273px] md:ml-[334px] lg:ml-[518px] xl:ml-[294px] 2xl:ml-[367px] "
+                  className="w-[30px] h-[30px] ml-[273px] md:ml-[334px] lg:ml-[518px] xl:ml-[294px] 2xl:ml-[250px] "
                 />
               </div>
             </div>

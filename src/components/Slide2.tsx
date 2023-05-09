@@ -47,58 +47,47 @@ function Slide2() {
     prevArrow: <SamplePrevArrow />,
   };
 
- let data =[
-  {
-    img:"/../assets/mainbanner1.jpg",
-    caption:"Fully automated immunoassay analyzer - LIAISON® XL - DiaSorin - for clinical diagnostic / chemiluminescence / plasma"
-  },
-  {
-    img:"/../assets/mainbanner2.jpg",
-    caption:"BA400 is a clinical chemistry and turbidimetry analyzer designed to offer the best performance to laboratories looking towards achieving the highest efficiency with optimal operating costs."
-  },
-  {
-    img:"/../assets/mainbanner3.jpg",
-    caption:"The sterilizing unit is designed for on-site installation in up to 300 beds hospitals. The sturdy design allows the sterilizer to work for several shifts, each lasting 35-40 minutes."
-  }
- ]
+  let data = [
+    {
+      img: "/../assets/mainbanner1.jpg",
+      caption:
+        "Fully automated immunoassay analyzer - LIAISON® XL - DiaSorin - for clinical diagnostic, chemiluminescence, plasma",
+    },
+    {
+      img: "/../assets/mainbanner2.jpg",
+      caption:
+        "BA400 is a clinical chemistry and turbidimetry analyzer designed to offer the best performance to laboratories looking towards achieving the highest efficiency with optimal operating costs.",
+    },
+    {
+      img: "/../assets/mainbanner3.jpg",
+      caption:
+        "The sterilizing unit is designed for on-site installation in up to 300 beds hospitals. The sturdy design allows the sterilizer to work for several shifts, each lasting 35-40 minutes.",
+    },
+  ];
 
   return (
-    <div className="w-full  overflow-x-hidden">
+    <div className="w-full relative  overflow-x-hidden">
+      <div className="absolute bottom-[6%] left-[26%] z-40 text-white ">
+        <h1 className="text-[92.31px] font-semibold leading-[78.46px] ">23</h1>
+        <p className="text-[24px] font-semibold text-center">
+          YEARS OF
+          <br /> EXPERTIES
+        </p>
+      </div>
       <Slider {...settings} className=" ">
-   
-      {
-        data.map((item:any,index:number)=>(
+        {data.map((item: any, index: number) => (
           <div key={index} className=" h-[300px] xl:h-[687px] relative ">
-
-            <div className="h-[100%] w-full absolute top-0 left-0 cover">
-
-            </div>
-             <img
-            src={item.img}
-            className="w-full h-[100%] "
-            alt=""
-             />
-            <div className=" hidden md:flex items-center gap-[92px] text-white absolute left-[50%] transform translate-x-[-50%] bottom-[10%]">
-            <div className="">
-              <h1 className="text-[92.31px] font-semibold leading-[78.46px] ">
-                23
-              </h1>
-              <p className="text-[24px] font-semibold text-center">
-                YEARS OF
-                <br /> EXPERTIES
-              </p>
-            </div>
-            <div className="">
-              <p className="text-[20px] text-start font-semibold leading-[30px] w-[815px]">
-               {item.caption}
-              </p>
+            <div className="h-[100%] w-full absolute top-0 left-0 cover"></div>
+            <img src={item.img} className="w-full h-[100%] " alt="" />
+            <div className=" hidden md:flex items-center gap-[92px] text-white pl-[300px] absolute left-[50%] transform translate-x-[-50%] bottom-[10%]">
+              <div className="">
+                <p className="text-[20px] text-start font-semibold leading-[30px] w-[815px]">
+                  {item.caption}
+                </p>
+              </div>
             </div>
           </div>
-        </div>
-        ))
-      }
-
-        
+        ))}
       </Slider>
     </div>
   );

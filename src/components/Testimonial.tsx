@@ -11,7 +11,7 @@ const Testimonial = () => {
      <div className="container 2xl:max-w-[1180px] mx-auto flex flex-col md:flex-row  ">
         <div className="md:basis-[40%]  md:ml-[0px] relative z-30">
             <h3 className="font-Work font-bold text-[13px] leading-[15px] tracking-[0.085em] text-[#fff] text-center md:text-left pt-[20px] md:pt-[239px] uppercase ">TESTIMONIALS</h3>
-            <h1 className="font-IBM uppercase text-[30px] md:text-[36px] text-center md:text-left leading-[47px] text-[#fff]  font-extrabold pr-[10px] pt-[4px] md:whitespace-pre">What Our Students Say</h1>
+            <h1 className="font-IBM uppercase text-[30px] md:text-[30px] text-center md:text-left leading-[47px] text-[#fff]  font-extrabold pr-[10px] pt-[4px] md:whitespace-pre">What Our Customers Say</h1>
             <p className="font-Work font-normal text-[16px] text-center md:text-start max-w-[385px] text-white leading-[24px]">Customer Reviews: Transforming Healthcare through Cutting-Edge Equipment. Success Stories: Revolutionizing Patient Care with Advanced Medical Technology. Success Stories: Revolutionizing Patient Care with Advanced Medical Technology</p>
         </div>
         <div className="basis-[60%] mt-[92px] mb-[82px] md:ml-[23px] ">

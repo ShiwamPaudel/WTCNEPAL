@@ -23,10 +23,7 @@ function Nav1() {
     setProduct(false);
   };
 
-  const handleSubmenu = () => {
-    setSub(true);
-    setMenu2(false)
-  };
+ 
   const handleSubmenuHide = () => {
     setSub(false);
   };
@@ -37,21 +34,31 @@ function Nav1() {
     setSub2(false);
   };
 
-
+  const handleSubmenu = () => {
+    setSub(true);
+    setMenu2(false)
+    setMenu3(false)
+    setMenu4(false)
+  };
 const handleMenu2 =()=>{
   setSub(false);
   setMenu2(true)
+  setMenu3(false)
+  setMenu4(false)
   // alert(sub)
 }
 const handleMenu3 =()=>{
   setSub(false);
   setMenu2(false)
   setMenu3(true)
+  setMenu4(false)
   // alert(sub)
 }
 const handleMenu4 =()=>{
   setSub(false);
   setMenu4(true)
+  setMenu2(false)
+  setMenu3(true)
   // alert(sub)
 }
   let menu = [
@@ -134,7 +141,7 @@ const handleMenu4 =()=>{
   ];
   let submenu3 = [
     {
-      name: "1Disinfectact and Cleaner",
+      name: "Disinfectact and Cleaner",
     },
     {
       name: "Sterlizer",
@@ -143,19 +150,19 @@ const handleMenu4 =()=>{
   ];
   let submenu5 = [
     {
-      name: "2Disinfectact and Cleaner",
+      name: "Asclepion",
     },
     {
-      name: "Sterlizer",
+      name: "Dermaindia",
     },
   
   ];
   let submenu6 = [
     {
-      name: "3Disinfectact and Cleaner",
+      name: "Ventilator",
     },
     {
-      name: "Sterlizer",
+      name: "OT Lights and Tables",
     },
   
   ];
@@ -216,16 +223,16 @@ const handleMenu4 =()=>{
               {about && (
                 <div className="absolute top-[18px] left-0    w-[199px] h-[126px] z-40 space-y-[10px]">
                   <div className="  border-t-[4px] border-t-[black]   absolute top-[27px] h-[100%] w-full ">
-                    <li className="text-[14px] border-b-[0.5px] border-b-[white]/[0.5] hover:text-[black] bg-[#1CABD3] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer">
+                    <li className="text-[14px] border-b-[0.5px] border-b-[white]/[0.5] hover:text-[#0000CC] bg-[#1CABD3] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer">
                       <Link href="/about">About Web Trading</Link>
                     </li>
-                    <li className="text-[14px]   border-b-[0.5px] border-b-[white]/[0.5]  bg-[#1CABD3] text-white py-[20px] px-[15px] hover:text-[black] transition-colors duration-300 ease-out font-semibold whitespace-pre cursor-pointer">
+                    <li className="text-[14px]   border-b-[0.5px] border-b-[white]/[0.5]  bg-[#1CABD3] text-white py-[20px] px-[15px] hover:text-[#0000CC] transition-colors duration-300 ease-out font-semibold whitespace-pre cursor-pointer">
                       <Link href="">Meet our CEO</Link>
                     </li>
-                    <li className="text-[14px]  border-b-[0.5px] border-b-[white]/[0.5]  bg-[#1CABD3] text-white py-[20px] px-[15px] hover:text-[black] transition-colors duration-300 ease-out font-semibold whitespace-pre cursor-pointer">
+                    <li className="text-[14px]  border-b-[0.5px] border-b-[white]/[0.5]  bg-[#1CABD3] text-white py-[20px] px-[15px] hover:text-[#0000CC] transition-colors duration-300 ease-out font-semibold whitespace-pre cursor-pointer">
                       <Link href="/team">Our Team</Link>
                     </li>
-                    <li className="text-[14px]   bg-[#1CABD3] text-white py-[20px] px-[15px] hover:text-[black] transition-colors duration-300 ease-out font-semibold whitespace-pre cursor-pointer">
+                    <li className="text-[14px]   bg-[#1CABD3] text-white py-[20px] px-[15px] hover:text-[#0000CC] transition-colors duration-300 ease-out font-semibold whitespace-pre cursor-pointer">
                       <Link href="">Our Network</Link>
                     </li>
                   </div>
