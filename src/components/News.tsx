@@ -5,7 +5,7 @@ function News() {
 
  
   return (
-    <div className="container mx-auto px-[15px] md:px-0">
+    <div className="container 2xl:max-w-[1180px] mx-auto px-[15px] md:px-0">
       <h3 className="font-Work font-bold text-[13px] leading-[15.25px] tracking-[0.085em] text-[#007EC5] pt-[139.96px] text-center">
         BLOGS
       </h3>

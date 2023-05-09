@@ -32,7 +32,7 @@ const SingleNews = () => {
     <>
       <AboutBanner title="News & Events" />
 
-      <div className="container flex gap-[40px] mx-auto py-[80px] ">
+      <div className="container 2xl:max-w-[1180px] flex gap-[40px] mx-auto py-[80px] ">
         <div className="basis-[70%] border p-[20px]">
           <div className="h-[300px]">
             <img

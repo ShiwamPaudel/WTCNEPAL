@@ -3,7 +3,7 @@ import React from "react";
 const BootomFooter = () => {
   return (
     <div className="bg-[#01011B] py-[24px]">
-      <div className="container mx-auto flex items-center justify-between flex-col md:flex-row gap-[18px] md:gap-0">
+      <div className="container 2xl:max-w-[1180px] mx-auto flex items-center justify-between flex-col md:flex-row gap-[18px] md:gap-0">
         <p className="text-[#CFCFCF]">copyright @ wtcpvtltd 2023</p>
         <div className="flex items-center gap-[31px]">
             <img src="/../assets/youtube.png" alt=""  className="cursor-pointer"/>

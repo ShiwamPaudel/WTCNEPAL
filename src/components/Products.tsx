@@ -37,7 +37,7 @@ const Products = () => {
 
     ]
   return (
-    <div className="container mx-auto pb-[111px] pt-[100px] px-[15px] md:px-0">
+    <div className="container 2xl:max-w-[1180px] mx-auto pb-[111px] pt-[100px] px-[15px] md:px-0">
       <div className="flex items-center justify-center gap-[8px] flex-col">
         <h2 className="text-[#7A8A9E] text-[13px] leading-[15.23px] font-medium">
           PRODUCTS

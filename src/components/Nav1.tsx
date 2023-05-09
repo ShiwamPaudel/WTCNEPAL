@@ -6,6 +6,9 @@ function Nav1() {
   const [product, setProduct] = useState(false);
   const [sub, setSub] = useState(false);
   const [sub2, setSub2] = useState(false);
+  const [menu2, setMenu2] = useState(false);
+  const [menu3, setMenu3] = useState(false);
+  const [menu4, setMenu4] = useState(false);
 
   const handleDropDown = () => {
     SetAbout(!about);
@@ -22,6 +25,7 @@ function Nav1() {
 
   const handleSubmenu = () => {
     setSub(true);
+    setMenu2(false)
   };
   const handleSubmenuHide = () => {
     setSub(false);
@@ -33,6 +37,23 @@ function Nav1() {
     setSub2(false);
   };
 
+
+const handleMenu2 =()=>{
+  setSub(false);
+  setMenu2(true)
+  // alert(sub)
+}
+const handleMenu3 =()=>{
+  setSub(false);
+  setMenu2(false)
+  setMenu3(true)
+  // alert(sub)
+}
+const handleMenu4 =()=>{
+  setSub(false);
+  setMenu4(true)
+  // alert(sub)
+}
   let menu = [
     {
       name: " Diagnostic Equipments/ Reagent kits",
@@ -79,10 +100,71 @@ function Nav1() {
       name: "Protein Analyzer",
     },
   ];
+  let submenu4 = [
+    {
+      name: "Biochemistry Instruments and Reagents",
+    },
+    {
+      name: " Blood Gas & Electrolyte Analyzer",
+    },
+    {
+      name: "Glucometer",
+    },
+    {
+      name: "  Hematology Instruments and Reagents",
+    },
+    {
+      name: " Liquid, Sample and Cell Handling",
+    },
+    {
+      name: "Immunoassay Analyzers",
+    },
+    {
+      name: " ELISA and Flexible C. Difficile Testing",
+    },
+    {
+      name: "Vacutainer and View Finder",
+    },
+    {
+      name: "Histopathology Instruments",
+    },
+    {
+      name: "Protein Analyzer",
+    },
+  ];
+  let submenu3 = [
+    {
+      name: "1Disinfectact and Cleaner",
+    },
+    {
+      name: "Sterlizer",
+    },
+  
+  ];
+  let submenu5 = [
+    {
+      name: "2Disinfectact and Cleaner",
+    },
+    {
+      name: "Sterlizer",
+    },
+  
+  ];
+  let submenu6 = [
+    {
+      name: "3Disinfectact and Cleaner",
+    },
+    {
+      name: "Sterlizer",
+    },
+  
+  ];
+  
+
 
   return (
     <>
-      <div className="container mx-auto lg:hidden">
+      <div className="container   mx-auto lg:hidden">
         <div className=" flex flex-row justify-between items-center  px-[15px] md:px-0 ">
           <div className="w-[115px] h-[63px] ">
             <Link href="/">
@@ -98,7 +180,7 @@ function Nav1() {
         </div>
       </div>
 
-      <div className="container mx-auto justify-between font-semibold items-center hidden py-[10px] lg:flex lg:flex-row">
+      <div className="container 2xl:max-w-[1180px] mx-auto justify-between font-semibold items-center hidden py-[10px] lg:flex lg:flex-row">
         <div className="w-[115px] h-[63px] ">
           <Link href="/">
             {" "}
@@ -120,6 +202,37 @@ function Nav1() {
               </Link>
             </li>
             <li
+              onMouseEnter={handleDropDown}
+              onMouseLeave={handleDropDownHide}
+              className="relative"
+            >
+              <Link
+                href="/about"
+                className=" font-semibold hover:text-[#1CABD3] transition-colors duration-300 ease-out"
+              >
+                Company
+              </Link>
+
+              {about && (
+                <div className="absolute top-[18px] left-0    w-[199px] h-[126px] z-40 space-y-[10px]">
+                  <div className="  border-t-[4px] border-t-[black]   absolute top-[27px] h-[100%] w-full ">
+                    <li className="text-[14px] border-b-[0.5px] border-b-[white]/[0.5] hover:text-[black] bg-[#1CABD3] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer">
+                      <Link href="/about">About Web Trading</Link>
+                    </li>
+                    <li className="text-[14px]   border-b-[0.5px] border-b-[white]/[0.5]  bg-[#1CABD3] text-white py-[20px] px-[15px] hover:text-[black] transition-colors duration-300 ease-out font-semibold whitespace-pre cursor-pointer">
+                      <Link href="">Meet our CEO</Link>
+                    </li>
+                    <li className="text-[14px]  border-b-[0.5px] border-b-[white]/[0.5]  bg-[#1CABD3] text-white py-[20px] px-[15px] hover:text-[black] transition-colors duration-300 ease-out font-semibold whitespace-pre cursor-pointer">
+                      <Link href="/team">Our Team</Link>
+                    </li>
+                    <li className="text-[14px]   bg-[#1CABD3] text-white py-[20px] px-[15px] hover:text-[black] transition-colors duration-300 ease-out font-semibold whitespace-pre cursor-pointer">
+                      <Link href="">Our Network</Link>
+                    </li>
+                  </div>
+                </div>
+              )}
+            </li>
+            <li
               onMouseEnter={handleProduct}
               onMouseLeave={handleProductHide}
               className="relative"
@@ -134,22 +247,22 @@ function Nav1() {
               {product && (
                 <div className="absolute top-[18px] left-0    w-[399px] h-[126px] z-40 space-y-[10px]">
                   <div
-                    onMouseEnter={handleSubmenu}
-                    onMouseLeave={handleSubmenuHide}
+                   
                     className="bg-white  border-t-[4px] border-t-[black]   absolute top-[27px] h-[100%] w-full "
                   >
                    
                       <>
-                        <li className="text-[15px] relative border-b-[0.5px] capitalize border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#1CABD3] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer">
+                        <li  onMouseEnter={handleSubmenu}
+                     className="text-[15px] relative border-b-[0.5px] capitalize border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#1CABD3] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer">
                           <Link href="/about">Diagnostic Equipments/ Reagent kits</Link>
                         </li>
-                        <li className="text-[15px] relative border-b-[0.5px] capitalize border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#1CABD3] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer">
+                        <li onMouseEnter ={handleMenu2} className="text-[15px] relative border-b-[0.5px] capitalize border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#1CABD3] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer">
                           <Link href="/about">Disinfectant and House Keeping</Link>
                         </li>
-                        <li className="text-[15px] relative border-b-[0.5px] capitalize border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#1CABD3] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer">
+                        <li onMouseEnter ={handleMenu3} className="text-[15px] relative border-b-[0.5px] capitalize border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#1CABD3] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer">
                           <Link href="/about"> Dermatology (Skin care & beauty) Products</Link>
                         </li>
-                        <li className="text-[15px] relative border-b-[0.5px] capitalize border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#1CABD3] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer">
+                        <li onMouseEnter ={handleMenu4} className="text-[15px] relative border-b-[0.5px] capitalize border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#1CABD3] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer">
                           <Link href="/about">Medical And Critical Care Devices</Link>
                         </li>
                         {sub && (
@@ -179,6 +292,87 @@ function Nav1() {
                             </div>
                           </div>
                         )}
+                           {menu2 && (
+                          <div className="absolute top-[0px] left-[100%]    w-[399px] h-[126px] z-40 space-y-[10px]">
+                            <div
+                              onMouseEnter={handleSubmenu2}
+                              onMouseLeave={handleSubmenuHide2}
+                              className=" border-l-[0.5px] border-l-[white]  border-t-[4px] border-t-[black]   absolute top-[10px] h-[100%] w-full "
+                            >
+                              {submenu3.map((item: any, index: number) => (
+                                <>
+                                  <li className="text-[15px] relative  capitalize border-b-[0.5px] border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#1CABD3] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer">
+                                    <Link href="/about">{item.name}</Link>
+                                  </li>
+                                  {sub2 && (
+                                    <div className="absolute top-[5px] left-[100%]    w-[199px] h-[126px] z-40 space-y-[10px]">
+                                      <div className="  border-t-[4px] border-t-[black]   absolute top-[0px] h-[100%] w-full ">
+                                        <li className="text-[15px] border-b-[0.5px] capitalize border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#1CABD3] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer">
+                                          <Link href="/about">BioSystems</Link>
+                                        </li>
+                                      </div>
+                                    </div>
+                                  )}
+                                </>
+                              ))}
+                             
+                            </div>
+                          </div>
+                        )}
+                            {menu3 && (
+                          <div className="absolute top-[0px] left-[100%]    w-[399px] h-[126px] z-40 space-y-[10px]">
+                            <div
+                              onMouseEnter={handleSubmenu2}
+                              onMouseLeave={handleSubmenuHide2}
+                              className=" border-l-[0.5px] border-l-[white]  border-t-[4px] border-t-[black]   absolute top-[10px] h-[100%] w-full "
+                            >
+                              {submenu5.map((item: any, index: number) => (
+                                <>
+                                  <li className="text-[15px] relative  capitalize border-b-[0.5px] border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#1CABD3] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer">
+                                    <Link href="/about">{item.name}</Link>
+                                  </li>
+                                  {sub2 && (
+                                    <div className="absolute top-[5px] left-[100%]    w-[199px] h-[126px] z-40 space-y-[10px]">
+                                      <div className="  border-t-[4px] border-t-[black]   absolute top-[0px] h-[100%] w-full ">
+                                        <li className="text-[15px] border-b-[0.5px] capitalize border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#1CABD3] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer">
+                                          <Link href="/about">BioSystems</Link>
+                                        </li>
+                                      </div>
+                                    </div>
+                                  )}
+                                </>
+                              ))}
+                             
+                            </div>
+                          </div>
+                        )}
+                             {menu4 && (
+                          <div className="absolute top-[0px] left-[100%]    w-[399px] h-[126px] z-40 space-y-[10px]">
+                            <div
+                              onMouseEnter={handleSubmenu2}
+                              onMouseLeave={handleSubmenuHide2}
+                              className=" border-l-[0.5px] border-l-[white]  border-t-[4px] border-t-[black]   absolute top-[10px] h-[100%] w-full "
+                            >
+                              {submenu6.map((item: any, index: number) => (
+                                <>
+                                  <li className="text-[15px] relative  capitalize border-b-[0.5px] border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#1CABD3] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer">
+                                    <Link href="/about">{item.name}</Link>
+                                  </li>
+                                  {sub2 && (
+                                    <div className="absolute top-[5px] left-[100%]    w-[199px] h-[126px] z-40 space-y-[10px]">
+                                      <div className="  border-t-[4px] border-t-[black]   absolute top-[0px] h-[100%] w-full ">
+                                        <li className="text-[15px] border-b-[0.5px] capitalize border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#1CABD3] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer">
+                                          <Link href="/about">BioSystems</Link>
+                                        </li>
+                                      </div>
+                                    </div>
+                                  )}
+                                </>
+                              ))}
+                             
+                            </div>
+                          </div>
+                        )}
                       </>
                  
 
@@ -187,37 +381,7 @@ function Nav1() {
                 </div>
               )}
             </li>
-            <li
-              onMouseEnter={handleDropDown}
-              onMouseLeave={handleDropDownHide}
-              className="relative"
-            >
-              <Link
-                href="/about"
-                className=" font-semibold hover:text-[#1CABD3] transition-colors duration-300 ease-out"
-              >
-                Company
-              </Link>
-
-              {about && (
-                <div className="absolute top-[18px] left-0    w-[199px] h-[126px] z-40 space-y-[10px]">
-                  <div className="bg-white  border-t-[4px] border-t-[black]   absolute top-[27px] h-[100%] w-full ">
-                    <li className="text-[14px] border-b-[0.5px] border-b-[white]/[0.5] hover:text-[black] bg-[#1CABD3] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer">
-                      <Link href="/about">About Web Trading</Link>
-                    </li>
-                    <li className="text-[14px]   border-b-[0.5px] border-b-[white]/[0.5]  bg-[#1CABD3] text-white py-[20px] px-[15px] hover:text-[black] transition-colors duration-300 ease-out font-semibold whitespace-pre cursor-pointer">
-                      <Link href="">Meet our CEO</Link>
-                    </li>
-                    <li className="text-[14px]  border-b-[0.5px] border-b-[white]/[0.5]  bg-[#1CABD3] text-white py-[20px] px-[15px] hover:text-[black] transition-colors duration-300 ease-out font-semibold whitespace-pre cursor-pointer">
-                      <Link href="/team">Our Team</Link>
-                    </li>
-                    <li className="text-[14px]   bg-[#1CABD3] text-white py-[20px] px-[15px] hover:text-[black] transition-colors duration-300 ease-out font-semibold whitespace-pre cursor-pointer">
-                      <Link href="">Our Network</Link>
-                    </li>
-                  </div>
-                </div>
-              )}
-            </li>
+         
 
             <li>
               <Link
@@ -244,7 +408,7 @@ function Nav1() {
                 Contact
               </Link>
             </li>
-            <li className="h-[42px] w-[128px] bg-[#1CABD3] rounded-[39px] flex items-center ml-[70px] justify-center">
+            <li className="h-[42px] w-[128px] bg-[#1CABD3] rounded-[39px] flex items-center ml-[0px] justify-center">
               <Link
                 href=""
                 className=" text-white text-[15px] leading-[18.15px] font-semibold"

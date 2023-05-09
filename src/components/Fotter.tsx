@@ -2,13 +2,13 @@ import React from "react";
 function Fotter() {
   return (
     <div className=" w-full bg-[#142031] py-[48px] px-[15px] md:px-0">
-      <div className="container mx-auto">
+      <div className="container 2xl:max-w-[1180px] mx-auto">
         <div className="flex gap-[68px] md:flex-row flex-col">
           <div className="basis-[30%] flex items-start justify-start flex-col">
             <img
               src="/../assets/footerlogo.png"
               alt="avatar"
-              className="w-full h-[125px] object-contain 2xl:ml-[-110px] xl:ml-[-80px]"
+              className="w-full h-[125px] object-contain 2xl:ml-[-60px] xl:ml-[-80px]"
             />
             <p className="font-IBM font-normal text-[15px] leading-[24px] text-center md:text-left text-[#CFCFCF] pt-[12px] max-w-[375px]  pr-[12px] md:pr-[0px]">
               We denounce with righteous indi gnation and dislike men who are so
