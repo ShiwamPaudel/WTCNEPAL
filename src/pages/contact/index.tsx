@@ -11,8 +11,8 @@ const index = () => {
         <AboutBanner title="Conact Us"/>
         <ContactForm/>
         <Map/>
-        <Fotter/>
-        <BootomFooter/>
+        {/* <Fotter/>
+        <BootomFooter/> */}
       
     </div>
   )
