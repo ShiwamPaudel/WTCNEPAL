@@ -68,7 +68,7 @@ function Slide2() {
    
       {
         data.map((item:any,index:number)=>(
-          <div className=" h-[300px] xl:h-[687px] relative ">
+          <div key={index} className=" h-[300px] xl:h-[687px] relative ">
 
             <div className="h-[100%] w-full absolute top-0 left-0 cover">
 
