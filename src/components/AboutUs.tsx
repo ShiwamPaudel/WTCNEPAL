@@ -45,7 +45,7 @@ const AboutUs = () => {
             <div className="about_box bg-[#007EC5]/[0.05] cursor-pointer hover:scale-[105%] transition duration-300 ease-out">
               <h2 className="text-[#007EC5] text-[44.8px] leading-[67.2px]">
                 {/* <CountUp end={100} enableScrollSpy /> */}
-                <CountUp isCounting end={100} duration={3.2} />
+                <CountUp isCounting end={23} duration={3.2} />
               </h2>
               <p className="text-[#434343] text-[16px] leading-[24px] font-semibold">
                 Years Experience

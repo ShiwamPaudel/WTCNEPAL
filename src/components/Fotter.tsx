@@ -21,31 +21,31 @@ function Fotter() {
           <div className="basis-[70%] grid md:grid-cols-3 grid-cols-1 gap-[25px] md:gap-0">
             <div className="Address ml-[22px] lg:ml-[0px]">
               <h3 className="font-IBM font-bold text-[15px] leading-[24px] text-[#CFCFCF]">
-                Products
+              Categories
               </h3>
               <a
                 href=""
                 className="flex flex-row cursor-pointer hover:text-white/[0.5] transition-colors duration-300 ease-in-out items-center font-IBM font-normal text-[15px] leading-[24px] text-[#CFCFCF] pt-[14px]"
               >
-                Centrifuge 5804/5804R
+              Diagnostic Equipments/ Reagent Kits
               </a>
               <a
                 href=""
                 className="flex flex-row cursor-pointer hover:text-white/[0.5] transition-colors duration-300 ease-in-out  items-center font-IBM font-normal text-[15px] leading-[24px] text-[#CFCFCF] pt-[9px]"
               >
-                i-smart 300
+             Disinfectant And House Keeping
               </a>
               <a
                 href=""
                 className="flex flex-row cursor-pointer hover:text-white/[0.5] transition-colors duration-300 ease-in-out  items-center font-IBM font-normal text-[15px] leading-[24px] text-[#CFCFCF] pt-[9px]"
               >
-                Liquid Handling work stations
+          Dermatology (Skin Care & Beauty) Products
               </a>
               <a
                 href=""
                 className="flex flex-row  cursor-pointer hover:text-white/[0.5] transition-colors duration-300 ease-in-out items-center font-IBM font-normal text-[15px] leading-[24px] text-[#CFCFCF] pt-[9px]"
               >
-                Pipettes
+              Medical And Critical Care Devices
               </a>
             </div>
 
@@ -117,7 +117,7 @@ function Fotter() {
 
                 <a
                   href=""
-                  className="flex flex-row underline hover:no-underline cursor-pointer hover:text-white/[0.5] transition-colors duration-300 ease-in-out items-center font-IBM font-normal text-[15px] leading-[24px] text-[#CFCFCF] "
+                  className="flex flex-row  cursor-pointer hover:text-white/[0.5] transition-colors duration-300 ease-in-out items-center font-IBM font-normal text-[15px] leading-[24px] text-[#CFCFCF] "
                 >
                   https://www.dmsnepal.com/
                 </a>
