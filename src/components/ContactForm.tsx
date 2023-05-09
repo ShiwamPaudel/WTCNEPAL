@@ -10,7 +10,7 @@ const ContactForm = () => {
         </div>
         <div className="flex items-center justify-center flex-col gap-[12px]">
           <h2 className="text-[#003760] text-[24px] font-bold elading-[30.12px]">Email</h2>
-          <p className="text-[#696969] text-[15px] leading-[22.5px] font-bold"> info@coastline.com</p>
+          <p className="text-[#696969] text-[15px] leading-[22.5px] font-bold"> info@dmsnepal.com</p>
         </div>
         <div className="flex items-center justify-center flex-col gap-[12px]">
           <h2 className="text-[#003760] text-[24px] font-bold elading-[30.12px]">Address</h2>

@@ -7,14 +7,14 @@ function Requestcall() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-[92px]">
           <div className=" pl-[15px] md:pl-[10px] flex items-center justify-center">
             <div>
-            <h3 className="font-Work font-bold text-[13px] leading-[15.25px] tracking-[0.085px] text-[white] ">
-            TESTIMONIALS
+            <h3 className="font-Work hidden font-bold text-[13px] leading-[15.25px] tracking-[0.085px] text-[white] ">
+            Contact us
             </h3>
-            <h2 className="font-IBM uppercase font-extrabold max-w-[464px] text-[33px] md:text-[48px] leading-[44px] md:leading-[47px] text-[white] pt-[4px]">
-            Lorem ipsum want us to call you ?
+            <h2 className="font-IBM uppercase font-extrabold max-w-[564px] text-[33px] md:text-[32px] leading-[44px] md:leading-[47px] text-[white] pt-[4px]">
+            Have a Question? Contact Us
             </h2>
             <p className="font-Work font-normal text-[16px] leading-[18px] text-[white] pr-[35px] w-[338px] mt-[26px] md:w-[385px] 2xl:w-[545px]">
-            Curabitur tincidunt turpis sit amet blandit maximus. Fusce ut feugiat justo. Phasellus ultricies venenatis rhoncus. Mauris aliquam semper nisl, non tincidunt metus tempor eu.
+            Web Trading Nepal is committed to providing the highest level of customer service. We welcome your feedback, questions, and concerns. Please feel free to reach out to us using the form below.
             </p>
             </div>
           </div>
