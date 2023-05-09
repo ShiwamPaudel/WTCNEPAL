@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 // import { IoIosArrowForward } from "react-icons/io";
 // import { IoIosArrowBack } from "react-icons/io";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import axios from "axios";
 // import CountUp from "react-countup";
 
 function SampleNextArrow(props: any) {
@@ -64,6 +65,17 @@ function Slide2() {
         "The sterilizing unit is designed for on-site installation in up to 300 beds hospitals. The sturdy design allows the sterilizer to work for several shifts, each lasting 35-40 minutes.",
     },
   ];
+
+
+useEffect(()=>{
+
+let getBanner =async()=>{
+  let banenr = await axios.get("http://localhost:1337/api/banners?populate=*")
+}
+
+},[])
+
+
 
   return (
     <div className="w-full relative  overflow-x-hidden">

@@ -14,7 +14,7 @@ const ContactForm = () => {
         </div>
         <div className="flex items-center justify-center flex-col gap-[12px]">
           <h2 className="text-[#003760] text-[24px] font-bold elading-[30.12px]">Address</h2>
-          <p className="text-[#696969] text-[15px] leading-[22.5px] font-bold text-center"> 15 St, New York, NY 10005 <br /> United States</p>
+          <p className="text-[#696969] text-[15px] leading-[22.5px] font-bold text-center"> DMS House-148, Kumari Marga, <br /> Tripureshwor, Kathmandu G.P.O. BOX: 1797</p>
         </div>
       </div>
       <div className="md:basis-[60%] border-l-[1px] border-[#003760]/[0.1] md:px-[84px] px-[15px] mt-[30px] md:mt-0">
