@@ -98,7 +98,7 @@ console.log(banner)
         {banner?.map((item: any, index: number) => (
           <div key={index} className=" h-[300px] xl:h-[687px] relative ">
             <div className="h-[100%] w-full absolute top-0 left-0 cover"></div>
-            <img src={`http://localhost:1337${item?.attributes?.image?.data?.attributes?.url}`} className="w-full h-[100%] " alt="" />
+            <img src={`${item?.attributes?.image?.data?.attributes?.url}`} className="w-full h-[100%] " alt="" />
             <div className=" hidden md:flex items-center gap-[92px] text-white pl-[300px] absolute left-[50%] transform translate-x-[-50%] bottom-[10%]">
               <div className="">
                 <p className="text-[20px] text-start font-semibold leading-[30px] w-[815px]">
