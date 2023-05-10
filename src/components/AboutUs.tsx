@@ -1,9 +1,24 @@
-import React from "react";
+import React,{useEffect,useState} from "react";
+import axios from "axios";
 // import CountUp from "react-countup";
 import { CountUp } from 'use-count-up'
 import Link from "next/link";
 
 const AboutUs = () => {
+  const [about,setAbout]=useState<any>(null)
+
+
+  // useEffect(()=>{
+
+  //   let getAbout =async()=>{
+  //     let banenr = await axios.get("https://dmsnepal.onrender.com/api/about-uses?populate=*")
+  //     setAbout(banenr.data.data)
+  //   }
+  //   getAbout()
+    
+  //   },[])
+    
+    console.log(about)
   return (
     <div className="pt-[80px] pb-[80px]">
       <div className="container 2xl:max-w-[1180px] mx-auto md:flex gap-[93px] px-[15px] md:px-0 ">

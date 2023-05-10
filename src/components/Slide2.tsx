@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect,useState } from "react";
 // import { IoIosArrowForward } from "react-icons/io";
 // import { IoIosArrowBack } from "react-icons/io";
 import Slider from "react-slick";
@@ -8,6 +8,7 @@ import axios from "axios";
 // import CountUp from "react-countup";
 
 function SampleNextArrow(props: any) {
+
   const { className, style, onClick } = props;
   return (
     <div className="absolute hidden md:block top-[65%] right-[50%] translate-x-[-50%] z-50">
@@ -36,6 +37,9 @@ function SamplePrevArrow(props: any) {
 }
 
 function Slide2() {
+
+  
+  const [banner,setBanner]=useState<any>(null)
   const settings = {
     dots: false,
     autoplay: true,
@@ -70,10 +74,14 @@ function Slide2() {
 useEffect(()=>{
 
 let getBanner =async()=>{
-  let banenr = await axios.get("http://localhost:1337/api/banners?populate=*")
+  let banenr = await axios.get("https://dmsnepal.onrender.com/api/banners?populate=*")
+  setBanner(banenr.data.data)
 }
+getBanner()
 
 },[])
+
+console.log(banner)
 
 
 
@@ -87,14 +95,14 @@ let getBanner =async()=>{
         </p>
       </div>
       <Slider {...settings} className=" ">
-        {data.map((item: any, index: number) => (
+        {banner?.map((item: any, index: number) => (
           <div key={index} className=" h-[300px] xl:h-[687px] relative ">
             <div className="h-[100%] w-full absolute top-0 left-0 cover"></div>
-            <img src={item.img} className="w-full h-[100%] " alt="" />
+            <img src={`http://localhost:1337${item?.attributes?.image?.data?.attributes?.url}`} className="w-full h-[100%] " alt="" />
             <div className=" hidden md:flex items-center gap-[92px] text-white pl-[300px] absolute left-[50%] transform translate-x-[-50%] bottom-[10%]">
               <div className="">
                 <p className="text-[20px] text-start font-semibold leading-[30px] w-[815px]">
-                  {item.caption}
+                  {item?.attributes?.description}
                 </p>
               </div>
             </div>
