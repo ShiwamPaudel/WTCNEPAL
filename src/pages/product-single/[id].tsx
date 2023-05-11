@@ -5,6 +5,7 @@ import { BaseUrl } from "../api/global";
 import axios from "axios";
 import { useRouter } from "next/router";
 import Parse from "html-react-parser"
+import RelatedProducts from "@/components/RelatedProducts";
 
 const ProductDetail = () => {
   const router = useRouter();
@@ -20,7 +21,7 @@ const ProductDetail = () => {
       setProduct(product.data.data);
     };
     getProduct();
-  }, []);
+  }, [id]);
   console.log(product);
 
   const onChange = (key: string) => {
@@ -71,6 +72,7 @@ const ProductDetail = () => {
           </div>
         </div>
       {/* ))} */}
+      <RelatedProducts/>
     </>
   );
 };
