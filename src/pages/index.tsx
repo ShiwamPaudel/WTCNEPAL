@@ -99,10 +99,11 @@ export default function Home() {
       let slide1 = await axios.get(`${BaseUrl}/slider1s?populate=*`)
       let faq = await axios.get(`${BaseUrl}/faqs?populate=*`)
       setSlide1(slide1.data.data)
+      
       setPartner(response.data.data)
       setFaq(faq.data.data)
       setCustomer(partner1.data.data)
-      setIsLoading(false);
+      
     }
     getPartner()
     
@@ -118,14 +119,18 @@ export default function Home() {
 
 
 <>
-      {isLoading ? (
+      {/* {isLoading ? (
         <div className="container max-w-[1180px] mx-auto flex items-center justify-center"><InfinitySpin 
         width='200'
         color="#4fa94d"
       /></div>
       ) : (
         <>
-         <Navbar />
+       
+      
+        </>
+      )} */}
+        <Navbar />
       <AboutUs />
       <Products/>
       <Testimonial />
@@ -137,8 +142,6 @@ export default function Home() {
       <PartneredUniverities partner={customer} title={"OUR Customers"} />
       <Partnered1 data={data2} slide={10} height={'79px'} style={'contain'}/>
       <News />
-        </>
-      )}
     </>
      
      
