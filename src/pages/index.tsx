@@ -17,6 +17,7 @@ import Partnered1 from "@/components/Partnerned1";
 import { useState,useEffect } from "react";
 import { BaseUrl } from "./api/global";
 import axios from "axios";
+import { InfinitySpin } from "react-loader-spinner";
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -83,7 +84,7 @@ export default function Home() {
   
   ]
 
-
+  const [isLoading, setIsLoading] = useState(true);
   const [partner,setPartner]=useState<any>(null)
   const [customer,setCustomer]=useState<any>(null)
   const [slide1,setSlide1]=useState<any>(null)
@@ -101,6 +102,7 @@ export default function Home() {
       setPartner(response.data.data)
       setFaq(faq.data.data)
       setCustomer(partner1.data.data)
+      setIsLoading(false);
     }
     getPartner()
     
@@ -115,7 +117,15 @@ export default function Home() {
 {/* <div className="max-w-[1180px] mx-auto"> */}
 
 
-      <Navbar />
+<>
+      {isLoading ? (
+        <div className="container max-w-[1180px] mx-auto flex items-center justify-center"><InfinitySpin 
+        width='200'
+        color="#4fa94d"
+      /></div>
+      ) : (
+        <>
+         <Navbar />
       <AboutUs />
       <Products/>
       <Testimonial />
@@ -127,6 +137,11 @@ export default function Home() {
       <PartneredUniverities partner={customer} title={"OUR Customers"} />
       <Partnered1 data={data2} slide={10} height={'79px'} style={'contain'}/>
       <News />
+        </>
+      )}
+    </>
+     
+     
       {/* </div> */}
   
     </>
