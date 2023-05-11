@@ -3,8 +3,8 @@ import axios from 'axios'
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { BaseUrl } from '@/pages/api/global'
-function Test2() {
+
+function Test2({testimonial}:any) {
   const settings = {
     dots: true,
     infinite: true,
@@ -63,21 +63,7 @@ function Test2() {
 
 
 
-  const [testimonial,setTestimonial]=useState<any>(null)
-
-
-  useEffect(()=>{
-
-    let getTestimonial =async()=>{
-      let response = await axios.get(`${BaseUrl}/testimonials?populate=*`)
-      // let response2 = await axios.get(`${BaseUrl}/testimonial-section?populate=*`)
-      setTestimonial(response.data.data)
-    }
-    getTestimonial()
-    
-    },[])
-
-    console.log(testimonial)
+    // console.log(testimonial)
 
   return (
     <div className="w-full ">

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Head from "next/head";
 import { Inter } from "next/font/google";
+
 import Navbar from "@/components/Navbar";
 import AboutUs from "@/components/AboutUs";
 import Testimonial from "@/components/Testimonial";
@@ -119,17 +120,20 @@ export default function Home() {
 
 
 <>
-      {/* {isLoading ? (
-        <div className="container max-w-[1180px] mx-auto flex items-center justify-center"><InfinitySpin 
+      {isLoading ? (
+        <div className="container max-w-[1180px] mx-auto flex items-center justify-center">
+          {/* <InfinitySpin 
         width='200'
         color="#4fa94d"
-      /></div>
+      /> */}
+      
+      </div>
       ) : (
         <>
        
       
         </>
-      )} */}
+      )}
         <Navbar />
       <AboutUs />
       <Products/>
