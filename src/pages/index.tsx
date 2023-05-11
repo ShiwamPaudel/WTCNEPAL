@@ -95,15 +95,14 @@ export default function Home() {
   useEffect(()=>{
 
     let getPartner =async()=>{
-      let response = await axios.get(`${BaseUrl}/our-partners?populate=*`)
-      let partner1 = await axios.get(`${BaseUrl}/customers?populate=*`)
       let slide1 = await axios.get(`${BaseUrl}/slider1s?populate=*`)
-      let faq = await axios.get(`${BaseUrl}/faqs?populate=*`)
       setSlide1(slide1.data.data)
-      
+      let response = await axios.get(`${BaseUrl}/our-partners?populate=*`)
       setPartner(response.data.data)
-      setFaq(faq.data.data)
+      let partner1 = await axios.get(`${BaseUrl}/customers?populate=*`)
       setCustomer(partner1.data.data)
+      let faq = await axios.get(`${BaseUrl}/faqs?populate=*`)
+      setFaq(faq.data.data)
       
     }
     getPartner()

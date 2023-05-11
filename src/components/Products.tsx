@@ -3,7 +3,9 @@ import React,{useState,useEffect} from "react";
 import axios from "axios";
 // import Parse from "html-react-parser"
 import { Skeleton } from 'antd';
+import { useRouter } from "next/router";
 const Products = () => {
+  const router = useRouter()
     let data =[
         {
             img:"/../assets/product1.png",
@@ -56,6 +58,12 @@ const Products = () => {
       },[])
       console.log(product)
 
+const handleClick =(item:any)=>{
+  router.push(`/product-single/${item.id}`)
+console.log(item)
+}
+
+
   return (
 
     <>
@@ -72,7 +80,7 @@ const Products = () => {
       <div className="grid md:grid-cols-4 grid-cols-1 gap-x-[30px] gap-y-[35px] mt-[68px]">
       {
         product?.map((item:any,index:number)=>(
-          <div key={index} className="border cursor-pointer flex items-center justify-end  flex-col gap-[35px] pb-[44px] pt-[10px] ">
+          <div onClick={()=>handleClick(item)} key={index} className="border cursor-pointer flex items-center justify-end  flex-col gap-[35px] pb-[44px] pt-[10px] ">
                 <img src={item?.attributes.image.data.attributes.url} alt="" className="cursor-pointer hover:scale-[105%] transition duration-300 ease-out"/>
                 <h2 className=" text-[#003760] text-[16px] leading-[20.08px] font-semibold">{item?.attributes?.title}</h2>
              
