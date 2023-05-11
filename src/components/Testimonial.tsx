@@ -1,8 +1,13 @@
-import React from 'react'
+import React,{useState,useEffect} from 'react'
+import axios from 'axios'
+
 import Test2 from './Test2'
 import Slide from './Slide'
 
+
 const Testimonial = () => {
+ 
+
   return (
    <div className=' testimonial relative px-[15px] md:px-0'>
     <div className='h-[100%] w-full bg-[#1CABD3CC]/[0.8] absolute left-0 top-0'>

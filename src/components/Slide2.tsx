@@ -5,6 +5,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import axios from "axios";
+import {BaseUrl} from "../pages/api/global"
 // import CountUp from "react-countup";
 
 function SampleNextArrow(props: any) {
@@ -74,7 +75,7 @@ function Slide2() {
 useEffect(()=>{
 
 let getBanner =async()=>{
-  let banenr = await axios.get("https://dmsnepal.onrender.com/api/banners?populate=*")
+  let banenr = await axios.get(`${BaseUrl}/banners?populate=*`)
   setBanner(banenr.data.data)
 }
 getBanner()

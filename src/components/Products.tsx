@@ -1,5 +1,7 @@
-import React from "react";
-
+import { BaseUrl } from "@/pages/api/global";
+import React,{useState,useEffect} from "react";
+import axios from "axios";
+import Parse from "html-react-parser"
 const Products = () => {
     let data =[
         {
@@ -36,6 +38,22 @@ const Products = () => {
         },
 
     ]
+
+
+    const [product,setProduct]=useState<any>(null)
+
+
+    useEffect(()=>{
+  
+      let getProduct =async()=>{
+        let product = await axios.get(`${BaseUrl}/products/?populate=*`)
+        setProduct(product.data.data)
+      }
+      getProduct()
+      
+      },[])
+      console.log(product)
+
   return (
     <div className="container 2xl:max-w-[1180px] mx-auto pb-[111px] pt-[100px] px-[15px] md:px-0">
       <div className="flex items-center justify-center gap-[8px] flex-col">
@@ -48,14 +66,18 @@ const Products = () => {
       </div>
       <div className="grid md:grid-cols-4 grid-cols-1 gap-x-[30px] gap-y-[35px] mt-[68px]">
       {
-        data.map((item:any,index:number)=>(
+        product?.map((item:any,index:number)=>(
             <div key={index} className="border cursor-pointer flex items-center justify-end  flex-col gap-[35px] pb-[44px] pt-[10px] ">
-                <img src={item?.img} alt="" className="cursor-pointer hover:scale-[105%] transition duration-300 ease-out"/>
-                <h2 className=" text-[#003760] text-[16px] leading-[20.08px] font-semibold">{item?.name}</h2>
+                <img src={item?.attributes.image.data.attributes.url} alt="" className="cursor-pointer hover:scale-[105%] transition duration-300 ease-out"/>
+                <h2 className=" text-[#003760] text-[16px] leading-[20.08px] font-semibold">{item?.attributes?.title}</h2>
+             
             </div>
         ))
       }
       </div>
+
+
+
     </div>
   );
 };
