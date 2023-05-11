@@ -6,6 +6,7 @@ import axios from "axios";
 import { useRouter } from "next/router";
 import Parse from "html-react-parser"
 import RelatedProducts from "@/components/RelatedProducts";
+import { InfinitySpin } from "react-loader-spinner";
 
 const ProductDetail = () => {
   const router = useRouter();
@@ -13,12 +14,14 @@ const ProductDetail = () => {
   console.log(id);
 
   const [product, setProduct] = useState<any>(null);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     let getProduct = async () => {
       let product = await axios.get(`${BaseUrl}/products/${id}?populate=*`);
       //  let list=    product.data.data.slice(0,8)
       setProduct(product.data.data);
+      setIsLoading(false)
     };
     getProduct();
   }, [id]);
@@ -53,7 +56,17 @@ const ProductDetail = () => {
   ];
   return (
     <>
-      {/* {product?.map((item: any, index: number) => ( */}
+
+{isLoading ? (
+        <div className="container max-w-[1180px] mx-auto flex items-center justify-center">
+          <InfinitySpin 
+        width='200'
+        color="#4fa94d"
+      />
+      
+      </div>
+      ) : (
+        <>
         <div className="container mx-auto 2xl:max-w-[1180px] pt-[30px] pb-[80px]">
           <div className="border-b-[1px] pb-[15px] mb-[15px]">
             <h1 className="text-[40px] font-thin leading-[48px] text-[#212529]">
@@ -71,8 +84,14 @@ const ProductDetail = () => {
             </div>
           </div>
         </div>
+        <RelatedProducts/>
+        </>
+      )}
+
+      {/* {product?.map((item: any, index: number) => ( */}
+       
       {/* ))} */}
-      <RelatedProducts/>
+
     </>
   );
 };
