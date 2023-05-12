@@ -61,6 +61,11 @@ const handleMenu4 =()=>{
   setMenu3(true)
   // alert(sub)
 }
+
+const handle3level =()=>{
+  setSub2(true);
+}
+
   let menu = [
     {
       name: " Diagnostic Equipments/ Reagent kits",
@@ -78,33 +83,84 @@ const handleMenu4 =()=>{
   let submenu2 = [
     {
       name: "Biochemistry Instruments and Reagents",
+      sub:[
+        {
+          menu:"hello1"
+        }
+      ]
     },
     {
       name: " Blood Gas & Electrolyte Analyzer",
+      sub:[
+        {
+          menu:"hello2"
+        }
+      ]
     },
     {
       name: "Glucometer",
+      sub:[
+        {
+          menu:"hello3"
+        }
+      ]
+      
     },
     {
       name: "  Hematology Instruments and Reagents",
+      sub:[
+        {
+          menu:"hello1"
+        }
+      ]
     },
     {
       name: " Liquid, Sample and Cell Handling",
+      sub:[
+        {
+          menu:"hello1"
+        }
+      ]
     },
     {
       name: "Immunoassay Analyzers",
+      sub:[
+        {
+          menu:"hello1"
+        }
+      ]
     },
     {
       name: " ELISA and Flexible C. Difficile Testing",
+      sub:[
+        {
+          menu:"hello1"
+        }
+      ]
     },
     {
       name: "Vacutainer and View Finder",
+      sub:[
+        {
+          menu:"hello1"
+        }
+      ]
     },
     {
       name: "Histopathology Instruments",
+      sub:[
+        {
+          menu:"hello1"
+        }
+      ]
     },
     {
       name: "Protein Analyzer",
+      sub:[
+        {
+          menu:"hello1"
+        }
+      ]
     },
   ];
   let submenu4 = [
@@ -275,24 +331,28 @@ const handleMenu4 =()=>{
                         {sub && (
                           <div className="absolute top-[0px] left-[100%]    w-[399px] h-[126px] z-40 space-y-[10px]">
                             <div
-                              onMouseEnter={handleSubmenu2}
-                              onMouseLeave={handleSubmenuHide2}
+                        
                               className="bg-white border-l-[0.5px] border-l-[white]  border-t-[4px] border-t-[black]   absolute top-[10px] h-[100%] w-full "
                             >
                               {submenu2.map((item: any, index: number) => (
                                 <>
-                                  <li className="text-[15px] relative  capitalize border-b-[0.5px] border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#1CABD3] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer">
+                                {console.log(item)}
+                                  <li       onMouseEnter={handleSubmenu2}
+                              onMouseLeave={handleSubmenuHide2} className="text-[15px] relative  capitalize border-b-[0.5px] border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#1CABD3] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer">
                                     <Link href="/about">{item.name}</Link>
+
+                                   
                                   </li>
                                   {sub2 && (
                                     <div className="absolute top-[5px] left-[100%]    w-[199px] h-[126px] z-40 space-y-[10px]">
                                       <div className="  border-t-[4px] border-t-[black]   absolute top-[0px] h-[100%] w-full ">
                                         <li className="text-[15px] border-b-[0.5px] capitalize border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#1CABD3] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer">
-                                          <Link href="/about">BioSystems</Link>
+                                    Biosystems
                                         </li>
                                       </div>
                                     </div>
                                   )}
+                                  
                                 </>
                               ))}
                              
