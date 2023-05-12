@@ -49,7 +49,7 @@ function Slide({data,slide,height,style}:any) {
           <div className="w-full cursor-pointer hover:scale-[105%] transition duration-300 ease-out" key={index}>
           <div className={`w-[100%]   h-[${height}]   `}>
             <img
-              src={item?.img}
+              src={item?.attributes?.image?.data?.attributes?.url}
               alt="Edge"
 
               className={`w-full h-full object-${style}`}

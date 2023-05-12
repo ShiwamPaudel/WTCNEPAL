@@ -1,8 +1,43 @@
 import React from "react";
+import { useFormik } from 'formik';
+import axios from "axios";
+import { BaseUrl } from "@/pages/api/global";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
-function Requestcall() {
+function Requestcall({notify}:any) {
+  const formik = useFormik({
+    initialValues: {
+      full_name: '',
+      email: '',
+      message: '',
+    },
+    onSubmit: values => {
+      // alert(JSON.stringify(values, null, 2));
+      handleSubmit(values);
+    },
+  });
+
+const handleSubmit = async(values:any) => {
+let submit = await axios.post(`${BaseUrl}/contacts`,{data:values})
+console.log(submit)
+if(submit){
+  toast.success("Message sent Successfully!");
+}
+
+
+// const notify = () =>
+// if(status==="200"){
+//   console.log("hello this code runs")
+//   alert("success")
+
+// } 
+
+}
+
   return (
     <div className="contact_form px-[15px] md:px-0">
+      <ToastContainer/>
       <div className="container mx-auto relative py-[32px] md:px-[180px] ">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-[92px]">
           <div className=" pl-[15px] md:pl-[10px] flex items-center justify-center">
@@ -27,12 +62,16 @@ function Requestcall() {
             </p>
             <div className="grid grid-cols-1  mt-[40px] ml-[34px] gap-[32px] mr-[38px]">
               <div className="box2">
-                <form action="" method="post">
+                <form onSubmit={formik.handleSubmit}>
                   <label className="font-IBM font-normal text-[15px] leading-[19.5px] text-[#0D1250]">
                     fullname
                   </label>
                   <br />
                   <input
+                  name="full_name"
+                  onChange={formik.handleChange}
+                  value={formik.values.full_name}
+                  required
                     type="text"
                     className="border-[1px] pl-[14px] border-solid border-[#EDEDED] w-full h-[56px] mt-[8px] mb-[38px] inputfield"
                   />
@@ -42,6 +81,10 @@ function Requestcall() {
                   </label>
                   <br />
                   <input
+                    name="email"
+                    onChange={formik.handleChange}
+                    value={formik.values.email}
+                    required
                     type="text"
                     className="border-[1px] pl-[14px] border-solid border-[#EDEDED] w-full mb-[38px] h-[56px] mt-[8px] inputfield"
                   />
@@ -50,24 +93,29 @@ function Requestcall() {
                   </label>
                   <br />
                   <input
+                   name="message"
+                   onChange={formik.handleChange}
+                   value={formik.values.message}
+                   required
                     type="text"
                     className="border-[1px] border-solid pl-[14px] border-[#EDEDED] w-full h-[56px] mt-[8px] inputfield"
                   />
-                </form>
-              </div>
-            </div>
-            <div className=" h-[56px] mx-[34px] mt-[40px] mb-[34px] bg-[#1CABD3] hover:bg-[#1CABD3]/[0.8] rounded-sm">
+                      <div className=" h-[56px]  mt-[40px] mb-[34px] bg-[#1CABD3] hover:bg-[#1CABD3]/[0.8] rounded-sm">
               <div className="flex items-center justify-center">
              
-                <a
-                  href=""
+                <button onClick={notify}
+              type="submit" 
                   className="font-IBM font-semibold text-[15px] leading-[19.5px] text-[#FFFFFF] pl-[15px] py-[18px]"
                 >
                   {" "}
                   Send Message
-                </a>
+                </button>
               </div>
             </div>
+                </form>
+              </div>
+            </div>
+        
           </div>
         </div>
       </div>

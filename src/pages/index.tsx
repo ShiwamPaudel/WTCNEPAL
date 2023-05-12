@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Head from "next/head";
 import { Inter } from "next/font/google";
+
 import Navbar from "@/components/Navbar";
 import AboutUs from "@/components/AboutUs";
 import Testimonial from "@/components/Testimonial";
@@ -14,6 +15,13 @@ import Products from "@/components/Products";
 import BootomFooter from "@/components/BootomFooter";
 import Nav1 from "@/components/Nav1";
 import Partnered1 from "@/components/Partnerned1";
+import { useState,useEffect } from "react";
+import { BaseUrl } from "./api/global";
+import axios from "axios";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { InfinitySpin } from "react-loader-spinner";
+
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -79,6 +87,66 @@ export default function Home() {
   
   ]
 
+  // const [isLoading, setIsLoading] = useState(true);
+  // const [partner,setPartner]=useState<any>(null)
+  // const [customer,setCustomer]=useState<any>(null)
+  // const [slide1,setSlide1]=useState<any>(null)
+  // const [faq,setFaq]=useState<any>(null)
+
+
+  // useEffect(()=>{
+
+  //   let getPartner =async()=>{
+  //     let slide1 = await axios.get(`${BaseUrl}/slider1s?populate=*`)
+  //     setSlide1(slide1.data.data)
+  //     let response = await axios.get(`${BaseUrl}/our-partners?populate=*`)
+  //     setPartner(response.data.data)
+  //     let partner1 = await axios.get(`${BaseUrl}/customers?populate=*`)
+  //     setCustomer(partner1.data.data)
+  //     let faq = await axios.get(`${BaseUrl}/faqs?populate=*`)
+  //     setFaq(faq.data.data)
+      
+  //   }
+  //   getPartner()
+    
+  //   },[])
+  const [isLoading, setIsLoading] = useState(true);
+const [partner, setPartner] = useState<any>(null);
+const [customer, setCustomer] = useState<any>(null);
+const [slide1, setSlide1] = useState<any>(null);
+const [slide2, setSlide2] = useState<any>(null);
+const [faq, setFaq] = useState<any>(null);
+
+useEffect(() => {
+  const fetchData = async () => {
+    try {
+      const [slide1Res, partnerRes, customerRes, faqRes,slideRes2] = await Promise.all([
+        axios.get(`${BaseUrl}/slider1s?populate=*`),
+        axios.get(`${BaseUrl}/our-partners?populate=*`),
+        axios.get(`${BaseUrl}/customers?populate=*`),
+        axios.get(`${BaseUrl}/faqs?populate=*`),
+        axios.get(`${BaseUrl}/slider2s?populate=*`),
+      ]);
+
+      setSlide1(slide1Res.data.data);
+      setPartner(partnerRes.data.data);
+      setCustomer(customerRes.data.data);
+      setFaq(faqRes.data.data);
+      setSlide2(slideRes2.data.data)
+      
+    } catch (error) {
+      console.error(error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  fetchData();
+}, []);
+
+    console.log(slide2)
+
+    
   return (
     <>
       <Head>
@@ -87,18 +155,23 @@ export default function Home() {
 {/* <div className="max-w-[1180px] mx-auto"> */}
 
 
-      <Navbar />
+<>
+<ToastContainer />
+        <Navbar />
       <AboutUs />
       <Products/>
       <Testimonial />
-      <PartneredUniverities img={"/../assets/globe.png"} title={"We Represent"} partner={"OUR PARTNERS"} description={"We take pride in representing over 50 renowned brands from around the globe. As your trusted partner, we bring you a diverse range of medical equipment and technologies, sourced from industry-leading manufacturers. With our extensive network and expertise, we ensure that you have access to the latest innovations in healthcare, all in one place."} />
-      <Partnered data={data} slide={6} height={'125px'} style={'cover'}/>
-      <Asked />
+      <PartneredUniverities partner={partner} title={"OUR PARTNERS"} />
+      <Partnered data={slide1} slide={6} height={'125px'} style={'cover'}/>
+      <Asked faq={faq} />
       {/* <Testimonial /> */}
       <Requestcall />
-      <PartneredUniverities img={"/../assets/nepal.png"} title={"We Valuable Customers"} partner={"CUSTOMERS"} description={"We have always been praised by our valuable customers. “Satisfaction” of our customers comes first. Some of our valuable customers but not limited includes:"} />
-      <Partnered1 data={data2} slide={10} height={'79px'} style={'contain'}/>
+      <PartneredUniverities partner={customer} title={"OUR Customers"} />
+      <Partnered1 data={slide2} slide={10} height={'79px'} style={'contain'}/>
       <News />
+    </>
+     
+     
       {/* </div> */}
   
     </>

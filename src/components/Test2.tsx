@@ -1,8 +1,10 @@
-import React from "react";
+import React,{useState,useEffect} from 'react'
+import axios from 'axios'
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-function Test2() {
+
+function Test2({testimonial}:any) {
   const settings = {
     dots: true,
     infinite: true,
@@ -59,27 +61,31 @@ function Test2() {
     },
   ];
 
+
+
+    // console.log(testimonial)
+
   return (
     <div className="w-full ">
-      <div className="md:w-[36vw]">
+      <div className="2xl:w-[36vw] xl:w-[52vw]">
         <Slider {...settings}>
-          {data.map((item: any, index) => (
+          {testimonial?.map((item: any, index:number) => (
             <div className="w-full cursor-pointer " key={index}>
               <div className=" h-[456px] bg-[#FFFFFF] w-full xl:w-[95%] term rounded-[10px]">
                 <div className="flex flex-row">
                   <div className="w-[58px] h-[58px] ml-[35px] mt-[32px] ">
                     <img
-                      src={item?.img}
+                      src={item?.attributes?.image?.data?.attributes?.url}
                       alt="Richard"
                       className="w-full h-full object-cover"
                     />
                   </div>
                   <div className="richard">
                     <h2 className="font-['IBM Plex Sans'] font-normal text-[24px] leading-[31.2px] text-[#000000] pt-[36px] pl-[24px] pr-[85px]">
-                      {item?.name}
+                      {item?.attributes?.name}
                     </h2>
                     <p className="font-IBM font-normal text-xs leading-[16px] text-[#007EC5] pt-[3px] pl-[24px]">
-                      {item?.position}
+                      {item?.attributes?.position}
                     </p>
                   </div>
                 </div>
@@ -89,7 +95,7 @@ function Test2() {
                   className="w-[30px] h-[30px] mt-[35px] ml-[15px] md:ml-[34px]"
                 />
                 <p className="font-Work font-normal text-xs leading-[16px] md:leading-[21.6px] text-[#838485] pt-[11px] pl-[34px] pr-[45px] pb-[4px]">
-                  {item?.desc}
+                  {item?.attributes?.description}
                 </p>
                 <img
                   src="/../assets/coma2.svg"
