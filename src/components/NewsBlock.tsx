@@ -59,7 +59,7 @@ const NewsBlock = () => {
 router.push((`/news/${item.id}`))
       }
   return (
-    <div className='container mx-auto'>
+    <div className='container 2xl:max-w-[1180px] mx-auto'>
         <div className="grid grid-cols-1 md:grid-cols-3 mt-[80px] mb-[72px] gap-[30px]">
         {
           news?.map((item:any,index:number)=>(
