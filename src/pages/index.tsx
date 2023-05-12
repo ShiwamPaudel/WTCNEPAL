@@ -21,6 +21,7 @@ import axios from "axios";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { InfinitySpin } from "react-loader-spinner";
+import Test from "../components/Test"
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -169,6 +170,7 @@ useEffect(() => {
       <PartneredUniverities partner={customer} title={"OUR Customers"} />
       <Partnered1 data={slide2} slide={10} height={'79px'} style={'contain'}/>
       <News />
+      {/* <Test/> */}
     </>
      
      
