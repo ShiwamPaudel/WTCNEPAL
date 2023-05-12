@@ -119,20 +119,7 @@ export default function Home() {
 
 
 <>
-      {isLoading ? (
-        <div className="container max-w-[1180px] mx-auto flex items-center justify-center">
-          {/* <InfinitySpin 
-        width='200'
-        color="#4fa94d"
-      /> */}
       
-      </div>
-      ) : (
-        <>
-       
-      
-        </>
-      )}
         <Navbar />
       <AboutUs />
       <Products/>
