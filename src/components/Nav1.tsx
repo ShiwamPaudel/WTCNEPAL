@@ -363,7 +363,7 @@ const handlelist4hide =()=>{
                             {submenu3.map((item: any, index: number) => (
                               <>
                                 <li   onMouseEnter={()=>handleList2(index)}
-                            onMouseLeave={handleList2hide} className="text-[15px] relative  capitalize border-b-[0.5px] border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#1CABD3] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer">
+                             className="text-[15px] relative  capitalize border-b-[0.5px] border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#1CABD3] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer">
                                   <Link href="/about">{item.name}</Link>
                                 </li>
                                 {list2===index && (
@@ -418,12 +418,12 @@ const handlelist4hide =()=>{
                             {submenu6.map((item: any, index: number) => (
                               <>
                                 <li onMouseEnter={()=>handlelist4(index)}
-                            onMouseLeave={handlelist4hide} className="text-[15px] relative  capitalize border-b-[0.5px] border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#1CABD3] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer">
+                      className="text-[15px] relative  capitalize border-b-[0.5px] border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#1CABD3] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer">
                                   <Link href="/about">{item.name}</Link>
                                 </li>
                                 {list4===index && (
-                                  <div className="absolute top-[5px] left-[100%]    w-[199px] h-[126px] z-40 space-y-[10px]">
-                                    <div className="  border-t-[4px] border-t-[black]   absolute top-[0px] h-[100%] w-full ">
+                                  <div className="absolute  left-[100%]    w-[199px] h-[126px] z-40 space-y-[10px]">
+                                    <div className=" mt-[-60px] border-t-[4px] border-t-[black]   absolute top-[0px] h-[100%] w-full ">
                                       <li className="text-[15px] border-b-[0.5px] capitalize border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#1CABD3] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer">
                                         <Link href="/about">{item.sub}</Link>
                                       </li>
