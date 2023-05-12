@@ -4,7 +4,7 @@ import Collape from "./Collape";
 const Asked = ({ faq }: any) => {
   return (
     <div className="bg-white pb-[91px] px-[15px] md:px-0">
-      <h3 className="font-Work font-bold text-[13px] leading-[15px] tracking-[0.085em] text-[#007EC5] text-center pt-[118px]">
+      <h3 className="font-Work font-bold text-[13px] leading-[15px] tracking-[0.085em] text-[#007EC5] text-center pt-[99px]">
         FAQs
       </h3>
       <h2 className="font-IBM font-normal uppercase text-4xl leading-[47px] text-[#0D1250] text-center pt-[4px]">

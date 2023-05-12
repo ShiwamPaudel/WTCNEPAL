@@ -114,22 +114,26 @@ export default function Home() {
 const [partner, setPartner] = useState<any>(null);
 const [customer, setCustomer] = useState<any>(null);
 const [slide1, setSlide1] = useState<any>(null);
+const [slide2, setSlide2] = useState<any>(null);
 const [faq, setFaq] = useState<any>(null);
 
 useEffect(() => {
   const fetchData = async () => {
     try {
-      const [slide1Res, partnerRes, customerRes, faqRes] = await Promise.all([
+      const [slide1Res, partnerRes, customerRes, faqRes,slideRes2] = await Promise.all([
         axios.get(`${BaseUrl}/slider1s?populate=*`),
         axios.get(`${BaseUrl}/our-partners?populate=*`),
         axios.get(`${BaseUrl}/customers?populate=*`),
         axios.get(`${BaseUrl}/faqs?populate=*`),
+        axios.get(`${BaseUrl}/slider2s?populate=*`),
       ]);
 
       setSlide1(slide1Res.data.data);
       setPartner(partnerRes.data.data);
       setCustomer(customerRes.data.data);
       setFaq(faqRes.data.data);
+      setSlide2(slideRes2.data.data)
+      
     } catch (error) {
       console.error(error);
     } finally {
@@ -140,7 +144,7 @@ useEffect(() => {
   fetchData();
 }, []);
 
-    console.log(customer)
+    console.log(slide2)
 
     
   return (
@@ -163,7 +167,7 @@ useEffect(() => {
       {/* <Testimonial /> */}
       <Requestcall />
       <PartneredUniverities partner={customer} title={"OUR Customers"} />
-      <Partnered1 data={data2} slide={10} height={'79px'} style={'contain'}/>
+      <Partnered1 data={slide2} slide={10} height={'79px'} style={'contain'}/>
       <News />
     </>
      
