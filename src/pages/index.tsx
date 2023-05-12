@@ -85,29 +85,58 @@ export default function Home() {
   
   ]
 
-  const [isLoading, setIsLoading] = useState(true);
-  const [partner,setPartner]=useState<any>(null)
-  const [customer,setCustomer]=useState<any>(null)
-  const [slide1,setSlide1]=useState<any>(null)
-  const [faq,setFaq]=useState<any>(null)
+  // const [isLoading, setIsLoading] = useState(true);
+  // const [partner,setPartner]=useState<any>(null)
+  // const [customer,setCustomer]=useState<any>(null)
+  // const [slide1,setSlide1]=useState<any>(null)
+  // const [faq,setFaq]=useState<any>(null)
 
 
-  useEffect(()=>{
+  // useEffect(()=>{
 
-    let getPartner =async()=>{
-      let slide1 = await axios.get(`${BaseUrl}/slider1s?populate=*`)
-      setSlide1(slide1.data.data)
-      let response = await axios.get(`${BaseUrl}/our-partners?populate=*`)
-      setPartner(response.data.data)
-      let partner1 = await axios.get(`${BaseUrl}/customers?populate=*`)
-      setCustomer(partner1.data.data)
-      let faq = await axios.get(`${BaseUrl}/faqs?populate=*`)
-      setFaq(faq.data.data)
+  //   let getPartner =async()=>{
+  //     let slide1 = await axios.get(`${BaseUrl}/slider1s?populate=*`)
+  //     setSlide1(slide1.data.data)
+  //     let response = await axios.get(`${BaseUrl}/our-partners?populate=*`)
+  //     setPartner(response.data.data)
+  //     let partner1 = await axios.get(`${BaseUrl}/customers?populate=*`)
+  //     setCustomer(partner1.data.data)
+  //     let faq = await axios.get(`${BaseUrl}/faqs?populate=*`)
+  //     setFaq(faq.data.data)
       
-    }
-    getPartner()
+  //   }
+  //   getPartner()
     
-    },[])
+  //   },[])
+  const [isLoading, setIsLoading] = useState(true);
+const [partner, setPartner] = useState<any>(null);
+const [customer, setCustomer] = useState<any>(null);
+const [slide1, setSlide1] = useState<any>(null);
+const [faq, setFaq] = useState<any>(null);
+
+useEffect(() => {
+  const fetchData = async () => {
+    try {
+      const [slide1Res, partnerRes, customerRes, faqRes] = await Promise.all([
+        axios.get(`${BaseUrl}/slider1s?populate=*`),
+        axios.get(`${BaseUrl}/our-partners?populate=*`),
+        axios.get(`${BaseUrl}/customers?populate=*`),
+        axios.get(`${BaseUrl}/faqs?populate=*`),
+      ]);
+
+      setSlide1(slide1Res.data.data);
+      setPartner(partnerRes.data.data);
+      setCustomer(customerRes.data.data);
+      setFaq(faqRes.data.data);
+    } catch (error) {
+      console.error(error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  fetchData();
+}, []);
 
     console.log(customer)
   return (
