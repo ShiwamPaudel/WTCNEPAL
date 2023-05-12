@@ -2,8 +2,10 @@ import React from "react";
 import { useFormik } from 'formik';
 import axios from "axios";
 import { BaseUrl } from "@/pages/api/global";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
-function Requestcall() {
+function Requestcall({notify}:any) {
   const formik = useFormik({
     initialValues: {
       full_name: '',
@@ -11,7 +13,7 @@ function Requestcall() {
       message: '',
     },
     onSubmit: values => {
-      alert(JSON.stringify(values, null, 2));
+      // alert(JSON.stringify(values, null, 2));
       handleSubmit(values);
     },
   });
@@ -19,16 +21,23 @@ function Requestcall() {
 const handleSubmit = async(values:any) => {
 let submit = await axios.post(`${BaseUrl}/contacts`,{data:values})
 console.log(submit)
-if(status==="200"){
-  console.log("hello this code runs")
-  alert("success")
+if(submit){
+  toast.success("Message sent Successfully!");
+}
 
-} 
+
+// const notify = () =>
+// if(status==="200"){
+//   console.log("hello this code runs")
+//   alert("success")
+
+// } 
 
 }
 
   return (
     <div className="contact_form px-[15px] md:px-0">
+      <ToastContainer/>
       <div className="container mx-auto relative py-[32px] md:px-[180px] ">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-[92px]">
           <div className=" pl-[15px] md:pl-[10px] flex items-center justify-center">
@@ -94,7 +103,7 @@ if(status==="200"){
                       <div className=" h-[56px]  mt-[40px] mb-[34px] bg-[#1CABD3] hover:bg-[#1CABD3]/[0.8] rounded-sm">
               <div className="flex items-center justify-center">
              
-                <button
+                <button onClick={notify}
               type="submit" 
                   className="font-IBM font-semibold text-[15px] leading-[19.5px] text-[#FFFFFF] pl-[15px] py-[18px]"
                 >

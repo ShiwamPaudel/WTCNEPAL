@@ -18,6 +18,8 @@ import Partnered1 from "@/components/Partnerned1";
 import { useState,useEffect } from "react";
 import { BaseUrl } from "./api/global";
 import axios from "axios";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { InfinitySpin } from "react-loader-spinner";
 
 
@@ -139,6 +141,8 @@ useEffect(() => {
 }, []);
 
     console.log(customer)
+
+    
   return (
     <>
       <Head>
@@ -148,7 +152,7 @@ useEffect(() => {
 
 
 <>
-      
+<ToastContainer />
         <Navbar />
       <AboutUs />
       <Products/>

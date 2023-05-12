@@ -25,6 +25,7 @@
     "react-icons": "^4.8.0",
     "react-loader-spinner": "^5.3.4",
     "react-slick": "^0.29.0",
+    "react-toastify": "^9.1.2",
     "slick-carousel": "^1.8.1",
     "typescript": "5.0.4",
     "use-count-up": "^3.0.1"

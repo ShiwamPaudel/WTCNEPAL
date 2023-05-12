@@ -8,6 +8,7 @@ import axios from "axios";
 import { BaseUrl } from "../pages/api/global";
 import { useRouter } from "next/router";
 // import CountUp from "react-countup";
+import { Skeleton } from 'antd';
 
 function SampleNextArrow(props: any) {
   const { className, style, onClick } = props;
@@ -93,9 +94,12 @@ function RelatedProducts() {
       <div className="border-b-[1px] pb-[15px] mb-[15px]">
         <h1 className="text-[22px] ">Related Products</h1>
       </div>
-      <Slider {...settings} className=" mt-[40px]">
+
+      {
+        product ?
+        <Slider {...settings} className=" mt-[40px]">
         {product?.map((item: any, index: number) => (
-          <div key={index} onClick={()=>handleClick(item)}>
+            <div key={index} onClick={()=>handleClick(item)}>
             <div key={index} className="w-[95%]  h-[350px] relative ">
               <div className="h-[270px] flex items-center justify-center border">
                 <img
@@ -114,7 +118,11 @@ function RelatedProducts() {
             </div>
           </div>
         ))}
-      </Slider>
+      </Slider>:<div className="max-w-[1180px] mx-auto flex justify-center items-center" style={{ zIndex: 100,backgroundColor:'white' }}>
+    <Skeleton className="px-4" active={true} />
+
+    </div>
+    }
     </div>
   );
 }
