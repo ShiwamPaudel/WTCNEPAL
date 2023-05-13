@@ -29,20 +29,12 @@ function Nav1() {
   const handleList2 =(index:any)=>{
     setList2(index)
   }
-const handleList2hide = ()=>{
-  setList2(0)
-}
+
 
 const handlelist4 = (index:any)=>{
   setList4(index)
 }
-const handlelist4hide =()=>{
-  setList4(5)
-}
 
-  const handleSubmenuHide = () => {
-    setSub(false);
-  };
   const handleSubmenu2 = (index: any) => {
     // console.log(index)
     setSub2(index);
@@ -79,9 +71,7 @@ const handlelist4hide =()=>{
     // alert(sub)
   };
 
-  const handle3level = () => {
-    setSub2(true);
-  };
+
 
   let menu = [
     {
@@ -201,7 +191,7 @@ const handlelist4hide =()=>{
 
   return (
     <>
-      <div className="container   mx-auto lg:hidden">
+      <div className="container   mx-auto lg:hidden ">
         <div className=" flex flex-row justify-between items-center  px-[15px] md:px-0 ">
           <div className="w-[115px] h-[63px] ">
             <Link href="/">
@@ -217,7 +207,7 @@ const handlelist4hide =()=>{
         </div>
       </div>
 
-      <div className="container 2xl:max-w-[1180px] mx-auto justify-between font-semibold items-center hidden py-[10px] lg:flex lg:flex-row">
+      <div className="container  2xl:max-w-[1180px] mx-auto justify-between font-semibold items-center hidden py-[10px] lg:flex lg:flex-row">
         <div className="w-[115px] h-[63px] ">
           <Link href="/">
             {" "}
@@ -337,7 +327,10 @@ const handlelist4hide =()=>{
                                     <div className=" mt-[-60px]    absolute top-[0px] h-[100%] w-full ">
                                       {item.sub && (
                                         <li className="text-[15px] border-b-[0.5px] capitalize border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#1CABD3] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer">
-                                          {item.sub}
+                                          <Link href={`/brand-product/${item?.sub}`}>
+
+                                          {item?.sub}
+                                          </Link>
                                         </li>
                                       )}
 
