@@ -4,43 +4,18 @@ import axios from "axios";
 // import Parse from "html-react-parser"
 import { Skeleton } from 'antd';
 import { useRouter } from "next/router";
-const Products = () => {
+import { json } from "stream/consumers";
+const Brand = () => {
   const router = useRouter()
-    let data =[
-        {
-            img:"/../assets/product1.png",
-            name:"Centrifuge 5804/5804R"
-        },
-        {
-            img:"/../assets/product2.png",
-            name:"Megasurg Gold"
-        },
-        {
-            img:"/../assets/product3.png",
-            name:"i-smart 300"
-        },
-        {
-            img:"/../assets/product4.png",
-            name:"Centrifuge 5804/5804R"
-        },
-        {
-            img:"/../assets/product5.png",
-            name:"Liquid Handling work stations"
-        },
-        {
-            img:"/../assets/product6.png",
-            name:"Pipetes"
-        },
-        {
-            img:"/../assets/product7.png",
-            name:"Liquid Handling work stations"
-        },
-        {
-            img:"/../assets/product8.png",
-            name:"Tissue Inclusion Center Modular EC 350"
-        },
 
-    ]
+  let query = router.query.id;
+
+//  let data =JSON.stringify(query)
+  // let parse = query.toString();
+//  toString(query)
+
+  console.log(query)
+ 
 
 
     const [product,setProduct]=useState<any>(null)
@@ -50,13 +25,18 @@ const Products = () => {
   
       let getProduct =async()=>{
         let product = await axios.get(`${BaseUrl}/products/?populate=*`)
-     let list=    product.data.data.slice(0,8)
-        setProduct(list)
+    //  let list=    product.data.data.slice(0,8)
+        setProduct(product.data.data)
       }
       getProduct()
       
       },[])
-      console.log(product)
+console.log(product)
+
+
+
+   let filteredBrans =   product?.filter((item:any,index:number) =>item.attributes.brand===query) 
+      console.log(filteredBrans)
 
 const handleClick =(item:any)=>{
   router.push(`/product-single/${item.id}`)
@@ -68,18 +48,16 @@ console.log(item)
 
     <>
     {
-      product?  <div className="container 2xl:max-w-[1180px] mx-auto pb-[111px] pt-[100px] px-[15px] md:px-0">
+      product?  <div className="container 2xl:max-w-[1180px] mx-auto pb-[111px] pt-[80px] px-[15px] md:px-0">
       <div className="flex items-center justify-center gap-[8px] flex-col">
-        <h2 className="text-[#7A8A9E] text-[13px] leading-[15.23px] font-medium">
-          PRODUCTS
-        </h2>
-        <h1 className="text-[36px] font-extrabold leading-[42.19px] text-center uppercase">
-          Products That We Offer
+  
+        <h1 className="text-[36px] font-extrabold leading-[42.19px] text-center uppercase border-b-[4px] border-b-[#0000CC] pb-[10px]">
+        {query}
         </h1>
       </div>
       <div className="grid md:grid-cols-4 grid-cols-1 gap-x-[30px] gap-y-[35px] mt-[68px]">
       {
-        product?.map((item:any,index:number)=>(
+        filteredBrans?.map((item:any,index:number)=>(
           <div onClick={()=>handleClick(item)} key={index} className="border cursor-pointer flex items-center justify-end  flex-col gap-[35px] pb-[44px] pt-[10px] ">
             <div className="h-[200px] flex items-center justify-center">
 
@@ -105,7 +83,7 @@ console.log(item)
   );
 };
 
-export default Products;
+export default Brand;
 
 
 
