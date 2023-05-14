@@ -77,7 +77,7 @@ const ProductDetail = () => {
                     <img
                       src={product?.attributes?.image?.data?.attributes?.url}
                       alt=""
-                      className="cursor-pointer hover:scale-[107%] transition duration-300 ease-out"
+                      className="cursor-pointer hover:scale-[107%] transition duration-300 ease-out h-[100%] w-[80%] object-contain"
                     />
                   </div>
                 )}
