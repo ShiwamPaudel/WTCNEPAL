@@ -49,6 +49,32 @@ function RelatedProducts() {
     arrows: true,
     slidesToShow: 4,
     slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+          dots: true
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1
+        }
+      }
+    ],
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
   };
@@ -90,7 +116,7 @@ function RelatedProducts() {
 
 
   return (
-    <div className=" relative  overflow-x-hidden max-w-[1180px] mx-auto pb-[90px]">
+    <div className=" relative  overflow-x-hidden max-w-[1180px] mx-auto pb-[90px] px-[15px] md:px-0">
       <div className="border-b-[1px] pb-[15px] mb-[15px]">
         <h1 className="text-[22px] ">Related Products</h1>
       </div>
