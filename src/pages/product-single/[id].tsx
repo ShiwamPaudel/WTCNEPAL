@@ -8,6 +8,7 @@ import Parse from "html-react-parser";
 import RelatedProducts from "@/components/RelatedProducts";
 import { InfinitySpin } from "react-loader-spinner";
 import { Skeleton } from "antd";
+import { Image } from 'antd';
 
 const ProductDetail = () => {
   const router = useRouter();
@@ -64,7 +65,7 @@ const ProductDetail = () => {
               </h1>
             </div>
             <div className="flex md:flex-row flex-col gap-[80px] pt-[20px]">
-              <div className="basis-[30%] md:border-[0.4px]">
+              <div className="basis-[30%] ">
                 {isLoading ? (
                   <div
                     className="max-w-[1180px] mx-auto flex justify-center items-center"
@@ -73,12 +74,19 @@ const ProductDetail = () => {
                     <Skeleton className="px-4" active={true} />
                   </div>
                 ) : (
-                  <div className="md:h-[250px] h-[180px] bg-white w-full flex items-center justify-center">
-                    <img
+                  <div className="md:h-[250px] p-[10px] h-[180px] md:border-[0.4px] bg-white w-full flex items-center justify-center">
+                      <Image
+    width={250}
+    height={220}
+    src={product?.attributes?.image?.data?.attributes?.url}
+    className="cursor-pointer hover:scale-[107%] transition duration-300 ease-out h-[100%] w-[80%] object-contain"
+
+  />
+                    {/* <img
                       src={product?.attributes?.image?.data?.attributes?.url}
                       alt=""
                       className="cursor-pointer hover:scale-[107%] transition duration-300 ease-out h-[100%] w-[80%] object-contain"
-                    />
+                    /> */}
                   </div>
                 )}
               </div>
