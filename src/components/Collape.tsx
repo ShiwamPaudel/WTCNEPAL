@@ -49,13 +49,13 @@ const Collape = () => {
       </Panel>
       
       <Panel header="Do you provide customized solutions to meet specific needs?" key="5" style={panelStyle}>
-        <p>{text}</p>
+        <p>{text4}</p>
       </Panel>
       <Panel header="Can you help with equipment selection and recommendations?" key="6" style={panelStyle}>
-        <p>{text}</p>
+        <p>{text5}</p>
       </Panel>
       <Panel header="What is the average delivery time for orders?" key="7" style={panelStyle}>
-        <p>{text}</p>
+        <p>{text6}</p>
       </Panel>
     </Collapse>
     </div>
