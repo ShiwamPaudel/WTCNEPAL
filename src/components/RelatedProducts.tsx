@@ -102,8 +102,8 @@ function RelatedProducts() {
   useEffect(() => {
     let getProduct = async () => {
       let product = await axios.get(`${BaseUrl}/products/?populate=*`);
-      let list = product.data.data.slice(0, 8);
-      setProduct(list);
+      // let list = product.data.data.slice(0, 8);
+      setProduct(product.data.data);
     };
     getProduct();
   }, []);
