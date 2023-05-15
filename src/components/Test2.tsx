@@ -67,7 +67,7 @@ function Test2({testimonial}:any) {
 
   return (
     <div className="w-full ">
-      <div className="2xl:w-[36vw] xl:w-[52vw]">
+      <div className="2xl:w-[36vw] xl:w-[52vw] md:w-[36vw]">
         <Slider {...settings}>
           {testimonial?.map((item: any, index:number) => (
             <div className="w-full cursor-pointer " key={index}>
