@@ -44,6 +44,8 @@ function Nav1() {
       item.attributes.position === "first"
   );
 
+  subCategory?.sort((a:any, b:any) => a.attributes.title.localeCompare(b.attributes.title));
+
   let secondCategory= categories?.filter(( (item: any, index: number) =>
   item.attributes.salect_category === "sub" &&
   item.attributes.position === "second "))

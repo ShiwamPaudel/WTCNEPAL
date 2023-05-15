@@ -19,7 +19,7 @@ const Asked = ({ faq }: any) => {
             <img
               src={item?.attributes?.image?.data?.attributes?.url}
               alt=""
-              className="h-[552px] w-full object-cover "
+              className="md:h-[552px] w-full object-cover "
             />
           ))}
         </div>

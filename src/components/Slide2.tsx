@@ -88,7 +88,7 @@ console.log(banner)
 
   return (
     <div className="w-full relative  overflow-x-hidden">
-      <div className="absolute bottom-[6%] left-[26%] z-40 text-white ">
+      <div className=" hidden absolute  md:block bottom-[6%] left-[26%] z-40 text-white ">
         <h1 className="text-[92.31px] font-semibold leading-[78.46px] ">23</h1>
         <p className="text-[24px] font-semibold text-center">
           YEARS OF
@@ -100,9 +100,9 @@ console.log(banner)
           <div key={index} className=" h-[300px] xl:h-[687px] relative ">
             <div className="h-[100%] w-full absolute top-0 left-0 cover"></div>
             <img src={`${item?.attributes?.image?.data?.attributes?.url}`} className="w-full h-[100%] " alt="" />
-            <div className=" hidden md:flex items-center gap-[92px] text-white 2xl:pl-[300px] xl:pl-[450px] absolute left-[50%] transform translate-x-[-50%] bottom-[10%]">
-              <div className="">
-                <p className="text-[20px] text-start font-semibold leading-[30px] w-[815px]">
+            <div className=" md:flex items-center gap-[92px] text-white 2xl:pl-[300px] xl:pl-[450px] absolute left-[50%] transform translate-x-[-50%] bottom-[10%]">
+              <div className="w-full">
+                <p className="text-[20px] text-start font-semibold leading-[30px] md:w-[815px] w-[310px]">
                   {item?.attributes?.description}
                 </p>
               </div>

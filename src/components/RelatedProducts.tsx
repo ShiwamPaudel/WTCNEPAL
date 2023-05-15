@@ -102,8 +102,8 @@ function RelatedProducts() {
   useEffect(() => {
     let getProduct = async () => {
       let product = await axios.get(`${BaseUrl}/products/?populate=*`);
-      let list = product.data.data.slice(0, 8);
-      setProduct(list);
+      // let list = product.data.data.slice(0, 8);
+      setProduct(product.data.data);
     };
     getProduct();
   }, []);
@@ -130,7 +130,7 @@ function RelatedProducts() {
               <div className="h-[270px] flex items-center justify-center border">
                 <img
                   src={`${item?.attributes?.image?.data?.attributes?.url}`}
-                  className="w-[70%] h-auto object-contain cursor-pointer hover:scale-[105%] transition duration-500 ease-out"
+                  className="w-[70%] h-[100%] object-contain cursor-pointer hover:scale-[105%] transition duration-500 ease-out"
                   alt=""
                 />
               </div>
