@@ -64,7 +64,7 @@ const ProductDetail = () => {
                 {product?.attributes?.title}
               </h1>
             </div>
-            <div className="flex md:flex-row flex-col gap-[80px] pt-[20px]">
+            <div className="flex md:flex-row flex-col md:gap-[80px] gap-[50px] pt-[20px]">
               <div className="basis-[30%] ">
                 {isLoading ? (
                   <div

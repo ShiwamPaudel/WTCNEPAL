@@ -16,7 +16,7 @@ function Dramenu() {
     <>
     <FaBars fontSize={25} onClick={showDrawer} className="baricons"/>
       <Drawer  placement="right" onClose={onClose} open={open}>
-        <ul className="flex flex-col items-center gap-[40px] font-[inter] font-normal text-xs leading-[14.52px] text-[#000000]">
+        <ul className="flex flex-col items-center gap-[40px] font-[inter] font-normal text-[16px] leading-[14.52px] text-[#000000]">
             <li><Link href="/">HOME</Link></li>
             <li><Link href="/about">ABOUT US</Link></li>
             <li><Link href="/">NEWS & EVENT</Link></li>
