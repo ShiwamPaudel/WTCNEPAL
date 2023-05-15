@@ -1,17 +1,62 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Dramenu from "./Dramenu";
+import { BaseUrl } from "@/pages/api/global";
+import axios from "axios";
 function Nav1() {
   const [about, SetAbout] = useState(false);
   const [product, setProduct] = useState(false);
-  const [sub, setSub] = useState(false);
-  const [sub2, setSub2] = useState(false);
+  const [sub, setSub] = useState(0);
+  const [sub2, setSub2] = useState(0);
   const [menu2, setMenu2] = useState(false);
   const [menu3, setMenu3] = useState(false);
   const [menu4, setMenu4] = useState(false);
 
-  const [list2,setList2] = useState(0);
-  const [list4,setList4] = useState(3);
+  const [list2, setList2] = useState(0);
+  const [list4, setList4] = useState(3);
+
+  const [categories, setCategories] = useState<any>(null);
+
+  useEffect(() => {
+    let getCategory = async () => {
+      let response = await axios.get(
+        `${BaseUrl}/product-categories?populate=*`
+      );
+      // let response2 = await axios.get(`${BaseUrl}/testimonial-section?populate=*`)
+      setCategories(response.data.data);
+    };
+    getCategory();
+  }, []);
+
+  //filtering main category
+
+  console.log(categories,"category")
+
+  let mainCategory = categories?.filter(
+    (item: any, index: number) => item.attributes.salect_category === "main"
+  );
+
+  // console.log(mainCategory,"filtering main category")
+
+  let subCategory = categories?.filter(
+    (item: any, index: number) =>
+      item.attributes.salect_category === "sub" &&
+      item.attributes.position === "first"
+  );
+
+  let secondCategory= categories?.filter(( (item: any, index: number) =>
+  item.attributes.salect_category === "sub" &&
+  item.attributes.position === "second "))
+
+
+  let thirdCategory= categories?.filter(( (item: any, index: number) =>
+  item.attributes.salect_category === "sub" &&
+  item.attributes.position === "third "))
+
+  let fourthCategory= categories?.filter(( (item: any, index: number) =>
+  item.attributes.salect_category === "sub" &&
+  item.attributes.position === "fourth"))
+  console.log(fourthCategory,"filtering sub category")
 
   const handleDropDown = () => {
     SetAbout(!about);
@@ -26,52 +71,50 @@ function Nav1() {
     setProduct(false);
   };
 
-  const handleList2 =(index:any)=>{
-    setList2(index)
-  }
+  const handleList2 = (index: any) => {
+    setList2(index);
+  };
 
-
-const handlelist4 = (index:any)=>{
-  setList4(index)
-}
+  const handlelist4 = (index: any) => {
+    setList4(index);
+  };
 
   const handleSubmenu2 = (index: any) => {
-    // console.log(index)
+    console.log(index);
     setSub2(index);
   };
   const handleSubmenuHide2 = () => {
     // setSub2(false);
   };
 
-  const handleSubmenu = () => {
-    setSub(true);
+  const handleSubmenu = (index: any) => {
+    console.log(index);
+    setSub(index);
     setMenu2(false);
     setMenu3(false);
     setMenu4(false);
   };
   const handleMenu2 = () => {
-    setSub(false);
+    // setSub(false);
     setMenu2(true);
     setMenu3(false);
     setMenu4(false);
     // alert(sub)
   };
   const handleMenu3 = () => {
-    setSub(false);
+    // setSub(false);
     setMenu2(false);
     setMenu3(true);
     setMenu4(false);
     // alert(sub)
   };
   const handleMenu4 = () => {
-    setSub(false);
+    // setSub(false);
     setMenu4(true);
     setMenu2(false);
     setMenu3(false);
     // alert(sub)
   };
-
-
 
   let menu = [
     {
@@ -163,11 +206,10 @@ const handlelist4 = (index:any)=>{
   let submenu3 = [
     {
       name: "Disinfectact and Cleaner",
-
     },
     {
       name: "Sterlizer",
-      sub:"Newster"
+      sub: "Newster",
     },
   ];
   let submenu5 = [
@@ -181,11 +223,11 @@ const handlelist4 = (index:any)=>{
   let submenu6 = [
     {
       name: "Ventilator",
-      sub:"Nihon kohden"
+      sub: "Nihon kohden",
     },
     {
       name: "OT Lights and Tables",
-      sub:"Bowin"
+      sub: "Bowin",
     },
   ];
 
@@ -275,120 +317,117 @@ const handlelist4 = (index:any)=>{
                 <div className="absolute top-[18px] left-0    w-[399px] h-[126px] z-40 space-y-[10px]">
                   <div className="bg-white  border-t-[4px] border-t-[black]   absolute top-[27px] h-[100%] w-full ">
                     <>
-                      <li
-                        onMouseEnter={handleSubmenu}
-                        className="text-[15px] relative border-b-[0.5px] capitalize border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#1CABD3] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer"
-                      >
-                        <Link href="/about">
-                          Diagnostic Equipments/ Reagent kits
-                        </Link>
-                      </li>
-                      <li
-                        onMouseEnter={handleMenu2}
-                        className="text-[15px] relative border-b-[0.5px] capitalize border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#1CABD3] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer"
-                      >
-                        <Link href="/about">
-                          Disinfectant and House Keeping
-                        </Link>
-                      </li>
-                      <li
-                        onMouseEnter={handleMenu3}
-                        className="text-[15px] relative border-b-[0.5px] capitalize border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#1CABD3] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer"
-                      >
-                        <Link href="/about">
-                          {" "}
-                          Dermatology (Skin care & beauty) Products
-                        </Link>
-                      </li>
-                      <li
-                        onMouseEnter={handleMenu4}
-                        className="text-[15px] relative border-b-[0.5px] capitalize border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#1CABD3] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer"
-                      >
-                        <Link href="/about">
-                          Medical And Critical Care Devices
-                        </Link>
-                      </li>
-                      {sub && (
-                        <div className="absolute top-[0px] left-[100%]    w-[399px] h-[126px] z-40 space-y-[10px]">
-                          <div className="bg-white border-l-[0.5px] border-l-[white]  border-t-[4px] border-t-[black]   absolute top-[10px] h-[100%] w-full ">
-                            {submenu2.map((item: any, index: any) => (
-                              <>
-                                {/* {console.log(item)} */}
-                                <li
-                                  onMouseEnter={() => handleSubmenu2(index)}
-                                  onMouseLeave={handleSubmenuHide2}
-                                  className="text-[15px] relative  capitalize border-b-[0.5px] border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#1CABD3] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer"
-                                >
-                                  <Link href="/about">{item.name}</Link>
-                                </li>
+                      {mainCategory?.map((item: any, index: any) => (
+                        <>
+                          <li
+                           
+                            onMouseEnter={() => handleSubmenu(index)}
+                            className="text-[15px] relative border-b-[0.5px] capitalize border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#1CABD3] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer"
+                          >
+                            <Link href="/about">{item?.attributes?.title}</Link>
+                          </li>
 
-                                {sub2 === index && (
-                                  <div className="absolute  left-[100%]    w-[199px] h-[126px] z-40 space-y-[10px]">
-                                    <div className=" mt-[-60px]    absolute top-[0px] h-[100%] w-full ">
-                                      {item.sub && (
-                                        <li className="text-[15px] border-b-[0.5px] capitalize border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#1CABD3] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer">
-                                          <Link href={`/brand-product/${item?.sub}`}>
+                          {sub === 0 && (
+                            <div className="absolute top-[0px] left-[100%]    w-[399px] h-[126px] z-40 space-y-[10px]">
+                              <div className="bg-white border-l-[0.5px] border-l-[white]  border-t-[4px] border-t-[black]   absolute top-[10px] h-[100%] w-full ">
+                                {subCategory?.map((item: any, index: any) => (
+                                  <>
+                                    {/* {console.log(item)} */}
+                                    <li
+                                      onMouseEnter={() => handleSubmenu2(index)}
+                                      onMouseLeave={handleSubmenuHide2}
+                                      className="text-[15px] relative  capitalize border-b-[0.5px] border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#1CABD3] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer"
+                                    >
+                                      <Link href="/about">
+                                        {item?.attributes?.title}
+                                      </Link>
+                                    </li>
 
-                                          {item?.sub}
-                                          </Link>
-                                        </li>
-                                      )}
+                                    {sub2 === index && (
+                                      <div className="absolute  left-[100%]    w-[199px] h-[126px] z-40 space-y-[10px]">
+                                        <div className=" mt-[-60px]    absolute top-[0px] h-[100%] w-full ">
+                                          {item.attributes.brand_name && (
+                                            <>
+                                            <li className="text-[15px] border-b-[0.5px] capitalize border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#1CABD3] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer">
+                                              <Link
+                                                href={`/brand-product/${item.attributes.brand_name}`}
+                                                >
+                                                {item.attributes.brand_name}
+                                              </Link>
+                                              
+                                            </li>
+                                            {
+                                              item?.attributes?.brand_name2 &&  <li className="text-[15px] border-b-[0.5px] capitalize border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#1CABD3] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer">
+                                              <Link
+                                                href={`/brand-product/${item?.attributes?.brand_name2}`}
+                                                >
+                                                {item?.attributes?.brand_name2}
+                                              </Link>
+                                              
+                                            </li>
+                                            }
+                                           
+                                                </>
+                                          )}
 
-                                      {item.sub2 && (
+                                          {/* {item.attributes.Brand_name==="BioSystems" && (
                                         <li className="text-[15px] border-b-[0.5px] capitalize border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#1CABD3] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer">
                                           {item.sub2}
                                         </li>
-                                      )}
-                                    </div>
-                                  </div>
-                                )}
-                              </>
-                            ))}
-                          </div>
-                        </div>
-                      )}
-                      {menu2 && (
-                        <div className="absolute top-[0px] left-[100%]    w-[399px] h-[126px] z-40 space-y-[10px]">
-                          <div
-                          
-                            className=" border-l-[0.5px] border-l-[white]  border-t-[4px] border-t-[black]   absolute top-[10px] h-[100%] w-full "
-                          >
-                            {submenu3.map((item: any, index: number) => (
-                              <>
-                                <li   onMouseEnter={()=>handleList2(index)}
-                             className="text-[15px] relative  capitalize border-b-[0.5px] border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#1CABD3] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer">
-                                  <Link href="/about">{item.name}</Link>
-                                </li>
-                                {list2===index && (
-                                  <div className="absolute  left-[100%]    w-[199px] h-[126px] z-40 space-y-[10px]">
-                                    <div className=" mt-[-60px]    absolute top-[0px] h-[100%] w-full ">
-                                      {
-                                        item.sub && <li className="text-[15px] border-b-[0.5px] capitalize border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#1CABD3] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer">
-                                        <Link href={`/brand-product/${item?.sub}`}>{item.sub}</Link>
-                                      </li>
-                                      }
-                                      
-                                    </div>
-                                  </div>
-                                )}
-                              </>
-                            ))}
-                          </div>
-                        </div>
-                      )}
-                      {menu3 && (
-                        <div className="absolute top-[95px] left-[100%]    w-[399px] h-[126px] z-40 space-y-[10px]">
-                          <div
-                            onMouseEnter={handleSubmenu2}
-                            onMouseLeave={handleSubmenuHide2}
-                            className=" border-l-[0.5px] border-l-[white]  border-t-[4px] border-t-[black]   absolute top-[10px] h-[100%] w-full "
-                          >
-                            {submenu5.map((item: any, index: number) => (
-                              <>
-                                <li className="text-[15px] relative  capitalize border-b-[0.5px] border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#1CABD3] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer">
-                                  <Link href="#">{item.name}</Link>
-                                </li>
-                                {/* {sub2 && (
+                                      )} */}
+                                        </div>
+                                      </div>
+                                    )}
+                                  </>
+                                ))}
+                              </div>
+                            </div>
+                          )}
+
+                          {sub === 1 && (
+                            <div className="absolute top-[0px] left-[100%]    w-[399px] h-[126px] z-40 space-y-[10px]">
+                              <div className=" border-l-[0.5px] border-l-[white]  border-t-[4px] border-t-[black]   absolute top-[10px] h-[100%] w-full ">
+                                {secondCategory?.map((item: any, index: number) => (
+                                  <>
+                                    <li
+                                      onMouseEnter={() => handleList2(index)}
+                                      className="text-[15px] relative  capitalize border-b-[0.5px] border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#1CABD3] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer"
+                                    >
+                                      <Link href="/about">{item?.attributes?.title}</Link>
+                                    </li>
+                                    {list2 === index && (
+                                      <div className="absolute  left-[100%]    w-[199px] h-[126px] z-40 space-y-[10px]">
+                                        <div className=" mt-[-60px]    absolute top-[0px] h-[100%] w-full ">
+                                          {item?.attributes?.brand_name && (
+                                            <li className="text-[15px] border-b-[0.5px] capitalize border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#1CABD3] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer">
+                                              <Link
+                                                href={`/brand-product/${item?.attributes?.brand_name}`}
+                                              >
+                                                {item?.attributes?.brand_name}
+                                              </Link>
+                                            </li>
+                                          )}
+                                        </div>
+                                      </div>
+                                    )}
+                                  </>
+                                ))}
+                              </div>
+                            </div>
+                          )}
+                          {sub===2 && (
+                            <div className="absolute top-[95px] left-[100%]    w-[399px] h-[126px] z-40 space-y-[10px]">
+                              <div
+                                onMouseEnter={handleSubmenu2}
+                                onMouseLeave={handleSubmenuHide2}
+                                className=" border-l-[0.5px] border-l-[white]  border-t-[4px] border-t-[black]   absolute top-[10px] h-[100%] w-full "
+                              >
+                                {thirdCategory?.map((item: any, index: number) => (
+                                  <>
+                                    <li className="text-[15px] relative  capitalize border-b-[0.5px] border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#1CABD3] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer">
+                                      <Link href="#">{item?.attributes?.title}</Link>
+                                    </li>
+                                    {/* {sub2 && (
                                   <div className="absolute top-[5px] left-[100%]    w-[199px] h-[126px] z-40 space-y-[10px]">
                                     <div className="  border-t-[4px] border-t-[black]   absolute top-[0px] h-[100%] w-full ">
                                       <li className="text-[15px] border-b-[0.5px] capitalize border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#1CABD3] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer">
@@ -397,37 +436,161 @@ const handlelist4 = (index:any)=>{
                                     </div>
                                   </div>
                                 )} */}
-                              </>
-                            ))}
-                          </div>
-                        </div>
-                      )}
-                      {menu4 && (
-                        <div className="absolute top-[100px] left-[100%]    w-[399px] h-[126px] z-40 space-y-[10px]">
-                          <div
-                            
-                            className=" border-l-[0.5px]   border-t-[4px] border-t-[black]   absolute top-[10px] h-[100%] w-full "
-                          >
-                            {submenu6.map((item: any, index: number) => (
-                              <>
-                                <li onMouseEnter={()=>handlelist4(index)}
-                      className="text-[15px] relative  capitalize border-b-[0.5px] border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#1CABD3] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer">
-                                  <Link href="/about">{item.name}</Link>
-                                </li>
-                                {list4===index && (
-                                  <div className="absolute  left-[100%]    w-[199px] h-[126px] z-40 space-y-[10px]">
-                                    <div className=" mt-[-60px] border-t-[4px] border-t-[black]   absolute top-[0px] h-[100%] w-full ">
-                                      <li className="text-[15px] border-b-[0.5px] capitalize border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#1CABD3] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer">
-                                        <Link href={`/brand-product/${item?.sub}`}>{item.sub}</Link>
-                                      </li>
-                                    </div>
-                                  </div>
-                                )}
-                              </>
-                            ))}
-                          </div>
-                        </div>
-                      )}
+                                  </>
+                                ))}
+                              </div>
+                            </div>
+                          )}
+                         
+                         {sub===3 && (
+                            <div className="absolute top-[100px] left-[100%]    w-[399px] h-[126px] z-40 space-y-[10px]">
+                              <div className=" border-l-[0.5px]   border-t-[4px] border-t-[black]   absolute top-[10px] h-[100%] w-full ">
+                                {fourthCategory?.map((item: any, index: number) => (
+                                  <>
+                                    <li
+                                      onMouseEnter={() => handlelist4(index)}
+                                      className="text-[15px] relative  capitalize border-b-[0.5px] border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#1CABD3] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer"
+                                    >
+                                      <Link href="/about">{item?.attributes?.title}</Link>
+                                    </li>
+                                    {list4 === index && (
+                                      <div className="absolute  left-[100%]    w-[199px] h-[126px] z-40 space-y-[10px]">
+                                        <div className=" mt-[-60px] border-t-[4px] border-t-[black]   absolute top-[0px] h-[100%] w-full ">
+                                          <li className="text-[15px] border-b-[0.5px] capitalize border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#1CABD3] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer">
+                                            <Link
+                                              href={`/brand-product/${item?.attributes?.brand_name}`}
+                                            >
+                                              {item?.attributes?.brand_name}
+                                            </Link>
+                                          </li>
+                                        </div>
+                                      </div>
+                                    )}
+                                  </>
+                                ))}
+                              </div>
+                            </div>
+                          )}
+                           {/* {sub===4 && (
+                            <div className="absolute top-[100px] left-[100%]    w-[399px] h-[126px] z-40 space-y-[10px]">
+                              <div className=" border-l-[0.5px]   border-t-[4px] border-t-[black]   absolute top-[10px] h-[100%] w-full ">
+                                {fourthCategory?.map((item: any, index: number) => (
+                                  <>
+                                    <li
+                                      onMouseEnter={() => handlelist4(index)}
+                                      className="text-[15px] relative  capitalize border-b-[0.5px] border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#1CABD3] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer"
+                                    >
+                                      <Link href="/about">{item?.attributes?.title}</Link>
+                                    </li>
+                                    {list4 === index && (
+                                      <div className="absolute  left-[100%]    w-[199px] h-[126px] z-40 space-y-[10px]">
+                                        <div className=" mt-[-60px] border-t-[4px] border-t-[black]   absolute top-[0px] h-[100%] w-full ">
+                                          <li className="text-[15px] border-b-[0.5px] capitalize border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#1CABD3] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer">
+                                            <Link
+                                              href={`/brand-product/${item?.attributes?.brand_name}`}
+                                            >
+                                              {item?.attributes?.brand_name}
+                                            </Link>
+                                          </li>
+                                        </div>
+                                      </div>
+                                    )}
+                                  </>
+                                ))}
+                              </div>
+                            </div>
+                          )}
+                           {sub===5 && (
+                            <div className="absolute top-[100px] left-[100%]    w-[399px] h-[126px] z-40 space-y-[10px]">
+                              <div className=" border-l-[0.5px]   border-t-[4px] border-t-[black]   absolute top-[10px] h-[100%] w-full ">
+                                {fourthCategory?.map((item: any, index: number) => (
+                                  <>
+                                    <li
+                                      onMouseEnter={() => handlelist4(index)}
+                                      className="text-[15px] relative  capitalize border-b-[0.5px] border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#1CABD3] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer"
+                                    >
+                                      <Link href="/about">{item?.attributes?.title}</Link>
+                                    </li>
+                                    {list4 === index && (
+                                      <div className="absolute  left-[100%]    w-[199px] h-[126px] z-40 space-y-[10px]">
+                                        <div className=" mt-[-60px] border-t-[4px] border-t-[black]   absolute top-[0px] h-[100%] w-full ">
+                                          <li className="text-[15px] border-b-[0.5px] capitalize border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#1CABD3] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer">
+                                            <Link
+                                              href={`/brand-product/${item?.attributes?.brand_name}`}
+                                            >
+                                              {item?.attributes?.brand_name}
+                                            </Link>
+                                          </li>
+                                        </div>
+                                      </div>
+                                    )}
+                                  </>
+                                ))}
+                              </div>
+                            </div>
+                          )}
+                           {sub===6 && (
+                            <div className="absolute top-[100px] left-[100%]    w-[399px] h-[126px] z-40 space-y-[10px]">
+                              <div className=" border-l-[0.5px]   border-t-[4px] border-t-[black]   absolute top-[10px] h-[100%] w-full ">
+                                {fourthCategory?.map((item: any, index: number) => (
+                                  <>
+                                    <li
+                                      onMouseEnter={() => handlelist4(index)}
+                                      className="text-[15px] relative  capitalize border-b-[0.5px] border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#1CABD3] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer"
+                                    >
+                                      <Link href="/about">{item?.attributes?.title}</Link>
+                                    </li>
+                                    {list4 === index && (
+                                      <div className="absolute  left-[100%]    w-[199px] h-[126px] z-40 space-y-[10px]">
+                                        <div className=" mt-[-60px] border-t-[4px] border-t-[black]   absolute top-[0px] h-[100%] w-full ">
+                                          <li className="text-[15px] border-b-[0.5px] capitalize border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#1CABD3] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer">
+                                            <Link
+                                              href={`/brand-product/${item?.attributes?.brand_name}`}
+                                            >
+                                              {item?.attributes?.brand_name}
+                                            </Link>
+                                          </li>
+                                        </div>
+                                      </div>
+                                    )}
+                                  </>
+                                ))}
+                              </div>
+                            </div>
+                          )}
+                           {sub===7 && (
+                            <div className="absolute top-[100px] left-[100%]    w-[399px] h-[126px] z-40 space-y-[10px]">
+                              <div className=" border-l-[0.5px]   border-t-[4px] border-t-[black]   absolute top-[10px] h-[100%] w-full ">
+                                {fourthCategory?.map((item: any, index: number) => (
+                                  <>
+                                    <li
+                                      onMouseEnter={() => handlelist4(index)}
+                                      className="text-[15px] relative  capitalize border-b-[0.5px] border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#1CABD3] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer"
+                                    >
+                                      <Link href="/about">{item?.attributes?.title}</Link>
+                                    </li>
+                                    {list4 === index && (
+                                      <div className="absolute  left-[100%]    w-[199px] h-[126px] z-40 space-y-[10px]">
+                                        <div className=" mt-[-60px] border-t-[4px] border-t-[black]   absolute top-[0px] h-[100%] w-full ">
+                                          <li className="text-[15px] border-b-[0.5px] capitalize border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#1CABD3] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer">
+                                            <Link
+                                              href={`/brand-product/${item?.attributes?.brand_name}`}
+                                            >
+                                              {item?.attributes?.brand_name}
+                                            </Link>
+                                          </li>
+                                        </div>
+                                      </div>
+                                    )}
+                                  </>
+                                ))}
+                              </div>
+                            </div>
+                          )} */}
+                   
+                          
+                        </>
+                      ))}
                     </>
                   </div>
                 </div>
