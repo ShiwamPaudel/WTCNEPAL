@@ -68,7 +68,7 @@ console.log(item)
 
     <>
     {
-      product?  <div className="container 2xl:max-w-[1180px] mx-auto pb-[111px] pt-[100px] px-[15px] md:px-0">
+      product?  <div className="container 2xl:max-w-[1180px] mx-auto pb-[111px] pt-[50px] px-[15px] md:px-0">
       <div className="flex items-center justify-center gap-[8px] flex-col">
         <h2 className="text-[#7A8A9E] text-[13px] leading-[15.23px] font-medium">
           PRODUCTS
@@ -77,15 +77,15 @@ console.log(item)
           Products That We Offer
         </h1>
       </div>
-      <div className="grid md:grid-cols-4 grid-cols-1 gap-x-[30px] gap-y-[35px] mt-[68px]">
+      <div className="grid md:grid-cols-4 grid-cols-2 md:gap-x-[30px] gap-x-[15px] md:gap-y-[35px] gap-y-[15px] mt-[68px]">
       {
         product?.map((item:any,index:number)=>(
-          <div onClick={()=>handleClick(item)} key={index} className="border cursor-pointer flex items-center justify-end  flex-col gap-[35px] pb-[44px] pt-[10px] ">
-            <div className="h-[200px] flex items-center justify-center">
+          <div onClick={()=>handleClick(item)} key={index} className="border cursor-pointer flex items-center md:justify-end justify-center  flex-col gap-[35px] pb-[44px] pt-[10px] ">
+            <div className="md:h-[200px] flex items-center justify-center">
 
                 <img src={item?.attributes.image.data.attributes.url} alt="" className="cursor-pointer hover:scale-[105%] transition duration-300 ease-out h-[100%] w-[80%] object-contain"/>
             </div>
-                <h2 className=" text-[#003760] text-[16px] leading-[20.08px] font-semibold">{item?.attributes?.title}</h2>
+                <h2 className=" text-[#003760] text-[16px] text-center leading-[20.08px] font-semibold">{item?.attributes?.title}</h2>
              
             </div>
         ))
