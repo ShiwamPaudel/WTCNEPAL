@@ -57,14 +57,14 @@ const ProductDetail = () => {
         </div>
       ) : (
         <>
-          <div className="container mx-auto 2xl:max-w-[1180px] pt-[30px] pb-[80px]">
+          <div className="container mx-auto 2xl:max-w-[1180px] pt-[30px] pb-[80px] px-[15px] md:px-0">
             <div className="border-b-[1px] pb-[15px] mb-[15px]">
               <h1 className="text-[40px] font-thin leading-[48px] text-[#212529]">
                 {product?.attributes?.title}
               </h1>
             </div>
-            <div className="flex gap-[80px] pt-[20px]">
-              <div className="basis-[30%] border-[0.4px]">
+            <div className="flex md:flex-row flex-col gap-[80px] pt-[20px]">
+              <div className="basis-[30%] md:border-[0.4px]">
                 {isLoading ? (
                   <div
                     className="max-w-[1180px] mx-auto flex justify-center items-center"
@@ -73,7 +73,7 @@ const ProductDetail = () => {
                     <Skeleton className="px-4" active={true} />
                   </div>
                 ) : (
-                  <div className="h-[250px] bg-white w-full flex items-center justify-center">
+                  <div className="md:h-[250px] h-[180px] bg-white w-full flex items-center justify-center">
                     <img
                       src={product?.attributes?.image?.data?.attributes?.url}
                       alt=""
