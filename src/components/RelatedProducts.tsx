@@ -130,7 +130,7 @@ function RelatedProducts() {
               <div className="h-[270px] flex items-center justify-center border">
                 <img
                   src={`${item?.attributes?.image?.data?.attributes?.url}`}
-                  className="w-[70%] h-auto object-contain cursor-pointer hover:scale-[105%] transition duration-500 ease-out"
+                  className="w-[70%] h-[100%] object-contain cursor-pointer hover:scale-[105%] transition duration-500 ease-out"
                   alt=""
                 />
               </div>
