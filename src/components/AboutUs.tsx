@@ -27,7 +27,7 @@ const AboutUs = () => {
           <div className="container 2xl:max-w-[1180px] mx-auto md:flex gap-[93px] px-[15px] md:px-0 ">
           <div className="basis-[50%]">
             <h2 className="text-[#7A8A9E] text-[13px] leading-[15.25px] tracking-[0.085em] font-bold">
-              ABOUT US
+              Welcome
             </h2>
             <h1 className="text-[#003760] text-[32px] leading-[46.8px] font-extrabold uppercase  mt-[8px]">
         {item?.attributes?.title}
