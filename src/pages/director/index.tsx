@@ -7,6 +7,7 @@ const index = () => {
     <>
     <Head>
       <title>MEET OUR DIRECTOR</title>
+      <link rel="icon" href="/../assets/favicon.jpg" />
     </Head>
     
     <div className="max-w-[1180px] mx-auto flex py-[50px] gap-[50px]">

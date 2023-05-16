@@ -1,7 +1,10 @@
-import React from "react";
+import React,{useState,useEffect} from "react";
 import Collape from "./Collape";
+import { BaseUrl } from "@/pages/api/global";
+import axios from "axios";
 
 const Asked = ({ faq }: any) => {
+
   return (
     <div className="bg-white pb-[91px] px-[15px] md:px-0">
       <h3 className="font-Work font-bold text-[13px] leading-[15px] tracking-[0.085em] text-[#007EC5] text-center pt-[99px]">

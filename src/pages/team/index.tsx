@@ -8,6 +8,7 @@ const index = () => {
     <div>
       <Head>
         <title>OUT TEAM</title>
+        <link rel="icon" href="/../assets/favicon.jpg" />
       </Head>
         <AboutBanner title={"Our Team"}/>
         <Team/>

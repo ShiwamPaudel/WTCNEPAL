@@ -8,7 +8,7 @@ import React from 'react'
 const index = () => {
   return (
     <div>
-        <AboutBanner title="Conact Us"/>
+        <AboutBanner title="Contact Us"/>
         <ContactForm/>
         <Map/>
         {/* <Fotter/>

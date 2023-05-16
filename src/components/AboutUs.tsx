@@ -88,7 +88,7 @@ if(submit){
             <h2 className="text-[#7A8A9E] text-[13px] leading-[15.25px] tracking-[0.085em] font-bold">
               Welcome
             </h2>
-            <h1 className="text-[#003760] text-[32px] leading-[46.8px] font-extrabold uppercase  mt-[8px]">
+            <h1 className="text-[#003760] text-[32px] leading-[46.8px] font-semibold uppercase  mt-[8px]">
         {item?.attributes?.title}
             </h1>
             <div className="w-full">

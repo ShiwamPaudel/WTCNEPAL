@@ -13,6 +13,7 @@ const index = () => {
     <>
     <Head>
       <title>ABOUT WEB TRADING</title>
+      <link rel="icon" href="/../assets/favicon.jpg" />
     </Head>
       <AboutBanner title="About Us"/>
       <AboutUs />

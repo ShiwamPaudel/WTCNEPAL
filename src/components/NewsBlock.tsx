@@ -87,7 +87,7 @@ router.push((`/news/${item.id}`))
             <h2 className="font-IBM hidden font-medium text-[27px] md:text-[28px] leading-[36px] text-[#0D1250] pt-[11px] pl-[20px] md:pl-[5px]">
              {item?.title}
             </h2>
-         <div className='h-[202px] overflow-hidden'>
+         <div className='h-[189px] overflow-hidden'>
          <p className="font-IBM font-normal text-[15px] leading-[24px] text-[#505056] pt-[11px] pl-[20px] pr-[11px] md:pl-[5px] md:pr-[0px] max-w-[378px]">
               {
                 Parse(`${(item?.attributes?.description)}`)
@@ -96,7 +96,7 @@ router.push((`/news/${item.id}`))
             </p>
          </div>
             <div className="flex items-center justify-end pr-[11px]">
-              <div className="w-[109px] h-[38px] bg-[#007EC5] hover:bg-[#007EC5]/[0.8] rounded-sm  mt-[31px] group">
+              <div className="w-[109px] h-[38px] bg-[#007EC5] hover:bg-[#007EC5]/[0.8] rounded-sm  mt-[21px] group">
                 <a
                   href=""
                   className="font-IBM font-normal text-sm leading-[18px] text-[#FBFCFC] py-[10px] pl-[13px] flex flex-row"
