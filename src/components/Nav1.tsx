@@ -14,6 +14,7 @@ function Nav1() {
 
   const [list2, setList2] = useState(0);
   const [list4, setList4] = useState(3);
+  const [fix, setFixed] = useState(false)
 
   const [categories, setCategories] = useState<any>(null);
 
@@ -233,6 +234,24 @@ function Nav1() {
     },
   ];
 
+
+  // for ther sticky header
+
+  const stickyTop = () => {
+    if (window.scrollY >= 50) {
+        setFixed(true)
+    } else {
+        setFixed(false)
+    }
+}
+
+if (typeof window !== "undefined") {
+    window.addEventListener('scroll', stickyTop)
+
+}
+
+
+
   return (
     <>
       <div className="container   mx-auto lg:hidden ">
@@ -251,7 +270,8 @@ function Nav1() {
         </div>
       </div>
 
-      <div className="container  2xl:max-w-[1180px] mx-auto justify-between font-semibold items-center hidden py-[10px] lg:flex lg:flex-row">
+<div className={`${fix ? 'nav' : ""}`}>
+<div className="container  2xl:max-w-[1180px] mx-auto justify-between font-semibold items-center hidden py-[10px] lg:flex lg:flex-row">
         <div className="w-[115px] h-[63px] ">
           <Link href="/">
             {" "}
@@ -291,7 +311,7 @@ function Nav1() {
                       <Link href="/about">About Web Trading</Link>
                     </li>
                     <li className="text-[14px]   border-b-[0.5px] border-b-[white]/[0.5]  bg-[#1CABD3] text-white py-[20px] px-[15px] hover:text-[#0000CC] transition-colors duration-300 ease-out font-semibold whitespace-pre cursor-pointer">
-                      <Link href="">Meet our CEO</Link>
+                      <Link href="/director">Meet our Director</Link>
                     </li>
                     <li className="text-[14px]  border-b-[0.5px] border-b-[white]/[0.5]  bg-[#1CABD3] text-white py-[20px] px-[15px] hover:text-[#0000CC] transition-colors duration-300 ease-out font-semibold whitespace-pre cursor-pointer">
                       <Link href="/team">Our Team</Link>
@@ -635,6 +655,8 @@ function Nav1() {
           </ul>
         </div>
       </div>
+</div>
+     
     </>
   );
 }
