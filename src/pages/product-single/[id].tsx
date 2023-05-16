@@ -8,8 +8,10 @@ import Parse from "html-react-parser";
 import RelatedProducts from "@/components/RelatedProducts";
 import { InfinitySpin } from "react-loader-spinner";
 import { Skeleton } from "antd";
-import { Image } from 'antd';
-
+import { Image } from "antd";
+import Link from "next/link";
+import { Button, Modal } from 'antd';
+import { useFormik } from 'formik';
 const ProductDetail = () => {
   const router = useRouter();
   let id = router.query.id;
@@ -50,6 +52,45 @@ const ProductDetail = () => {
       children: <div>{Parse(`${product?.attributes?.specifications}`)}</div>,
     },
   ];
+
+
+
+  const [modal1Open, setModal1Open] = useState(false);
+  const [modal2Open, setModal2Open] = useState(false);
+
+
+  const formik = useFormik({
+    initialValues: {
+      name: '',
+      email: '',
+      number: '',
+    },
+    onSubmit: values => {
+      // alert(JSON.stringify(values, null, 2));
+      handleSubmit(values);
+    },
+  });
+
+const handleSubmit = async(values:any) => {
+
+let submit = await axios.post(`${BaseUrl}/email-collections`,{data:values})
+console.log(submit)
+if(submit){
+  window.location.href ="https://www.dmsnepal.com/brochure?brochure=products/wNR0XuhUdDYoxCXir1VQ5r6RnAUFk80AbZca8TQd.pdf"
+
+}else{
+
+}
+
+
+// const notify = () =>
+// if(status==="200"){
+//   console.log("hello this code runs")
+//   alert("success")
+
+// } 
+
+}
   return (
     <>
       {isLoading ? (
@@ -58,6 +99,21 @@ const ProductDetail = () => {
         </div>
       ) : (
         <>
+         <Modal
+        title="Provide your details for download brochure"
+        centered
+        open={modal2Open}
+        footer={false}
+        onOk={() => setModal2Open(false)}
+        onCancel={() => setModal2Open(false)}
+      >
+     <form onSubmit={formik.handleSubmit} className="space-y-[15px] ">
+      <input name="name" onChange={formik.handleChange} value={formik.values.name} type="text" placeholder="Enter your Name" required className="border h-[35px] pl-[15px] w-full" />
+      <input name="email" onChange={formik.handleChange} value={formik.values.email} type="email" placeholder="Enter your Email" required className="border h-[35px] pl-[15px] w-full" />
+      <input name="number" onChange={formik.handleChange} value={formik.values.number} type="text" placeholder="Enter your number" required className="border h-[35px] pl-[15px] w-full" />
+      <button type="submit" className="h-[35px] w-[100px] bg-blue-700 flex items-center justify-center text-white rounded-[4px]">Submit</button>
+     </form>
+      </Modal>
           <div className="container mx-auto 2xl:max-w-[1180px] pt-[30px] pb-[80px] px-[15px] md:px-0">
             <div className="border-b-[1px] pb-[15px] mb-[15px]">
               <h1 className="text-[40px] font-thin leading-[48px] text-[#212529]">
@@ -74,20 +130,29 @@ const ProductDetail = () => {
                     <Skeleton className="px-4" active={true} />
                   </div>
                 ) : (
-                  <div className="md:h-[250px] p-[10px] h-[180px] md:border-[0.4px] bg-white w-full flex items-center justify-center">
-                      <Image
-    width={250}
-    height={220}
-    src={product?.attributes?.image?.data?.attributes?.url}
-    className="cursor-pointer hover:scale-[107%] transition duration-300 ease-out h-[100%] w-[80%] object-contain"
+                  <div>
 
-  />
+                  <div className="md:h-[250px] p-[10px] h-[180px] md:border-[0.4px] bg-white w-full flex items-center justify-center">
+                    <Image
+                      width={250}
+                      height={220}
+                      src={product?.attributes?.image?.data?.attributes?.url}
+                      className="cursor-pointer hover:scale-[107%] transition duration-300 ease-out h-[100%] w-[80%] object-contain"
+                      />
                     {/* <img
                       src={product?.attributes?.image?.data?.attributes?.url}
                       alt=""
                       className="cursor-pointer hover:scale-[107%] transition duration-300 ease-out h-[100%] w-[80%] object-contain"
                     /> */}
                   </div>
+                  <div className="pt-[15px]">
+
+                    {
+                      product?.attributes?.Brochure?.data?.length && 
+                    <button onClick={() => setModal2Open(true)}  className="h-[38px] p-[10px] bg-blue-700 hover:bg-blue-500 w-[160px] flex items-center justify-center text-white text-[16px] leading-[21.6px] rounded-[4px] ">Brochure</button>
+                    }
+                  </div>
+                    </div>
                 )}
               </div>
               <div className="basis-[80%] ">
