@@ -169,7 +169,7 @@ useEffect(() => {
       {/* <Testimonial /> */}
       <Requestcall />
       <PartneredUniverities partner={customer} title={"OUR Customers"} />
-      <Partnered1 data={slide2} slide={10} height={'79px'} style={'contain'}/>
+      {/* <Partnered1 data={slide2} slide={10} height={'79px'} style={'contain'}/> */}
       <News />
       {/* <Test/> */}
     </>

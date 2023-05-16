@@ -31,7 +31,8 @@ const AboutUs = () => {
       name: '',
       email: '',
       mobile: '',
-      company_name:""
+      company_name:"",
+      message:""
     },
     onSubmit: values => {
       // alert(JSON.stringify(values, null, 2));
@@ -73,8 +74,10 @@ if(submit){
      <form onSubmit={formik.handleSubmit} className="space-y-[15px] ">
       <input name="name" onChange={formik.handleChange} value={formik.values.name} type="text" placeholder="Enter your Name" required className="border h-[35px] pl-[15px] w-full" />
       <input name="email" onChange={formik.handleChange} value={formik.values.email} type="email" placeholder="Enter your Email" required className="border h-[35px] pl-[15px] w-full" />
-      <input name="mobile" onChange={formik.handleChange} value={formik.values.mobile} type="text" placeholder="Enter your number" required className="border h-[35px] pl-[15px] w-full" />
+      <input name="mobile" onChange={formik.handleChange} value={formik.values.mobile} type="text" placeholder="Enter your cell number" required className="border h-[35px] pl-[15px] w-full" />
       <input name="company_name" onChange={formik.handleChange} value={formik.values.company_name} type="text" placeholder="Enter your company name"  className="border h-[35px] pl-[15px] w-full" />
+      <textarea name="message" onChange={formik.handleChange} value={formik.values.message}  placeholder="Enter your message"  className="border h-[75px] pl-[15px] pt-[10px] w-full" />
+
       <button type="submit" className="h-[35px] w-[100px] bg-blue-700 flex items-center justify-center text-white rounded-[4px]">Submit</button>
      </form>
       </Modal>
@@ -130,7 +133,10 @@ if(submit){
             <img src={item?.attributes?.image?.data?.attributes?.url} alt="img" />
             </div>
             <div className="flex items-center justify-center">
-              <img src="/../assets/brochure.png" alt="" className="cursor-pointer w-[70%]"  onClick={() => setModal2Open(true)}/>
+
+              {/* <img src="/../assets/brochure.png" alt="" className="cursor-pointer w-[70%]"  onClick={() => setModal2Open(true)}/> */}
+              <button onClick={() => setModal2Open(true)}  className="h-[50px] p-[10px] bg-[#23a8cd] hover:bg-[#23a8cd] w-[190px] flex items-center justify-center text-white text-[16px] leading-[21.6px] rounded-[4px] ">Download Brochure</button>
+
               
             </div>
           </div>
