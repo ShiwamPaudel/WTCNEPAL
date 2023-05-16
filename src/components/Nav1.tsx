@@ -291,7 +291,7 @@ function Nav1() {
                       <Link href="/about">About Web Trading</Link>
                     </li>
                     <li className="text-[14px]   border-b-[0.5px] border-b-[white]/[0.5]  bg-[#1CABD3] text-white py-[20px] px-[15px] hover:text-[#0000CC] transition-colors duration-300 ease-out font-semibold whitespace-pre cursor-pointer">
-                      <Link href="">Meet our CEO</Link>
+                      <Link href="/director">Meet our Director</Link>
                     </li>
                     <li className="text-[14px]  border-b-[0.5px] border-b-[white]/[0.5]  bg-[#1CABD3] text-white py-[20px] px-[15px] hover:text-[#0000CC] transition-colors duration-300 ease-out font-semibold whitespace-pre cursor-pointer">
                       <Link href="/team">Our Team</Link>
