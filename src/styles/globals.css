@@ -248,3 +248,7 @@ element.style {
 .cover{
     background: linear-gradient(180deg, rgba(28, 171, 211, 0.174) 0%, rgb(6, 6, 94) 100%);
 }
+
+.ant-drawer{
+    left: 500px!important;
+}

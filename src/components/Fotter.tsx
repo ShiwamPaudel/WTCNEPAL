@@ -18,6 +18,7 @@ function Fotter({ footer }: any) {
                {
 Parse(`${item?.attributes?.description}`)
                }
+              <Link href="/about">..Read More</Link>
               </p>
             </div>
             <div className="basis-[70%] grid md:grid-cols-3 grid-cols-1 gap-[25px] md:gap-0">

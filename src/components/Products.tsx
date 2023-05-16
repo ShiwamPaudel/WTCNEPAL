@@ -80,8 +80,8 @@ console.log(item)
       <div className="grid md:grid-cols-4 grid-cols-2 md:gap-x-[30px] gap-x-[15px] md:gap-y-[35px] gap-y-[15px] mt-[68px]">
       {
         product?.map((item:any,index:number)=>(
-          <div onClick={()=>handleClick(item)} key={index} className="border cursor-pointer flex items-center md:justify-end justify-center  flex-col gap-[35px] pb-[44px] pt-[10px] ">
-            <div className="md:h-[200px] flex items-center justify-center">
+          <div onClick={()=>handleClick(item)} key={index} className="border cursor-pointer flex items-center md:justify-end justify-center  flex-col md:gap-[35px] gap-[15px] md:pb-[44px] pb-[25px] pt-[10px] ">
+            <div className="md:h-[200px] h-[120px] flex items-center justify-center">
 
                 <img src={item?.attributes.image.data.attributes.url} alt="" className="cursor-pointer hover:scale-[105%] transition duration-300 ease-out h-[100%] w-[80%] object-contain"/>
             </div>
