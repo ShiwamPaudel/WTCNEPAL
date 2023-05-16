@@ -5,6 +5,8 @@ import { CountUp } from 'use-count-up'
 import Link from "next/link";
 import { BaseUrl } from "@/pages/api/global";
 import parse from 'html-react-parser';
+import { Button, Modal } from 'antd';
+import { useFormik } from 'formik';
 
 const AboutUs = () => {
   const [about,setAbout]=useState<any>(null)
@@ -20,8 +22,62 @@ const AboutUs = () => {
     
     },[])
 
+
+    const [modal1Open, setModal1Open] = useState(false);
+    const [modal2Open, setModal2Open] = useState(false);
+    
+  const formik = useFormik({
+    initialValues: {
+      name: '',
+      email: '',
+      mobile: '',
+      company_name:""
+    },
+    onSubmit: values => {
+      // alert(JSON.stringify(values, null, 2));
+      handleSubmit(values);
+    },
+  });
+
+const handleSubmit = async(values:any) => {
+
+let submit = await axios.post(`${BaseUrl}/email-collections`,{data:values})
+console.log(submit)
+if(submit){
+  window.location.href ="https://www.dmsnepal.com/brochure?brochure=products/wNR0XuhUdDYoxCXir1VQ5r6RnAUFk80AbZca8TQd.pdf"
+
+}else{
+
+}
+
+
+// const notify = () =>
+// if(status==="200"){
+//   console.log("hello this code runs")
+//   alert("success")
+
+// } 
+
+}
+
   return (
     <div className="pt-[80px] pb-[80px]">
+        <Modal
+        title="Provide your details for download brochure"
+        centered
+        open={modal2Open}
+        footer={false}
+        onOk={() => setModal2Open(false)}
+        onCancel={() => setModal2Open(false)}
+      >
+     <form onSubmit={formik.handleSubmit} className="space-y-[15px] ">
+      <input name="name" onChange={formik.handleChange} value={formik.values.name} type="text" placeholder="Enter your Name" required className="border h-[35px] pl-[15px] w-full" />
+      <input name="email" onChange={formik.handleChange} value={formik.values.email} type="email" placeholder="Enter your Email" required className="border h-[35px] pl-[15px] w-full" />
+      <input name="mobile" onChange={formik.handleChange} value={formik.values.mobile} type="text" placeholder="Enter your number" required className="border h-[35px] pl-[15px] w-full" />
+      <input name="company_name" onChange={formik.handleChange} value={formik.values.company_name} type="text" placeholder="Enter your company name"  className="border h-[35px] pl-[15px] w-full" />
+      <button type="submit" className="h-[35px] w-[100px] bg-blue-700 flex items-center justify-center text-white rounded-[4px]">Submit</button>
+     </form>
+      </Modal>
       {
         about?.map((item:any,index:number)=>(
           <div className="container 2xl:max-w-[1180px] mx-auto md:flex gap-[93px] px-[15px] md:px-0 ">
@@ -69,8 +125,14 @@ const AboutUs = () => {
               </div>
             </div>
           </div>
-          <div className="basis-[45%] mt-[40px] md:mt-0 flex items-center justify-center">
+          <div className="basis-[45%] mt-[40px] md:mt-0 flex items-center justify-center flex-col gap-[30px]">
+            <div>
             <img src={item?.attributes?.image?.data?.attributes?.url} alt="img" />
+            </div>
+            <div>
+              <img src="/../assets/brochure.png" alt="" className="cursor-pointer"  onClick={() => setModal2Open(true)}/>
+              
+            </div>
           </div>
         </div>
         ))
