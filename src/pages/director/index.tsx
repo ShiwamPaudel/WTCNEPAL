@@ -4,7 +4,9 @@ const index = () => {
   return (
     <div className="max-w-[1180px] mx-auto flex py-[50px] gap-[50px]">
       <div className="basis-[40%]">
-        <div className="h-[100%] w-full border"></div>
+        <div className="h-[420px] w-full ">
+          <img src="/../assets/director.jpg" alt="" className="object-contain h-[100%] w-full cursor-pointer" />
+        </div>
       </div>
       <div className="basis-[60%]">
         <div className="flex items-center justify-start ">
