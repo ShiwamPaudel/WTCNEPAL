@@ -26,11 +26,11 @@ const OurVision = () => {
       <div className="flex md:flex-row flex-col items-center justify-center md:gap-[40px] gap-[20px] h-[260px] md:px-[200px]">
 
         {
-          vision?.slice(0,2).map((item:any,index:number) =>(
+          vision?.slice(1,3).map((item:any,index:number) =>(
 <div className="border hover:scale-[103%] transition duration-300 ease-out cursor-pointer shadow-lg bg-[#1CABD3] text-white rounded-[3px] flex-1 md:px-[80px] px-[15px] h-[100%] flex items-center justify-start flex-col gap-[15px] py-[20px]">
           <h1 className="text-[25px] font-semibold border-b-[2px]">{item?.attributes?.title}</h1>
 
-          <div className="w-full flex items-center justify-center text-center">
+          <div className="w-full flex items-center justify-center text-center text-white">
             {Parse(`${item?.attributes?.description}`)}
           </div>
         
@@ -57,7 +57,7 @@ const OurVision = () => {
               <>  
               
               <div className="border hover:scale-[103%] transition duration-300 ease-out shadow-lg bg-[#1CABD3] text-white rounded-[3px] flex items-center justify-center flex-col py-[20px] px-[15px] md:px-[80px]">
-              <h1 className="text-[25px] font-semibold border-b-[2px]">Values</h1>
+              <h1 className="text-[25px] font-semibold border-b-[2px]">{item?.attributes.title}</h1>
               <p className="text-center text-[16px]  my-[15px]">
                 Our core values guide our actions and decisions as we strive to
                 achieve our vision and mission. We are committed to:
