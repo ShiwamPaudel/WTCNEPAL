@@ -287,7 +287,7 @@ if (typeof window !== "undefined") {
             <li>
               <Link
                 href="/"
-                className="font-semibold  hover:text-[#1CABD3] transition-colors duration-150 ease-out"
+                className="font-semibold  hover:text-[#23a8cd] transition-colors duration-150 ease-out"
               >
                 Home
               </Link>
@@ -299,7 +299,7 @@ if (typeof window !== "undefined") {
             >
               <Link
                 href="/about"
-                className=" font-semibold hover:text-[#1CABD3] transition-colors duration-300 ease-out"
+                className=" font-semibold hover:text-[#23a8cd] transition-colors duration-300 ease-out"
               >
                 Company
               </Link>
@@ -307,16 +307,16 @@ if (typeof window !== "undefined") {
               {about && (
                 <div className="absolute top-[18px] left-0    w-[199px] h-[126px] z-40 space-y-[10px]">
                   <div className="  border-t-[4px] border-t-[black]   absolute top-[27px] h-[100%] w-full ">
-                    <li className="text-[14px] border-b-[0.5px] border-b-[white]/[0.5] hover:text-[#0000CC] bg-[#1CABD3] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer">
+                    <li className="text-[14px] border-b-[0.5px] border-b-[white]/[0.5] hover:text-[#0000CC] bg-[#23a8cd] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer">
                       <Link href="/about">About Web Trading</Link>
                     </li>
-                    <li className="text-[14px]   border-b-[0.5px] border-b-[white]/[0.5]  bg-[#1CABD3] text-white py-[20px] px-[15px] hover:text-[#0000CC] transition-colors duration-300 ease-out font-semibold whitespace-pre cursor-pointer">
+                    <li className="text-[14px]   border-b-[0.5px] border-b-[white]/[0.5]  bg-[#23a8cd] text-white py-[20px] px-[15px] hover:text-[#0000CC] transition-colors duration-300 ease-out font-semibold whitespace-pre cursor-pointer">
                       <Link href="/director">Meet our Director</Link>
                     </li>
-                    <li className="text-[14px]  border-b-[0.5px] border-b-[white]/[0.5]  bg-[#1CABD3] text-white py-[20px] px-[15px] hover:text-[#0000CC] transition-colors duration-300 ease-out font-semibold whitespace-pre cursor-pointer">
+                    <li className="text-[14px]  border-b-[0.5px] border-b-[white]/[0.5]  bg-[#23a8cd] text-white py-[20px] px-[15px] hover:text-[#0000CC] transition-colors duration-300 ease-out font-semibold whitespace-pre cursor-pointer">
                       <Link href="/team">Our Team</Link>
                     </li>
-                    <li className="text-[14px]   bg-[#1CABD3] text-white py-[20px] px-[15px] hover:text-[#0000CC] transition-colors duration-300 ease-out font-semibold whitespace-pre cursor-pointer">
+                    <li className="text-[14px]   bg-[#23a8cd] text-white py-[20px] px-[15px] hover:text-[#0000CC] transition-colors duration-300 ease-out font-semibold whitespace-pre cursor-pointer">
                       <Link href="">Our Network</Link>
                     </li>
                   </div>
@@ -330,7 +330,7 @@ if (typeof window !== "undefined") {
             >
               <Link
                 href="#"
-                className="font-semibold hover:text-[#1CABD3] transition-colors duration-300 ease-out"
+                className="font-semibold hover:text-[#23a8cd] transition-colors duration-300 ease-out"
               >
                 Products
               </Link>
@@ -344,7 +344,7 @@ if (typeof window !== "undefined") {
                           <li
                            
                             onMouseEnter={() => handleSubmenu(index)}
-                            className="text-[15px] relative border-b-[0.5px] capitalize border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#1CABD3] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer"
+                            className="text-[15px] relative border-b-[0.5px] capitalize border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#23a8cd] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer"
                           >
                             <Link href="/about">{item?.attributes?.title}</Link>
                           </li>
@@ -358,7 +358,7 @@ if (typeof window !== "undefined") {
                                     <li
                                       onMouseEnter={() => handleSubmenu2(index)}
                                       onMouseLeave={handleSubmenuHide2}
-                                      className="text-[15px] relative  capitalize border-b-[0.5px] border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#1CABD3] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer"
+                                      className="text-[15px] relative  capitalize border-b-[0.5px] border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#23a8cd] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer"
                                     >
                                       <Link href="/about">
                                         {item?.attributes?.title}
@@ -370,7 +370,7 @@ if (typeof window !== "undefined") {
                                         <div className=" mt-[-60px]    absolute top-[0px] h-[100%] w-full ">
                                           {item.attributes.brand_name && (
                                             <>
-                                            <li className="text-[15px] border-b-[0.5px] capitalize border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#1CABD3] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer">
+                                            <li className="text-[15px] border-b-[0.5px] capitalize border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#23a8cd] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer">
                                               <Link
                                                 href={`/brand-product/${item.attributes.brand_name}`}
                                                 >
@@ -379,7 +379,7 @@ if (typeof window !== "undefined") {
                                               
                                             </li>
                                             {
-                                              item?.attributes?.brand_name2 &&  <li className="text-[15px] border-b-[0.5px] capitalize border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#1CABD3] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer">
+                                              item?.attributes?.brand_name2 &&  <li className="text-[15px] border-b-[0.5px] capitalize border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#23a8cd] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer">
                                               <Link
                                                 href={`/brand-product/${item?.attributes?.brand_name2}`}
                                                 >
@@ -393,7 +393,7 @@ if (typeof window !== "undefined") {
                                           )}
 
                                           {/* {item.attributes.Brand_name==="BioSystems" && (
-                                        <li className="text-[15px] border-b-[0.5px] capitalize border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#1CABD3] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer">
+                                        <li className="text-[15px] border-b-[0.5px] capitalize border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#23a8cd] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer">
                                           {item.sub2}
                                         </li>
                                       )} */}
@@ -413,7 +413,7 @@ if (typeof window !== "undefined") {
                                   <>
                                     <li
                                       onMouseEnter={() => handleList2(index)}
-                                      className="text-[15px] relative  capitalize border-b-[0.5px] border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#1CABD3] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer"
+                                      className="text-[15px] relative  capitalize border-b-[0.5px] border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#23a8cd] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer"
                                     >
                                       <Link href="/about">{item?.attributes?.title}</Link>
                                     </li>
@@ -421,7 +421,7 @@ if (typeof window !== "undefined") {
                                       <div className="absolute  left-[100%]    w-[199px] h-[126px] z-40 space-y-[10px]">
                                         <div className=" mt-[-60px]    absolute top-[0px] h-[100%] w-full ">
                                           {item?.attributes?.brand_name && (
-                                            <li className="text-[15px] border-b-[0.5px] capitalize border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#1CABD3] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer">
+                                            <li className="text-[15px] border-b-[0.5px] capitalize border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#23a8cd] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer">
                                               <Link
                                                 href={`/brand-product/${item?.attributes?.brand_name}`}
                                               >
@@ -446,13 +446,13 @@ if (typeof window !== "undefined") {
                               >
                                 {thirdCategory?.map((item: any, index: number) => (
                                   <>
-                                    <li className="text-[15px] relative  capitalize border-b-[0.5px] border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#1CABD3] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer">
+                                    <li className="text-[15px] relative  capitalize border-b-[0.5px] border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#23a8cd] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer">
                                       <Link href="#">{item?.attributes?.title}</Link>
                                     </li>
                                     {/* {sub2 && (
                                   <div className="absolute top-[5px] left-[100%]    w-[199px] h-[126px] z-40 space-y-[10px]">
                                     <div className="  border-t-[4px] border-t-[black]   absolute top-[0px] h-[100%] w-full ">
-                                      <li className="text-[15px] border-b-[0.5px] capitalize border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#1CABD3] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer">
+                                      <li className="text-[15px] border-b-[0.5px] capitalize border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#23a8cd] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer">
                                         <Link href="/about">BioSystems</Link>
                                       </li>
                                     </div>
@@ -471,14 +471,14 @@ if (typeof window !== "undefined") {
                                   <>
                                     <li
                                       onMouseEnter={() => handlelist4(index)}
-                                      className="text-[15px] relative  capitalize border-b-[0.5px] border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#1CABD3] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer"
+                                      className="text-[15px] relative  capitalize border-b-[0.5px] border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#23a8cd] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer"
                                     >
                                       <Link href="/about">{item?.attributes?.title}</Link>
                                     </li>
                                     {list4 === index && (
                                       <div className="absolute  left-[100%]    w-[199px] h-[126px] z-40 space-y-[10px]">
                                         <div className=" mt-[-60px] border-t-[4px] border-t-[black]   absolute top-[0px] h-[100%] w-full ">
-                                          <li className="text-[15px] border-b-[0.5px] capitalize border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#1CABD3] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer">
+                                          <li className="text-[15px] border-b-[0.5px] capitalize border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#23a8cd] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer">
                                             <Link
                                               href={`/brand-product/${item?.attributes?.brand_name}`}
                                             >
@@ -500,14 +500,14 @@ if (typeof window !== "undefined") {
                                   <>
                                     <li
                                       onMouseEnter={() => handlelist4(index)}
-                                      className="text-[15px] relative  capitalize border-b-[0.5px] border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#1CABD3] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer"
+                                      className="text-[15px] relative  capitalize border-b-[0.5px] border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#23a8cd] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer"
                                     >
                                       <Link href="/about">{item?.attributes?.title}</Link>
                                     </li>
                                     {list4 === index && (
                                       <div className="absolute  left-[100%]    w-[199px] h-[126px] z-40 space-y-[10px]">
                                         <div className=" mt-[-60px] border-t-[4px] border-t-[black]   absolute top-[0px] h-[100%] w-full ">
-                                          <li className="text-[15px] border-b-[0.5px] capitalize border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#1CABD3] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer">
+                                          <li className="text-[15px] border-b-[0.5px] capitalize border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#23a8cd] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer">
                                             <Link
                                               href={`/brand-product/${item?.attributes?.brand_name}`}
                                             >
@@ -529,14 +529,14 @@ if (typeof window !== "undefined") {
                                   <>
                                     <li
                                       onMouseEnter={() => handlelist4(index)}
-                                      className="text-[15px] relative  capitalize border-b-[0.5px] border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#1CABD3] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer"
+                                      className="text-[15px] relative  capitalize border-b-[0.5px] border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#23a8cd] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer"
                                     >
                                       <Link href="/about">{item?.attributes?.title}</Link>
                                     </li>
                                     {list4 === index && (
                                       <div className="absolute  left-[100%]    w-[199px] h-[126px] z-40 space-y-[10px]">
                                         <div className=" mt-[-60px] border-t-[4px] border-t-[black]   absolute top-[0px] h-[100%] w-full ">
-                                          <li className="text-[15px] border-b-[0.5px] capitalize border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#1CABD3] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer">
+                                          <li className="text-[15px] border-b-[0.5px] capitalize border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#23a8cd] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer">
                                             <Link
                                               href={`/brand-product/${item?.attributes?.brand_name}`}
                                             >
@@ -558,14 +558,14 @@ if (typeof window !== "undefined") {
                                   <>
                                     <li
                                       onMouseEnter={() => handlelist4(index)}
-                                      className="text-[15px] relative  capitalize border-b-[0.5px] border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#1CABD3] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer"
+                                      className="text-[15px] relative  capitalize border-b-[0.5px] border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#23a8cd] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer"
                                     >
                                       <Link href="/about">{item?.attributes?.title}</Link>
                                     </li>
                                     {list4 === index && (
                                       <div className="absolute  left-[100%]    w-[199px] h-[126px] z-40 space-y-[10px]">
                                         <div className=" mt-[-60px] border-t-[4px] border-t-[black]   absolute top-[0px] h-[100%] w-full ">
-                                          <li className="text-[15px] border-b-[0.5px] capitalize border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#1CABD3] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer">
+                                          <li className="text-[15px] border-b-[0.5px] capitalize border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#23a8cd] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer">
                                             <Link
                                               href={`/brand-product/${item?.attributes?.brand_name}`}
                                             >
@@ -587,14 +587,14 @@ if (typeof window !== "undefined") {
                                   <>
                                     <li
                                       onMouseEnter={() => handlelist4(index)}
-                                      className="text-[15px] relative  capitalize border-b-[0.5px] border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#1CABD3] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer"
+                                      className="text-[15px] relative  capitalize border-b-[0.5px] border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#23a8cd] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer"
                                     >
                                       <Link href="/about">{item?.attributes?.title}</Link>
                                     </li>
                                     {list4 === index && (
                                       <div className="absolute  left-[100%]    w-[199px] h-[126px] z-40 space-y-[10px]">
                                         <div className=" mt-[-60px] border-t-[4px] border-t-[black]   absolute top-[0px] h-[100%] w-full ">
-                                          <li className="text-[15px] border-b-[0.5px] capitalize border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#1CABD3] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer">
+                                          <li className="text-[15px] border-b-[0.5px] capitalize border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#23a8cd] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer">
                                             <Link
                                               href={`/brand-product/${item?.attributes?.brand_name}`}
                                             >
@@ -622,7 +622,7 @@ if (typeof window !== "undefined") {
             <li>
               <Link
                 href="/news"
-                className=" font-semibold hover:text-[#1CABD3] transition-colors duration-300 ease-out"
+                className=" font-semibold hover:text-[#23a8cd] transition-colors duration-300 ease-out"
               >
                 News & Events
               </Link>
@@ -631,7 +631,7 @@ if (typeof window !== "undefined") {
             <li>
               <Link
                 href=""
-                className="font-semibold hover:text-[#1CABD3] transition-colors duration-300 ease-out"
+                className="font-semibold hover:text-[#23a8cd] transition-colors duration-300 ease-out"
               >
                 Careers
               </Link>
@@ -639,7 +639,7 @@ if (typeof window !== "undefined") {
             <li>
               <Link
                 href="/contact"
-                className=" font-semibold hover:text-[#1CABD3] transition-colors duration-300 ease-out"
+                className=" font-semibold hover:text-[#23a8cd] transition-colors duration-300 ease-out"
               >
                 Contact
               </Link>

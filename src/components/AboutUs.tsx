@@ -133,7 +133,10 @@ if(submit){
             <img src={item?.attributes?.image?.data?.attributes?.url} alt="img" />
             </div>
             <div className="flex items-center justify-center">
-              <img src="/../assets/brochure.png" alt="" className="cursor-pointer w-[70%]"  onClick={() => setModal2Open(true)}/>
+
+              {/* <img src="/../assets/brochure.png" alt="" className="cursor-pointer w-[70%]"  onClick={() => setModal2Open(true)}/> */}
+              <button onClick={() => setModal2Open(true)}  className="h-[50px] p-[10px] bg-[#23a8cd] hover:bg-[#23a8cd] w-[190px] flex items-center justify-center text-white text-[16px] leading-[21.6px] rounded-[4px] ">Download Brochure</button>
+
               
             </div>
           </div>
