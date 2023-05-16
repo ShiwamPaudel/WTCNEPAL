@@ -64,7 +64,8 @@ const ProductDetail = () => {
       name: '',
       email: '',
       mobile: '',
-      company_name:""
+      company_name:"",
+      message:""
     },
     onSubmit: values => {
       // alert(JSON.stringify(values, null, 2));
@@ -113,6 +114,7 @@ if(submit){
       <input name="email" onChange={formik.handleChange} value={formik.values.email} type="email" placeholder="Enter your Email" required className="border h-[35px] pl-[15px] w-full" />
       <input name="mobile" onChange={formik.handleChange} value={formik.values.mobile} type="text" placeholder="Enter your number" required className="border h-[35px] pl-[15px] w-full" />
       <input name="company_name" onChange={formik.handleChange} value={formik.values.company_name} type="text" placeholder="Enter your company name"  className="border h-[35px] pl-[15px] w-full" />
+      <textarea name="message" onChange={formik.handleChange} value={formik.values.message}  placeholder="Enter your message"  className="border h-[75px] pl-[15px] w-full" />
       <button type="submit" className="h-[35px] w-[100px] bg-blue-700 flex items-center justify-center text-white rounded-[4px]">Submit</button>
      </form>
       </Modal>
