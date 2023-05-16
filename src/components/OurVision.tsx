@@ -58,38 +58,9 @@ const OurVision = () => {
               
               <div className="border hover:scale-[103%] transition duration-300 ease-out shadow-lg bg-[#1CABD3] text-white rounded-[3px] flex items-center justify-center flex-col py-[20px] px-[15px] md:px-[80px]">
               <h1 className="text-[25px] font-semibold border-b-[2px]">{item?.attributes.title}</h1>
-              <p className="text-center text-[16px]  my-[15px]">
-                Our core values guide our actions and decisions as we strive to
-                achieve our vision and mission. We are committed to:
-              </p>
-              <ul className="space-y-[8px]">
-                <li>
-                  <span className="font-bold">Quality</span>: We source products
-                  from top multinational manufacturing companies to ensure the
-                  highest standards of quality.
-                </li>
-                <li>
-                  <span className="font-bold">Integrity</span>: We conduct our
-                  business with honesty, transparency, and accountability. Customer
-                  focus: We prioritize customer satisfaction and strive to deliver
-                  the best product
-                </li>
-                <li>
-                  <span className="font-bold">Innovation</span> : We embrace new
-                  technologies and ideas to provide cutting-edge solutions to our
-                  customers.
-                </li>
-                <li>
-                  <span className="font-bold">Teamwork</span> : We work
-                  collaboratively with our stakeholders to achieve shared goals and
-                  objectives.
-                </li>
-                <li>
-                  <span className="font-bold">Social responsibility</span> : We are
-                  committed to making a positive impact on society and the
-                  environment through our business operations.
-                </li>
-              </ul>
+        <div>
+        {Parse(`${item?.attributes?.description}`)}
+        </div>
             </div>
               
               </>
