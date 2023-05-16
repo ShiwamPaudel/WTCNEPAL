@@ -125,12 +125,12 @@ if(submit){
               </div>
             </div>
           </div>
-          <div className="basis-[45%] mt-[40px] md:mt-0 flex items-center justify-center flex-col gap-[30px]">
+          <div className="basis-[45%] mt-[40px] md:mt-0 flex items-center justify-center flex-col gap-[40px]">
             <div>
             <img src={item?.attributes?.image?.data?.attributes?.url} alt="img" />
             </div>
-            <div>
-              <img src="/../assets/brochure.png" alt="" className="cursor-pointer"  onClick={() => setModal2Open(true)}/>
+            <div className="flex items-center justify-center">
+              <img src="/../assets/brochure.png" alt="" className="cursor-pointer w-[70%]"  onClick={() => setModal2Open(true)}/>
               
             </div>
           </div>

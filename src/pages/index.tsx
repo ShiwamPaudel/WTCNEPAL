@@ -152,6 +152,7 @@ useEffect(() => {
     <>
       <Head>
         <title>WEB TRADING CONCERN PVT.LTD</title>
+        <link rel="icon" href="/../assets/favicon.jpg" />
       </Head>
 {/* <div className="max-w-[1180px] mx-auto"> */}
 
