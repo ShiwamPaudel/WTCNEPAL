@@ -11,6 +11,7 @@ const index = () => {
         <title>
           NEWS & EVENTS
         </title>
+        <link rel="icon" href="/../assets/favicon.jpg" />
       </Head>
       <AboutBanner title="News & Events" />
       <NewsBlock />
