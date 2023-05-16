@@ -4,7 +4,7 @@ import Parse from "html-react-parser";
 const PartneredUniverities = ({ partner,title }: any) => {
   console.log(partner);
   return (
-    <div className="bg-[#007DC50A]  pt-[80px] px-[15px] pb-[30px] md:px-0">
+    <div className="bg-[#007DC50A]  pt-[80px] px-[15px] pb-[50px] md:px-0">
       {partner?.map((item: any, index: number) => (
         <div
           key={index}
@@ -14,7 +14,7 @@ const PartneredUniverities = ({ partner,title }: any) => {
             <h2 className=" text-[#7A8A9E]  text-[13px]  leading-[15.25px] font-medium tracking-[ 0.085em]">
               {title}
             </h2>
-            <h1 className="text-[#0D1250] uppercase text-[36px] font-medium text-center leading-[46.8px] mt-[3px]">
+            <h1 className="text-[#0D1250] uppercase text-[36px] font-medium text-left leading-[46.8px] mt-[3px]">
               {item?.attributes?.title}
             </h1>
             <div>{Parse(`${item?.attributes?.description}`)}</div>

@@ -1,4 +1,5 @@
 import AboutBanner from "@/components/AboutBanner";
+import Head from "next/head";
 import AboutUs from "@/components/AboutUs";
 import OurVision from "@/components/OurVision";
 import Partnered from "@/components/Partnered";
@@ -10,6 +11,9 @@ const index = () => {
 
   return (
     <>
+    <Head>
+      <title>ABOUT WEB TRADING</title>
+    </Head>
       <AboutBanner title="About Us"/>
       <AboutUs />
       <OurVision/>

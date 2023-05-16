@@ -1,7 +1,14 @@
 import React from "react";
+import Head from "next/head";
 
 const index = () => {
   return (
+
+    <>
+    <Head>
+      <title>MEET OUR DIRECTOR</title>
+    </Head>
+    
     <div className="max-w-[1180px] mx-auto flex py-[50px] gap-[50px]">
       <div className="basis-[40%]">
         <div className="h-[420px] w-full ">
@@ -58,6 +65,7 @@ const index = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 
