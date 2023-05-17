@@ -19,6 +19,7 @@ const ProductDetail = () => {
 
   const [product, setProduct] = useState<any>(null);
   const [isLoading, setIsLoading] = useState(true);
+  const [isLoading2, setIsLoading2] = useState(true);
 
   useEffect(() => {
     let getProduct = async () => {
@@ -26,6 +27,7 @@ const ProductDetail = () => {
       //  let list=    product.data.data.slice(0,8)
       setProduct(product.data.data);
       setIsLoading(false);
+      setIsLoading2(false)
     };
     getProduct();
   }, [id]);
@@ -131,7 +133,7 @@ if(submit){
             </div>
             <div className="flex md:flex-row flex-col md:gap-[80px] gap-[50px] pt-[20px]">
               <div className="basis-[30%] ">
-                {isLoading ? (
+                {isLoading2 ? (
                   <div
                     className="max-w-[1180px] mx-auto flex justify-center items-center"
                     style={{ zIndex: 100, backgroundColor: "white" }}
@@ -169,7 +171,7 @@ if(submit){
               </div>
             </div>
           </div>
-          <RelatedProducts />
+          <RelatedProducts setIsLoading2={setIsLoading2}/>
         </>
       )}
 
