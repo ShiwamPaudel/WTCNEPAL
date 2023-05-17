@@ -71,25 +71,35 @@ function Slide2() {
     },
   ];
 
+  let [year,setYear]=useState([])
 
 useEffect(()=>{
 
 let getBanner =async()=>{
-  let banenr = await axios.get(`${BaseUrl}/banners?populate=*`)
-  setBanner(banenr.data.data)
+  const [banner,year]= await Promise.all([
+    axios.get(`${BaseUrl}/banners?populate=*`),
+    axios.get(`${BaseUrl}/header-experience-titles?populate=*`)
+  ])
+  setBanner(banner.data.data)
+  setYear(year.data.data)
 }
 getBanner()
 
 },[])
 
-console.log(banner)
+console.log(year)
 
 
 
   return (
     <div className="w-full relative  overflow-x-hidden">
       <div className=" hidden absolute  md:block bottom-[6%] left-[26%] z-40 text-white ">
-        <h1 className="text-[92.31px] font-semibold leading-[78.46px] ">23</h1>
+        {
+          year?.map((item:any,index:number)=>(
+
+            <h1 className="text-[92.31px] font-semibold leading-[78.46px] ">{item?.attributes?.Years_Experience}</h1>
+          ))
+        }
         <p className="text-[24px] font-semibold text-center">
           YEARS OF
           <br /> EXPERTIES
