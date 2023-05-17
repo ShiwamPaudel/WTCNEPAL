@@ -336,7 +336,7 @@ if (typeof window !== "undefined") {
               </Link>
 
               {product && (
-                <div className="absolute top-[18px] left-0    w-[399px] h-[126px] z-40 space-y-[10px]">
+                <div className="absolute top-[18px] left-0    w-[359px] h-[126px] z-40 space-y-[10px]">
                   <div className="bg-white  border-t-[4px] border-t-[black]   absolute top-[27px] h-[100%] w-full ">
                     <>
                       {mainCategory?.map((item: any, index: any) => (
@@ -350,7 +350,7 @@ if (typeof window !== "undefined") {
                           </li>
 
                           {sub === 0 && (
-                            <div className="absolute top-[0px] left-[100%]    w-[399px] h-[126px] z-40 space-y-[10px]">
+                            <div className="absolute top-[0px] left-[100%]    w-[359px] h-[126px] z-40 space-y-[10px]">
                               <div className="bg-white border-l-[0.5px] border-l-[white]  border-t-[4px] border-t-[black]   absolute top-[10px] h-[100%] w-full ">
                                 {subCategory?.map((item: any, index: any) => (
                                   <>

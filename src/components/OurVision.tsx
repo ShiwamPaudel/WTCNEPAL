@@ -28,11 +28,11 @@ const OurVision = () => {
             {
          
               <div className="border hover:scale-[103%] transition duration-300 ease-out cursor-pointer shadow-lg bg-[#23a8cd] hover:bg-[#0000CC] text-white rounded-[3px] flex-1 md:px-[80px] px-[15px] h-[100%] flex items-center justify-start flex-col gap-[15px] py-[20px]">
-                <div>
+                <div className="bg-white rounded-[10px] p-[5px]">
                  <img src={item?.attributes?.image?.data?.attributes?.url} alt="" className="h-[80px] w-[80px]" />
 
                 </div>
-                <h1 className="text-[25px] font-semibold border-b-[2px]">
+                <h1 className="text-[25px] font-semibold capitalize border-b-[2px]">
                   {item?.attributes?.title}
                 </h1>
 
@@ -49,11 +49,11 @@ const OurVision = () => {
           return (
             <>
               <div className="border hover:scale-[103%] transition duration-300 ease-out shadow-lg bg-[#23a8cd] hover:bg-[#0000CC] text-white rounded-[3px] flex items-center justify-center flex-col py-[20px] px-[15px] md:px-[80px]">
-              <div>
+              <div className="bg-white rounded-[10px] p-[5px] mb-[7px]">
                  <img src={item?.attributes?.image?.data?.attributes?.url} alt="" className="h-[80px] w-[80px]" />
 
                 </div>
-                <h1 className="text-[25px] font-semibold border-b-[2px]">
+                <h1 className="text-[25px] capitalize font-semibold border-b-[2px]">
                   {item?.attributes.title}
                 </h1>
                 <div className="css-specific">{Parse(`${item?.attributes?.description}`)}</div>

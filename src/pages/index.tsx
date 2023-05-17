@@ -153,8 +153,19 @@ useEffect(() => {
   return (
     <>
       <Head>
+
         <title>WEB TRADING CONCERN PVT.LTD</title>
         <link rel="icon" href="/../assets/favicon.jpg" />
+        <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+  
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"
+    />
       </Head>
 {/* <div className="max-w-[1180px] mx-auto"> */}
 
@@ -188,6 +199,14 @@ useEffect(() => {
 			btnTxt="Start Chat"
 			btnTxtColor="black"
 		/> */}
+        <a
+        href="https://wa.me/+9779851140881"
+        className="whatsapp_float"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <i className="fa fa-whatsapp whatsapp-icon"></i>
+      </a>
 <ToastContainer />
         <Navbar />
       <AboutUs />
