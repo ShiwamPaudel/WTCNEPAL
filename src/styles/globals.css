@@ -286,3 +286,44 @@ element.style {
         top: 0;
     }
 }
+
+
+/* .css-specific ul{
+ 
+        padding-left: 30px;
+        list-style-type: none;
+    
+      
+  
+}
+
+
+.css-specific ul li {
+    color: #212529;
+    line-height: 32px;
+    position: relative;
+    padding-left: 9px;
+
+  } */
+.css-specific ul li::after {
+    content: '➡️';
+    position: absolute;
+    left: 0px;
+    top: 0px;
+font-size: 12px;
+ 
+  
+    
+
+
+  }
+
+  .css-specific ul{
+
+    padding-left: 30px;
+    list-style-type: none;
+    background-color: red!important;
+
+  
+
+}

@@ -22,12 +22,16 @@ const OurVision = () => {
 
   return (
     <div className="container mx-auto  py-[80px] px-[15px] md:px-0">
-      <div className="flex md:flex-row flex-col items-center justify-center md:gap-[40px] gap-[20px] h-[260px] md:px-[200px]">
-        {vision?.slice(1).map((item: any, index: any) => (
+      <div className="flex md:flex-row flex-col items-center justify-center md:gap-[40px] gap-[20px] h-[290px] md:px-[200px]">
+        {vision?.slice(0,2).map((item: any, index: any) => (
           <>
             {
          
-              <div className="border hover:scale-[103%] transition duration-300 ease-out cursor-pointer shadow-lg bg-[#23a8cd] text-white rounded-[3px] flex-1 md:px-[80px] px-[15px] h-[100%] flex items-center justify-start flex-col gap-[15px] py-[20px]">
+              <div className="border hover:scale-[103%] transition duration-300 ease-out cursor-pointer shadow-lg bg-[#23a8cd] hover:bg-[#0000CC] text-white rounded-[3px] flex-1 md:px-[80px] px-[15px] h-[100%] flex items-center justify-start flex-col gap-[15px] py-[20px]">
+                <div>
+                 <img src={item?.attributes?.image?.data?.attributes?.url} alt="" className="h-[80px] w-[80px]" />
+
+                </div>
                 <h1 className="text-[25px] font-semibold border-b-[2px]">
                   {item?.attributes?.title}
                 </h1>
@@ -41,14 +45,18 @@ const OurVision = () => {
         ))}
       </div>
       <div className="md:mt-[40px] mt-[135px] md:px-[200px] cursor-pointer">
-        {vision?.slice(0, 1)?.map((item: any, index: number) => {
+        {vision?.slice(2)?.map((item: any, index: number) => {
           return (
             <>
-              <div className="border hover:scale-[103%] transition duration-300 ease-out shadow-lg bg-[#23a8cd] text-white rounded-[3px] flex items-center justify-center flex-col py-[20px] px-[15px] md:px-[80px]">
+              <div className="border hover:scale-[103%] transition duration-300 ease-out shadow-lg bg-[#23a8cd] hover:bg-[#0000CC] text-white rounded-[3px] flex items-center justify-center flex-col py-[20px] px-[15px] md:px-[80px]">
+              <div>
+                 <img src={item?.attributes?.image?.data?.attributes?.url} alt="" className="h-[80px] w-[80px]" />
+
+                </div>
                 <h1 className="text-[25px] font-semibold border-b-[2px]">
                   {item?.attributes.title}
                 </h1>
-                <div>{Parse(`${item?.attributes?.description}`)}</div>
+                <div className="css-specific">{Parse(`${item?.attributes?.description}`)}</div>
               </div>
             </>
           );

@@ -88,7 +88,7 @@ router.push((`/news/${item.id}`))
              {item?.title}
             </h2>
          <div className='h-[189px] overflow-hidden'>
-         <p className="font-IBM font-normal text-[15px] leading-[24px] text-[#505056] pt-[11px] pl-[20px] pr-[11px] md:pl-[5px] md:pr-[0px] max-w-[378px]">
+         <p className=" font-normal text-[15px] leading-[24px] text-[#505056] pt-[11px] pl-[20px] pr-[11px] md:pl-[5px] md:pr-[0px] max-w-[378px]">
               {
                 Parse(`${(item?.attributes?.description)}`)
               }

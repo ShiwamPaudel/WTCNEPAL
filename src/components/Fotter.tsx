@@ -4,7 +4,7 @@ import { BsGlobeAmericas } from "react-icons/bs";
 import Parse from "html-react-parser"
 function Fotter({ footer }: any) {
   return (
-    <div className=" w-full bg-[#142031] py-[48px] px-[15px] md:px-0">
+    <div className=" w-full bg-[#0000cc] py-[48px] px-[15px] md:px-0">
       {footer?.map((item: any, index: number) => (
         <div key={index} className="container 2xl:max-w-[1180px] mx-auto">
           <div className="flex gap-[68px] md:flex-row flex-col">
