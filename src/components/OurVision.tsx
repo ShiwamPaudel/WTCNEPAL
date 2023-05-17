@@ -22,7 +22,7 @@ const OurVision = () => {
 
   return (
     <div className="container mx-auto  py-[80px] px-[15px] md:px-0">
-      <div className="flex md:flex-row flex-col items-center justify-center md:gap-[40px] gap-[20px] h-[290px] md:px-[200px]">
+      <div className="flex md:flex-row flex-col items-center justify-center md:gap-[40px] gap-[20px] h-[290px] 2xl:px-[200px]">
         {vision?.slice(0,2).map((item: any, index: any) => (
           <>
             {
@@ -44,7 +44,7 @@ const OurVision = () => {
           </>
         ))}
       </div>
-      <div className="md:mt-[40px] mt-[135px] md:px-[200px] cursor-pointer">
+      <div className="md:mt-[40px] mt-[135px] 2xl:px-[200px] cursor-pointer">
         {vision?.slice(2)?.map((item: any, index: number) => {
           return (
             <>

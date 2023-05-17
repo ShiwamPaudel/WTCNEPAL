@@ -38,7 +38,7 @@ function SamplePrevArrow(props: any) {
   );
 }
 
-function RelatedProducts() {
+function RelatedProducts({setIsLoading2}:any) {
     const router = useRouter()
   const [banner, setBanner] = useState<any>(null);
   const settings = {
@@ -111,6 +111,7 @@ function RelatedProducts() {
   console.log(product);
   const handleClick =(item:any)=>{
     router.push(`/product-single/${item.id}`)
+    setIsLoading2(true)
   console.log(item)
   }
 

@@ -350,8 +350,8 @@ if (typeof window !== "undefined") {
                           </li>
 
                           {sub === 0 && (
-                            <div className="absolute top-[0px] left-[100%]    w-[359px] h-[126px] z-40 space-y-[10px]">
-                              <div className="bg-white border-l-[0.5px] border-l-[white]  border-t-[4px] border-t-[black]   absolute top-[10px] h-[100%] w-full ">
+                            <div className="absolute top-[0px] left-[100%]    w-[91%] h-[126px] z-40 space-y-[10px]">
+                              <div className="bg-white border-l-[0.5px] w-full border-l-[white]  border-t-[4px] border-t-[black]   absolute top-[10px] h-[100%]  ">
                                 {subCategory?.map((item: any, index: any) => (
                                   <>
                                     {/* {console.log(item)} */}
@@ -366,11 +366,11 @@ if (typeof window !== "undefined") {
                                     </li>
 
                                     {sub2 === index && (
-                                      <div className="absolute  left-[100%]    w-[199px] h-[126px] z-40 space-y-[10px]">
+                                      <div className="absolute  left-[100%]    w-[35%] h-[126px] z-40 space-y-[10px]">
                                         <div className=" mt-[-60px]    absolute top-[0px] h-[100%] w-full ">
                                           {item.attributes.brand_name && (
                                             <>
-                                            <li className="text-[15px] border-b-[0.5px] capitalize border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#23a8cd] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer">
+                                            <li className="text-[15px] whitespace-pre w-full border-b-[0.5px] capitalize border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#23a8cd] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer">
                                               <Link
                                                 href={`/brand-product/${item.attributes.brand_name}`}
                                                 >
@@ -407,7 +407,7 @@ if (typeof window !== "undefined") {
                           )}
 
                           {sub === 1 && (
-                            <div className="absolute top-[0px] left-[100%]    w-[399px] h-[126px] z-40 space-y-[10px]">
+                            <div className="absolute top-[0px] left-[100%]    w-[91%] h-[126px] z-40 space-y-[10px]">
                               <div className=" border-l-[0.5px] border-l-[white]  border-t-[4px] border-t-[black]   absolute top-[10px] h-[100%] w-full ">
                                 {secondCategory?.map((item: any, index: number) => (
                                   <>
@@ -418,7 +418,7 @@ if (typeof window !== "undefined") {
                                       <Link href="/about">{item?.attributes?.title}</Link>
                                     </li>
                                     {list2 === index && (
-                                      <div className="absolute  left-[100%]    w-[199px] h-[126px] z-40 space-y-[10px]">
+                                      <div className="absolute  left-[100%]    w-[35%] h-[126px] z-40 space-y-[10px]">
                                         <div className=" mt-[-60px]    absolute top-[0px] h-[100%] w-full ">
                                           {item?.attributes?.brand_name && (
                                             <li className="text-[15px] border-b-[0.5px] capitalize border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#23a8cd] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer">
@@ -438,7 +438,7 @@ if (typeof window !== "undefined") {
                             </div>
                           )}
                           {sub===2 && (
-                            <div className="absolute top-[95px] left-[100%]    w-[399px] h-[126px] z-40 space-y-[10px]">
+                            <div className="absolute top-[95px] left-[100%]    w-[91%] h-[126px] z-40 space-y-[10px]">
                               <div
                                 onMouseEnter={handleSubmenu2}
                                 onMouseLeave={handleSubmenuHide2}
@@ -465,7 +465,7 @@ if (typeof window !== "undefined") {
                           )}
                          
                          {sub===3 && (
-                            <div className="absolute top-[100px] left-[100%]    w-[399px] h-[126px] z-40 space-y-[10px]">
+                            <div className="absolute top-[100px] left-[100%]    w-[91%] h-[126px] z-40 space-y-[10px]">
                               <div className=" border-l-[0.5px]   border-t-[4px] border-t-[black]   absolute top-[10px] h-[100%] w-full ">
                                 {fourthCategory?.map((item: any, index: number) => (
                                   <>
@@ -476,7 +476,7 @@ if (typeof window !== "undefined") {
                                       <Link href="/about">{item?.attributes?.title}</Link>
                                     </li>
                                     {list4 === index && (
-                                      <div className="absolute  left-[100%]    w-[199px] h-[126px] z-40 space-y-[10px]">
+                                      <div className="absolute  left-[100%]    w-[35%] h-[126px] z-40 space-y-[10px]">
                                         <div className=" mt-[-60px] border-t-[4px] border-t-[black]   absolute top-[0px] h-[100%] w-full ">
                                           <li className="text-[15px] border-b-[0.5px] capitalize border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#23a8cd] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer">
                                             <Link
