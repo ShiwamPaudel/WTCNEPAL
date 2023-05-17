@@ -316,7 +316,7 @@ if (typeof window !== "undefined") {
                     <li className="text-[14px]  border-b-[0.5px] border-b-[white]/[0.5]  bg-[#23a8cd] text-white py-[20px] px-[15px] hover:text-[#0000CC] transition-colors duration-300 ease-out font-semibold whitespace-pre cursor-pointer">
                       <Link href="/team">Our Team</Link>
                     </li>
-                    <li className="text-[14px]   bg-[#23a8cd] text-white py-[20px] px-[15px] hover:text-[#0000CC] transition-colors duration-300 ease-out font-semibold whitespace-pre cursor-pointer">
+                    <li className="text-[14px] hidden   bg-[#23a8cd] text-white py-[20px] px-[15px] hover:text-[#0000CC] transition-colors duration-300 ease-out font-semibold whitespace-pre cursor-pointer">
                       <Link href="">Our Network</Link>
                     </li>
                   </div>
@@ -646,7 +646,7 @@ if (typeof window !== "undefined") {
             </li>
             <li className="h-[42px] w-[128px] bg-[#23a8cd] rounded-[39px] flex items-center ml-[0px] justify-center">
               <Link
-                href=""
+                href="https://mail.zoho.com/zm/"
                 className=" text-white text-[15px] leading-[18.15px] font-semibold"
               >
                 Check Email

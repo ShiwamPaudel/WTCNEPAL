@@ -16,7 +16,8 @@ module.exports = {
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
       fontFamily:{
-        'ibm': ['IBM Plex Serif', 'serif']
+        'ibm': ['IBM Plex Serif', 'serif'],
+        'inter': ['Inter', 'sans-serif']
       }
     },
   },

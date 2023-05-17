@@ -53,7 +53,7 @@ const ProductDetail = () => {
     },
     {
       key: "4",
-      label: `video`,
+      label: <div>{product?.attributes?.Youtube_video_Link&& 'video'}</div>,
       children: <div><ReactPlayer url={product?.attributes?.Youtube_video_Link} /></div>,
     },
   ];
@@ -158,7 +158,7 @@ if(submit){
 
                     {
                       product?.attributes?.Brochure?.data?.length && 
-                    <button onClick={() => setModal2Open(true)}  className="h-[38px] p-[10px] bg-[#23a8cd] hover:bg-[#23a8cd] w-[160px] flex items-center justify-center text-white text-[16px] leading-[21.6px] rounded-[4px] ">Download Brochure</button>
+                    <button onClick={() => setModal2Open(true)}  className="h-[38px] p-[10px] bg-[#23a8cd] hover:bg-[#23a8cd] w-[180px] flex items-center justify-center text-white text-[16px] leading-[21.6px] rounded-[4px] ">Download Brochure</button>
                     }
                   </div>
                     </div>

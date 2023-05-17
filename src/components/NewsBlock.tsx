@@ -88,12 +88,12 @@ router.push((`/news/${item.id}`))
              {item?.title}
             </h2>
          <div className='h-[189px] overflow-hidden'>
-         <p className=" font-normal text-[15px] leading-[24px] text-[#505056] pt-[11px] pl-[20px] pr-[11px] md:pl-[5px] md:pr-[0px] max-w-[378px]">
+         <div className=" font-normal text-[15px] leading-[24px] font-inter text-[#505056] pt-[11px] pl-[20px] pr-[11px] md:pl-[5px] md:pr-[0px] max-w-[378px]">
               {
                 Parse(`${(item?.attributes?.description)}`)
               }
               {/* {item?.attribues?.description}.. */}
-            </p>
+            </div>
          </div>
             <div className="flex items-center justify-end pr-[11px]">
               <div className="w-[109px] h-[38px] bg-[#007EC5] hover:bg-[#007EC5]/[0.8] rounded-sm  mt-[21px] group">
