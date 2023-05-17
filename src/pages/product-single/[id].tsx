@@ -9,9 +9,9 @@ import RelatedProducts from "@/components/RelatedProducts";
 import { InfinitySpin } from "react-loader-spinner";
 import { Skeleton } from "antd";
 import { Image } from "antd";
-import Link from "next/link";
-import { Button, Modal } from 'antd';
+import {  Modal } from 'antd';
 import { useFormik } from 'formik';
+import ReactPlayer from 'react-player'
 const ProductDetail = () => {
   const router = useRouter();
   let id = router.query.id;
@@ -50,6 +50,11 @@ const ProductDetail = () => {
       key: "3",
       label: `Specifications`,
       children: <div>{Parse(`${product?.attributes?.specifications}`)}</div>,
+    },
+    {
+      key: "4",
+      label: `video`,
+      children: <div><ReactPlayer url={product?.attributes?.Youtube_video_Link} /></div>,
     },
   ];
 
