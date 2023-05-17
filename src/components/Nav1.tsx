@@ -645,11 +645,13 @@ if (typeof window !== "undefined") {
               </Link>
             </li>
             <li className="h-[42px] w-[128px] bg-[#23a8cd] rounded-[39px] flex items-center ml-[0px] justify-center">
-              <Link
-                href="https://mail.zoho.com/zm/"
-                className=" text-white text-[15px] leading-[18.15px] font-semibold"
+              <Link target="_black"
+                href="https://mail.zoho.com/zm/" 
+                className=" text-white text-[15px] leading-[18.15px] font-semibold" passHref
               >
+               
                 Check Email
+             
               </Link>
             </li>
           </ul>

@@ -27,6 +27,7 @@
     "react-player": "^2.12.0",
     "react-slick": "^0.29.0",
     "react-toastify": "^9.1.2",
+    "react-whatsapp-chat-widget": "^1.1.6",
     "slick-carousel": "^1.8.1",
     "typescript": "5.0.4",
     "use-count-up": "^3.0.1"
