@@ -7,6 +7,7 @@ import {useEffect,useState} from "react"
 import axios from 'axios'
 import { BaseUrl } from './api/global'
 
+
 export default function App({ Component, pageProps }: AppProps) {
   const [footer,setFooter]=useState<any>(null)
 
@@ -24,6 +25,7 @@ export default function App({ Component, pageProps }: AppProps) {
     console.log(footer)
   return(
     <>
+   
     <Nav1/>
   <Component {...pageProps} />
   <Fotter footer={footer}/>

@@ -22,6 +22,8 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { InfinitySpin } from "react-loader-spinner";
 import Test from "../components/Test"
+// import WhatsAppWidget from "react-whatsapp-chat-widget";
+import "react-whatsapp-chat-widget/index.css";
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -158,6 +160,34 @@ useEffect(() => {
 
 
 <>
+{/* <WhatsAppWidget
+			phoneNo="+9779851140881"
+			position="right"
+			widgetWidth="300px"
+			widgetWidthMobile="260px"
+      
+			autoOpen={true}
+			autoOpenTimer={5000}
+			messageBox={true}
+			messageBoxTxt="Hi Team, is there any related service available ?"
+			iconSize="40"
+			iconColor="white"
+			iconBgColor="tomato"
+			headerIcon="/../assets/favicon.jpg"
+			headerIconColor="pink"
+			headerTxtColor="black"
+			headerBgColor="tomato"
+			headerTitle="Web Trading"
+			headerCaption="Online"
+			bodyBgColor="#bbb"
+			chatPersonName="Support"
+			chatMessage={<>Hi there 👋 <br /><br /> How can I help you?</>}
+			footerBgColor="#999"
+			placeholder="Type a message.."
+			btnBgColor="yellow"
+			btnTxt="Start Chat"
+			btnTxtColor="black"
+		/> */}
 <ToastContainer />
         <Navbar />
       <AboutUs />
