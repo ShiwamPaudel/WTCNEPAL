@@ -5,7 +5,7 @@ import { BaseUrl } from "@/pages/api/global";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-const ContactForm = () => {
+const ContactForm = ({data}:any) => {
 
 
   const formik = useFormik({
@@ -34,15 +34,15 @@ if(submit){
       <div className="basis-[40%] flex items-center flex-col md:gap-[69px] gap-[50px]">
         <div className="flex items-center justify-center flex-col gap-[12px]">
           <h2 className="text-[#003760] text-[24px] font-bold elading-[30.12px]">Phone</h2>
-          <p className="text-[#696969] text-[15px] leading-[22.5px] font-bold text-center">+977-1234567891 <br /> 01-154245684</p>
+          <p className="text-[#696969] text-[15px] leading-[22.5px] font-bold text-center max-w-[150px]">{data?.attributes?.phone}</p>
         </div>
         <div className="flex items-center justify-center flex-col gap-[12px]">
           <h2 className="text-[#003760] text-[24px] font-bold elading-[30.12px]">Email</h2>
-          <p className="text-[#696969] text-[15px] leading-[22.5px] font-bold"> info@dmsnepal.com</p>
+          <p className="text-[#696969] text-[15px] leading-[22.5px] font-bold"> {data?.attributes?.email}</p>
         </div>
         <div className="flex items-center justify-center flex-col gap-[12px]">
           <h2 className="text-[#003760] text-[24px] font-bold elading-[30.12px]">Address</h2>
-          <p className="text-[#696969] text-[15px] leading-[22.5px] font-bold text-center"> DMS House-148, Kumari Marga, <br /> Tripureshwor, Kathmandu G.P.O. BOX: 1797</p>
+          <p className="text-[#696969] text-[15px] leading-[22.5px] font-bold text-center max-w-[320px]">{data?.attributes?.address}</p>
         </div>
       </div>
       <div className="md:basis-[60%] border-l-[1px] border-[#003760]/[0.1] md:px-[84px] px-[15px] mt-[30px] md:mt-0">

@@ -49,26 +49,41 @@ const Team = () => {
 
 
   const [testimonial,setTestimonial]=useState<any>(null)
+  const [testimonial2,setTestimonial2]=useState<any>(null)
 
 
   useEffect(()=>{
 
     let getTestimonial =async()=>{
-      let response = await axios.get(`${BaseUrl}/team-members?populate=*`)
+
+       let [teamMember,teamData]= await Promise.all([
+        axios.get(`${BaseUrl}/team-members?populate=*`),
+        axios.get(`${BaseUrl}/out-teams?populate=*`),
+
+       ])
+      // let response = await axios.get(`${BaseUrl}/team-members?populate=*`)
       // let response2 = await axios.get(`${BaseUrl}/testimonial-section?populate=*`)
-      setTestimonial(response.data.data)
+      setTestimonial(teamMember.data.data)
+      setTestimonial2(teamData.data.data)
     }
     getTestimonial()
     
     },[])
+
+    // console.log(testimonial2)
   return (
     <div className="container 2xl:max-w-[1180px] mx-auto pt-[20px] px-[15px] md:0">
-      <div className=" flex items-center justify flex-col gap-[10px]">
-        <h1 className="text-[22px] font-semibold">Meet Our Leadership Team</h1>
+      {
+        testimonial2?.map((item:any,index:number)=>(
+<div className=" flex items-center justify flex-col gap-[10px]">
+        <h1 className="text-[22px] font-semibold ">{item?.attributes?.title}</h1>
         <p className="text-[16px] leading-[24px] font-normal max-w-[1100px] text-center">
-        Our staffs with varied experience and skills are readily available to meet customers service needs in the range of the areas catered by our firm. Our team is well versed in managing complex and high value assignments. Continuous training and HR development activities keep our staffs always updated to meet and exceed customers expectation. Currently 40 well trained and highly qualified professionals are working in Web Trading Concern.
+       {item?.attributes?.description}
         </p>
       </div>
+        ))
+      }
+      
       <div className="grid md:grid-cols-4 grid-cols-1 px-[00px] mt-[80px] gap-[30px] pb-[50px]">
         {testimonial?.map((item: any, index: number) => (
           <div key={index} className="border cursor-pointer group rounded-[3px] hover:scale-[103%] transition duration-150 ease-out">
