@@ -53,7 +53,7 @@ const ProductDetail = () => {
     },
     {
       key: "4",
-      label: <div>{product?.attributes?.Youtube_video_Link&& 'video'}</div>,
+      label: <div>{product?.attributes?.Youtube_video_Link&& 'Video'}</div>,
       children: <div><ReactPlayer url={product?.attributes?.Youtube_video_Link} /></div>,
     },
   ];
