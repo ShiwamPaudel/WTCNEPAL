@@ -13,11 +13,14 @@ const SingleNews = () => {
   console.log(id);
 
   const [news, setNews] = useState<any>(null);
+  const[banner,setBanner] = useState<any>(null);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     let getNews = async () => {
       let news = await axios.get(`${BaseUrl}/news-and-events/${id}?populate=*`);
+      let response = await axios.get(`${BaseUrl}/news-banner?populate=*`)
+      setBanner(response.data.data)
       //  let list=    product.data.data.slice(0,8)
       setNews(news.data.data);
       setIsLoading(false);
@@ -28,7 +31,7 @@ const SingleNews = () => {
 
   return (
     <>
-      <AboutBanner title="News & Events" />
+      <AboutBanner testimonial={banner} />
    
 
       <div className="container px-[15px] md:px-0 flex-wrap md:flex-nowrap 2xl:max-w-[1180px] flex gap-[40px] mx-auto py-[80px] ">
