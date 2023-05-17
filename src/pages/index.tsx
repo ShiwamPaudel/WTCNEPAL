@@ -22,7 +22,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { InfinitySpin } from "react-loader-spinner";
 import Test from "../components/Test"
-import WhatsAppWidget from "react-whatsapp-chat-widget";
+// import WhatsAppWidget from "react-whatsapp-chat-widget";
 import "react-whatsapp-chat-widget/index.css";
 
 
@@ -160,7 +160,7 @@ useEffect(() => {
 
 
 <>
-<WhatsAppWidget
+{/* <WhatsAppWidget
 			phoneNo="+9779851140881"
 			position="right"
 			widgetWidth="300px"
@@ -187,7 +187,7 @@ useEffect(() => {
 			btnBgColor="yellow"
 			btnTxt="Start Chat"
 			btnTxtColor="black"
-		/>
+		/> */}
 <ToastContainer />
         <Navbar />
       <AboutUs />
