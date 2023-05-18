@@ -100,10 +100,14 @@ console.log(year)
             <h1 className="text-[92.31px] font-semibold leading-[78.46px] ">{item?.attributes?.Years_Experience}</h1>
           ))
         }
-        <p className="text-[24px] font-semibold text-center">
-          YEARS OF
-          <br /> EXPERTIES
+        {
+          year?.map((item:any,index:number)=>(
+<p className="text-[24px] font-semibold text-center max-w-[120px] mt-[4px]">
+       {item?.attributes?.text}
         </p>
+          ))
+        }
+        
       </div>
       <Slider {...settings} className=" ">
         {banner?.map((item: any, index: number) => (
