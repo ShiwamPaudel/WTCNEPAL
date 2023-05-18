@@ -87,26 +87,26 @@ getBanner()
 
 },[])
 
-console.log(year)
+console.log(year,"year")
 
 
 
   return (
     <div className="w-full relative  overflow-x-hidden">
-      <div className=" hidden absolute  md:block bottom-[6%] left-[26%] z-40 text-white ">
+      <div className=" hidden absolute  md:block bottom-[6%] 2xl:left-[26%] xl:left-[22%] z-40 text-white ">
         {
           year?.map((item:any,index:number)=>(
 
-            <h1 className="text-[92.31px] font-semibold leading-[78.46px] ">{item?.attributes?.Years_Experience}</h1>
+            <img src={item?.attributes?.image?.data?.attributes?.url} className="w-[80%] cursor-pointer" alt="" />
           ))
         }
-        {
+        {/* {
           year?.map((item:any,index:number)=>(
 <p className="text-[24px] font-semibold text-center max-w-[120px] mt-[4px]">
        {item?.attributes?.text}
         </p>
-          ))
-        }
+          )) */}
+        {/* } */}
         
       </div>
       <Slider {...settings} className=" ">
