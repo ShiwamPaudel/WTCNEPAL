@@ -20,105 +20,24 @@ import { BaseUrl } from "./api/global";
 import axios from "axios";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { InfinitySpin } from "react-loader-spinner";
-import Test from "../components/Test"
-// import WhatsAppWidget from "react-whatsapp-chat-widget";
-import "react-whatsapp-chat-widget/index.css";
+
+
 
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
-  let data = [
-    {
-      img:"/../assets/partner1.png"
-    },
-    {
-      img:"/../assets/partner2.png"
-    },
-    {
-      img:"/../assets/partner3.png"
-    },
-    {
-      img:"/../assets/partner4.png"
-    },
-    {
-      img:"/../assets/partner5.png"
-    }, 
-     {
-      img:"/../assets/partner1.png"
-    },
-    {
-      img:"/../assets/partner3.png"
-    },
-  
-  ]
-  let data2 = [
-    {
-      img:"/../assets/cus1.png"
-    },
-    {
-      img:"/../assets/cus2.png"
-    },
-    {
-      img:"/../assets/cus3.png"
-    },
-    {
-      img:"/../assets/cus4.png"
-    },
-    {
-      img:"/../assets/cus5.png"
-    }, 
-     {
-      img:"/../assets/cus6.png"
-    },
-    {
-      img:"/../assets/cus7.png"
-    },
-    {
-      img:"/../assets/cus8.png"
-    }, 
-     {
-      img:"/../assets/cus9.png"
-    },
-    {
-      img:"/../assets/cus10.png"
-    },
-    {
-      img:"/../assets/cus7.png"
-    },
-  
-  ]
-
-  // const [isLoading, setIsLoading] = useState(true);
-  // const [partner,setPartner]=useState<any>(null)
-  // const [customer,setCustomer]=useState<any>(null)
-  // const [slide1,setSlide1]=useState<any>(null)
-  // const [faq,setFaq]=useState<any>(null)
 
 
-  // useEffect(()=>{
 
-  //   let getPartner =async()=>{
-  //     let slide1 = await axios.get(`${BaseUrl}/slider1s?populate=*`)
-  //     setSlide1(slide1.data.data)
-  //     let response = await axios.get(`${BaseUrl}/our-partners?populate=*`)
-  //     setPartner(response.data.data)
-  //     let partner1 = await axios.get(`${BaseUrl}/customers?populate=*`)
-  //     setCustomer(partner1.data.data)
-  //     let faq = await axios.get(`${BaseUrl}/faqs?populate=*`)
-  //     setFaq(faq.data.data)
-      
-  //   }
-  //   getPartner()
-    
-  //   },[])
+
   const [isLoading, setIsLoading] = useState(true);
 const [partner, setPartner] = useState<any>(null);
 const [customer, setCustomer] = useState<any>(null);
 const [slide1, setSlide1] = useState<any>(null);
 const [slide2, setSlide2] = useState<any>(null);
 const [faq, setFaq] = useState<any>(null);
+
 
 useEffect(() => {
   const fetchData = async () => {
@@ -129,6 +48,7 @@ useEffect(() => {
         axios.get(`${BaseUrl}/customers?populate=*`),
         axios.get(`${BaseUrl}/faqs?populate=*`),
         axios.get(`${BaseUrl}/slider2s?populate=*`),
+     
       ]);
 
       setSlide1(slide1Res.data.data);
@@ -136,6 +56,7 @@ useEffect(() => {
       setCustomer(customerRes.data.data);
       setFaq(faqRes.data.data);
       setSlide2(slideRes2.data.data)
+      // setPopupbanner(popupBanner.data.data);
       
     } catch (error) {
       console.error(error);
@@ -147,7 +68,7 @@ useEffect(() => {
   fetchData();
 }, []);
 
-    console.log(slide2)
+    // console.log(popupbanner)
 
     
   return (
@@ -171,34 +92,8 @@ useEffect(() => {
 
 
 <>
-{/* <WhatsAppWidget
-			phoneNo="+9779851140881"
-			position="right"
-			widgetWidth="300px"
-			widgetWidthMobile="260px"
-      
-			autoOpen={true}
-			autoOpenTimer={5000}
-			messageBox={true}
-			messageBoxTxt="Hi Team, is there any related service available ?"
-			iconSize="40"
-			iconColor="white"
-			iconBgColor="tomato"
-			headerIcon="/../assets/favicon.jpg"
-			headerIconColor="pink"
-			headerTxtColor="black"
-			headerBgColor="tomato"
-			headerTitle="Web Trading"
-			headerCaption="Online"
-			bodyBgColor="#bbb"
-			chatPersonName="Support"
-			chatMessage={<>Hi there 👋 <br /><br /> How can I help you?</>}
-			footerBgColor="#999"
-			placeholder="Type a message.."
-			btnBgColor="yellow"
-			btnTxt="Start Chat"
-			btnTxtColor="black"
-		/> */}
+
+
         <a
         href="https://wa.me/+9779851140881"
         className="whatsapp_float"

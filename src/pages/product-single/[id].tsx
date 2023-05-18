@@ -12,6 +12,7 @@ import { Image } from "antd";
 import {  Modal } from 'antd';
 import { useFormik } from 'formik';
 import ReactPlayer from 'react-player'
+import { Breadcrumb } from 'antd';
 const ProductDetail = () => {
   const router = useRouter();
   let id = router.query.id;
@@ -126,6 +127,25 @@ if(submit){
      </form>
       </Modal>
           <div className="container mx-auto 2xl:max-w-[1180px] pt-[30px] pb-[80px] px-[15px] md:px-0">
+            <div className="pb-[15px]">
+              {
+                 product?.attributes?.select_product_category &&
+                 <Breadcrumb
+                 items={[
+                
+                   {
+                     title: <a href="">{product?.attributes?.select_product_category}</a>,
+                   },
+                   {
+                     title: <a href="" >{product?.attributes?.choose_product_sub_category}</a>,
+                   },
+                
+                 ]}
+               />
+              }
+          
+            </div>
+          
             <div className="border-b-[1px] pb-[15px] mb-[15px]">
               <h1 className="text-[40px] font-thin leading-[48px] text-[#212529]">
                 {product?.attributes?.title}

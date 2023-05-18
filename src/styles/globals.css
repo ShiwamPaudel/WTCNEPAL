@@ -364,3 +364,14 @@ font-size: 12px;
   
 
 }
+
+.pop.ant-modal .ant-modal-content {
+    padding: 0px !important;
+}
+.pop.ant-modal .ant-modal-close-x{
+    color: white !important;
+    position: absolute !important;
+    right: 0px !important;
+    top:0px !important;
+}
+/* :where(.css-dev-only-do-not-override-yp8pcc).ant-modal .ant-modal-content */
