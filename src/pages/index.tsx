@@ -155,7 +155,7 @@ useEffect(() => {
       <Head>
 
         <title>WEB TRADING CONCERN PVT.LTD</title>
-        <link rel="icon" href="/../assets/favicon.jpg" />
+        <link rel="icon" href="/../assets/wtc.svg" />
         <link
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"

@@ -30,7 +30,7 @@ const index = () => {
     <>
     <Head>
       <title>ABOUT WEB TRADING</title>
-      <link rel="icon" href="/../assets/favicon.jpg" />
+      <link rel="icon" href="/../assets/wtc.svg" />
       <link
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
