@@ -42,23 +42,29 @@ function Nav1() {
   let subCategory = categories?.filter(
     (item: any, index: number) =>
       item.attributes.salect_category === "sub" &&
-      item.attributes.position === "first"
+      item.attributes.position === "Diagnostic Equipments/ Reagent Kits"
   );
+
+  console.log(subCategory)
 
   subCategory?.sort((a:any, b:any) => a.attributes.title.localeCompare(b.attributes.title));
 
   let secondCategory= categories?.filter(( (item: any, index: number) =>
   item.attributes.salect_category === "sub" &&
-  item.attributes.position === "second "))
+  item.attributes.position === "Disinfectant And House Keeping"))
+
+  console.log(secondCategory)
 
 
   let thirdCategory= categories?.filter(( (item: any, index: number) =>
   item.attributes.salect_category === "sub" &&
-  item.attributes.position === "third "))
+  item.attributes.position === "Dermatology (Skin Care & Beauty) Products"))
+  console.log(thirdCategory)
+
 
   let fourthCategory= categories?.filter(( (item: any, index: number) =>
   item.attributes.salect_category === "sub" &&
-  item.attributes.position === "fourth"))
+  item.attributes.position === "Medical And Critical Care Devices"))
   console.log(fourthCategory,"filtering sub category")
 
   const handleDropDown = () => {
