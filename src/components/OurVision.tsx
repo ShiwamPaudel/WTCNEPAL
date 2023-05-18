@@ -22,12 +22,12 @@ const OurVision = () => {
 
   return (
     <div className="container mx-auto  py-[80px] px-[15px] md:px-0">
-      <div className="flex md:flex-row flex-col items-center justify-center md:gap-[40px] gap-[20px] h-[290px] 2xl:px-[200px]">
-        {vision?.slice(0,2).map((item: any, index: any) => (
+      <div className="grid md:grid-cols-2 grid-cols-1 md:gap-[40px] gap-[20px]  2xl:px-[200px]">
+        {vision?.map((item: any, index: any) => (
           <>
             {
          
-              <div className="border hover:scale-[103%] transition duration-300 ease-out cursor-pointer shadow-lg bg-[#23a8cd] hover:bg-[#0000CC] text-white rounded-[3px] flex-1 md:px-[80px] px-[15px] h-[100%] flex items-center justify-start flex-col gap-[15px] py-[20px]">
+              <div className="border hover:scale-[103%] transition duration-300 ease-out cursor-pointer shadow-lg bg-[#23a8cd] hover:bg-[#0000CC] text-white rounded-[3px] flex-1 md:px-[25px] px-[15px] h-[100%] flex items-center justify-start flex-col gap-[15px] py-[20px] rounded-tl-[50px] rounded-br-[50px]">
                 <div className="bg-white rounded-[10px] p-[5px]">
                  <img src={item?.attributes?.image?.data?.attributes?.url} alt="" className="h-[80px] w-[80px]" />
 
@@ -37,14 +37,17 @@ const OurVision = () => {
                 </h1>
 
                 <div className="w-full flex items-center justify-center text-center text-white">
+                
+
                   {Parse(`${item?.attributes?.description}`)}
+              
                 </div>
               </div>
             }
           </>
         ))}
       </div>
-      <div className="md:mt-[40px] mt-[135px] 2xl:px-[200px] cursor-pointer">
+      <div className="md:mt-[40px] mt-[135px] hidden 2xl:px-[200px] cursor-pointer">
         {vision?.slice(2)?.map((item: any, index: number) => {
           return (
             <>
