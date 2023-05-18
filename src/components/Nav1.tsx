@@ -42,7 +42,7 @@ function Nav1() {
   let subCategory = categories?.filter(
     (item: any, index: number) =>
       item.attributes.salect_category === "sub" &&
-      item.attributes.position === "Medical And Critical Care Devices"
+      item.attributes.position === "Diagnostic Equipments/ Reagent Kits"
   );
 
   console.log(subCategory)
