@@ -93,7 +93,7 @@ console.log(year,"year")
 
   return (
     <div className="w-full relative  overflow-x-hidden">
-      <div className=" hidden absolute  md:block bottom-[6%] 2xl:left-[26%] xl:left-[22%] z-40 text-white ">
+      <div className=" hidden absolute  md:block bottom-[6%] 2xl:left-[19%] xl:left-[3%] z-40 text-white ">
         {
           year?.map((item:any,index:number)=>(
 
@@ -114,7 +114,7 @@ console.log(year,"year")
           <div key={index} className=" h-[300px] xl:h-[92vh] relative ">
             <div className="h-[100%] w-full absolute top-0 left-0 cover"></div>
             <img src={`${item?.attributes?.image?.data?.attributes?.url}`} className="w-full h-[100%] object-cover " alt="" />
-            <div className=" md:flex items-center gap-[92px] text-white 2xl:pl-[440px] xl:pl-[490px] absolute left-[50%] transform translate-x-[-50%] bottom-[10%]">
+            <div className=" md:flex items-center gap-[92px] text-white 2xl:pl-[180px] xl:pl-[80px] absolute left-[50%] transform translate-x-[-50%] bottom-[10%]">
               <div className="w-full">
                 <p className="md:text-[32px] text-[20px] leading-[37px] text-start font-semibold  md:w-[815px] w-[310px]">
                   {item?.attributes?.description}
