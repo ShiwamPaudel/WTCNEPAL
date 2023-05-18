@@ -30,7 +30,7 @@ export default function App({ Component, pageProps }: AppProps) {
     getFooter()
     
     },[])
-    console.log(popupbanner)
+    console.log(footer)
 
 
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -80,7 +80,7 @@ export default function App({ Component, pageProps }: AppProps) {
     <Nav1/>
   <Component {...pageProps} />
   <Fotter footer={footer}/>
-  <BootomFooter/>
+  <BootomFooter data={footer}/>
     </>
   ) 
 }
