@@ -342,7 +342,7 @@ element.style {
     padding-left: 9px;
 
   } */
-.css-specific ul li::after {
+/* p span::after {
     content: '➡️';
     position: absolute;
     left: 0px;
@@ -353,7 +353,7 @@ font-size: 12px;
     
 
 
-  }
+  } */
 
   .css-specific ul{
 

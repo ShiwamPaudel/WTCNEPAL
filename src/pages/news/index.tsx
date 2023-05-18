@@ -27,7 +27,7 @@ const index = () => {
         <title>
           NEWS & EVENTS
         </title>
-        <link rel="icon" href="/../assets/favicon.jpg" />
+        <link rel="icon" href="/../assets/wtc.svg" />
       </Head>
       <AboutBanner testimonial={testimonial} />
       <NewsBlock />
