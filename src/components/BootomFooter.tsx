@@ -9,11 +9,26 @@ const BootomFooter = ({data}:any) => {
         {
           data?.map((item:any,index:number) =>(
             <div className="flex items-center gap-[31px]">
+              {
+                item?.attributes?.Youtube_Url  && 
               <Link href={`${item?.attributes?.Youtube_Url}`} target="_blank"><img src="/../assets/youtube.png" alt=""  className="cursor-pointer"/></Link>
+              }
+              {
+                item?.attributes?.Twitter_url && 
               <Link href={`${item?.attributes?.Twitter_url}`} target="_blank"> <img src="/../assets/twitter.png" alt="" className="cursor-pointer" /></Link>
+              }
+              {
+                item?.attributes?.Tiktok_Url && 
               <Link href={`${item?.attributes?.Tiktok_Url}`} target="_blank"> <img src="/../assets/tiktok.png" alt=""  className="cursor-pointer"/></Link>
+              }
+              {
+                item?.attributes?.Facebook_Url && 
               <Link href={`${item?.attributes?.Facebook_Url}`} target="_blank">  <img src="/../assets/facebook.png" alt=""  className="cursor-pointer"/></Link>
+              }
+              {
+                item?.attributes?.Instagram_Url && 
               <Link href={`${item?.attributes?.Instagram_Url}`} target="_blank"><img src="/../assets/instagram.png" alt=""  className="cursor-pointer"/> </Link>
+              }
             
         </div>
           ))
