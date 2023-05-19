@@ -342,7 +342,7 @@ if (typeof window !== "undefined") {
               </Link>
 
               {product && (
-                <div className="absolute top-[18px] left-0    w-[359px] h-[126px] z-40 space-y-[10px]">
+                <div className="absolute top-[18px] left-0    w-[250px] h-[126px] z-40 space-y-[10px]">
                   <div className="bg-white  border-t-[4px] border-t-[black]   absolute top-[27px] h-[100%] w-full ">
                     <>
                       {mainCategory?.map((item: any, index: any) => (
@@ -350,7 +350,7 @@ if (typeof window !== "undefined") {
                           <li
                            
                             onMouseEnter={() => handleSubmenu(index)}
-                            className="text-[15px] relative border-b-[0.5px] capitalize border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#23a8cd] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer"
+                            className="text-[14px] relative border-b-[0.5px] capitalize border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#23a8cd] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer"
                           >
                             <Link href="/about">{item?.attributes?.title}</Link>
                           </li>
@@ -372,7 +372,7 @@ if (typeof window !== "undefined") {
                                     </li>
 
                                     {sub2 === index && (
-                                      <div className="absolute  left-[100%]    w-[35%] h-[126px] z-40 space-y-[10px]">
+                                      <div className="absolute  left-[100%]    w-[54%] h-[126px] z-40 space-y-[10px]">
                                         <div className=" mt-[-60px]    absolute top-[0px] h-[100%] w-full ">
                                           {item.attributes.brand_name && (
                                             <>
