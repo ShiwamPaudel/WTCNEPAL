@@ -39,34 +39,88 @@ const [slide2, setSlide2] = useState<any>(null);
 const [faq, setFaq] = useState<any>(null);
 
 
-useEffect(() => {
-  const fetchData = async () => {
-    try {
-      const [slide1Res, partnerRes, customerRes, faqRes,slideRes2] = await Promise.all([
-        axios.get(`${BaseUrl}/slider1s?populate=*`),
-        axios.get(`${BaseUrl}/our-partners?populate=*`),
-        axios.get(`${BaseUrl}/customers?populate=*`),
-        axios.get(`${BaseUrl}/faqs?populate=*`),
-        axios.get(`${BaseUrl}/slider2s?populate=*`),
+// useEffect(() => {
+//   const fetchData = async () => {
+//     try {
+//       const [slide1Res, partnerRes, customerRes, faqRes,slideRes2] = await Promise.all([
+//         axios.get(`${BaseUrl}/slider1s?populate=*`),
+//         axios.get(`${BaseUrl}/our-partners?populate=*`),
+//         axios.get(`${BaseUrl}/customers?populate=*`),
+//         axios.get(`${BaseUrl}/faqs?populate=*`),
+//         axios.get(`${BaseUrl}/slider2s?populate=*`),
      
-      ]);
+//       ]);
 
-      setSlide1(slide1Res.data.data);
-      setPartner(partnerRes.data.data);
-      setCustomer(customerRes.data.data);
-      setFaq(faqRes.data.data);
-      setSlide2(slideRes2.data.data)
-      // setPopupbanner(popupBanner.data.data);
+//       setSlide1(slide1Res.data.data);
+//       setPartner(partnerRes.data.data);
+//       setCustomer(customerRes.data.data);
+//       setFaq(faqRes.data.data);
+//       setSlide2(slideRes2.data.data)
+//       // setPopupbanner(popupBanner.data.data);
       
-    } catch (error) {
-      console.error(error);
-    } finally {
-      setIsLoading(false);
-    }
-  };
+//     } catch (error) {
+//       console.error(error);
+//     } finally {
+//       setIsLoading(false);
+//     }
+//   };
 
-  fetchData();
+//   fetchData();
+// }, []);
+const cacheKey = 'cachedData';
+
+const fetchData = async () => {
+  try {
+    const [slide1Res, partnerRes, customerRes, faqRes, slideRes2] = await Promise.all([
+      axios.get(`${BaseUrl}/slider1s?populate=*`),
+      axios.get(`${BaseUrl}/our-partners?populate=*`),
+      axios.get(`${BaseUrl}/customers?populate=*`),
+      axios.get(`${BaseUrl}/faqs?populate=*`),
+      axios.get(`${BaseUrl}/slider2s?populate=*`),
+    ]);
+
+    const data = {
+      slide1: slide1Res.data.data,
+      partner: partnerRes.data.data,
+      customer: customerRes.data.data,
+      faq: faqRes.data.data,
+      slide2: slideRes2.data.data,
+    };
+
+    localStorage.setItem(cacheKey, JSON.stringify(data));
+
+    // Update state with fetched data
+    setSlide1(data.slide1);
+    setPartner(data.partner);
+    setCustomer(data.customer);
+    setFaq(data.faq);
+    setSlide2(data.slide2);
+  } catch (error) {
+    console.error(error);
+  } finally {
+    setIsLoading(false);
+  }
+};
+
+const loadDataFromCache = () => {
+  const cachedData = localStorage.getItem(cacheKey);
+
+  if (cachedData) {
+    const data = JSON.parse(cachedData);
+    setSlide1(data.slide1);
+    setPartner(data.partner);
+    setCustomer(data.customer);
+    setFaq(data.faq);
+    setSlide2(data.slide2);
+  } else {
+    fetchData();
+  }
+};
+
+useEffect(() => {
+  loadDataFromCache();
 }, []);
+
 
     // console.log(popupbanner)
 
