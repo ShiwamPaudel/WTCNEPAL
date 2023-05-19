@@ -30,7 +30,7 @@ export default function App({ Component, pageProps }: AppProps) {
     getFooter()
     
     },[])
-    // console.log(popup)
+    console.log(footer)
 
 
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -64,19 +64,23 @@ export default function App({ Component, pageProps }: AppProps) {
    <Modal className='pop' title="" width={800} open={isModalOpen} onOk={handleOk} onCancel={handleCancel} footer={false}>
   {
     popupbanner?.map((item:any,index:number) =>(
+      <>
+     { item?.attributes?.image?.data?.attributes?.mime==="video/mp4"?
+     <video autoPlay loop muted>
+     <source src={item?.attributes?.image?.data?.attributes?.url} type="video/mp4" />
+   </video> :<img src={item?.attributes?.image?.data?.attributes?.url} alt=""  className="w-full h-[100%] object-contain" />
+    }
       
-      <video autoPlay loop muted>
-      <source src={item?.attributes?.image?.data?.attributes?.url} type="video/mp4" />
-    </video>
-    // <img src={item?.attributes?.image?.data?.attributes?.previewUrl} alt=""  className="w-full h-[100%] object-contain" />
-      // <video autoPlay={true}  src={item?.attributes?.image?.data?.attributes?.url} className="w-full h-[100%] object-contain"  />
+     
+       {/* <video autoPlay={true}  src={item?.attributes?.image?.data?.attributes?.url} className="w-full h-[100%] object-contain"  /> */}
+      </>
     ))
   }
       </Modal>
     <Nav1/>
   <Component {...pageProps} />
   <Fotter footer={footer}/>
-  <BootomFooter/>
+  <BootomFooter data={footer}/>
     </>
   ) 
 }
