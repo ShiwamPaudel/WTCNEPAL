@@ -32,7 +32,7 @@ const index = () => {
     {
       testimonial?
       testimonial?.map((item:any,index:number) =>(
-        <div key={index} className="max-w-[1180px] mx-auto flex py-[50px] gap-[50px]">
+        <div key={index} className="max-w-[1180px] mx-auto md:flex-row flex-col flex py-[50px] gap-[50px] px-[15px] md:px-0">
         <div className="basis-[40%]">
           <div className="h-[420px] w-full ">
             <img src={item?.attributes?.image?.data?.attributes?.url} alt="" className="object-contain h-[100%] w-full cursor-pointer" />
