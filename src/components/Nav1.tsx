@@ -272,13 +272,13 @@ if (typeof window !== "undefined") {
               />
             </Link>
           </div>
-          <Dramenu />
+          <Dramenu categories={categories}/>
         </div>
       </div>
 
 <div className={`${fix ? 'nav' : ""}`}>
 <div className="container  2xl:max-w-[1180px] mx-auto justify-between font-semibold items-center hidden py-[10px] lg:flex lg:flex-row">
-        <div className="w-[115px] h-[63px] ">
+        <div className="w-[137px] h-auto ">
           <Link href="/">
             {" "}
             <img

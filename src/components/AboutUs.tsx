@@ -72,9 +72,9 @@ if(submit){
         onCancel={() => setModal2Open(false)}
       >
      <form onSubmit={formik.handleSubmit} className="space-y-[15px] ">
-      <input name="name" onChange={formik.handleChange} value={formik.values.name} type="text" placeholder="Enter your Name" required className="border h-[35px] pl-[15px] w-full" />
-      <input name="email" onChange={formik.handleChange} value={formik.values.email} type="email" placeholder="Enter your Email" required className="border h-[35px] pl-[15px] w-full" />
-      <input name="mobile" onChange={formik.handleChange} value={formik.values.mobile} type="text" placeholder="Enter your cell number" required className="border h-[35px] pl-[15px] w-full" />
+      <input name="name" onChange={formik.handleChange} value={formik.values.name} type="text" placeholder="Enter your Name*" required className="border h-[35px] pl-[15px] w-full" />
+      <input name="email" onChange={formik.handleChange} value={formik.values.email} type="email" placeholder="Enter your Email*" required className="border h-[35px] pl-[15px] w-full" />
+      <input name="mobile" onChange={formik.handleChange} value={formik.values.mobile} type="text" placeholder="Enter your cell number*" required className="border h-[35px] pl-[15px] w-full" />
       <input name="company_name" onChange={formik.handleChange} value={formik.values.company_name} type="text" placeholder="Enter your company name"  className="border h-[35px] pl-[15px] w-full" />
       <textarea name="message" onChange={formik.handleChange} value={formik.values.message}  placeholder="Enter your message"  className="border h-[75px] pl-[15px] pt-[10px] w-full" />
 
@@ -135,7 +135,7 @@ if(submit){
             <div className="flex items-center justify-center">
 
               {/* <img src="/../assets/brochure.png" alt="" className="cursor-pointer w-[70%]"  onClick={() => setModal2Open(true)}/> */}
-              <button onClick={() => setModal2Open(true)}  className="h-[50px] p-[10px] bg-[#23a8cd] hover:bg-[#23a8cd] w-[190px] flex items-center justify-center text-white text-[16px] leading-[21.6px] rounded-[4px] ">Download Brochure</button>
+              <button onClick={() => setModal2Open(true)}  className="h-[50px] p-[10px] bg-[#23a8cd] hover:bg-[#23a8cd] w-[190px] flex items-center justify-center text-white text-[16px] leading-[21.6px] rounded-[4px] ">Download Profile</button>
 
               
             </div>
