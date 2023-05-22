@@ -636,7 +636,7 @@ if (typeof window !== "undefined") {
 
             <li>
               <Link
-                href=""
+                href="/careers"
                 className="font-semibold hover:text-[#23a8cd] transition-colors duration-300 ease-out"
               >
                 Careers
