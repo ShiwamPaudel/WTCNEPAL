@@ -52,13 +52,6 @@ if(submit){
 }
 
 
-// const notify = () =>
-// if(status==="200"){
-//   console.log("hello this code runs")
-//   alert("success")
-
-// } 
-
 }
 
   return (

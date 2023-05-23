@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios';
 import { Button, Modal } from 'antd';
 import { BaseUrl } from '@/pages/api/global';
+import { useRouter } from 'next/router';
+// import { Router } from 'next/router';
 
 type Props = {}
 
@@ -9,6 +11,7 @@ type Props = {}
 
 const JobListing = (props: Props) => {
     const [job,setJob]=useState<any>(null)
+    const router = useRouter()
 
 
     useEffect(()=>{
@@ -23,6 +26,12 @@ const JobListing = (props: Props) => {
       },[])
 
     console.log(job, "jobs");
+
+    const handleClick =(item:any)=>{
+// router.push(``)
+router.push(`/careers/${item.id}`)
+console.log(item.id)
+    }
     return (
         <div className='  pt-[60px] pb-[72px]' id='job'>
 
@@ -54,7 +63,7 @@ const JobListing = (props: Props) => {
                         job?.map((item: any, index: any) =>
 
                         (
-                            <div className='bg-white  border shadow-md border-[#EFEFEF] py-[20px] px-[27px] cursor-pointer hover:shadow-lg transform hover:scale-[102%] transition-all duration-300 ease-out rounded-[4px]' key={index} >
+                            <div onClick={()=>handleClick(item)} className='bg-white  border shadow-md border-[#EFEFEF] py-[20px] px-[27px] cursor-pointer hover:shadow-lg transform hover:scale-[102%] transition-all duration-300 ease-out rounded-[4px]' key={index} >
                                 {/* <h1 className='text-[#16243D] text-[19px] leading-[30.4px] font-medium tracking-[0.02em] mt-[10px]'>{item?.attributes.Title}</h1> */}
                                 {/* <div className='grid grid-cols-2 gap-[10px] my-[10px]'>
                                     <div className='border p-[5px]'>
@@ -89,7 +98,7 @@ const JobListing = (props: Props) => {
                                         <img src="/../assets/avtar.jpeg" alt="avatar" className='w-full' />
                                     </div>
                                     <div className='basis-[80%]'>
-                                <p className='text-[12px] leading-[17px] font-normal text-[#333]'>Apply Before 27 May 2023</p>
+                                <p className='text-[12px] leading-[17px] font-normal text-[#333]'>Apply Before {item.attributes.Deadline}</p>
                                 <h1 className='text-[16px] leading-[18px] text-[#23A8CD] mt-[8px] mb-[4px]'>{item.attributes.Title}</h1>
                                 <p className='text-[14px] leading-[20px] font-normal text-[#333]'>D.Shahi & Associates</p>
                                     </div>
@@ -115,7 +124,7 @@ const JobListing = (props: Props) => {
 
 
                 </div>
-                <div className='flex items-center justify-center'>
+                <div className='flex items-center justify-center hidden'>
 
                     <button className='bg-[#1295EF] h-[64px] w-[233px] flex items-center justify-center text-white text-[16px] leading-[21.86px] font-semibold' >Load More Listings</button>
                 </div>
