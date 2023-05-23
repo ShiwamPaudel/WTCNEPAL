@@ -204,54 +204,73 @@ const SingleJob = () => {
         </div>
         <div>
           <div className="pt-[10px]">
-            <h2>
-              Company Name:{" "}
-              <span className="font-semibold">
-                {product?.attributes?.company_name
-                  ? product?.attributes?.company_name
-                  : "Null"}
-              </span>
-            </h2>
-            <h2>
-              No of Vacancy:{" "}
-              <span className="font-semibold">
-                {product?.attributes?.No_of_Vacancy
-                  ? product?.attributes?.No_of_Vacancy
-                  : "Null"}
-              </span>
-            </h2>
-            <h2>
-              Education Level:{" "}
-              <span className="font-semibold">
-                {product?.attributes?.education_level
-                  ? product?.attributes?.education_level
-                  : "Null"}
-              </span>
-            </h2>
-            <h2>
-              Job Location:{" "}
-              <span className="font-semibold">
-                {product?.attributes?.address
-                  ? product?.attributes?.address
-                  : "Null"}
-              </span>
-            </h2>
-            <h2>
-              Deadline:{" "}
-              <span className="font-semibold">
-                {product?.attributes?.Deadline
-                  ? product?.attributes?.Deadline
-                  : "Null"}
-              </span>
-            </h2>
-            <h2>
-              Professional Skill Required :{" "}
-              <span className="font-semibold">
-                {product?.attributes?.Professional_Skill_Required
-                  ? product?.attributes?.Professional_Skill_Required
-                  : "Null"}
-              </span>
-            </h2>
+            { product?.attributes?.company_name &&
+                          <h2>
+                          Company Name:{" "}
+                          <span className="font-semibold">
+                            {product?.attributes?.company_name
+                              ? product?.attributes?.company_name
+                              : "Null"}
+                          </span>
+                        </h2>
+            }
+
+{
+  product?.attributes?.No_of_Vacancy &&  <h2>
+  No of Vacancy:{" "}
+  <span className="font-semibold">
+    {product?.attributes?.No_of_Vacancy
+      ? product?.attributes?.No_of_Vacancy
+      : "Null"}
+  </span>
+</h2>
+}
+
+          {
+            product?.attributes?.education_level &&  <h2>
+            Education Level:{" "}
+            <span className="font-semibold">
+              {product?.attributes?.education_level
+                ? product?.attributes?.education_level
+                : "Null"}
+            </span>
+          </h2>
+          }  
+           
+           {
+            product?.attributes?.address &&   <h2>
+            Job Location:{" "}
+            <span className="font-semibold">
+              {product?.attributes?.address
+                ? product?.attributes?.address
+                : "Null"}
+            </span>
+          </h2>
+           }
+           
+           {
+            product?.attributes?.Deadline &&   <h2>
+            Deadline:{" "}
+            <span className="font-semibold">
+              {product?.attributes?.Deadline
+                ? product?.attributes?.Deadline
+                : "Null"}
+            </span>
+          </h2>
+           }
+           
+           {
+            product?.attributes?.Professional_Skill_Required && <h2>
+            Professional Skill Required :{" "}
+            <span className="font-semibold">
+              {product?.attributes?.Professional_Skill_Required
+                ? product?.attributes?.Professional_Skill_Required
+                : "Null"}
+            </span>
+          </h2>
+           }
+
+           { product?.attributes?.Employment_Type &&
             <h2>
               Employment Type :{" "}
               <span className="font-semibold">
@@ -260,6 +279,9 @@ const SingleJob = () => {
                   : "Null"}
               </span>
             </h2>
+           }
+           
+            
           </div>
         </div>
       </div>

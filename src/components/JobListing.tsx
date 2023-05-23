@@ -98,9 +98,9 @@ console.log(item.id)
                                         <img src="/../assets/avtar.jpeg" alt="avatar" className='w-full' />
                                     </div>
                                     <div className='basis-[80%]'>
-                                <p className='text-[12px] leading-[17px] font-normal text-[#333]'>Apply Before {item.attributes.Deadline}</p>
-                                <h1 className='text-[16px] leading-[18px] text-[#23A8CD] mt-[8px] mb-[4px]'>{item.attributes.Title}</h1>
-                                <p className='text-[14px] leading-[20px] font-normal text-[#333]'>D.Shahi & Associates</p>
+                                <p className='text-[12px] leading-[17px] font-normal text-[#333]'>Apply Before {item?.attributes?.Deadline}</p>
+                                <h1 className='text-[16px] leading-[18px] text-[#23A8CD] mt-[8px] mb-[4px]'>{item?.attributes?.Title}</h1>
+                                <p className='text-[14px] leading-[20px] font-normal text-[#333]'>{item?.attributes?.Posted_By}</p>
                                     </div>
 
                                 </div>
