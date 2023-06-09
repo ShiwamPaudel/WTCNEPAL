@@ -97,8 +97,8 @@ router.push((`/news/${item.id}`))
          </div>
             <div className="flex items-center justify-end pr-[11px]">
               <div className="w-[109px] h-[38px] bg-[#007EC5] hover:bg-[#007EC5]/[0.8] rounded-sm  mt-[15px] group">
-                <a
-                  href=""
+                <p
+                  // href="#"
                   className="font-IBM font-normal text-sm leading-[18px] text-[#FBFCFC] py-[10px] pl-[13px] flex flex-row"
                 >
                   Read More{" "}
@@ -107,7 +107,7 @@ router.push((`/news/${item.id}`))
                     alt="avatar"
                     className="w-[5px] h-[10px] ml-[10px] mt-[5px] group-hover:translate-x-[5px] transition duration-200 ease-out"
                   />
-                </a>
+                </p>
               </div>
             </div>
           </div>
