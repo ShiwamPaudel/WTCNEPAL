@@ -72,11 +72,11 @@ const cacheKey = 'cachedData';
 const fetchData = async () => {
   try {
     const [slide1Res, partnerRes, customerRes, faqRes, slideRes2] = await Promise.all([
-      axios.get(`${BaseUrl}/slider1s?populate=*`),
-      axios.get(`${BaseUrl}/our-partners?populate=*`),
-      axios.get(`${BaseUrl}/customers?populate=*`),
-      axios.get(`${BaseUrl}/faqs?populate=*`),
-      axios.get(`${BaseUrl}/slider2s?populate=*`),
+      axios.get(`${BaseUrl}/slider1s?populate=*&?sort=rank:asc`),
+      axios.get(`${BaseUrl}/our-partners?populate=*&?sort=rank:asc`),
+      axios.get(`${BaseUrl}/customers?populate=*&?sort=rank:asc`),
+      axios.get(`${BaseUrl}/faqs?populate=*&?sort=rank:asc`),
+      axios.get(`${BaseUrl}/slider2s?populate=*&?sort=rank:asc`),
     ]);
 
     const data = {

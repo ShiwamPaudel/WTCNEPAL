@@ -17,7 +17,7 @@ const JobListing = (props: Props) => {
     useEffect(()=>{
   
       let getJobs =async()=>{
-        let response = await axios.get(`${BaseUrl}/gsfgs?populate=*`)
+        let response = await axios.get(`${BaseUrl}/gsfgs?populate=*&?sort=rank:asc`)
         // let response2 = await axios.get(`${BaseUrl}/testimonial-section?populate=*`)
         setJob(response.data.data)
       }
