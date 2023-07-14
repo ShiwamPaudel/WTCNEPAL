@@ -57,8 +57,8 @@ const Team = () => {
     let getTestimonial =async()=>{
 
        let [teamMember,teamData]= await Promise.all([
-        axios.get(`${BaseUrl}/team-members?populate=*`),
-        axios.get(`${BaseUrl}/out-teams?populate=*`),
+        axios.get(`${BaseUrl}/team-members?populate=*&?sort=rank:asc`),
+        axios.get(`${BaseUrl}/out-teams?populate=*&?sort=rank:asc`),
 
        ])
       // let response = await axios.get(`${BaseUrl}/team-members?populate=*`)

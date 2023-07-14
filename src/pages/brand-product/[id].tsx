@@ -35,7 +35,7 @@ console.log(product)
 
 
 
-   let filteredBrans =   product?.filter((item:any,index:number) =>item.attributes.brand===query) 
+   let filteredBrans =   product?.filter((item:any,index:number) =>item?.attributes?.brand_name?.data?.attributes?.title===query) 
       console.log(filteredBrans)
 
 const handleClick =(item:any)=>{
@@ -63,7 +63,7 @@ console.log(item)
 
                 <img src={item?.attributes.image.data.attributes.url} alt="" className="cursor-pointer hover:scale-[105%] transition duration-300 ease-out h-[100%] w-[80%] object-contain"/>
             </div>
-                <h2 className=" text-[#003760] text-[16px] leading-[20.08px] font-semibold">{item?.attributes?.title}</h2>
+                <h2 className=" text-[#003760] text-[16px] text-center leading-[20.08px] font-semibold">{item?.attributes?.title}</h2>
              
             </div>
         ))

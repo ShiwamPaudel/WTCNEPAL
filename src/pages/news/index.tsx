@@ -13,7 +13,7 @@ const index = () => {
   useEffect(()=>{
 
     let getTestimonial =async()=>{
-      let response = await axios.get(`${BaseUrl}/news-banner?populate=*`)
+      let response = await axios.get(`${BaseUrl}/news-banner?populate=*&?sort=rank:asc`)
       // let response2 = await axios.get(`${BaseUrl}/testimonial-section?populate=*`)
       setTestimonial(response.data.data)
     }
