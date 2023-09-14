@@ -4,6 +4,7 @@ import axios from "axios";
 import { InfinitySpin,ThreeDots } from "react-loader-spinner";
 import { Skeleton } from 'antd';
 import { useRouter } from "next/router";
+import { imageUrl } from "@/utils/imageUrl";
 const Products = () => {
   const [limit ,setLimit]=useState(8)
   const [isLoading3,setIsLoading3]=useState(true)
@@ -91,7 +92,7 @@ console.log(limit)
           <div onClick={()=>handleClick(item)} key={index} className="border cursor-pointer flex items-center md:justify-end justify-center  flex-col md:gap-[35px] gap-[15px] md:pb-[44px] pb-[25px] pt-[10px] ">
             <div className="md:h-[200px] h-[120px] flex items-center justify-center">
 
-                <img src={item?.attributes?.image?.data?.attributes?.url} alt="" className="cursor-pointer hover:scale-[105%] transition duration-300 ease-out h-[100%] w-[80%] object-contain"/>
+                <img src={imageUrl(`${item?.attributes?.image?.data?.attributes?.url}`)} alt="" className="cursor-pointer hover:scale-[105%] transition duration-300 ease-out h-[100%] w-[80%] object-contain"/>
             </div>
                 <h2 className=" text-[#003760] text-[16px] text-center leading-[20.08px] font-semibold">{item?.attributes?.title}</h2>
              
