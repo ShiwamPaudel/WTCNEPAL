@@ -6,6 +6,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import axios from "axios";
 import {BaseUrl} from "../pages/api/global"
+import { imageUrl } from "@/utils/imageUrl";
 // import CountUp from "react-countup";
 
 function SampleNextArrow(props: any) {
@@ -113,7 +114,7 @@ console.log(year,"year")
         {banner?.map((item: any, index: number) => (
           <div key={index} className=" h-[300px] xl:h-[92vh] relative ">
             <div className="h-[100%] w-full absolute top-0 left-0 cover"></div>
-            <img src={`${item?.attributes?.image?.data?.attributes?.url}`} className="w-full h-[100%] object-cover " alt="" />
+            <img src={imageUrl(`${item?.attributes?.image?.data?.attributes?.url}`)} className="w-full h-[100%] object-cover " alt="" />
             <div className=" md:flex items-center gap-[92px] text-white 2xl:pl-[180px] xl:pl-[80px] absolute left-[50%] transform translate-x-[-50%] bottom-[10%]">
               <div className="w-full">
                 <p className="md:text-[32px] text-[20px] leading-[37px] text-start font-semibold  md:w-[815px] w-[310px]">

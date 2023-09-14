@@ -5,6 +5,7 @@ import axios from "axios";
 import { Skeleton } from 'antd';
 import { useRouter } from "next/router";
 import { json } from "stream/consumers";
+import { imageUrl } from "@/utils/imageUrl";
 const Brand = () => {
   const router = useRouter()
 
@@ -24,19 +25,20 @@ const Brand = () => {
     useEffect(()=>{
   
       let getProduct =async()=>{
-        let product = await axios.get(`${BaseUrl}/products/?populate=*`)
+        let product = await axios.get(`${BaseUrl}/products?populate=*`)
     //  let list=    product.data.data.slice(0,8)
         setProduct(product.data.data)
+        console.log("product.data ? ", product.data)
       }
       getProduct()
+    },[])
       
-      },[])
-console.log(product)
+
 
 
 
    let filteredBrans =   product?.filter((item:any,index:number) =>item?.attributes?.brand_name?.data?.attributes?.title===query) 
-      console.log(filteredBrans)
+      console.log("hehe",filteredBrans)
 
 const handleClick =(item:any)=>{
   router.push(`/product-single/${item.id}`)
@@ -56,12 +58,14 @@ console.log(item)
         </h1>
       </div>
       <div className="grid md:grid-cols-4 grid-cols-1 gap-x-[30px] gap-y-[35px] mt-[68px]">
+       
       {
         filteredBrans?.map((item:any,index:number)=>(
           <div onClick={()=>handleClick(item)} key={index} className="border cursor-pointer flex items-center justify-end  flex-col gap-[35px] pb-[44px] pt-[10px] ">
+          
             <div className="h-[200px] flex items-center justify-center">
 
-                <img src={item?.attributes.image.data.attributes.url} alt="" className="cursor-pointer hover:scale-[105%] transition duration-300 ease-out h-[100%] w-[80%] object-contain"/>
+                <img src={imageUrl(`${item?.attributes?.image?.data?.attributes?.url}`)} alt="" className="cursor-pointer hover:scale-[105%] transition duration-300 ease-out h-[100%] w-[80%] object-contain"/>
             </div>
                 <h2 className=" text-[#003760] text-[16px] text-center leading-[20.08px] font-semibold">{item?.attributes?.title}</h2>
              

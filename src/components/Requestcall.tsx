@@ -64,7 +64,7 @@ if(submit){
               <div className="box2">
                 <form onSubmit={formik.handleSubmit}>
                   <label className="font-IBM font-normal text-[15px] leading-[19.5px] text-[#0D1250]">
-                    fullname
+                    Full Name
                   </label>
                   <br />
                   <input

@@ -1,10 +1,9 @@
 import React,{useState,useEffect} from "react";
 import Collape from "./Collape";
-import { BaseUrl } from "@/pages/api/global";
-import axios from "axios";
+import { imageUrl } from "@/utils/imageUrl";
 
 const Asked = ({ faq }: any) => {
-
+console.log("faq",faq)
   return (
     <div className="bg-white pb-[91px] px-[15px] md:px-0">
       <h3 className="font-Work font-bold text-[13px] leading-[15px] tracking-[0.085em] text-[#007EC5] text-center pt-[99px]">
@@ -18,9 +17,10 @@ const Asked = ({ faq }: any) => {
           <Collape />
         </div>
         <div className="basis-[40%]">
+          heehe
           {faq?.map((item: any, index: number) => (
             <img
-              src={item?.attributes?.image?.data?.attributes?.url}
+              src={imageUrl(`${item?.attributes?.image?.data?.attributes?.formats?.large.url}`)}
               alt=""
               className="md:h-[552px] w-full object-cover "
             />

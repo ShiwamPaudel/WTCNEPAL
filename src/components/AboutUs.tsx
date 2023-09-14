@@ -7,7 +7,7 @@ import { BaseUrl } from "@/pages/api/global";
 import parse from 'html-react-parser';
 import { Button, Modal } from 'antd';
 import { useFormik } from 'formik';
-
+import { imageUrl } from "@/utils/imageUrl";
 const AboutUs = () => {
   const [about,setAbout]=useState<any>(null)
 
@@ -15,7 +15,7 @@ const AboutUs = () => {
   useEffect(()=>{
 
     let getAbout =async()=>{
-      let banenr = await axios.get(`${BaseUrl}/about-uses?populate=*`)
+      let banenr = await axios.get(`${BaseUrl}/tsts?populate=*`)
       setAbout(banenr.data.data)
     }
     getAbout()
@@ -74,6 +74,7 @@ if(submit){
       <button type="submit" className="h-[35px] w-[100px] bg-blue-700 flex items-center justify-center text-white rounded-[4px]">Submit</button>
      </form>
       </Modal>
+      
       {
         about?.map((item:any,index:number)=>(
           <div className="container 2xl:max-w-[1180px] mx-auto md:flex gap-[93px] px-[15px] md:px-0 ">
@@ -123,7 +124,7 @@ if(submit){
           </div>
           <div className="basis-[45%] mt-[40px] md:mt-0 flex items-center justify-center flex-col gap-[40px]">
             <div>
-            <img src={item?.attributes?.image?.data?.attributes?.url} alt="img" />
+            <img src={imageUrl(`${item?.attributes?.image?.data?.attributes?.url}`)} alt="img" />
             </div>
             <div className="flex items-center justify-center">
 
