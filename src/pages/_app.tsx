@@ -61,7 +61,7 @@ export default function App({ Component, pageProps }: AppProps) {
     }, []);
   return(
     <>
-   <Modal className='pop' title="" width={800} open={isModalOpen} onOk={handleOk} onCancel={handleCancel} footer={false}>
+   {/* <Modal className='pop' title="" width={800} open={isModalOpen} onOk={handleOk} onCancel={handleCancel} footer={false}>
   {
     popupbanner?.map((item:any,index:number) =>(
       <>
@@ -72,11 +72,11 @@ export default function App({ Component, pageProps }: AppProps) {
     }
       
      
-       {/* <video autoPlay={true}  src={item?.attributes?.image?.data?.attributes?.url} className="w-full h-[100%] object-contain"  /> */}
+       <video autoPlay={true}  src={item?.attributes?.image?.data?.attributes?.url} className="w-full h-[100%] object-contain"  />
       </>
     ))
   }
-      </Modal>
+      </Modal> */}
     <Nav1/>
   <Component {...pageProps} />
   <Fotter footer={footer}/>
