@@ -17,7 +17,7 @@ console.log("faq",faq)
           <Collape />
         </div>
         <div className="basis-[40%]">
-          heehe
+         
           {faq?.map((item: any, index: number) => (
             <img
               src={imageUrl(`${item?.attributes?.image?.data?.attributes?.formats?.large.url}`)}
