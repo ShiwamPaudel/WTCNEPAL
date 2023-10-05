@@ -49,7 +49,7 @@ const AboutUs = () => {
   };
 
   return (
-    <div className="pt-[80px] pb-[80px]">
+    <div className="py-10">
       <Modal
         title="Provide your details for download brochure"
         centered
@@ -112,12 +112,12 @@ const AboutUs = () => {
       </Modal>
 
       {about?.map((item: any, index: number) => (
-        <div className="container 2xl:max-w-[1180px] mx-auto md:flex gap-[93px] px-[15px] md:px-0 ">
-          <div className="basis-[50%]">
+        <div className="container 2xl:max-w-[1180px] mx-auto md:flex gap-20 px-[15px] md:px-0 ">
+          <div className="basis-[50%] ">
             <h2 className="text-[#7A8A9E] text-[13px] leading-[15.25px] tracking-[0.085em] font-bold">
               Welcome
             </h2>
-            <h1 className="text-[#003760] text-[32px] leading-[46.8px] font-semibold uppercase  mt-6">
+            <h1 className="text-[#003760] text-[32px] leading-[46.8px] font-semibold uppercase py-4">
               {item?.attributes?.title}
             </h1>
             <div className="w-full">
@@ -154,7 +154,7 @@ const AboutUs = () => {
               </div>
             </div> */}
           </div>
-          <div className="basis-[45%] mt-[40px] md:mt-0 flex items-center justify-center flex-col gap-[40px]">
+          <div className="basis-[45%] mt-[40px] md:mt-0 flex flex-col items-center justify-center  gap-4">
             <div>
               <img
                 src={imageUrl(
@@ -167,7 +167,7 @@ const AboutUs = () => {
               {/* <img src="/../assets/brochure.png" alt="" className="cursor-pointer w-[70%]"  onClick={() => setModal2Open(true)}/> */}
               <button
                 onClick={() => setModal2Open(true)}
-                className="h-[50px] p-[10px] bg-[#23a8cd] hover:bg-[#23a8cd] w-[190px] flex items-center justify-center text-white text-[16px] leading-[21.6px] rounded-[4px] "
+                className="h-[50px] bg-[#23a8cd] hover:bg-[#23a8cd] w-[190px] flex items-center justify-center text-white text-[16px] leading-[21.6px] rounded-[4px] "
               >
                 Download Profile
               </button>
