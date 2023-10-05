@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Parse from "html-react-parser";
+import { imageUrl } from "@/utils/imageUrl";
 
 const NewsBlock = () => {
   const router = useRouter();
@@ -17,7 +18,7 @@ const NewsBlock = () => {
     };
     getNews();
   }, []);
-  console.log("news", news);
+  // console.log("news", news);
 
   const handleClick = (item: any) => {
     router.push(`/news/${item.id}`);
@@ -33,7 +34,9 @@ const NewsBlock = () => {
           >
             <div className="w-[94%] md:w-full ml-[12px] md:ml-[0px] h-[274px] ">
               <img
-                src={`https://admin.dmsnepal.com/${item?.attributes?.image?.data?.attributes?.url}`}
+                src={imageUrl(
+                  `${item?.attributes?.image?.data?.attributes?.url}`
+                )}
                 alt="avatar"
                 className="w-full h-full object-cover rounded-[10px] cursor-pointer hover:scale-[106%] transition duration-300 ease-out"
               />
@@ -51,21 +54,17 @@ const NewsBlock = () => {
                 {item?.time}
               </p>
             </div>
-            <h2 className="font-IBM hidden font-medium text-[27px] md:text-[28px] leading-[36px] text-[#0D1250] pt-[11px] pl-[20px] md:pl-[5px]">
+            <h2 className="font-IBM hidden font-medium text-[27px] md:text-[28px] leading-[36px] text-[#0D1250] pt-[11px] pl-[20px] md:pl-[5px] ">
               {item?.title}
             </h2>
-            <div className="h-[109px] overflow-hidden">
-              <div className=" font-normal text-[15px] leading-[24px] font-inter text-[#505056] pt-[11px] pl-[20px] pr-[11px] md:pl-[5px] md:pr-[0px] max-w-[378px]">
+            <div className="h-[109px] overflow-hidden text-justify">
+              <div className=" font-normal text-[15px] leading-[24px] font-inter text-[#505056] pt-[11px] pl-[20px] pr-[11px] md:pl-[5px] md:pr-[0px] md:max-w-[378px]">
                 {Parse(`${item?.attributes?.description}`)}
-                {/* {JSON.stringify() }.. */}
               </div>
             </div>
             <div className="flex items-center justify-end pr-[11px]">
               <div className="w-[109px] h-[38px] bg-[#007EC5] hover:bg-[#007EC5]/[0.8] rounded-sm  mt-[15px] group">
-                <p
-                  // href="#"
-                  className="font-IBM font-normal text-sm leading-[18px] text-[#FBFCFC] py-[10px] pl-[13px] flex flex-row"
-                >
+                <p className="font-IBM font-normal text-sm leading-[18px] text-[#FBFCFC] py-[10px] pl-[13px] flex flex-row cursor-pointer">
                   Read More
                   <img
                     src="/../assets/arrow.png"
