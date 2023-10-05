@@ -49,7 +49,7 @@ const AboutUs = () => {
   };
 
   return (
-    <div className="py-10">
+    <div className="pt-[80px] pb-[80px]">
       <Modal
         title="Provide your details for download brochure"
         centered
@@ -117,7 +117,7 @@ const AboutUs = () => {
             <h2 className="text-[#7A8A9E] text-[13px] leading-[15.25px] tracking-[0.085em] font-bold">
               Welcome
             </h2>
-            <h1 className="text-[#003760] text-[32px] leading-[46.8px] font-semibold uppercase  mt-[8px]">
+            <h1 className="text-[#003760] text-[32px] leading-[46.8px] font-semibold uppercase  mt-6">
               {item?.attributes?.title}
             </h1>
             <div className="w-full">
@@ -126,12 +126,9 @@ const AboutUs = () => {
             {/* <div className="grid md:grid-cols-3 gap-[34px] mt-[40px]">
               <div className="about_box bg-[#007EC5]/[0.05] cursor-pointer hover:scale-[105%] transition duration-300 ease-out">
                 <h2 className="text-[#007EC5] text-[44.8px] leading-[67.2px]">
+                  
                   <CountUp end={100} enableScrollSpy />
-                  <CountUp
-                    isCounting
-                    end={parseInt(item.attributes.Years_Experience)}
-                    duration={3.2}
-                  />
+                  <CountUp isCounting end={parseInt(item.attributes.Years_Experience)} duration={3.2} />
                 </h2>
                 <p className="text-[#434343] text-[16px] leading-[24px] font-semibold">
                   Years Experience
@@ -140,12 +137,7 @@ const AboutUs = () => {
               <div className="about_box bg-[#00A023]/[0.05] cursor-pointer hover:scale-[105%] transition duration-300 ease-out">
                 <h2 className="text-[#00A023] text-[44.8px] leading-[67.2px]">
                   <CountUp end={400} enableScrollSpy />+
-                  <CountUp
-                    isCounting
-                    end={parseInt(item.attributes.Customers)}
-                    duration={3.2}
-                  />
-                  +
+                  <CountUp isCounting end={parseInt(item.attributes.Customers)} duration={3.2} />+
                 </h2>
                 <p className="text-[#434343] text-[16px] leading-[24px] font-semibold">
                   Customers{" "}
@@ -154,15 +146,10 @@ const AboutUs = () => {
               <div className="about_box bg-[#FF7F0A]/[0.05] cursor-pointer hover:scale-[105%] transition duration-300 ease-out">
                 <h2 className="text-[#FF7F0A] text-[44.8px] leading-[67.2px]">
                   <CountUp end={98} enableScrollSpy />%
-                  <CountUp
-                    isCounting
-                    end={parseInt(item.attributes.Repeated_Customers)}
-                    duration={3.2}
-                  />
-                  %
+                  <CountUp isCounting end={parseInt(item.attributes.Repeated_Customers)} duration={3.2} />%
                 </h2>
                 <p className="text-[#434343] text-[16px] leading-[24px] font-semibold">
-                  Repeated Customers
+                  Repeated Customers{" "}
                 </p>
               </div>
             </div> */}
