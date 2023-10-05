@@ -40,7 +40,7 @@ const AboutUs = () => {
     let submit = await axios.post(`${BaseUrl}/email-collections`, {
       data: values,
     });
-    console.log(submit);
+    // console.log(submit);
     if (submit) {
       window.location.href =
         "https://www.dmsnepal.com/brochure?brochure=products/wNR0XuhUdDYoxCXir1VQ5r6RnAUFk80AbZca8TQd.pdf";
@@ -154,7 +154,7 @@ const AboutUs = () => {
               </div>
             </div> */}
           </div>
-          <div className="basis-[45%] mt-[40px] md:mt-0 flex flex-col items-center justify-center  gap-4">
+          <div className="basis-[45%] mt-[40px] md:mt-0 flex flex-col items-center justify-center ">
             <div>
               <img
                 src={imageUrl(
@@ -167,7 +167,7 @@ const AboutUs = () => {
               {/* <img src="/../assets/brochure.png" alt="" className="cursor-pointer w-[70%]"  onClick={() => setModal2Open(true)}/> */}
               <button
                 onClick={() => setModal2Open(true)}
-                className="h-[50px] bg-[#23a8cd] hover:bg-[#23a8cd] w-[190px] flex items-center justify-center text-white text-[16px] leading-[21.6px] rounded-[4px] "
+                className="h-[50px] bg-[#23a8cd] hover:bg-[#23a8cd] w-[190px] flex items-center justify-center text-white text-[16px]  rounded-[4px] "
               >
                 Download Profile
               </button>

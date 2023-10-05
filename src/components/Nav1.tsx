@@ -31,7 +31,7 @@ function Nav1() {
 
   //filtering main category
 
-  console.log(categories, "category");
+  // console.log(categories, "category");
 
   let mainCategory = categories?.filter(
     (item: any, index: number) => item.attributes.salect_category === "main"
@@ -45,7 +45,7 @@ function Nav1() {
       item.attributes.position === "Diagnostic Equipments/ Reagent Kits"
   );
 
-  console.log(subCategory);
+  // console.log(subCategory);
 
   subCategory?.sort((a: any, b: any) =>
     a.attributes.title.localeCompare(b.attributes.title)
@@ -57,21 +57,21 @@ function Nav1() {
       item.attributes.position === "Disinfectant And House Keeping"
   );
 
-  console.log(secondCategory);
+  // console.log(secondCategory);
 
   let thirdCategory = categories?.filter(
     (item: any, index: number) =>
       item.attributes.salect_category === "sub" &&
       item.attributes.position === "Dermatology (Skin Care & Beauty) Products"
   );
-  console.log(thirdCategory);
+  // console.log(thirdCategory);
 
   let fourthCategory = categories?.filter(
     (item: any, index: number) =>
       item.attributes.salect_category === "sub" &&
       item.attributes.position === "Medical And Critical Care Devices"
   );
-  console.log(fourthCategory, "filtering sub category");
+  // console.log(fourthCategory, "filtering sub category");
 
   const handleDropDown = () => {
     SetAbout(!about);
@@ -131,121 +131,6 @@ function Nav1() {
     // alert(sub)
   };
 
-  let menu = [
-    {
-      name: " Diagnostic Equipments/ Reagent kits",
-    },
-    {
-      name: " Disinfectant and House Keeping",
-    },
-    {
-      name: "  Dermatology (Skin care & beauty) Products",
-    },
-    {
-      name: " Medical And Critical Care Devices<",
-    },
-  ];
-  let submenu2 = [
-    {
-      name: "Biochemistry Instruments and Reagents",
-      sub: "BioSystems",
-    },
-    {
-      name: " Blood Gas & Electrolyte Analyzer",
-      sub: "i-sens",
-    },
-    {
-      name: "Glucometer",
-    },
-    {
-      name: "  Hematology Instruments and Reagents",
-      sub: "Avantor",
-    },
-    {
-      name: " Liquid, Sample and Cell Handling",
-      sub: "Eppendorf",
-      sub2: "Melling",
-    },
-    {
-      name: "Immunoassay Analyzers",
-      sub: "Diasorin",
-      sub2: "NeoMedica",
-    },
-    {
-      name: " ELISA and Flexible C. Difficile Testing",
-    },
-    {
-      name: "Vacutainer and View Finder",
-      sub: "Improve",
-    },
-    {
-      name: "Histopathology Instruments",
-      sub: "Myr",
-    },
-    {
-      name: "Protein Analyzer",
-    },
-  ];
-  let submenu4 = [
-    {
-      name: "Biochemistry Instruments and Reagents",
-    },
-    {
-      name: " Blood Gas & Electrolyte Analyzer",
-    },
-    {
-      name: "Glucometer",
-    },
-    {
-      name: "  Hematology Instruments and Reagents",
-    },
-    {
-      name: " Liquid, Sample and Cell Handling",
-    },
-    {
-      name: "Immunoassay Analyzers",
-    },
-    {
-      name: " ELISA and Flexible C. Difficile Testing",
-    },
-    {
-      name: "Vacutainer and View Finder",
-    },
-    {
-      name: "Histopathology Instruments",
-    },
-    {
-      name: "Protein Analyzer",
-    },
-  ];
-  let submenu3 = [
-    {
-      name: "Disinfectact and Cleaner",
-    },
-    {
-      name: "Sterlizer",
-      sub: "Newster",
-    },
-  ];
-  let submenu5 = [
-    {
-      name: "Asclepion",
-    },
-    {
-      name: "Dermaindia",
-    },
-  ];
-  let submenu6 = [
-    {
-      name: "Ventilator",
-      sub: "Nihon kohden",
-    },
-    {
-      name: "OT Lights and Tables",
-      sub: "Bowin",
-    },
-  ];
-
   // for ther sticky header
 
   const stickyTop = () => {
@@ -262,11 +147,11 @@ function Nav1() {
 
   return (
     <>
+      {/* responsive navbar  */}
       <div className="container   mx-auto lg:hidden ">
         <div className=" flex flex-row justify-between items-center  px-[15px] md:px-0 ">
           <div className="w-[115px] h-[63px] ">
             <Link href="/">
-              {" "}
               <img
                 src="/../assets/logo.png"
                 alt="avatar"
@@ -278,7 +163,7 @@ function Nav1() {
         </div>
       </div>
 
-      <div className={`${fix ? "nav" : ""}`}>
+      <div className={` ${fix ? "nav" : ""}`}>
         <div className="container  2xl:max-w-[1180px] mx-auto justify-between font-semibold items-center hidden py-[10px] lg:flex lg:flex-row">
           <div className="w-[137px] h-auto ">
             <Link href="/">
@@ -469,7 +354,9 @@ function Nav1() {
                                     (item: any, index: number) => (
                                       <>
                                         <li className="text-[15px] relative  capitalize border-b-[0.5px] border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#23a8cd] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer">
-                                          <Link href={`/brand-product/${item?.attributes?.title}`}>
+                                          <Link
+                                            href={`/brand-product/${item?.attributes?.title}`}
+                                          >
                                             {item?.attributes?.title}
                                           </Link>
                                         </li>
@@ -524,122 +411,6 @@ function Nav1() {
                                 </div>
                               </div>
                             )}
-                            {/* {sub===4 && (
-                            <div className="absolute top-[100px] left-[100%]    w-[399px] h-[126px] z-40 space-y-[10px]">
-                              <div className=" border-l-[0.5px]   border-t-[4px] border-t-[black]   absolute top-[10px] h-[100%] w-full ">
-                                {fourthCategory?.map((item: any, index: number) => (
-                                  <>
-                                    <li
-                                      onMouseEnter={() => handlelist4(index)}
-                                      className="text-[15px] relative  capitalize border-b-[0.5px] border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#23a8cd] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer"
-                                    >
-                                      <Link href="/about">{item?.attributes?.title}</Link>
-                                    </li>
-                                    {list4 === index && (
-                                      <div className="absolute  left-[100%]    w-[199px] h-[126px] z-40 space-y-[10px]">
-                                        <div className=" mt-[-60px] border-t-[4px] border-t-[black]   absolute top-[0px] h-[100%] w-full ">
-                                          <li className="text-[15px] border-b-[0.5px] capitalize border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#23a8cd] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer">
-                                            <Link
-                                              href={`/brand-product/${item?.attributes?.brand_name}`}
-                                            >
-                                              {item?.attributes?.brand_name}
-                                            </Link>
-                                          </li>
-                                        </div>
-                                      </div>
-                                    )}
-                                  </>
-                                ))}
-                              </div>
-                            </div>
-                          )}
-                           {sub===5 && (
-                            <div className="absolute top-[100px] left-[100%]    w-[399px] h-[126px] z-40 space-y-[10px]">
-                              <div className=" border-l-[0.5px]   border-t-[4px] border-t-[black]   absolute top-[10px] h-[100%] w-full ">
-                                {fourthCategory?.map((item: any, index: number) => (
-                                  <>
-                                    <li
-                                      onMouseEnter={() => handlelist4(index)}
-                                      className="text-[15px] relative  capitalize border-b-[0.5px] border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#23a8cd] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer"
-                                    >
-                                      <Link href="/about">{item?.attributes?.title}</Link>
-                                    </li>
-                                    {list4 === index && (
-                                      <div className="absolute  left-[100%]    w-[199px] h-[126px] z-40 space-y-[10px]">
-                                        <div className=" mt-[-60px] border-t-[4px] border-t-[black]   absolute top-[0px] h-[100%] w-full ">
-                                          <li className="text-[15px] border-b-[0.5px] capitalize border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#23a8cd] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer">
-                                            <Link
-                                              href={`/brand-product/${item?.attributes?.brand_name}`}
-                                            >
-                                              {item?.attributes?.brand_name}
-                                            </Link>
-                                          </li>
-                                        </div>
-                                      </div>
-                                    )}
-                                  </>
-                                ))}
-                              </div>
-                            </div>
-                          )}
-                           {sub===6 && (
-                            <div className="absolute top-[100px] left-[100%]    w-[399px] h-[126px] z-40 space-y-[10px]">
-                              <div className=" border-l-[0.5px]   border-t-[4px] border-t-[black]   absolute top-[10px] h-[100%] w-full ">
-                                {fourthCategory?.map((item: any, index: number) => (
-                                  <>
-                                    <li
-                                      onMouseEnter={() => handlelist4(index)}
-                                      className="text-[15px] relative  capitalize border-b-[0.5px] border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#23a8cd] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer"
-                                    >
-                                      <Link href="/about">{item?.attributes?.title}</Link>
-                                    </li>
-                                    {list4 === index && (
-                                      <div className="absolute  left-[100%]    w-[199px] h-[126px] z-40 space-y-[10px]">
-                                        <div className=" mt-[-60px] border-t-[4px] border-t-[black]   absolute top-[0px] h-[100%] w-full ">
-                                          <li className="text-[15px] border-b-[0.5px] capitalize border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#23a8cd] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer">
-                                            <Link
-                                              href={`/brand-product/${item?.attributes?.brand_name}`}
-                                            >
-                                              {item?.attributes?.brand_name}
-                                            </Link>
-                                          </li>
-                                        </div>
-                                      </div>
-                                    )}
-                                  </>
-                                ))}
-                              </div>
-                            </div>
-                          )}
-                           {sub===7 && (
-                            <div className="absolute top-[100px] left-[100%]    w-[399px] h-[126px] z-40 space-y-[10px]">
-                              <div className=" border-l-[0.5px]   border-t-[4px] border-t-[black]   absolute top-[10px] h-[100%] w-full ">
-                                {fourthCategory?.map((item: any, index: number) => (
-                                  <>
-                                    <li
-                                      onMouseEnter={() => handlelist4(index)}
-                                      className="text-[15px] relative  capitalize border-b-[0.5px] border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#23a8cd] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer"
-                                    >
-                                      <Link href="/about">{item?.attributes?.title}</Link>
-                                    </li>
-                                    {list4 === index && (
-                                      <div className="absolute  left-[100%]    w-[199px] h-[126px] z-40 space-y-[10px]">
-                                        <div className=" mt-[-60px] border-t-[4px] border-t-[black]   absolute top-[0px] h-[100%] w-full ">
-                                          <li className="text-[15px] border-b-[0.5px] capitalize border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#23a8cd] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer">
-                                            <Link
-                                              href={`/brand-product/${item?.attributes?.brand_name}`}
-                                            >
-                                              {item?.attributes?.brand_name}
-                                            </Link>
-                                          </li>
-                                        </div>
-                                      </div>
-                                    )}
-                                  </>
-                                ))}
-                              </div>
-                            </div>
-                          )} */}
                           </>
                         ))}
                       </>
