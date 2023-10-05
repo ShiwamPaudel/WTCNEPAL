@@ -4,7 +4,6 @@ import Slide2 from "./Slide2";
 const Navbar = () => {
   return (
     <>
-   
       <Slide2 />
     </>
   );

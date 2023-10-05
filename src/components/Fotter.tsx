@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React from "react";
 import { BsGlobeAmericas } from "react-icons/bs";
-import Parse from "html-react-parser"
+import Parse from "html-react-parser";
 function Fotter({ footer }: any) {
   return (
     <div className=" w-full bg-[#0000cc] py-[48px] px-[15px] md:px-0">
@@ -15,10 +15,8 @@ function Fotter({ footer }: any) {
                 className="w-full h-[125px] object-contain 2xl:ml-[-60px] xl:ml-[-80px]"
               />
               <p className="font-IBM font-normal text-[15px] leading-[24px] text-center md:text-left text-[#CFCFCF] pt-[12px] max-w-[375px]  pr-[12px] md:pr-[0px]">
-               {
-Parse(`${item?.attributes?.description}`)
-               }
-              <Link href="/about">..Read More</Link>
+                {Parse(`${item?.attributes?.description}`)}
+                <Link href="/about">..Read More</Link>
               </p>
             </div>
             <div className="basis-[70%] grid md:grid-cols-3 grid-cols-1 gap-[25px] md:gap-0">
@@ -91,7 +89,7 @@ Parse(`${item?.attributes?.description}`)
                     href=""
                     className="flex flex-row cursor-pointer hover:text-white/[0.5] transition-colors duration-300 ease-in-out  items-center font-IBM font-normal text-[15px] leading-[24px] text-[#CFCFCF] pt-[13px]"
                   >
-                   {item?.attributes?.address}
+                    {item?.attributes?.address}
                   </a>
                 </div>
                 <div className="flex items-center gap-[10px]">
@@ -100,7 +98,7 @@ Parse(`${item?.attributes?.description}`)
                     href=""
                     className="flex flex-row  cursor-pointer hover:text-white/[0.5] transition-colors duration-300 ease-in-out items-center font-IBM font-normal text-[15px] leading-[24px] text-[#CFCFCF] pt-[13px]"
                   >
-                     {item?.attributes?.contact_number}
+                    {item?.attributes?.contact_number}
                   </a>
                 </div>
                 <div className="flex items-center gap-[10px] pt-[10px]">
@@ -110,7 +108,7 @@ Parse(`${item?.attributes?.description}`)
                     href=""
                     className="flex flex-row  cursor-pointer hover:text-white/[0.5] transition-colors duration-300 ease-in-out items-center font-IBM font-normal text-[15px] leading-[24px] text-[#CFCFCF] "
                   >
-          {item?.attributes?.Email}
+                    {item?.attributes?.Email}
                   </a>
                 </div>
                 <div className="flex items-center gap-[10px] pt-[10px]">
@@ -124,7 +122,7 @@ Parse(`${item?.attributes?.description}`)
                     href=""
                     className="flex flex-row  cursor-pointer hover:text-white/[0.5] transition-colors duration-300 ease-in-out items-center font-IBM font-normal text-[15px] leading-[24px] text-[#CFCFCF] "
                   >
-                   {item?.attributes?.Web}
+                    {item?.attributes?.Web}
                   </a>
                 </div>
               </div>

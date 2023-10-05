@@ -1,67 +1,62 @@
-import BootomFooter from '@/components/BootomFooter'
-import Fotter from '@/components/Fotter'
-import Nav1 from '@/components/Nav1'
-import '@/styles/globals.css'
-import type { AppProps } from 'next/app'
-import {useEffect,useState} from "react"
-import axios from 'axios'
-import { BaseUrl } from './api/global'
-import { Button, Modal } from 'antd';
-
+import BootomFooter from "@/components/BootomFooter";
+import Fotter from "@/components/Fotter";
+import Nav1 from "@/components/Nav1";
+import "@/styles/globals.css";
+import type { AppProps } from "next/app";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import { BaseUrl } from "./api/global";
+import { Button, Modal } from "antd";
 
 export default function App({ Component, pageProps }: AppProps) {
-  const [footer,setFooter]=useState<any>(null)
-  const [popupbanner,setPopupbanner] = useState<any>(null);
+  const [footer, setFooter] = useState<any>(null);
+  const [popupbanner, setPopupbanner] = useState<any>(null);
 
-  useEffect(()=>{
-
-    let getFooter =async()=>{
-      const [footer,popup] = await Promise.all([
+  useEffect(() => {
+    let getFooter = async () => {
+      const [footer, popup] = await Promise.all([
         axios.get(`${BaseUrl}/footer-sections?populate=*`),
         axios.get(`${BaseUrl}/popup-banners?populate=*`),
-
-      ]) 
+      ]);
       // (`${BaseUrl}/footer-sections?populate=*`)
-      // let popup = await 
+      // let popup = await
       // // let response2 = await axios.get(`${BaseUrl}/testimonial-section?populate=*`)
-      setFooter(footer.data.data)
-      setPopupbanner(popup.data.data)
-    }
-    getFooter()
-    
-    },[])
-    console.log(footer)
-
-
-    const [isModalOpen, setIsModalOpen] = useState(false);
-
-    const showModal = () => {
-      setIsModalOpen(true);
+      setFooter(footer.data.data);
+      setPopupbanner(popup.data.data);
     };
-  
-    const handleOk = () => {
-      setIsModalOpen(false);
+    getFooter();
+  }, []);
+  console.log(footer);
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const showModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleOk = () => {
+    setIsModalOpen(false);
+  };
+
+  const handleCancel = () => {
+    setIsModalOpen(false);
+  };
+
+  useEffect(() => {
+    const delay = 3000; // Delay of 3 seconds
+
+    const timer = setTimeout(() => {
+      // Perform any action after the delay
+      showModal();
+    }, delay);
+
+    return () => {
+      clearTimeout(timer); // Clear the timer if the component unmounts before the delay
     };
-  
-    const handleCancel = () => {
-      setIsModalOpen(false);
-    };
-    
-    useEffect(() => {
-      const delay = 3000; // Delay of 3 seconds
-  
-      const timer = setTimeout(() => {
-        // Perform any action after the delay
-        showModal();
-      }, delay);
-  
-      return () => {
-        clearTimeout(timer); // Clear the timer if the component unmounts before the delay
-      };
-    }, []);
-  return(
+  }, []);
+  return (
     <>
-   {/* <Modal className='pop' title="" width={800} open={isModalOpen} onOk={handleOk} onCancel={handleCancel} footer={false}>
+      {/* <Modal className='pop' title="" width={800} open={isModalOpen} onOk={handleOk} onCancel={handleCancel} footer={false}>
   {
     popupbanner?.map((item:any,index:number) =>(
       <>
@@ -77,10 +72,10 @@ export default function App({ Component, pageProps }: AppProps) {
     ))
   }
       </Modal> */}
-    <Nav1/>
-  <Component {...pageProps} />
-  <Fotter footer={footer}/>
-  <BootomFooter data={footer}/>
+      <Nav1 />
+      <Component {...pageProps} />
+      <Fotter footer={footer} />
+      <BootomFooter data={footer} />
     </>
-  ) 
+  );
 }

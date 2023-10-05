@@ -1,16 +1,15 @@
-import React, { useEffect,useState } from "react";
+import React, { useEffect, useState } from "react";
 // import { IoIosArrowForward } from "react-icons/io";
 // import { IoIosArrowBack } from "react-icons/io";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import axios from "axios";
-import {BaseUrl} from "../pages/api/global"
+import { BaseUrl } from "../pages/api/global";
 import { imageUrl } from "@/utils/imageUrl";
 // import CountUp from "react-countup";
 
 function SampleNextArrow(props: any) {
-
   const { className, style, onClick } = props;
   return (
     <div className="absolute hidden md:block top-[65%] right-[50%] translate-x-[-50%] z-50">
@@ -39,9 +38,7 @@ function SamplePrevArrow(props: any) {
 }
 
 function Slide2() {
-
-  
-  const [banner,setBanner]=useState<any>(null)
+  const [banner, setBanner] = useState<any>(null);
   const settings = {
     dots: false,
     autoplay: true,
@@ -54,67 +51,42 @@ function Slide2() {
     prevArrow: <SamplePrevArrow />,
   };
 
-  let data = [
-    {
-      img: "/../assets/mainbanner1.jpg",
-      caption:
-        "Fully automated immunoassay analyzer - LIAISON® XL - DiaSorin - for clinical diagnostic, chemiluminescence, plasma",
-    },
-    {
-      img: "/../assets/mainbanner2.jpg",
-      caption:
-        "BA400 is a clinical chemistry and turbidimetry analyzer designed to offer the best performance to laboratories looking towards achieving the highest efficiency with optimal operating costs.",
-    },
-    {
-      img: "/../assets/mainbanner3.jpg",
-      caption:
-        "The sterilizing unit is designed for on-site installation in up to 300 beds hospitals. The sturdy design allows the sterilizer to work for several shifts, each lasting 35-40 minutes.",
-    },
-  ];
+  let [year, setYear] = useState([]);
 
-  let [year,setYear]=useState([])
-
-useEffect(()=>{
-
-let getBanner =async()=>{
-  const [banner,year]= await Promise.all([
-    axios.get(`${BaseUrl}/banners?populate=*`),
-    axios.get(`${BaseUrl}/header-experience-titles?populate=*`)
-  ])
-  setBanner(banner.data.data)
-  setYear(year.data.data)
-}
-getBanner()
-
-},[])
-
-console.log(year,"year")
-
-
+  useEffect(() => {
+    let getBanner = async () => {
+      const [banner, year] = await Promise.all([
+        axios.get(`${BaseUrl}/banners?populate=*`),
+        axios.get(`${BaseUrl}/header-experience-titles?populate=*`),
+      ]);
+      setBanner(banner.data.data);
+      setYear(year.data.data);
+    };
+    getBanner();
+  }, []);
 
   return (
     <div className="w-full relative  overflow-x-hidden">
       <div className=" hidden absolute  md:block bottom-[6%] 2xl:left-[19%] xl:left-[3%] z-40 text-white ">
-        {
-          year?.map((item:any,index:number)=>(
-
-            <img src={item?.attributes?.image?.data?.attributes?.url} className="2xl:h-[190px] 2xl:w-[200px] xl:w-[80%] object-contain cursor-pointer" alt="" />
-          ))
-        }
-        {/* {
-          year?.map((item:any,index:number)=>(
-<p className="text-[24px] font-semibold text-center max-w-[120px] mt-[4px]">
-       {item?.attributes?.text}
-        </p>
-          )) */}
-        {/* } */}
-        
+        {year?.map((item: any, index: number) => (
+          <img
+            src={item?.attributes?.image?.data?.attributes?.url}
+            className="2xl:h-[190px] 2xl:w-[200px] xl:w-[80%] object-contain cursor-pointer"
+            alt=""
+          />
+        ))}
       </div>
       <Slider {...settings} className=" ">
         {banner?.map((item: any, index: number) => (
           <div key={index} className=" h-[300px] xl:h-[92vh] relative ">
             <div className="h-[100%] w-full absolute top-0 left-0 cover"></div>
-            <img src={imageUrl(`${item?.attributes?.image?.data?.attributes?.url}`)} className="w-full h-[100%] object-cover " alt="" />
+            <img
+              src={imageUrl(
+                `${item?.attributes?.image?.data?.attributes?.url}`
+              )}
+              className="w-full h-[100%] object-cover "
+              alt=""
+            />
             <div className=" md:flex items-center gap-[92px] text-white 2xl:pl-[180px] xl:pl-[80px] absolute left-[50%] transform translate-x-[-50%] bottom-[10%]">
               <div className="w-full">
                 <p className="md:text-[32px] text-[20px] leading-[37px] text-start font-semibold  md:w-[815px] w-[310px]">
