@@ -17,7 +17,6 @@ const Asked = ({ faq }: any) => {
           <Collape />
         </div>
         <div className="basis-[40%]">
-          heehe
           {faq?.map((item: any, index: number) => (
             <img
               src={imageUrl(
