@@ -1,44 +1,49 @@
 import AboutBanner from "@/components/AboutBanner";
 import { useRouter } from "next/router";
-import React,{useState,useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import { HiOutlineSearch } from "react-icons/hi";
 import { BaseUrl } from "../api/global";
-import Parse from "html-react-parser"
+import Parse from "html-react-parser";
 import axios from "axios";
 import Item from "antd/es/list/Item";
+import { imageUrl } from "@/utils/imageUrl";
+
 const SingleNews = () => {
- 
   const router = useRouter();
   let id = router.query.id;
   console.log(id);
 
   const [news, setNews] = useState<any>(null);
-  const[banner,setBanner] = useState<any>(null);
+  const [banner, setBanner] = useState<any>(null);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     let getNews = async () => {
       let news = await axios.get(`${BaseUrl}/news-and-events/${id}?populate=*`);
-      let response = await axios.get(`${BaseUrl}/news-banner?populate=*&?sort=rank:asc`)
-      setBanner(response.data.data)
+      let response = await axios.get(
+        `${BaseUrl}/news-banner?populate=*&?sort=rank:asc`
+      );
+      setBanner(response.data.data);
       //  let list=    product.data.data.slice(0,8)
       setNews(news.data.data);
       setIsLoading(false);
     };
     getNews();
   }, [id]);
-  console.log(news)
+  console.log(news);
 
   return (
     <>
       <AboutBanner testimonial={banner} />
-   
 
       <div className="container px-[15px] md:px-0 flex-wrap md:flex-nowrap 2xl:max-w-[1180px] flex gap-[40px] mx-auto py-[80px] ">
         <div className="md:basis-[70%]  border p-[20px]">
           <div className="h-[300px]">
             <img
-              src={news?.attributes?.image?.data?.attributes?.url}
+              src={imageUrl(
+                `${news?.attributes?.image?.data?.attributes?.url}`
+              )}
+              // src={news?.attributes?.image?.data?.attributes?.url}
               alt=""
               className="h-[100%] w-full object-cover"
             />
@@ -46,11 +51,9 @@ const SingleNews = () => {
           <div className="flex flex-row mt-[17px] ml-[20px] md:ml-[5px] "></div>
 
           <p className="font-IBM font-normal text-[16px]  leading-[24px] text-[#505056] pt-[11px] pl-[20px] pr-[11px] md:pl-[5px] md:pr-[0px] ">
-            {
-Parse(`${news?.attributes?.description}`)
-            }
+            {Parse(`${news?.attributes?.description}`)}
           </p>
-          <div className="flex items-center justify-end pr-[11px] hidden">
+          <div className="flex items-center justify-end pr-[11px]">
             <div className="w-[109px] h-[38px] bg-[#007EC5] hover:bg-[#007EC5]/[0.8] rounded-sm  mt-[31px] group">
               <a
                 href=""
@@ -85,7 +88,7 @@ Parse(`${news?.attributes?.description}`)
               <li className="cursor-pointer border-b-[1px] pb-[10px] hover:underline">
                 Lorem ipsum dolor sit, amet consectetur adipisicientium, ea
                 quisquam.?
-              </li >
+              </li>
               <li className="cursor-pointer border-b-[1px] pb-[10px] hover:underline">
                 Lorem ipsum dolor sit, amet consectetur adipisicientium, ea
                 quisquam.?

@@ -8,7 +8,8 @@ import axios from "axios";
 import { BaseUrl } from "../pages/api/global";
 import { useRouter } from "next/router";
 // import CountUp from "react-countup";
-import { Skeleton } from 'antd';
+import { Skeleton } from "antd";
+import { imageUrl } from "@/utils/imageUrl";
 
 function SampleNextArrow(props: any) {
   const { className, style, onClick } = props;
@@ -38,8 +39,8 @@ function SamplePrevArrow(props: any) {
   );
 }
 
-function RelatedProducts({setIsLoading2}:any) {
-    const router = useRouter()
+function RelatedProducts({ setIsLoading2 }: any) {
+  const router = useRouter();
   const [banner, setBanner] = useState<any>(null);
   const settings = {
     dots: false,
@@ -56,24 +57,24 @@ function RelatedProducts({setIsLoading2}:any) {
           slidesToShow: 3,
           slidesToScroll: 3,
           infinite: true,
-          dots: true
-        }
+          dots: true,
+        },
       },
       {
         breakpoint: 600,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 2,
-          initialSlide: 2
-        }
+          initialSlide: 2,
+        },
       },
       {
         breakpoint: 480,
         settings: {
           slidesToShow: 2,
-          slidesToScroll: 1
-        }
-      }
+          slidesToScroll: 1,
+        },
+      },
     ],
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
@@ -108,13 +109,12 @@ function RelatedProducts({setIsLoading2}:any) {
     getProduct();
   }, []);
 
-  console.log(product);
-  const handleClick =(item:any)=>{
-    router.push(`/product-single/${item.id}`)
-    setIsLoading2(true)
-  console.log(item)
-  }
-
+  // console.log(product);
+  const handleClick = (item: any) => {
+    router.push(`/product-single/${item.id}`);
+    setIsLoading2(true);
+    // console.log(item);
+  };
 
   return (
     <div className=" relative  overflow-x-hidden max-w-[1180px] mx-auto pb-[90px] px-[15px] md:px-0">
@@ -122,34 +122,39 @@ function RelatedProducts({setIsLoading2}:any) {
         <h1 className="text-[22px] ">Related Products</h1>
       </div>
 
-      {
-        product ?
+      {product ? (
         <Slider {...settings} className=" mt-[40px]">
-        {product?.map((item: any, index: number) => (
-            <div key={index} onClick={()=>handleClick(item)}>
-            <div key={index} className="w-[95%]  h-[350px] relative ">
-              <div className="h-[270px] flex items-center justify-center border">
-                <img
-                  src={`${item?.attributes?.image?.data?.attributes?.url}`}
-                  className="w-[70%] h-[100%] object-contain cursor-pointer hover:scale-[105%] transition duration-500 ease-out"
-                  alt=""
-                />
-              </div>
-             
+          {product?.map((item: any, index: number) => (
+            <div key={index} onClick={() => handleClick(item)}>
+              <div key={index} className="w-[95%]  h-[350px] relative ">
+                <div className="h-[270px] flex items-center justify-center border">
+                  <img
+                    // src={`${item?.attributes?.image?.data?.attributes?.url}`}
+                    src={imageUrl(
+                      `${item?.attributes?.image?.data?.attributes?.url}`
+                    )}
+                    className="w-[70%] h-[100%] object-contain cursor-pointer hover:scale-[105%] transition duration-500 ease-out"
+                    alt=""
+                  />
+                </div>
+
                 <div className="pt-[15px]">
                   <p className="text-[20px] text-start font-semibold leading-[30px] ">
                     {item?.attributes?.title}
                   </p>
                 </div>
-            
+              </div>
             </div>
-          </div>
-        ))}
-      </Slider>:<div className="max-w-[1180px] mx-auto flex justify-center items-center" style={{ zIndex: 100,backgroundColor:'white' }}>
-    <Skeleton className="px-4" active={true} />
-
-    </div>
-    }
+          ))}
+        </Slider>
+      ) : (
+        <div
+          className="max-w-[1180px] mx-auto flex justify-center items-center"
+          style={{ zIndex: 100, backgroundColor: "white" }}
+        >
+          <Skeleton className="px-4" active={true} />
+        </div>
+      )}
     </div>
   );
 }
