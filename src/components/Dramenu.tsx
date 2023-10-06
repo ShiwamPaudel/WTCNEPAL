@@ -5,7 +5,7 @@ import Link from "next/link";
 
 function Dramenu({ categories }: any) {
   // filtering categories
-  console.log(categories, "category");
+  // console.log(categories, "category");
 
   let mainCategory = categories?.filter(
     (item: any, index: number) => item.attributes.salect_category === "main"
@@ -19,7 +19,7 @@ function Dramenu({ categories }: any) {
       item.attributes.position === "Diagnostic Equipments/ Reagent Kits"
   );
 
-  console.log(subCategory);
+  // console.log(subCategory);
 
   subCategory?.sort((a: any, b: any) =>
     a.attributes.title.localeCompare(b.attributes.title)
@@ -31,21 +31,21 @@ function Dramenu({ categories }: any) {
       item.attributes.position === "Disinfectant And House Keeping"
   );
 
-  console.log(secondCategory);
+  // console.log(secondCategory);
 
   let thirdCategory = categories?.filter(
     (item: any, index: number) =>
       item.attributes.salect_category === "sub" &&
       item.attributes.position === "Dermatology (Skin Care & Beauty) Products"
   );
-  console.log(thirdCategory);
+  // console.log(thirdCategory);
 
   let fourthCategory = categories?.filter(
     (item: any, index: number) =>
       item.attributes.salect_category === "sub" &&
       item.attributes.position === "Medical And Critical Care Devices"
   );
-  console.log(fourthCategory, "filtering sub category");
+  // console.log(fourthCategory, "filtering sub category");
 
   const [open, setOpen] = useState(false);
   const [about, setAbout] = useState(false);
@@ -62,14 +62,14 @@ function Dramenu({ categories }: any) {
   };
 
   const handleSubmenu = (index: any) => {
-    console.log(index);
+    // console.log(index);
     setSub(index);
     // setMenu2(false);
     // setMenu3(false);
     // setMenu4(false);
   };
   const handleSubmenu2 = (index: any) => {
-    console.log(index);
+    // console.log(index);
     setSub2(index);
   };
 
@@ -142,38 +142,34 @@ function Dramenu({ categories }: any) {
                               >
                                 <Link href="#">{item?.attributes?.title}</Link>
                               </li>
-                              
-                                {sub2 === index && (
-                                      <div className="    w-[50%]  z-40 space-y-[10px]">
-                                        <div className="  py-[5px] pl-[5px] mb-[0px]   h-[100%] w-full ">
-                                          {item.attributes.brand_name && (
-                                            <div className="flex items-center pt-[8px]"><p className="mr-[4px]">➡️</p>
-                                            <li className="text-[15px] whitespace-pre w-full  hover:text-[#0000CC]  transition-colors duration-300 ease-out font-semibold cursor-pointer">
-                                              <Link
-                                                href={`/brand-product/${item.attributes.brand_name}`}
-                                                >
-                                                {item.attributes.brand_name}
-                                              </Link>
-                                              
-                                            </li>
-                                            {
-                                              item?.attributes?.brand_name2 &&  <li className="text-[15px]  hover:text-[#0000CC]  transition-colors duration-300 ease-out font-semibold cursor-pointer">
-                                              <Link
-                                                href={`/brand-product/${item?.attributes?.brand_name2}`}
-                                                >
-                                                {item?.attributes?.brand_name2}
-                                              </Link>
-                                              
-                                            </li>
-                                            }
-                                           
-                                                </div>
-                                          )}
 
-                               
-                                        </div>
+                              {sub2 === index && (
+                                <div className="    w-[50%]  z-40 space-y-[10px]">
+                                  <div className="  py-[5px] pl-[5px] mb-[0px]   h-[100%] w-full ">
+                                    {item.attributes.brand_name && (
+                                      <div className="flex items-center pt-[8px]">
+                                        <p className="mr-[4px]">➡️</p>
+                                        <li className="text-[15px] whitespace-pre w-full  hover:text-[#0000CC]  transition-colors duration-300 ease-out font-semibold cursor-pointer">
+                                          <Link
+                                            href={`/brand-product/${item.attributes.brand_name}`}
+                                          >
+                                            {item.attributes.brand_name}
+                                          </Link>
+                                        </li>
+                                        {item?.attributes?.brand_name2 && (
+                                          <li className="text-[15px]  hover:text-[#0000CC]  transition-colors duration-300 ease-out font-semibold cursor-pointer">
+                                            <Link
+                                              href={`/brand-product/${item?.attributes?.brand_name2}`}
+                                            >
+                                              {item?.attributes?.brand_name2}
+                                            </Link>
+                                          </li>
+                                        )}
                                       </div>
                                     )}
+                                  </div>
+                                </div>
+                              )}
                             </div>
                           ))}
                         </div>
@@ -193,36 +189,32 @@ function Dramenu({ categories }: any) {
                                 <Link href="#">{item?.attributes?.title}</Link>
                               </li>
                               {sub2 === index && (
-                                      <div className="    w-[50%]  z-40 space-y-[10px]">
-                                        <div className="  py-[5px] pl-[5px] mb-[0px]   h-[100%] w-full ">
-                                          {item.attributes.brand_name && (
-                                            <div className="flex items-center pt-[8px]"><p className="mr-[4px]">➡️</p>
-                                            <li className="text-[15px] whitespace-pre w-full  hover:text-[#0000CC]  transition-colors duration-300 ease-out font-semibold cursor-pointer">
-                                              <Link
-                                                href={`/brand-product/${item.attributes.brand_name}`}
-                                                >
-                                                {item.attributes.brand_name}
-                                              </Link>
-                                              
-                                            </li>
-                                            {
-                                              item?.attributes?.brand_name2 &&  <li className="text-[15px]  hover:text-[#0000CC]  transition-colors duration-300 ease-out font-semibold cursor-pointer">
-                                              <Link
-                                                href={`/brand-product/${item?.attributes?.brand_name2}`}
-                                                >
-                                                {item?.attributes?.brand_name2}
-                                              </Link>
-                                              
-                                            </li>
-                                            }
-                                           
-                                                </div>
-                                          )}
-
-                               
-                                        </div>
+                                <div className="    w-[50%]  z-40 space-y-[10px]">
+                                  <div className="  py-[5px] pl-[5px] mb-[0px]   h-[100%] w-full ">
+                                    {item.attributes.brand_name && (
+                                      <div className="flex items-center pt-[8px]">
+                                        <p className="mr-[4px]">➡️</p>
+                                        <li className="text-[15px] whitespace-pre w-full  hover:text-[#0000CC]  transition-colors duration-300 ease-out font-semibold cursor-pointer">
+                                          <Link
+                                            href={`/brand-product/${item.attributes.brand_name}`}
+                                          >
+                                            {item.attributes.brand_name}
+                                          </Link>
+                                        </li>
+                                        {item?.attributes?.brand_name2 && (
+                                          <li className="text-[15px]  hover:text-[#0000CC]  transition-colors duration-300 ease-out font-semibold cursor-pointer">
+                                            <Link
+                                              href={`/brand-product/${item?.attributes?.brand_name2}`}
+                                            >
+                                              {item?.attributes?.brand_name2}
+                                            </Link>
+                                          </li>
+                                        )}
                                       </div>
                                     )}
+                                  </div>
+                                </div>
+                              )}
                             </>
                           ))}
                         </div>
@@ -241,38 +233,34 @@ function Dramenu({ categories }: any) {
                               >
                                 <Link href="#">{item?.attributes?.title}</Link>
                               </li>
-                              
-                              {sub2 === index && (
-                                      <div className="    w-[50%]  z-40 space-y-[10px]">
-                                        <div className="  py-[3px] pl-[5px] mb-[0px]   h-[100%] w-full ">
-                                          {item.attributes.brand_name && (
-                                            <div className="flex items-center pt-[0px]"><p className="mr-[4px]">➡️</p>
-                                            <li className="text-[15px] whitespace-pre w-full  hover:text-[#0000CC]  transition-colors duration-300 ease-out font-semibold cursor-pointer">
-                                              <Link
-                                                href={`/brand-product/${item.attributes.brand_name}`}
-                                                >
-                                                {item.attributes.brand_name}
-                                              </Link>
-                                              
-                                            </li>
-                                            {
-                                              item?.attributes?.brand_name2 &&  <li className="text-[15px]  hover:text-[#0000CC]  transition-colors duration-300 ease-out font-semibold cursor-pointer">
-                                              <Link
-                                                href={`/brand-product/${item?.attributes?.brand_name2}`}
-                                                >
-                                                {item?.attributes?.brand_name2}
-                                              </Link>
-                                              
-                                            </li>
-                                            }
-                                           
-                                                </div>
-                                          )}
 
-                               
-                                        </div>
+                              {sub2 === index && (
+                                <div className="    w-[50%]  z-40 space-y-[10px]">
+                                  <div className="  py-[3px] pl-[5px] mb-[0px]   h-[100%] w-full ">
+                                    {item.attributes.brand_name && (
+                                      <div className="flex items-center pt-[0px]">
+                                        <p className="mr-[4px]">➡️</p>
+                                        <li className="text-[15px] whitespace-pre w-full  hover:text-[#0000CC]  transition-colors duration-300 ease-out font-semibold cursor-pointer">
+                                          <Link
+                                            href={`/brand-product/${item.attributes.brand_name}`}
+                                          >
+                                            {item.attributes.brand_name}
+                                          </Link>
+                                        </li>
+                                        {item?.attributes?.brand_name2 && (
+                                          <li className="text-[15px]  hover:text-[#0000CC]  transition-colors duration-300 ease-out font-semibold cursor-pointer">
+                                            <Link
+                                              href={`/brand-product/${item?.attributes?.brand_name2}`}
+                                            >
+                                              {item?.attributes?.brand_name2}
+                                            </Link>
+                                          </li>
+                                        )}
                                       </div>
                                     )}
+                                  </div>
+                                </div>
+                              )}
                             </>
                           ))}
                         </div>
@@ -291,38 +279,34 @@ function Dramenu({ categories }: any) {
                               >
                                 <Link href="#">{item?.attributes?.title}</Link>
                               </li>
-                              
-                              {sub2 === index && (
-                                      <div className="    w-[50%]  z-40 space-y-[10px]">
-                                        <div className="  py-[3px] pl-[5px] mb-[0px]   h-[100%] w-full ">
-                                          {item.attributes.brand_name && (
-                                            <div className="flex items-center pt-[0px]"><p className="mr-[4px]">➡️</p>
-                                            <li className="text-[15px] whitespace-pre w-full  hover:text-[#0000CC]  transition-colors duration-300 ease-out font-semibold cursor-pointer">
-                                              <Link
-                                                href={`/brand-product/${item.attributes.brand_name}`}
-                                                >
-                                                {item.attributes.brand_name}
-                                              </Link>
-                                              
-                                            </li>
-                                            {
-                                              item?.attributes?.brand_name2 &&  <li className="text-[15px]  hover:text-[#0000CC]  transition-colors duration-300 ease-out font-semibold cursor-pointer">
-                                              <Link
-                                                href={`/brand-product/${item?.attributes?.brand_name2}`}
-                                                >
-                                                {item?.attributes?.brand_name2}
-                                              </Link>
-                                              
-                                            </li>
-                                            }
-                                           
-                                                </div>
-                                          )}
 
-                               
-                                        </div>
+                              {sub2 === index && (
+                                <div className="    w-[50%]  z-40 space-y-[10px]">
+                                  <div className="  py-[3px] pl-[5px] mb-[0px]   h-[100%] w-full ">
+                                    {item.attributes.brand_name && (
+                                      <div className="flex items-center pt-[0px]">
+                                        <p className="mr-[4px]">➡️</p>
+                                        <li className="text-[15px] whitespace-pre w-full  hover:text-[#0000CC]  transition-colors duration-300 ease-out font-semibold cursor-pointer">
+                                          <Link
+                                            href={`/brand-product/${item.attributes.brand_name}`}
+                                          >
+                                            {item.attributes.brand_name}
+                                          </Link>
+                                        </li>
+                                        {item?.attributes?.brand_name2 && (
+                                          <li className="text-[15px]  hover:text-[#0000CC]  transition-colors duration-300 ease-out font-semibold cursor-pointer">
+                                            <Link
+                                              href={`/brand-product/${item?.attributes?.brand_name2}`}
+                                            >
+                                              {item?.attributes?.brand_name2}
+                                            </Link>
+                                          </li>
+                                        )}
                                       </div>
                                     )}
+                                  </div>
+                                </div>
+                              )}
                             </>
                           ))}
                         </div>

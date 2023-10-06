@@ -95,7 +95,7 @@ function Nav1() {
   };
 
   const handleSubmenu2 = (index: any) => {
-    console.log(index);
+    // console.log(index);
     setSub2(index);
   };
   const handleSubmenuHide2 = () => {
@@ -103,7 +103,7 @@ function Nav1() {
   };
 
   const handleSubmenu = (index: any) => {
-    console.log(index);
+    // console.log(index);
     setSub(index);
     setMenu2(false);
     setMenu3(false);

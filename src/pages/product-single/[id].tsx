@@ -18,7 +18,7 @@ import { imageUrl } from "@/utils/imageUrl";
 const ProductDetail = () => {
   const router = useRouter();
   let id = router.query.id;
-  console.log(id);
+  // console.log(id);
 
   const [product, setProduct] = useState<any>(null);
   const [isLoading, setIsLoading] = useState(true);
@@ -88,7 +88,7 @@ const ProductDetail = () => {
     let submit = await axios.post(`${BaseUrl}/email-collections`, {
       data: values,
     });
-    console.log(submit);
+    // console.log(submit);
     if (submit) {
       window.location.href =
         "https://www.dmsnepal.com/brochure?brochure=products/wNR0XuhUdDYoxCXir1VQ5r6RnAUFk80AbZca8TQd.pdf";
@@ -206,17 +206,11 @@ const ProductDetail = () => {
                       <Image
                         width={250}
                         height={220}
-                        src={product?.attributes?.image?.data?.attributes?.url}
-                        // src={imageUrl(
-                        //   `${product?.attributes?.image?.data?.attributes?.url}`
-                        // )}
+                        src={imageUrl(
+                          `${product?.attributes?.image?.data?.attributes?.url}`
+                        )}
                         className="cursor-pointer hover:scale-[107%] transition duration-300 ease-out h-[100%] w-[80%] object-contain"
                       />
-                      {/* <img
-                      src={product?.attributes?.image?.data?.attributes?.url}
-                      alt=""
-                      className="cursor-pointer hover:scale-[107%] transition duration-300 ease-out h-[100%] w-[80%] object-contain"
-                    /> */}
                     </div>
                     <div className="pt-[15px]">
                       {product?.attributes?.Brochure?.data?.length && (
