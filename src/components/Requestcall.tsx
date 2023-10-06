@@ -61,7 +61,7 @@ function Requestcall({ notify }: any) {
             <p className="font-Work font-normal text-[xs] leading-[18px] text-[#838485] pt-[14px] pl-[34px]">
               Leave us your info, we shall call you ASAP
             </p>
-            <div className="grid grid-cols-1  mt-[40px] ml-[34px] gap-[32px] mr-[38px]">
+            <div className=" grid grid-cols-1  mt-[40px] ml-[34px] gap-[32px] mr-[38px]">
               <div className="box2">
                 <form onSubmit={formik.handleSubmit}>
                   <label className="font-IBM font-normal text-[15px] leading-[19.5px] text-[#0D1250]">
