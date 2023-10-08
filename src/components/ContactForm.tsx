@@ -20,7 +20,7 @@ const ContactForm = ({ data }: any) => {
 
   const handleSubmit = async (values: any) => {
     let submit = await axios.post(`${BaseUrl}/contacts`, { data: values });
-    console.log(submit);
+    // console.log(submit);
     if (submit) {
       toast.success("Message sent Successfully!");
     }

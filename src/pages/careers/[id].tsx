@@ -8,13 +8,13 @@ import { Button, Modal } from "antd";
 import { UploadOutlined } from "@ant-design/icons";
 import type { UploadProps } from "antd";
 import { message, Upload } from "antd";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const SingleJob = () => {
   const router = useRouter();
   const id = router.query.id;
-  console.log(id);
+  // console.log(id);
   const [product, setProduct] = useState<any>(null);
 
   useEffect(() => {
@@ -27,7 +27,7 @@ const SingleJob = () => {
     };
     getProduct();
   }, [id]);
-  console.log(product, "hello");
+  // console.log(product, "hello");
 
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -57,7 +57,7 @@ const SingleJob = () => {
       Email: "",
       Mobile: "",
       Message: "",
-    Resume:""
+      Resume: "",
     },
 
     onSubmit: (values) => {
@@ -73,36 +73,35 @@ const SingleJob = () => {
 
       // }
       formData.append("data", JSON.stringify(values));
-      formData.append("files.Resume",values.Resume)
+      formData.append("files.Resume", values.Resume);
 
-      console.log(formData);
+      // console.log(formData);
 
-    
       handleSubmit(values);
     },
   });
 
   const handleSingleFile = (e: any) => {
     let file = e.target.files;
-    console.log(file[0])
+    // console.log(file[0]);
     // console.log(file)
-    
+
     // formik.setFieldValue("Resume", file[0]);
-    formData.append("files.Resume",file[0])
-    console.log(formData);
+    formData.append("files.Resume", file[0]);
+    // console.log(formData);
   };
 
   const handleSubmit = async (values: any) => {
-    console.log(formData)
+    // console.log(formData);
     let submit = await axios.post(`${BaseUrl}/sc-xcs`, formData, {
-      headers: { 'Content-type':"multipart/form-data"}
+      headers: { "Content-type": "multipart/form-data" },
     });
 
-    if(submit){
+    if (submit) {
       toast.success("Applied Successfully!");
-      router.push("/careers")
+      router.push("/careers");
     }
-    console.log(submit);
+    // console.log(submit);
   };
 
   // formData.append("data",values)
@@ -116,7 +115,7 @@ const SingleJob = () => {
     },
     onChange(info) {
       if (info.file.status !== "uploading") {
-        console.log(info.file, info.fileList);
+        // console.log(info.file, info.fileList);
         formik.setFieldValue("Resume", info.file);
       }
       if (info.file.status === "done") {
@@ -130,7 +129,7 @@ const SingleJob = () => {
   // const router = useRouter()
   return (
     <div className="container mx-auto 2xl:max-w-[1180px] pb-[50px]">
-      <ToastContainer/>
+      <ToastContainer />
       {/* modal popup */}
       <Modal
         width={700}
@@ -182,9 +181,13 @@ const SingleJob = () => {
     <Button icon={<UploadOutlined />}>Upload your CV</Button>
   </Upload> */}
             {/* <label htmlFor="">Upload your CV</label> */}
-            <input type="file" name="Resume"    onChange={(event:any) => {
-          formik.setFieldValue("Resume", event.currentTarget.files[0]);
-        }} />
+            <input
+              type="file"
+              name="Resume"
+              onChange={(event: any) => {
+                formik.setFieldValue("Resume", event.currentTarget.files[0]);
+              }}
+            />
           </div>
 
           <button
@@ -204,84 +207,82 @@ const SingleJob = () => {
         </div>
         <div>
           <div className="pt-[10px]">
-            { product?.attributes?.company_name &&
-                          <h2>
-                          Company Name:{" "}
-                          <span className="font-semibold">
-                            {product?.attributes?.company_name
-                              ? product?.attributes?.company_name
-                              : "Null"}
-                          </span>
-                        </h2>
-            }
+            {product?.attributes?.company_name && (
+              <h2>
+                Company Name:{" "}
+                <span className="font-semibold">
+                  {product?.attributes?.company_name
+                    ? product?.attributes?.company_name
+                    : "Null"}
+                </span>
+              </h2>
+            )}
 
-{
-  product?.attributes?.No_of_Vacancy &&  <h2>
-  No of Vacancy:{" "}
-  <span className="font-semibold">
-    {product?.attributes?.No_of_Vacancy
-      ? product?.attributes?.No_of_Vacancy
-      : "Null"}
-  </span>
-</h2>
-}
+            {product?.attributes?.No_of_Vacancy && (
+              <h2>
+                No of Vacancy:{" "}
+                <span className="font-semibold">
+                  {product?.attributes?.No_of_Vacancy
+                    ? product?.attributes?.No_of_Vacancy
+                    : "Null"}
+                </span>
+              </h2>
+            )}
 
-          {
-            product?.attributes?.education_level &&  <h2>
-            Education Level:{" "}
-            <span className="font-semibold">
-              {product?.attributes?.education_level
-                ? product?.attributes?.education_level
-                : "Null"}
-            </span>
-          </h2>
-          }  
-           
-           {
-            product?.attributes?.address &&   <h2>
-            Job Location:{" "}
-            <span className="font-semibold">
-              {product?.attributes?.address
-                ? product?.attributes?.address
-                : "Null"}
-            </span>
-          </h2>
-           }
-           
-           {
-            product?.attributes?.Deadline &&   <h2>
-            Deadline:{" "}
-            <span className="font-semibold">
-              {product?.attributes?.Deadline
-                ? product?.attributes?.Deadline
-                : "Null"}
-            </span>
-          </h2>
-           }
-           
-           {
-            product?.attributes?.Professional_Skill_Required && <h2>
-            Professional Skill Required :{" "}
-            <span className="font-semibold">
-              {product?.attributes?.Professional_Skill_Required
-                ? product?.attributes?.Professional_Skill_Required
-                : "Null"}
-            </span>
-          </h2>
-           }
+            {product?.attributes?.education_level && (
+              <h2>
+                Education Level:{" "}
+                <span className="font-semibold">
+                  {product?.attributes?.education_level
+                    ? product?.attributes?.education_level
+                    : "Null"}
+                </span>
+              </h2>
+            )}
 
-           { product?.attributes?.Employment_Type &&
-            <h2>
-              Employment Type :{" "}
-              <span className="font-semibold">
-                {product?.attributes?.Employment_Type
-                  ? product?.attributes?.Employment_Type
-                  : "Null"}
-              </span>
-            </h2>
-           }
-           
-            
+            {product?.attributes?.address && (
+              <h2>
+                Job Location:{" "}
+                <span className="font-semibold">
+                  {product?.attributes?.address
+                    ? product?.attributes?.address
+                    : "Null"}
+                </span>
+              </h2>
+            )}
+
+            {product?.attributes?.Deadline && (
+              <h2>
+                Deadline:{" "}
+                <span className="font-semibold">
+                  {product?.attributes?.Deadline
+                    ? product?.attributes?.Deadline
+                    : "Null"}
+                </span>
+              </h2>
+            )}
+
+            {product?.attributes?.Professional_Skill_Required && (
+              <h2>
+                Professional Skill Required :{" "}
+                <span className="font-semibold">
+                  {product?.attributes?.Professional_Skill_Required
+                    ? product?.attributes?.Professional_Skill_Required
+                    : "Null"}
+                </span>
+              </h2>
+            )}
+
+            {product?.attributes?.Employment_Type && (
+              <h2>
+                Employment Type :{" "}
+                <span className="font-semibold">
+                  {product?.attributes?.Employment_Type
+                    ? product?.attributes?.Employment_Type
+                    : "Null"}
+                </span>
+              </h2>
+            )}
           </div>
         </div>
       </div>

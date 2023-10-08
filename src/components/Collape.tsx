@@ -44,7 +44,7 @@ const Collape = () => {
     };
     getTestimonial();
   }, []);
-  console.log(testimonial);
+  // console.log(testimonial);
 
   return (
     <div>
@@ -61,18 +61,16 @@ const Collape = () => {
         }
         style={{ background: token.colorBgContainer }}
       >
-        {
-          testimonial?.map((item:any,index:number) =>(
-            <Panel
+        {testimonial?.map((item: any, index: number) => (
+          <Panel
             header={item?.attributes?.question}
             key={item?.id}
             style={panelStyle}
           >
             <p>{item?.attributes?.answer}</p>
           </Panel>
-          ))
-        }
-       
+        ))}
+
         {/* <Panel
           header="Do you offer warranty and technical support for the equipment?"
           key="2"

@@ -3,7 +3,7 @@ import Collape from "./Collape";
 import { imageUrl } from "@/utils/imageUrl";
 
 const Asked = ({ faq }: any) => {
-  console.log("faq", faq);
+  // console.log("faq", faq);
   return (
     <div className="bg-white  px-[15px] md:px-0 py-10">
       <h3 className="font-Work font-bold text-[13px] leading-[15px] tracking-[0.085em] text-[#007EC5] text-center ">

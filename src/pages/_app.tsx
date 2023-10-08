@@ -26,7 +26,7 @@ export default function App({ Component, pageProps }: AppProps) {
     };
     getFooter();
   }, []);
-  console.log(footer);
+  // console.log(footer);
 
   const [isModalOpen, setIsModalOpen] = useState(false);
 

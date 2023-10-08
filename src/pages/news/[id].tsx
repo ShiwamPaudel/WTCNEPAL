@@ -11,7 +11,8 @@ import { imageUrl } from "@/utils/imageUrl";
 const SingleNews = () => {
   const router = useRouter();
   let id = router.query.id;
-  console.log(id);
+
+  // console.log("id", id);
 
   const [news, setNews] = useState<any>(null);
   const [banner, setBanner] = useState<any>(null);
@@ -30,7 +31,7 @@ const SingleNews = () => {
     };
     getNews();
   }, [id]);
-  console.log(news);
+  // console.log(news);
 
   return (
     <>
@@ -86,16 +87,12 @@ const SingleNews = () => {
             </h2>
             <ul className="mt-[20px] space-y-[5px] text-[#0000CC] ">
               <li className="cursor-pointer border-b-[1px] pb-[10px] hover:underline">
-                Lorem ipsum dolor sit, amet consectetur adipisicientium, ea
-                quisquam.?
+                DiaSorin User Meet and Update Training: A Successful Gathering
+                of Minds
               </li>
               <li className="cursor-pointer border-b-[1px] pb-[10px] hover:underline">
-                Lorem ipsum dolor sit, amet consectetur adipisicientium, ea
-                quisquam.?
-              </li>
-              <li className="cursor-pointer hover:underline">
-                Lorem ipsum dolor sit, amet consectetur adipisicientium, ea
-                quisquam.?
+                WTC-DiaSorin Day 2023 Gala Dinner Celebration: A Grand Affair of
+                Togetherness
               </li>
             </ul>
           </div>
