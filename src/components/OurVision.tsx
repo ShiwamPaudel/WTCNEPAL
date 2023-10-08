@@ -59,7 +59,7 @@ const OurVision = () => {
           </>
         ))}
       </div>
-      <div className="md:mt-[40px] mt-[135px] hidden 2xl:px-[200px] cursor-pointer">
+      {/* <div className="md:mt-[40px] mt-[135px] hidden 2xl:px-[200px] cursor-pointer">
         {vision?.slice(2)?.map((item: any, index: number) => {
           return (
             <>
@@ -81,7 +81,7 @@ const OurVision = () => {
             </>
           );
         })}
-      </div>
+      </div> */}
     </div>
   );
 };
