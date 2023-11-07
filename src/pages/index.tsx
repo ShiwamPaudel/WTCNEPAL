@@ -1,8 +1,8 @@
 import Image from "next/image";
 import Head from "next/head";
 import { Inter } from "next/font/google";
-
-import Navbar from "@/components/Navbar";
+import HomeSlider from "@/components/HomeSlider";
+import Customers from "@/components/Customers";
 import AboutUs from "@/components/AboutUs";
 import Testimonial from "@/components/Testimonial";
 import PartneredUniverities from "@/components/PartneredUniverities";
@@ -10,7 +10,7 @@ import Partnered from "@/components/Partnered";
 import Asked from "@/components/Asked";
 import Requestcall from "@/components/Requestcall";
 import News from "@/components/News";
-import Fotter from "@/components/Fotter";
+import Fotter from "@/components/Footer";
 import Products from "@/components/Products";
 import BootomFooter from "@/components/BootomFooter";
 import Nav1 from "@/components/Nav1";
@@ -26,7 +26,6 @@ const inter = Inter({ subsets: ["latin"] });
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
   const [partner, setPartner] = useState<any>(null);
-  const [customer, setCustomer] = useState<any>(null);
   const [slide1, setSlide1] = useState<any>(null);
   const [slide2, setSlide2] = useState<any>(null);
   const [faq, setFaq] = useState<any>(null);
@@ -34,18 +33,15 @@ export default function Home() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const [ partnerRes] =
-          await Promise.all([
-            axios.get(`${BaseUrl}/our-partners?populate=*`),
-            // axios.get(`${BaseUrl}/slider1s?populate=*`),
-            // axios.get(`${BaseUrl}/customers?populate=*`),
-            // axios.get(`${BaseUrl}/faqs?populate=*`),
-            // axios.get(`${BaseUrl}/slider2s?populate=*`),
-          ]);
+        const [partnerRes] = await Promise.all([
+          axios.get(`${BaseUrl}/our-partners?populate=*`),
+          // axios.get(`${BaseUrl}/slider1s?populate=*`),
+          // axios.get(`${BaseUrl}/faqs?populate=*`),
+          // axios.get(`${BaseUrl}/slider2s?populate=*`),
+        ]);
 
-          setPartner(partnerRes.data.data);
+        setPartner(partnerRes.data.data);
         // setSlide1(slide1Res.data.data);
-        // setCustomer(customerRes.data.data);
         // setFaq(faqRes.data.data);
         // setSlide2(slideRes2.data.data);
         // setPopupbanner(popupBanner.data.data);
@@ -119,7 +115,7 @@ export default function Home() {
     <>
       <Head>
         <title>WEB TRADING CONCERN PVT.LTD</title>
-        <link rel="icon" href="/../assets/wtc.svg" />
+        <link rel="icon" href="/../assets/footerlogo.png" />
         <link
           rel="stylesheet"
           href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
@@ -131,7 +127,6 @@ export default function Home() {
         />
       </Head>
       {/* <div className="max-w-[1180px] mx-auto"> */}
-
       <>
         <a
           href="https://wa.me/+9779851140881"
@@ -142,22 +137,20 @@ export default function Home() {
           <i className="fa fa-whatsapp whatsapp-icon"></i>
         </a>
         <ToastContainer />
-        <Navbar />
+        <HomeSlider />
         <AboutUs />
-        <PartneredUniverities partner={partner} title={"We represent"} />
-        <Partnered data={slide1} slide={6} height={"125px"} style={"cover"} />
+        <Customers />
+        {/* <PartneredUniverities partner={partner} title={"We represent"} /> */}
+        {/* <Partnered data={slide1} slide={6} height={"125px"} style={"cover"} /> */}
         <Products />
-        <Testimonial />
-        <Asked faq={faq} />
         {/* <Testimonial /> */}
+        <Asked faq={faq} />
         <Requestcall />
-        {/* <PartneredUniverities partner={customer} title={"OUR Customers"} /> */}
         {/* <Partnered1 data={slide2} slide={10} height={'79px'} style={'contain'}/> */}
         <News />
         {/* <Test/> */}
       </>
-
-      {/* </div> */}
     </>
   );
 }
+

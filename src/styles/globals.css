@@ -11,6 +11,9 @@
   background-position: center;
 }
 
+html {
+  scroll-behavior: smooth;
+}
 body {
   font-family: "inter", serif;
 }
@@ -366,3 +369,10 @@ font-size: 12px;
   top: 0px !important;
 }
 /* :where(.css-dev-only-do-not-override-yp8pcc).ant-modal .ant-modal-content */
+.custom-bg{
+background-image: url("/../assets/news.jpg");
+background-repeat: no-repeat;
+background-size: cover;
+background-attachment: fixed;
+
+}
