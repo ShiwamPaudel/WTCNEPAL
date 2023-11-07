@@ -34,20 +34,20 @@ export default function Home() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const [slide1Res, partnerRes, customerRes, faqRes, slideRes2] =
+        const [ partnerRes] =
           await Promise.all([
-            axios.get(`${BaseUrl}/slider1s?populate=*`),
             axios.get(`${BaseUrl}/our-partners?populate=*`),
-            axios.get(`${BaseUrl}/customers?populate=*`),
-            axios.get(`${BaseUrl}/faqs?populate=*`),
-            axios.get(`${BaseUrl}/slider2s?populate=*`),
+            // axios.get(`${BaseUrl}/slider1s?populate=*`),
+            // axios.get(`${BaseUrl}/customers?populate=*`),
+            // axios.get(`${BaseUrl}/faqs?populate=*`),
+            // axios.get(`${BaseUrl}/slider2s?populate=*`),
           ]);
 
-        setSlide1(slide1Res.data.data);
-        setPartner(partnerRes.data.data);
-        setCustomer(customerRes.data.data);
-        setFaq(faqRes.data.data);
-        setSlide2(slideRes2.data.data);
+          setPartner(partnerRes.data.data);
+        // setSlide1(slide1Res.data.data);
+        // setCustomer(customerRes.data.data);
+        // setFaq(faqRes.data.data);
+        // setSlide2(slideRes2.data.data);
         // setPopupbanner(popupBanner.data.data);
       } catch (error) {
         console.error(error);

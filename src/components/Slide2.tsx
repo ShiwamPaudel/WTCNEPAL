@@ -55,12 +55,12 @@ function Slide2() {
 
   useEffect(() => {
     let getBanner = async () => {
-      const [banner, year] = await Promise.all([
+      const [banner] = await Promise.all([
         axios.get(`${BaseUrl}/banners?populate=*`),
-        axios.get(`${BaseUrl}/header-experience-titles?populate=*`),
+        // axios.get(`${BaseUrl}/header-experience-titles?populate=*`),
       ]);
       setBanner(banner.data.data);
-      setYear(year.data.data);
+      // setYear(year.data.data);
     };
     getBanner();
   }, []);
