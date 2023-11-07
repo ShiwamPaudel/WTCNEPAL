@@ -21,10 +21,10 @@ const SingleNews = () => {
   useEffect(() => {
     let getNews = async () => {
       let news = await axios.get(`${BaseUrl}/news-and-events/${id}?populate=*`);
-      let response = await axios.get(
-        `${BaseUrl}/news-banner?populate=*&?sort=rank:asc`
-      );
-      setBanner(response.data.data);
+      // let response = await axios.get(
+      //   `${BaseUrl}/news-banner?populate=*&?sort=rank:asc`
+      // );
+      // setBanner(response.data.data);
       //  let list=    product.data.data.slice(0,8)
       setNews(news.data.data);
       setIsLoading(false);

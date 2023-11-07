@@ -5,7 +5,7 @@ import { imageUrl } from "@/utils/imageUrl";
 const PartneredUniverities = ({ partner, title }: any) => {
   console.log(partner);
   return (
-    <div className=" container  mx-auto ">
+    <div className=" container  mx-auto my-8 ">
       <h2 className="text-[36px] font-semibold leading-[42.19px] text-center uppercase pb-10">
         {title}
       </h2>

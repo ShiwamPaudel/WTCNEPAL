@@ -2,7 +2,7 @@ import React from 'react'
 import {BsYoutube} from 'react-icons/bs'
 import {FiTwitter} from 'react-icons/fi'
 import {FaFacebookF, FaTiktok,FaInstagram} from 'react-icons/fa'
-function Fotter1() {
+function Footer1() {
   return (
     <>
     <div className="w-full bg-[#0C1B30] pb-[25px] md:pb-0">
@@ -23,4 +23,4 @@ function Fotter1() {
   )
 }
 
-export default Fotter1
+export default Footer1

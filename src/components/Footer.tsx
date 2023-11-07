@@ -2,7 +2,7 @@ import Link from "next/link";
 import React from "react";
 import { BsGlobeAmericas } from "react-icons/bs";
 import Parse from "html-react-parser";
-function Fotter({ footer }: any) {
+function Footer({ footer }: any) {
   return (
     <div className=" w-full bg-[#0000cc] py-[48px] px-[15px] md:px-0">
       {footer?.map((item: any, index: number) => (
@@ -134,4 +134,4 @@ function Fotter({ footer }: any) {
   );
 }
 
-export default Fotter;
+export default Footer;

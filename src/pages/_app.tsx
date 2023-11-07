@@ -1,6 +1,7 @@
 import BootomFooter from "@/components/BootomFooter";
-import Fotter from "@/components/Fotter";
+import Footer from "@/components/Footer";
 import Nav1 from "@/components/Nav1";
+import FooterTop from "@/components/FooterTop";
 import "@/styles/globals.css";
 import type { AppProps } from "next/app";
 import { useEffect, useState } from "react";
@@ -74,7 +75,8 @@ export default function App({ Component, pageProps }: AppProps) {
       </Modal> */}
       <Nav1 />
       <Component {...pageProps} />
-      <Fotter footer={footer} />
+      <FooterTop />
+      <Footer footer={footer} />
       <BootomFooter data={footer} />
     </>
   );

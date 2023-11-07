@@ -1,7 +1,7 @@
 import React from "react";
 import Nav1 from "./Nav1";
 import Slide2 from "./Slide2";
-const Navbar = () => {
+const HomeSlider = () => {
   return (
     <>
       <Slide2 />
@@ -9,4 +9,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default HomeSlider;
