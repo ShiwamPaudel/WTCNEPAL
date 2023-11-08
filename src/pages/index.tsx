@@ -115,7 +115,7 @@ export default function Home() {
     <>
       <Head>
         <title>WEB TRADING CONCERN PVT.LTD</title>
-        <link rel="icon" href="/../assets/footerlogo.png" />
+        <link rel="icon" href="/../assets/favicon.png" />
         <link
           rel="stylesheet"
           href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
