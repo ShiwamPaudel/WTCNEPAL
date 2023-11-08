@@ -12,10 +12,9 @@ function Nav1() {
   const [menu3, setMenu3] = useState(false);
   const [menu4, setMenu4] = useState(false);
 
-  const [list2, setList2] = useState(0);
-  const [list4, setList4] = useState(3);
+  const [list2, setList2] = useState(null);
+  const [list4, setList4] = useState(null);
   const [fix, setFixed] = useState(false);
-
   const [categories, setCategories] = useState<any>(null);
 
   useEffect(() => {
@@ -24,7 +23,7 @@ function Nav1() {
         `${BaseUrl}/product-categories?populate=*`
       );
       // let response2 = await axios.get(`${BaseUrl}/testimonial-section?populate=*`)
-      setCategories(response.data.data);
+      setCategories(response?.data.data);
     };
     getCategory();
   }, []);
@@ -37,7 +36,7 @@ function Nav1() {
     (item: any, index: number) => item.attributes.salect_category === "main"
   );
 
-  // console.log(mainCategory,"filtering main category")
+  console.log(mainCategory,"filtering main category")
 
   let subCategory = categories?.filter(
     (item: any, index: number) =>
@@ -79,6 +78,7 @@ function Nav1() {
   const handleDropDownHide = () => {
     SetAbout(false);
   };
+
   const handleProduct = () => {
     setProduct(true);
     setSub(null);
@@ -100,9 +100,7 @@ function Nav1() {
     // console.log(index);
     setSub2(index);
   };
-  const handleSubmenuHide2 = () => {
-    // setSub2(false);
-  };
+
 
   const handleSubmenu = (index: any) => {
     // console.log(index);
@@ -111,29 +109,8 @@ function Nav1() {
     setMenu3(false);
     setMenu4(false);
   };
-  const handleMenu2 = () => {
-    // setSub(false);
-    setMenu2(true);
-    setMenu3(false);
-    setMenu4(false);
-    // alert(sub)
-  };
-  const handleMenu3 = () => {
-    // setSub(false);
-    setMenu2(false);
-    setMenu3(true);
-    setMenu4(false);
-    // alert(sub)
-  };
-  const handleMenu4 = () => {
-    // setSub(false);
-    setMenu4(true);
-    setMenu2(false);
-    setMenu3(false);
-    // alert(sub)
-  };
 
-  // for ther sticky header
+ 
 
   const stickyTop = () => {
     if (window.scrollY >= 50) {
@@ -169,7 +146,6 @@ function Nav1() {
         <div className="container  2xl:max-w-[1180px] mx-auto justify-between font-semibold items-center hidden py-[10px] lg:flex lg:flex-row">
           <div className="w-[137px] h-auto ">
             <Link href="/">
-              {" "}
               <img
                 src="/../assets/logo.png"
                 alt="avatar"
@@ -200,8 +176,8 @@ function Nav1() {
                 </Link>
 
                 {about && (
-                  <div className="absolute top-[18px] left-0    w-[199px] h-[126px] z-40 space-y-[10px]">
-                    <div className="  border-t-[4px] border-t-[black]   absolute top-[27px] h-[100%] w-full ">
+                  <div className="absolute top-[12px] left-[-60px]   w-[199px] h-[126px] z-40 space-y-[10px]">
+                    <div className="  absolute top-[27px] h-[100%] w-full ">
                       <li className="text-[14px] border-b-[0.5px] border-b-[white]/[0.5] hover:text-[#0000CC] bg-[#23a8cd] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer">
                         <Link href="/about">About Web Trading</Link>
                       </li>
@@ -231,8 +207,8 @@ function Nav1() {
                 </Link>
 
                 {product && (
-                  <div className="absolute top-[18px] left-0    w-[250px] h-[126px] z-40 space-y-[10px]">
-                    <div className="bg-white  border-t-[4px] border-t-[black]   absolute top-[27px] h-[100%] w-full ">
+                  <div className="absolute top-[12px] left-[-84px]   w-[250px] h-[126px] z-[9999] space-y-[10px]">
+                    <div className="bg-white  absolute top-[27px] h-[100%] w-full ">
                       <>
                         {mainCategory?.map((item: any, index: any) => (
                           <>
@@ -246,8 +222,8 @@ function Nav1() {
                             </li>
 
                             {sub === 0 && (
-                              <div className="absolute top-[0px] left-[100%]    w-[91%] h-[126px] z-40 space-y-[10px]">
-                                <div className="bg-white border-l-[0.5px] w-full border-l-[white]  border-t-[4px] border-t-[black]   absolute top-[10px] h-[100%]  ">
+                              <div className="absolute top-[-10px] left-[100%] border-l-2 border-transparent   w-[90%] h-[126px] z-40 space-y-[10px]">
+                                <div className="bg-white  w-full  absolute top-[10px] h-[100%]  ">
                                   {subCategory?.map((item: any, index: any) => (
                                     <>
                                       {/* {console.log(item)} */}
@@ -255,7 +231,6 @@ function Nav1() {
                                         onMouseEnter={() =>
                                           handleSubmenu2(index)
                                         }
-                                        onMouseLeave={handleSubmenuHide2}
                                         className="text-[15px] relative  capitalize border-b-[0.5px] border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#23a8cd] text-white py-[10px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer"
                                       >
                                         <Link href="/about">
@@ -264,8 +239,8 @@ function Nav1() {
                                       </li>
 
                                       {sub2 === index && (
-                                        <div className="absolute  left-[100%]    w-[54%] h-[126px] z-40 space-y-[10px]">
-                                          <div className=" mt-[-60px]    absolute top-[0px] h-[100%] w-full ">
+                                        <div className="absolute left-[100%] border-l-2 border-transparent   w-[54%] h-[126px] z-40 space-y-[10px]">
+                                          <div className=" -mt-[40%]    absolute top-[0px] h-[100%] w-full ">
                                             {item.attributes.brand_name && (
                                               <>
                                                 <li className="text-[15px] whitespace-pre w-full border-b-[0.5px] capitalize border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#23a8cd] text-white py-[10px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer">
@@ -290,12 +265,6 @@ function Nav1() {
                                                 )}
                                               </>
                                             )}
-
-                                            {/* {item.attributes.Brand_name==="BioSystems" && (
-              <li className="text-[15px] border-b-[0.5px] capitalize border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#23a8cd] text-white py-[10px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer">
-                {item.sub2}
-              </li>
-            )} */}
                                           </div>
                                         </div>
                                       )}
@@ -306,8 +275,8 @@ function Nav1() {
                             )}
 
                             {sub === 1 && (
-                              <div className="absolute top-[0px] left-[100%]    w-[91%] h-[126px] z-40 space-y-[10px]">
-                                <div className=" border-l-[0.5px] border-l-[white]  border-t-[4px] border-t-[black]   absolute top-[10px] h-[100%] w-full ">
+                              <div className="absolute top-[59px] left-[100%] border-l-2 border-transparent   w-[90%] h-[126px] z-40 space-y-[10px]">
+                                <div className="  absolute top-[10px] h-[100%] w-full ">
                                   {secondCategory?.map(
                                     (item: any, index: number) => (
                                       <>
@@ -322,8 +291,8 @@ function Nav1() {
                                           </Link>
                                         </li>
                                         {list2 === index && (
-                                          <div className="absolute  left-[100%]    w-[35%] h-[126px] z-40 space-y-[10px]">
-                                            <div className=" mt-[-60px]    absolute top-[0px] h-[100%] w-full ">
+                                          <div className="absolute  left-[100%]  border-l-2 border-transparent  w-[35%] h-[126px] z-40 space-y-[10px]">
+                                            <div className=" mt-[-36px]    absolute top-[0px] h-[100%] w-full ">
                                               {item?.attributes?.brand_name && (
                                                 <li className="text-[15px] border-b-[0.5px] capitalize border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#23a8cd] text-white py-[10px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer">
                                                   <Link
@@ -346,11 +315,10 @@ function Nav1() {
                               </div>
                             )}
                             {sub === 2 && (
-                              <div className="absolute top-[95px] left-[100%]    w-[91%] h-[126px] z-40 space-y-[10px]">
+                              <div className="absolute top-[115px] left-[100%] border-l-2 border-transparent   w-[90%] h-[126px] z-40 space-y-[10px]">
                                 <div
                                   onMouseEnter={handleSubmenu2}
-                                  onMouseLeave={handleSubmenuHide2}
-                                  className=" border-l-[0.5px] border-l-[white]  border-t-[4px] border-t-[black]   absolute top-[10px] h-[100%] w-full "
+                                  className="  absolute top-[10px] h-[100%] w-full "
                                 >
                                   {thirdCategory?.map(
                                     (item: any, index: number) => (
@@ -364,7 +332,7 @@ function Nav1() {
                                         </li>
                                         {/* {sub2 && (
         <div className="absolute top-[5px] left-[100%]    w-[199px] h-[126px] z-40 space-y-[10px]">
-          <div className="  border-t-[4px] border-t-[black]   absolute top-[0px] h-[100%] w-full ">
+          <div className="  absolute top-[0px] h-[100%] w-full ">
             <li className="text-[15px] border-b-[0.5px] capitalize border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#23a8cd] text-white py-[10px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer">
               <Link href="/about">BioSystems</Link>
             </li>
@@ -379,8 +347,8 @@ function Nav1() {
                             )}
 
                             {sub === 3 && (
-                              <div className="absolute top-[100px] left-[100%]    w-[91%] h-[126px] z-40 space-y-[10px]">
-                                <div className=" border-l-[0.5px]   border-t-[4px] border-t-[black]   absolute top-[10px] h-[100%] w-full ">
+                              <div className="absolute top-[185px] left-[100%]  border-l-2 border-transparent  w-[90%] h-[126px] z-40 space-y-[10px]">
+                                <div className="    absolute top-[10px] h-[100%] w-full ">
                                   {fourthCategory?.map(
                                     (item: any, index: number) => (
                                       <>
@@ -395,9 +363,9 @@ function Nav1() {
                                           </Link>
                                         </li>
                                         {list4 === index && (
-                                          <div className="absolute  left-[100%]    w-[55%] h-[126px] z-40 space-y-[10px]">
-                                            <div className=" mt-[-60px] border-t-[4px] border-t-[black]   absolute top-[0px] h-[100%] w-full ">
-                                              <li className="text-[15px] border-b-[0.5px] capitalize border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#23a8cd] text-white py-[10px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer">
+                                          <div className="absolute  left-[100%]  border-l-2 border-transparent  w-[55%] h-[126px] z-40 space-y-[10px]">
+                                            <div className=" mt-[-35px] absolute top-[0px] h-[100%] w-full ">
+                                              <li className="text-[15px] border-b-[0.5px] capitalize border-b-[white]/[0.3] whitespace-nowrap hover:text-[#0000CC] bg-[#23a8cd] text-white py-[10px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer">
                                                 <Link
                                                   href={`/brand-product/${item?.attributes?.brand_name}`}
                                                 >

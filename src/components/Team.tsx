@@ -26,7 +26,7 @@ const Team = () => {
     <div className="container 2xl:max-w-[1180px] mx-auto pt-[20px] px-[15px] md:0">
       {testimonial2?.map((item: any, index: number) => (
         <div className=" flex items-center justify flex-col gap-[10px]">
-          <h1 className="text-[22px] font-semibold ">
+          <h1 className="text-[32px] font-semibold ">
             {item?.attributes?.title}
           </h1>
           <p className="text-[16px] leading-[24px] font-normal max-w-[1100px] text-center">
@@ -35,7 +35,7 @@ const Team = () => {
         </div>
       ))}
 
-      <div className="grid md:grid-cols-4 grid-cols-1 px-[00px] mt-[80px] gap-[30px] pb-[50px]">
+      <div className="grid md:grid-cols-4 grid-cols-1 px-[00px] my-20 gap-[30px] ">
         {testimonial?.map((item: any, index: number) => (
           <div
             key={index}
