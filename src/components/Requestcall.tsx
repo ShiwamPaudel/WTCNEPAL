@@ -4,8 +4,8 @@ import axios from "axios";
 import { BaseUrl } from "@/pages/api/global";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
-function Requestcall({ notify }: any) {
+import Collape from "./Collape";
+function Requestcall({ faq }: any) {
   const formik = useFormik({
     initialValues: {
       full_name: "",
@@ -34,34 +34,20 @@ function Requestcall({ notify }: any) {
   };
 
   return (
-    <div className="contact_form px-[15px] md:px-0">
+    <div className="contact_form">
       <ToastContainer />
-      <div className="container mx-auto relative py-10 md:px-[180px] ">
-        <div className="flex flex-col md:flex-row gap-10 ">
-          <div className="flex-1 pl-[15px] md:pl-[10px] flex items-center justify-center">
-            <div>
-              <h3 className="font-Work hidden font-bold text-[13px] leading-[15.25px] tracking-[0.085px] text-[white] ">
-                Contact us
-              </h3>
-              <h2 className="font-IBM uppercase font-extrabold max-w-[564px] text-[33px] md:text-[32px] leading-[44px] md:leading-[47px] text-[white] pt-[4px]">
-                Have a Question? Contact Us
-              </h2>
-              <p className="font-Work font-normal text-[16px] leading-[18px] text-[white] pr-[35px] w-[338px] mt-[26px] md:w-[385px] 2xl:w-[545px]">
-                Web Trading Nepal is committed to providing the highest level of
-                customer service. We welcome your feedback, questions, and
-                concerns. Please feel free to reach out to us using the form
-                below.
-              </p>
+      <div className="container 2xl:max-w-[1180px] mx-auto relative ">
+        <h1 className="text-lg sm:text-[36px] font-semibold leading-[42.19px] text-center uppercase text-white py-10">Frequently Asked Questions</h1>
+        <div className="flex flex-col lg:flex-row gap-6 pb-10 mx-8">
+          <Collape />
+          <div className="box1 w-full self-start px-6 py-8  basis-[50%] rounded-lg ">
+            <div className="font-IBM font-medium text-[28px] leading-[36.4px] text-[#0D1250]">
+              Have a question?
             </div>
-          </div>
-          <div className="box1 flex-1 w-full md:min-h-[600px] ">
-            <h2 className="font-IBM font-medium text-[28px] leading-[36.4px] text-[#0D1250] pt-[34px] pl-[34px]">
-              Contact Form
-            </h2>
-            <p className="font-Work font-normal text-[xs] leading-[18px] text-[#838485] pt-[14px] pl-[34px]">
-              Leave us your info, we shall call you ASAP
+            <p className="font-Work font-normal text-[xs] leading-[18px] text-[#838485] ">
+              Leave us your info and we shall get back to you soon.
             </p>
-            <div className=" grid grid-cols-1  mt-[40px] ml-[34px] gap-[32px] mr-[38px]">
+            <div className=" grid grid-cols-1  mt-[40px]  gap-[32px] mr-[38px]">
               <div className="box2">
                 <form onSubmit={formik.handleSubmit}>
                   <label className="font-IBM font-normal text-[15px] leading-[19.5px] text-[#0D1250]">
@@ -74,7 +60,7 @@ function Requestcall({ notify }: any) {
                     value={formik.values.full_name}
                     required
                     type="text"
-                    className="border-[1px] pl-[14px] border-solid border-[#EDEDED] w-full h-[56px] mt-[8px] mb-[38px] inputfield"
+                    className="border-[1px] border-solid border-[#EDEDED] w-full h-[56px] mt-[8px] mb-[38px] inputfield pl-[14px]"
                   />
                   <br />
                   <label className="font-IBM font-normal  text-[15px] leading-[19.5px] text-[#0D1250]">
@@ -87,7 +73,7 @@ function Requestcall({ notify }: any) {
                     value={formik.values.email}
                     required
                     type="text"
-                    className="border-[1px] pl-[14px] border-solid border-[#EDEDED] w-full mb-[38px] h-[56px] mt-[8px] inputfield"
+                    className="border-[1px]  border-solid border-[#EDEDED] w-full mb-[38px] h-[56px] mt-[6px] inputfield pl-[14px]"
                   />
                   <label className="font-IBM font-normal  text-[15px] leading-[19.5px] text-[#0D1250]">
                     Message
@@ -101,10 +87,9 @@ function Requestcall({ notify }: any) {
                     type="text"
                     className="border-[1px] border-solid pl-[14px] border-[#EDEDED] w-full h-[56px] mt-[8px] inputfield"
                   />
-                  <div className=" h-[56px]  mt-[40px] mb-[34px] bg-[#1CABD3] hover:bg-[#1CABD3]/[0.8] rounded-sm">
-                    <div className="flex items-center justify-center">
+                  <div className=" h-[56px]  mt-[40px]  bg-[#1CABD3] hover:bg-[#1CABD3]/[0.8] rounded-sm">
+                    <div className="flex items-center justify-center pb-2">
                       <button
-                        onClick={notify}
                         type="submit"
                         className="font-IBM font-semibold text-[15px] leading-[19.5px] text-[#FFFFFF] pl-[15px] py-[18px]"
                       >
