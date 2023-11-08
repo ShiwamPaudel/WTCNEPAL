@@ -24,7 +24,7 @@ const index = () => {
     <div>
       <Head>
         <title>NEWS & EVENTS</title>
-        <link rel="icon" href="/../assets/wtc.svg" />
+        <link rel="icon" href="/../assets/favicon.png" />
       </Head>
       <AboutBanner testimonial={testimonial} />
       <NewsBlock />

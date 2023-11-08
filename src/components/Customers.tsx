@@ -16,9 +16,9 @@ const AboutUs = () => {
   }, []);
   return (
     <div className="custom-bg" >
-      <div className="bg-gradient-to-r from-neutral-50/90 to-blue-600/95 py-10 ">
+      <div className="bg-gradient-to-r from-black/50 to-blue-600/95  md:from-neutral-50/90 md:to-blue-600/95  py-10 ">
         {customer?.map((item: any, index: number) => (
-          <div className="md:flex gap-20 px-[15px] md:px-0  my-8 items-center">
+          <div className="md:flex my-8 items-center">
             <div className="basis-[55%] mt-[40px] md:mt-0 flex flex-col items-center justify-center ">
               <div className="bg-white/70 p-8 rounded-r-[36px]">
                 <img
@@ -29,11 +29,11 @@ const AboutUs = () => {
                 />
               </div>
             </div>
-            <div className="basis-[45%] ">
-              <h1 className="text-white text-[32px] leading-[46.8px] font-semibold uppercase py-4">
+            <div className="basis-[45%] flex flex-col justify-center items-center">
+              <h1 className="text-white text-[32px] leading-[46.8px] font-semibold uppercase py-4 mt-8 md:mt-0">
                 {item?.attributes?.title}
               </h1>
-              <div className="w-[70%] text-xl text-justify text-white">
+              <div className="w-[90%] text-xl text-justify text-white">
                 {parse(`${item?.attributes?.description}`)}
               </div>
             </div>

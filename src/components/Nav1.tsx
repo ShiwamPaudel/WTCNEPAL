@@ -6,8 +6,8 @@ import axios from "axios";
 function Nav1() {
   const [about, SetAbout] = useState(false);
   const [product, setProduct] = useState(false);
-  const [sub, setSub] = useState(0);
-  const [sub2, setSub2] = useState(0);
+  const [sub, setSub] = useState(null);
+  const [sub2, setSub2] = useState(null);
   const [menu2, setMenu2] = useState(false);
   const [menu3, setMenu3] = useState(false);
   const [menu4, setMenu4] = useState(false);
@@ -81,6 +81,8 @@ function Nav1() {
   };
   const handleProduct = () => {
     setProduct(true);
+    setSub(null);
+    setSub2(null);
   };
   const handleProductHide = () => {
     setProduct(false);
@@ -254,7 +256,7 @@ function Nav1() {
                                           handleSubmenu2(index)
                                         }
                                         onMouseLeave={handleSubmenuHide2}
-                                        className="text-[15px] relative  capitalize border-b-[0.5px] border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#23a8cd] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer"
+                                        className="text-[15px] relative  capitalize border-b-[0.5px] border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#23a8cd] text-white py-[10px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer"
                                       >
                                         <Link href="/about">
                                           {item?.attributes?.title}
@@ -266,7 +268,7 @@ function Nav1() {
                                           <div className=" mt-[-60px]    absolute top-[0px] h-[100%] w-full ">
                                             {item.attributes.brand_name && (
                                               <>
-                                                <li className="text-[15px] whitespace-pre w-full border-b-[0.5px] capitalize border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#23a8cd] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer">
+                                                <li className="text-[15px] whitespace-pre w-full border-b-[0.5px] capitalize border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#23a8cd] text-white py-[10px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer">
                                                   <Link
                                                     href={`/brand-product/${item.attributes.brand_name}`}
                                                   >
@@ -275,7 +277,7 @@ function Nav1() {
                                                 </li>
                                                 {item?.attributes
                                                   ?.brand_name2 && (
-                                                  <li className="text-[15px] border-b-[0.5px] capitalize border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#23a8cd] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer">
+                                                  <li className="text-[15px] border-b-[0.5px] capitalize border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#23a8cd] text-white py-[10px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer">
                                                     <Link
                                                       href={`/brand-product/${item?.attributes?.brand_name2}`}
                                                     >
@@ -290,10 +292,10 @@ function Nav1() {
                                             )}
 
                                             {/* {item.attributes.Brand_name==="BioSystems" && (
-                                        <li className="text-[15px] border-b-[0.5px] capitalize border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#23a8cd] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer">
-                                          {item.sub2}
-                                        </li>
-                                      )} */}
+              <li className="text-[15px] border-b-[0.5px] capitalize border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#23a8cd] text-white py-[10px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer">
+                {item.sub2}
+              </li>
+            )} */}
                                           </div>
                                         </div>
                                       )}
@@ -313,7 +315,7 @@ function Nav1() {
                                           onMouseEnter={() =>
                                             handleList2(index)
                                           }
-                                          className="text-[15px] relative  capitalize border-b-[0.5px] border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#23a8cd] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer"
+                                          className="text-[15px] relative  capitalize border-b-[0.5px] border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#23a8cd] text-white py-[10px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer"
                                         >
                                           <Link href="/about">
                                             {item?.attributes?.title}
@@ -323,7 +325,7 @@ function Nav1() {
                                           <div className="absolute  left-[100%]    w-[35%] h-[126px] z-40 space-y-[10px]">
                                             <div className=" mt-[-60px]    absolute top-[0px] h-[100%] w-full ">
                                               {item?.attributes?.brand_name && (
-                                                <li className="text-[15px] border-b-[0.5px] capitalize border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#23a8cd] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer">
+                                                <li className="text-[15px] border-b-[0.5px] capitalize border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#23a8cd] text-white py-[10px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer">
                                                   <Link
                                                     href={`/brand-product/${item?.attributes?.brand_name}`}
                                                   >
@@ -353,7 +355,7 @@ function Nav1() {
                                   {thirdCategory?.map(
                                     (item: any, index: number) => (
                                       <>
-                                        <li className="text-[15px] relative  capitalize border-b-[0.5px] border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#23a8cd] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer">
+                                        <li className="text-[15px] relative  capitalize border-b-[0.5px] border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#23a8cd] text-white py-[10px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer">
                                           <Link
                                             href={`/brand-product/${item?.attributes?.title}`}
                                           >
@@ -361,14 +363,14 @@ function Nav1() {
                                           </Link>
                                         </li>
                                         {/* {sub2 && (
-                                  <div className="absolute top-[5px] left-[100%]    w-[199px] h-[126px] z-40 space-y-[10px]">
-                                    <div className="  border-t-[4px] border-t-[black]   absolute top-[0px] h-[100%] w-full ">
-                                      <li className="text-[15px] border-b-[0.5px] capitalize border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#23a8cd] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer">
-                                        <Link href="/about">BioSystems</Link>
-                                      </li>
-                                    </div>
-                                  </div>
-                                )} */}
+        <div className="absolute top-[5px] left-[100%]    w-[199px] h-[126px] z-40 space-y-[10px]">
+          <div className="  border-t-[4px] border-t-[black]   absolute top-[0px] h-[100%] w-full ">
+            <li className="text-[15px] border-b-[0.5px] capitalize border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#23a8cd] text-white py-[10px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer">
+              <Link href="/about">BioSystems</Link>
+            </li>
+          </div>
+        </div>
+      )} */}
                                       </>
                                     )
                                   )}
@@ -386,7 +388,7 @@ function Nav1() {
                                           onMouseEnter={() =>
                                             handlelist4(index)
                                           }
-                                          className="text-[15px] relative  capitalize border-b-[0.5px] border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#23a8cd] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer"
+                                          className="text-[15px] relative  capitalize border-b-[0.5px] border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#23a8cd] text-white py-[10px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer"
                                         >
                                           <Link href="/about">
                                             {item?.attributes?.title}
@@ -395,7 +397,7 @@ function Nav1() {
                                         {list4 === index && (
                                           <div className="absolute  left-[100%]    w-[55%] h-[126px] z-40 space-y-[10px]">
                                             <div className=" mt-[-60px] border-t-[4px] border-t-[black]   absolute top-[0px] h-[100%] w-full ">
-                                              <li className="text-[15px] border-b-[0.5px] capitalize border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#23a8cd] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer">
+                                              <li className="text-[15px] border-b-[0.5px] capitalize border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#23a8cd] text-white py-[10px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer">
                                                 <Link
                                                   href={`/brand-product/${item?.attributes?.brand_name}`}
                                                 >

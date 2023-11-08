@@ -22,7 +22,7 @@ const index = () => {
     <div>
       <Head>
         <title>OUT TEAM</title>
-        <link rel="icon" href="/../assets/wtc.svg" />
+        <link rel="icon" href="/../assets/favicon.png" />
       </Head>
       <AboutBanner testimonial={testimonial} />
       <Team />

@@ -2,6 +2,8 @@ import AboutBanner from '@/components/AboutBanner'
 import BootomFooter from '@/components/BootomFooter'
 import ContactForm from '@/components/ContactForm'
 import Fotter from '@/components/Footer'
+import Head from "next/head";
+
 import Map from '@/components/Map'
 import React,{useState,useEffect} from 'react'
 import axios from 'axios'
@@ -24,7 +26,20 @@ const index = () => {
 
     console.log(testimonial)
 
-  return (
+  return (<>  
+    <Head>
+    <title>Contact us</title>
+    <link rel="icon" href="/../assets/favicon.png" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"
+    />
+  </Head>
     <div>
         <AboutBanner testimonial={testimonial}/>
         <ContactForm data={testimonial}/>
@@ -33,6 +48,8 @@ const index = () => {
         <BootomFooter/> */}
       
     </div>
+    </>
+
   )
 }
 

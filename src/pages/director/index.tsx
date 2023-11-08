@@ -25,7 +25,7 @@ const index = () => {
     <>
       <Head>
         <title>MEET OUR DIRECTOR</title>
-        <link rel="icon" href="/../assets/wtc.svg" />
+        <link rel="icon" href="/../assets/favicon.png" />
       </Head>
 
       {testimonial ? (
