@@ -10,7 +10,7 @@ const AboutBanner = ({ testimonial }: any) => {
           src={imageUrl(
             `${testimonial?.attributes?.image?.data?.attributes?.url}`
           )}
-          className="w-full  object-cover"
+          className="w-full  object-cover opacity-60"
           alt=""
         />
 

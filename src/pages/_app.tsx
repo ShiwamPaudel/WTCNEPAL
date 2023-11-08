@@ -13,6 +13,7 @@ export default function App({ Component, pageProps }: AppProps) {
   const [footer, setFooter] = useState<any>(null);
   const [popupbanner, setPopupbanner] = useState<any>(null);
 
+
   useEffect(() => {
     let getFooter = async () => {
       const [footer, popup] = await Promise.all([
@@ -74,10 +75,12 @@ export default function App({ Component, pageProps }: AppProps) {
   }
       </Modal> */}
       <Nav1 />
+      <div>
       <Component {...pageProps} />
       <FooterTop />
       <Footer footer={footer} />
       <BootomFooter data={footer} />
+      </div>
     </>
   );
 }

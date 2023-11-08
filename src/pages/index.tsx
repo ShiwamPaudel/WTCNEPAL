@@ -142,10 +142,10 @@ export default function Home() {
         <Customers />
         {/* <PartneredUniverities partner={partner} title={"We represent"} /> */}
         {/* <Partnered data={slide1} slide={6} height={"125px"} style={"cover"} /> */}
-        <Products />
+        {/* <Products /> */}
         {/* <Testimonial /> */}
-        <Asked faq={faq} />
-        <Requestcall />
+        {/* <Asked /> */}
+        <Requestcall faq={faq}  />
         {/* <Partnered1 data={slide2} slide={10} height={'79px'} style={'contain'}/> */}
         <News />
         {/* <Test/> */}
