@@ -4,7 +4,7 @@ import React from "react";
 
 const index = () => {
   return (
-    <div className="container mx-auto 2xl:max-w-[1180px]">
+    <div className="container mx-auto 2xl:max-w-[1180px] xl:px-20 2xl:px-0  ">
       {/* <AboutBanner/> */}
 
       <JobListing />

@@ -23,7 +23,7 @@ const OurVision = () => {
   // console.log(typeof vision);
 
   return (
-    <div className="container 2xl:max-w-[1180px] mx-auto  px-[15px] md:px-0 pb-10 my-4 flex flex-col md:flex-row items-center gap-10 text-center text-white">
+    <div className="container 2xl:max-w-[1180px] xl:px-20 2xl:px-0   mx-auto  px-[15px] md:px-0 pb-10 my-4 flex flex-col md:flex-row items-center gap-10 text-center text-white">
       {/* <div className="rounded-tl-[15px] rounded-tr-[50px] rounded-br-[15px]  rounded-bl-[50px] w-[250px] h-[200px] bg-[#23a8cd] p-4 flex flex-col items-center gap-2">
         <h1 className="text-[20px]">Our Vision</h1>
         <img src="/assets/vision1.png" alt="" className="w-[50px] h-[50px]" />

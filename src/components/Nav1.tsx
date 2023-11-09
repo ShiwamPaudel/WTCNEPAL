@@ -143,7 +143,7 @@ function Nav1() {
       </div>
 
       <div className={` ${fix ? "nav" : ""}`}>
-        <div className="container  2xl:max-w-[1180px] mx-auto justify-between font-semibold items-center hidden py-[10px] lg:flex lg:flex-row">
+        <div className="container  2xl:max-w-[1180px] xl:px-20 2xl:px-0   xl:px-20 2xl:px-0  mx-auto justify-between font-semibold items-center hidden py-[10px] lg:flex lg:flex-row">
           <div className="w-[137px] h-auto ">
             <Link href="/">
               <img
@@ -414,7 +414,7 @@ function Nav1() {
                   Contact
                 </Link>
               </li>
-              <li className="h-[42px] w-[128px] bg-[#23a8cd] rounded-[39px] flex items-center ml-[0px] justify-center">
+              <li className="h-[42px] w-[128px] bg-[#23a8cd] rounded-[39px] flex items-center ml-[0px] justify-center whitespace-nowrap">
                 <Link
                   target="_black"
                   href="https://mail.zoho.com/zm/"

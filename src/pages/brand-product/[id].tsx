@@ -43,7 +43,7 @@ const Brand = () => {
   return (
     <>
       {product ? (
-        <div className="container 2xl:max-w-[1180px] mx-auto pb-[111px] pt-[80px] px-[15px] md:px-0">
+        <div className="container 2xl:max-w-[1180px] xl:px-20 2xl:px-0   mx-auto pb-[111px] pt-[80px] px-[15px] md:px-0">
           <div className="flex items-center justify-center gap-[8px] flex-col">
             <h1 className="text-[36px] font-extrabold leading-[42.19px] text-center uppercase border-b-[4px] border-b-[#0000CC] pb-[10px]">
               {query}

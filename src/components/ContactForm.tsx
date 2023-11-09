@@ -27,7 +27,7 @@ const ContactForm = ({ data }: any) => {
   };
 
   return (
-    <div className="container 2xl:max-w-[1180px] mx-auto flex md:flex-row flex-col  py-10">
+    <div className="container 2xl:max-w-[1180px] xl:px-20 2xl:px-0   mx-auto flex md:flex-row flex-col  py-10">
       <ToastContainer />
       <div className="basis-[40%] flex items-center flex-col md:gap-[69px] gap-[50px]">
         <div className="flex items-center justify-center flex-col gap-[12px]">

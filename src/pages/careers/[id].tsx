@@ -128,7 +128,7 @@ const SingleJob = () => {
 
   // const router = useRouter()
   return (
-    <div className="container mx-auto 2xl:max-w-[1180px] pb-[50px]">
+    <div className="container mx-auto 2xl:max-w-[1180px] xl:px-20 2xl:px-0   pb-[50px]">
       <ToastContainer />
       {/* modal popup */}
       <Modal

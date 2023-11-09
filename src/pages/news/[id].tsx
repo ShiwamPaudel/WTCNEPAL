@@ -37,7 +37,7 @@ const SingleNews = () => {
     <>
       <AboutBanner testimonial={banner} />
 
-      <div className="container px-[15px] md:px-0 flex-wrap md:flex-nowrap 2xl:max-w-[1180px] flex gap-[40px] mx-auto py-[80px] ">
+      <div className="container px-[15px] md:px-0 flex-wrap md:flex-nowrap 2xl:max-w-[1180px] xl:px-20 2xl:px-0   flex gap-[40px] mx-auto py-[80px] ">
         <div className="md:basis-[70%]  border p-[20px]">
           <div className="h-[300px]">
             <img

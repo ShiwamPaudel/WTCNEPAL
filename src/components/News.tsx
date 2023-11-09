@@ -3,7 +3,7 @@ import NewsBlock from "./NewsBlock";
 
 function News() {
   return (
-    <div className="container 2xl:max-w-[1180px] mx-auto px-[15px] md:px-0 py-10">
+    <div className="container 2xl:max-w-[1180px] xl:px-20 2xl:px-0   mx-auto px-[15px] md:px-0 py-10">
       <h3 className="font-Work font-bold text-[13px] leading-[15.25px] tracking-[0.085em] text-[#007EC5] text-center">
         BLOGS
       </h3>

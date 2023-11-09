@@ -36,7 +36,7 @@ function Requestcall({ faq }: any) {
   return (
     <div className="contact_form">
       <ToastContainer />
-      <div className="container 2xl:max-w-[1180px] mx-auto relative ">
+      <div className="container 2xl:max-w-[1180px] xl:px-20 2xl:px-0   mx-auto relative ">
         <h1 className="text-lg sm:text-[36px] font-semibold leading-[42.19px] text-center uppercase text-white py-10">Frequently Asked Questions</h1>
         <div className="flex flex-col lg:flex-row gap-6 pb-10 mx-8">
           <Collape />

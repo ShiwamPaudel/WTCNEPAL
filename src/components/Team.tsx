@@ -23,7 +23,7 @@ const Team = () => {
 
   // console.log(testimonial2)
   return (
-    <div className="container 2xl:max-w-[1180px] mx-auto pt-[20px] px-[15px] md:0">
+    <div className="container 2xl:max-w-[1180px] xl:px-20 2xl:px-0   mx-auto pt-[20px] px-[15px] md:0">
       {testimonial2?.map((item: any, index: number) => (
         <div className=" flex items-center justify flex-col gap-[10px]">
           <h1 className="text-[32px] font-semibold ">

@@ -3,7 +3,7 @@ import React from "react";
 const FooterTop = () => {
   return (
     <div className="bg-gradient-to-tr from-blue-500 to-blue-800 py-6 ">
-      <div className=" container 2xl:max-w-[1180px] mx-auto flex justify-between items-center flex-col md:flex-row ">
+      <div className=" container 2xl:max-w-[1180px] xl:px-20 2xl:px-0   mx-auto flex justify-between items-center flex-col md:flex-row ">
         <div>
           <img src="/../assets/footerlogo.png" alt="" className="w-[132px] " />
         </div>

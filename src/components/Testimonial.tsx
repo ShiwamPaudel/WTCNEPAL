@@ -24,7 +24,7 @@ const Testimonial = () => {
       {testimonial ? (
         <div className=" testimonial relative px-[15px] md:px-0 py-10">
           <div className="h-[100%] w-full bg-[#1CABD3CC]/[0.8] absolute left-0 top-0"></div>
-          <div className="container 2xl:max-w-[1180px] mx-auto flex flex-col md:flex-row  ">
+          <div className="container 2xl:max-w-[1180px] xl:px-20 2xl:px-0   mx-auto flex flex-col md:flex-row  ">
             <div className="md:basis-[40%]  md:ml-[0px] relative z-30">
               <h3 className="font-Work font-bold text-[13px] leading-[15px] tracking-[0.085em] text-[#fff] text-center md:text-left  uppercase ">
                 TESTIMONIALS
