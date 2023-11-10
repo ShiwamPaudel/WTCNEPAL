@@ -397,14 +397,14 @@ function Nav1() {
                   News & Events
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link
                   href="/gallery"
                   className=" font-semibold hover:text-[#23a8cd] transition-colors duration-300 ease-out"
                 >
                   Gallery
                 </Link>
-              </li>
+              </li> */}
 
               <li>
                 <Link
