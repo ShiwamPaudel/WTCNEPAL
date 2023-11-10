@@ -162,7 +162,7 @@ const ProductDetail = () => {
               </button>
             </form>
           </Modal>
-          <div className="container mx-auto 2xl:max-w-[1180px] pt-[30px] pb-[80px] px-[15px] md:px-0">
+          <div className="container mx-auto 2xl:max-w-[1180px] xl:px-20 2xl:px-0   pt-[30px] pb-[80px] px-[15px] md:px-0">
             <div className="pb-[15px]">
               {product?.attributes?.select_product_category && (
                 <Breadcrumb

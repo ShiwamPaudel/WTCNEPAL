@@ -6,7 +6,7 @@ function Footer({ footer }: any) {
   return (
     <div className=" w-full bg-[#0000cc] py-[48px] px-[15px] md:px-0">
       {footer?.map((item: any, index: number) => (
-        <div key={index} className="container 2xl:max-w-[1180px] mx-auto">
+        <div key={index} className="container 2xl:max-w-[1180px] xl:px-20 2xl:px-0   mx-auto">
           <div className="flex gap-[68px] md:flex-row flex-col">
             <div className="basis-[30%] flex items-start justify-start flex-col">
               <img

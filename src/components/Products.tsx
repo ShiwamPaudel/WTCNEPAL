@@ -38,7 +38,7 @@ const Products = () => {
   return (
     <>
       {product ? (
-        <div className="container 2xl:max-w-[1180px] mx-auto py-10 px-[15px] md:px-0">
+        <div className="container 2xl:max-w-[1180px] xl:px-20 2xl:px-0   mx-auto py-10 px-[15px] md:px-0">
           <div className="flex items-center justify-center gap-[8px] flex-col">
             <h2 className="text-[#7A8A9E] text-[13px] leading-[15.23px] font-medium ">
               PRODUCTS

@@ -112,7 +112,7 @@ const AboutUs = () => {
       </Modal>
 
       {about?.map((item: any, index: number) => (
-        <div className="container 2xl:max-w-[1180px] mx-auto md:flex gap-20 px-[15px] md:px-0 ">
+        <div className="container 2xl:max-w-[1180px] xl:px-20 2xl:px-0   mx-auto md:flex gap-20 px-[15px] md:px-0 ">
           <div className="basis-[50%] ">
             <h2 className="text-[#7A8A9E] text-[13px] leading-[15.25px] tracking-[0.085em] font-bold">
               Welcome

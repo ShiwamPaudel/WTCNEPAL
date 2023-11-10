@@ -318,6 +318,9 @@ function Dramenu({ categories }: any) {
             )}
           </li>
           <li>
+            <Link href="/gallery">GALLERY</Link>
+          </li>
+          <li>
             <Link href="">CAREER</Link>
           </li>
           <li>

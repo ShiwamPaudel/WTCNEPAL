@@ -12,7 +12,7 @@ const Asked = ({ faq }: any) => {
       <h2 className="font-IBM font-normal uppercase text-4xl  text-[#0D1250] text-center ">
         Frequently Asked Questions
       </h2>
-      <div className="container 2xl:max-w-[1180px] mx-auto flex items-center md:flex-row flex-col  gap-[40px] ">
+      <div className="container 2xl:max-w-[1180px] xl:px-20 2xl:px-0   mx-auto flex items-center md:flex-row flex-col  gap-[40px] ">
         <div className="basis-[60%] ">
           <Collape />
         </div>
