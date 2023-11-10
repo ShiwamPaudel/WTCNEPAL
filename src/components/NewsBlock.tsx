@@ -18,7 +18,6 @@ const NewsBlock = () => {
     };
     getNews();
   }, []);
-  // console.log("news", news);
 
   const handleClick = (item: any) => {
     router.push(`/news/${item.id}`);
