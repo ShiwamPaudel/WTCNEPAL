@@ -143,7 +143,7 @@ function Nav1() {
       </div>
 
       <div className={` ${fix ? "nav" : ""}`}>
-        <div className="container  2xl:max-w-[1180px] xl:px-20 2xl:px-0   xl:px-20 2xl:px-0  mx-auto justify-between font-semibold items-center hidden py-[10px] lg:flex lg:flex-row">
+        <div className="container  2xl:max-w-[1180px] xl:px-20 2xl:px-0   mx-auto justify-between font-semibold items-center hidden py-[10px] lg:flex lg:flex-row">
           <div className="w-[137px] h-auto ">
             <Link href="/">
               <img
@@ -154,7 +154,7 @@ function Nav1() {
             </Link>
           </div>
           <div className="">
-            <ul className="flex flex-row items-center font-[inter] gap-[40px] font-normal text-[15px] uppercase leading-[14.52px] text-[#000000]">
+            <ul className="flex flex-row items-center font-[inter] gap-[32px] font-normal text-[14px] uppercase leading-[14.52px] text-[#000000]">
               <li>
                 <Link
                   href="/"
@@ -395,6 +395,14 @@ function Nav1() {
                   className=" font-semibold hover:text-[#23a8cd] transition-colors duration-300 ease-out"
                 >
                   News & Events
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/gallery"
+                  className=" font-semibold hover:text-[#23a8cd] transition-colors duration-300 ease-out"
+                >
+                  Gallery
                 </Link>
               </li>
 

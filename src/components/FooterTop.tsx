@@ -7,9 +7,9 @@ const FooterTop = () => {
         <div>
           <img src="/../assets/footerlogo.png" alt="" className="w-[132px] " />
         </div>
-        <div>
+        <div className="flex justify-center items-center sm:items-start sm:justify-normal flex-col gap-2 sm:flex-row ">
           <input
-            className="w-[350px] border border-white bg-transparent px-4 py-2 text-white placeholder:text-white rounded-md outline-none"
+            className=" w-[300px] sm:w-[350px] border border-white bg-transparent px-4 py-2 text-white placeholder:text-white rounded-md outline-none"
             placeholder="Enter your email"
           ></input>
           <button className="bg-white py-2 px-8 ml-2 rounded-md hover:bg-gray-200">

@@ -5,7 +5,7 @@ const BootomFooter = ({ data }: any) => {
   // console.log("bottom", data);
   return (
     <div className="bg-[#15157c] py-[24px]">
-      <div className="container 2xl:max-w-[1180px] xl:px-20 2xl:px-0   mx-auto flex items-center justify-between flex-col md:flex-row gap-[18px] md:gap-0">
+      <div className="container 2xl:max-w-[1180px]  mx-auto  px-[15px] sm:px-0 flex items-center justify-between flex-col md:flex-row gap-[18px] md:gap-0">
         <p className="text-[#fff] text-[16px]">
           Copyright @ 2023 Web Trading Concern Pvt.Ltd . All rights reserved..
           Site by{" "}
