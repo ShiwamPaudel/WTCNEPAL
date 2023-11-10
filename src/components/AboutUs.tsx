@@ -40,13 +40,14 @@ const AboutUs = () => {
     let submit = await axios.post(`${BaseUrl}/email-collections`, {
       data: values,
     });
-    // console.log(submit);
+
     if (submit) {
-      window.location.href =
-        "https://www.dmsnepal.com/brochure?brochure=products/wNR0XuhUdDYoxCXir1VQ5r6RnAUFk80AbZca8TQd.pdf";
+      const pdfUrl = `wtc.pdf`;
+      window.open(pdfUrl, "_blank");
     } else {
     }
   };
+
 
   return (
     <div className="py-10">
