@@ -168,7 +168,7 @@ const AboutUs = () => {
               {/* <img src="/../assets/brochure.png" alt="" className="cursor-pointer w-[70%]"  onClick={() => setModal2Open(true)}/> */}
               <button
                 onClick={() => setModal2Open(true)}
-                className="h-[50px] bg-[#23a8cd] hover:bg-[#23a8cd] w-[190px] flex items-center justify-center text-white text-[16px]  rounded-[4px] "
+                className="h-[50px] bg-[#23a8cd] hover:bg-[#fff] w-[190px] flex items-center justify-center text-white text-[16px]  rounded-[4px] "
               >
                 Download Profile
               </button>
