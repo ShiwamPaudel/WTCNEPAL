@@ -3,6 +3,7 @@ import Link from "next/link";
 import Dramenu from "./Dramenu";
 import { BaseUrl } from "@/pages/api/global";
 import axios from "axios";
+// import { useRouter } from "next/router";
 function Nav1() {
   const [about, SetAbout] = useState(false);
   const [product, setProduct] = useState(false);
@@ -12,6 +13,7 @@ function Nav1() {
   const [menu3, setMenu3] = useState(false);
   const [menu4, setMenu4] = useState(false);
 
+  // const router = useRouter();
   const [list2, setList2] = useState(null);
   const [list4, setList4] = useState(null);
   const [fix, setFixed] = useState(false);
@@ -124,12 +126,16 @@ function Nav1() {
     window.addEventListener("scroll", stickyTop);
   }
 
+  // const isActive = (path: string) => {
+  //   return router.pathname === path;
+  // };
+
   return (
     <>
       {/* responsive navbar  */}
-      <div className="container   mx-auto lg:hidden ">
+      <div className="container flex mx-auto lg:hidden ">
         <div className=" flex flex-row justify-between items-center  px-[15px] md:px-0 ">
-          <div className="w-[115px] h-[63px] ">
+          <div className="w-[115px] h-auto ">
             <Link href="/">
               <img
                 src="/../assets/logo.png"
@@ -142,8 +148,9 @@ function Nav1() {
         </div>
       </div>
 
-      <div className={` ${fix ? "nav" : ""}`}>
-        <div className="container  2xl:max-w-[1180px] xl:px-20 2xl:px-0   mx-auto justify-between font-semibold items-center hidden py-[10px] lg:flex lg:flex-row">
+      <div className={`bg-cyan ${fix ? "nav" : ""}`}>
+        <div className="container flex justify-between items-center py-[5px] lg:flex 2xl:max-w-[1180px] mx-auto font-semibold hidden lg:flex-row ">
+          {/* xl:px-20 2xl:px-0 */}
           <div className="w-[137px] h-auto ">
             <Link href="/">
               <img
@@ -154,11 +161,11 @@ function Nav1() {
             </Link>
           </div>
           <div className="">
-            <ul className="flex flex-row items-center font-[inter] gap-[32px] font-normal text-[14px] uppercase leading-[14.52px] text-[#000000]">
+            <ul className="flex flex-row items-center font-[inter] gap-[20px] font-normal text-[14px] uppercase leading-[14.52px] text-[#000000]">
               <li>
                 <Link
                   href="/"
-                  className="font-semibold  hover:text-[#23a8cd] transition-colors duration-150 ease-out"
+                  className="px-[1px] py-[5px] hover-text-border font-semibold relative overflow-hidden hover:text-[#23a8cd] transition-colors duration-150 ease-out px-"
                 >
                   Home
                 </Link>
@@ -166,11 +173,11 @@ function Nav1() {
               <li
                 onMouseEnter={handleDropDown}
                 onMouseLeave={handleDropDownHide}
-                className="relative"
+                className="relative px-[1px] py-[5px]"
               >
                 <Link
                   href="/about"
-                  className=" font-semibold hover:text-[#23a8cd] transition-colors duration-300 ease-out"
+                  className="hover-text-border font-semibold hover:text-[#23a8cd] transition-colors duration-300 ease-out"
                 >
                   Company
                 </Link>
@@ -178,16 +185,16 @@ function Nav1() {
                 {about && (
                   <div className="absolute top-[12px] left-[-60px]   w-[199px] h-[126px] z-40 space-y-[10px]">
                     <div className="  absolute top-[27px] h-[100%] w-full ">
-                      <li className="text-[14px] border-b-[0.5px] border-b-[white]/[0.5] hover:text-[#0000CC] bg-[#23a8cd] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer">
+                      <li className="hover-text-borderB relative overflow-hidden text-[14px] border-b-[0.5px] border-b-[white]/[0.5] hover:text-[#0000CC] bg-[#23a8cd] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer">
                         <Link href="/about">About Web Trading</Link>
                       </li>
-                      <li className="text-[14px]   border-b-[0.5px] border-b-[white]/[0.5]  bg-[#23a8cd] text-white py-[20px] px-[15px] hover:text-[#0000CC] transition-colors duration-300 ease-out font-semibold whitespace-pre cursor-pointer">
+                      <li className="text-[14px] border-b-[0.5px] border-b-[white]/[0.5]  bg-[#23a8cd] text-white py-[20px] px-[15px] hover:text-[#0000CC] transition-colors duration-300 ease-out font-semibold whitespace-pre cursor-pointer">
                         <Link href="/director">Meet our Director</Link>
                       </li>
                       <li className="text-[14px]  border-b-[0.5px] border-b-[white]/[0.5]  bg-[#23a8cd] text-white py-[20px] px-[15px] hover:text-[#0000CC] transition-colors duration-300 ease-out font-semibold whitespace-pre cursor-pointer">
                         <Link href="/team">Our Team</Link>
                       </li>
-                      <li className="text-[14px] hidden   bg-[#23a8cd] text-white py-[20px] px-[15px] hover:text-[#0000CC] transition-colors duration-300 ease-out font-semibold whitespace-pre cursor-pointer">
+                      <li className="text-[14px] hidden bg-[#23a8cd] text-white py-[20px] px-[15px] hover:text-[#0000CC] transition-colors duration-300 ease-out font-semibold whitespace-pre cursor-pointer">
                         <Link href="">Our Network</Link>
                       </li>
                     </div>
@@ -197,11 +204,11 @@ function Nav1() {
               <li
                 onMouseEnter={handleProduct}
                 onMouseLeave={handleProductHide}
-                className="relative"
+                className="relative px-[1px] py-[5px]"
               >
                 <Link
-                  href="#"
-                  className="font-semibold hover:text-[#23a8cd] transition-colors duration-300 ease-out"
+                  href="/brand-product/BioSystems"
+                  className="cursor-pointer hover-text-border font-semibold hover:text-[#23a8cd] transition-colors duration-300 ease-out"
                 >
                   Products
                 </Link>
@@ -392,7 +399,7 @@ function Nav1() {
               <li>
                 <Link
                   href="/news"
-                  className=" font-semibold hover:text-[#23a8cd] transition-colors duration-300 ease-out"
+                  className="px-[1px] py-[5px] hover-text-border font-semibold relative overflow-hidden hover:text-[#23a8cd] transition-colors duration-300 ease-out"
                 >
                   News & Events
                 </Link>
@@ -409,7 +416,7 @@ function Nav1() {
               <li>
                 <Link
                   href="/careers"
-                  className="font-semibold hover:text-[#23a8cd] transition-colors duration-300 ease-out"
+                  className="px-[1px] py-[5px] hover-text-border font-semibold relative overflow-hidden hover:text-[#23a8cd] transition-colors duration-300 ease-out"
                 >
                   Careers
                 </Link>
@@ -417,7 +424,7 @@ function Nav1() {
               <li>
                 <Link
                   href="/contact"
-                  className=" font-semibold hover:text-[#23a8cd] transition-colors duration-300 ease-out"
+                  className="px-[1px] py-[5px] hover-text-border font-semibold relative overflow-hidden hover:text-[#23a8cd] transition-colors duration-300 ease-out"
                 >
                   Contact
                 </Link>
@@ -426,7 +433,7 @@ function Nav1() {
                 <Link
                   target="_black"
                   href="https://mail.zoho.com/zm/"
-                  className=" text-white text-[15px] leading-[18.15px] font-semibold"
+                  className="text-white text-[15px] leading-[18.15px] font-semibold"
                   passHref
                 >
                   Check Email

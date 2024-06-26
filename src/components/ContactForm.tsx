@@ -5,6 +5,7 @@ import { BaseUrl } from "@/pages/api/global";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
+
 const ContactForm = ({ data }: any) => {
   const formik = useFormik({
     initialValues: {
@@ -88,8 +89,7 @@ const ContactForm = ({ data }: any) => {
           <div className="flex items-center justify-start">
             <button
               type="submit"
-              className="h-[45px] w-[198px] bg-[#E02454] flex items-center justify-center text-white text-[14px] leading-[17.57px] font-bold"
-            >
+              className="font-Poppins h-[45px] w-[198px] bg-[#23a8cd] flex items-center justify-center text-white text-[14px] leading-[17.57px] font-semibold border hover:bg-white hover:text-black hover:border-black transition-all duration-500 ease-in-out">
               SEND MESSAGE
             </button>
           </div>

@@ -9,6 +9,15 @@ import axios from "axios";
 import { BaseUrl } from "./api/global";
 import { Button, Modal } from "antd";
 
+import { Poppins } from 'next/font/google';
+import '@/styles/globals.css';
+
+const poppins = Poppins({
+  subsets: ['latin'],
+  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
+  preload: true
+});
+
 export default function App({ Component, pageProps }: AppProps) {
   const [footer, setFooter] = useState<any>(null);
   const [popupbanner, setPopupbanner] = useState<any>(null);
@@ -84,3 +93,6 @@ export default function App({ Component, pageProps }: AppProps) {
     </>
   );
 }
+
+
+

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Head from "next/head";
-import { Inter } from "next/font/google";
+import { Inter } from "next/font/google"; //Fonts
+import { Poppins } from "next/font/google";
 import HomeSlider from "@/components/HomeSlider";
 import Customers from "@/components/Customers";
 import AboutUs from "@/components/AboutUs";
@@ -21,7 +22,7 @@ import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Poppins({ subsets: ["latin"], weight:["100", "200", "300", "400", "500", "600", "700", "800", "900"], preload:true });
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -114,7 +115,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>WEB TRADING CONCERN PVT.LTD</title>
+        <title>Web Trading Concern Pvt. Ltd.</title>
         <link rel="icon" href="/../assets/favicon.png" />
         <link
           rel="stylesheet"
