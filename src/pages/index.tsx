@@ -115,7 +115,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>WEB TRADING CONCERN PVT. LTD.</title>
+        <title>Web Trading Concern Pvt. Ltd.</title>
         <link rel="icon" href="/../assets/favicon.png" />
         <link
           rel="stylesheet"

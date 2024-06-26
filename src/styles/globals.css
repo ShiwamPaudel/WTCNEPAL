@@ -5,18 +5,19 @@
 @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@300;500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap"); */
 
+
 .banner {
   background-image: url("/../assets/banner.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 }
-html, body {
+/* html, body {
   font-family: 'Poppins', sans-serif;
-}
+} */
 
 * {
-  font-family: inherit;
+  font-family: 'Poppins', sans-serif;
 }
 
 html {
@@ -33,9 +34,41 @@ html {
   border-radius: 5px;
   transition: 0.9s ease-out;
 }
+.hover-text-border::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0; /* Start from the right side */
+  width: 0;
+  height: 2px; /* Adjust the thickness of the border as needed */
+  background-color: #23a8cd; /* Color of the border */
+  transition: width 0.3s ease-out, left 0.3s ease-out; /* Transition properties */
+}
+
+.hover-text-border:hover::after {
+  width: 50%;
+  left: 50%;
+  right: auto;
+}
+
+.hover-text-borderB::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 0;
+  height: 2px; 
+  background-color: white;
+  transition: width 0.3s ease-out, right 0.3s ease-out;
+}
+
+.hover-text-borderB:hover::after {
+  width: 100%;
+  right: 100%;
+}
+
 
 .box_div {
-  /* background: linear-gradient(180deg, #007DC5 0%, #003BD2 100%); */
   box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.05);
   border-radius: 5px;
   transition: 0.9s ease-out;

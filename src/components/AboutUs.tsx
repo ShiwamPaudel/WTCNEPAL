@@ -52,7 +52,7 @@ const AboutUs = () => {
   return (
     <div className="py-10">
       <Modal
-        title="Provide your details for download brochure"
+        title="Enter your details to download Brochure: "
         centered
         open={modal2Open}
         footer={false}
@@ -65,7 +65,7 @@ const AboutUs = () => {
             onChange={formik.handleChange}
             value={formik.values.name}
             type="text"
-            placeholder="Enter your Name*"
+            placeholder="Your Name"
             required
             className="border h-[35px] pl-[15px] w-full"
           />
@@ -74,7 +74,7 @@ const AboutUs = () => {
             onChange={formik.handleChange}
             value={formik.values.email}
             type="email"
-            placeholder="Enter your Email*"
+            placeholder="Email Address"
             required
             className="border h-[35px] pl-[15px] w-full"
           />
@@ -83,7 +83,7 @@ const AboutUs = () => {
             onChange={formik.handleChange}
             value={formik.values.mobile}
             type="text"
-            placeholder="Enter your cell number*"
+            placeholder="Phone Number"
             required
             className="border h-[35px] pl-[15px] w-full"
           />
@@ -92,15 +92,15 @@ const AboutUs = () => {
             onChange={formik.handleChange}
             value={formik.values.company_name}
             type="text"
-            placeholder="Enter your company name"
-            className="border h-[35px] pl-[15px] w-full"
+            placeholder="Organization's Name"
+            className="border h-[35px] pl-[15px] w-full font-Poppins"
           />
           <textarea
             name="message"
             onChange={formik.handleChange}
             value={formik.values.message}
-            placeholder="Enter your message"
-            className="border h-[75px] pl-[15px] pt-[10px] w-full"
+            placeholder="Write a comment"
+            className="border h-[75px] pl-[15px] pt-[10px] w-full font-poppins"
           />
 
           <button
