@@ -87,7 +87,7 @@ const Products = () => {
             ) : (
               <button
                 onClick={handleLimit}
-                className="h-[50px] w-[130px] bg-[#23A8CD] flex items-center justify-center text-white text-[16px] rounded-[4px]"
+                className="h-[50px] text-[17px] font-semibold bg-[#23a8cd] hover:bg-[#fff] w-[140px] flex items-center justify-center text-white hover:text-black text-[16px] rounded-[8px] border hover:border-black transition-all duration-500 ease-in-out"
               >
                 Load More
               </button>

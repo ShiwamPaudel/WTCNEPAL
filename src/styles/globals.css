@@ -11,12 +11,16 @@
   background-size: cover;
   background-position: center;
 }
+html, body {
+  font-family: 'Poppins', sans-serif;
+}
+
+* {
+  font-family: inherit;
+}
 
 html {
   scroll-behavior: smooth;
-}
-body {
-  /* font-family: "inter", serif; */
 }
 
 .sd {

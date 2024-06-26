@@ -3,6 +3,7 @@ import Link from "next/link";
 import Dramenu from "./Dramenu";
 import { BaseUrl } from "@/pages/api/global";
 import axios from "axios";
+// import { useRouter } from "next/router";
 function Nav1() {
   const [about, SetAbout] = useState(false);
   const [product, setProduct] = useState(false);
@@ -12,6 +13,7 @@ function Nav1() {
   const [menu3, setMenu3] = useState(false);
   const [menu4, setMenu4] = useState(false);
 
+  // const router = useRouter();
   const [list2, setList2] = useState(null);
   const [list4, setList4] = useState(null);
   const [fix, setFixed] = useState(false);
@@ -123,6 +125,10 @@ function Nav1() {
   if (typeof window !== "undefined") {
     window.addEventListener("scroll", stickyTop);
   }
+
+  // const isActive = (path: string) => {
+  //   return router.pathname === path;
+  // };
 
   return (
     <>
