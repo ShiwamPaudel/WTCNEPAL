@@ -149,7 +149,7 @@ function Nav1() {
       </div>
 
       <div className={`bg-cyan ${fix ? "nav" : ""}`}>
-        <div className="container flex justify-between items-center py-[5px] lg:flex 2xl:max-w-[1180px] mx-auto font-semibold hidden lg:flex-row ">
+        <div className="container flex justify-between xl:px-10 items-center py-[5px] lg:flex 2xl:max-w-[1180px] mx-auto font-semibold hidden lg:flex-row ">
           {/* xl:px-20 2xl:px-0 */}
           <div className="w-[137px] h-auto ">
             <Link href="/">
@@ -429,7 +429,7 @@ function Nav1() {
                   Contact
                 </Link>
               </li>
-              <li className="h-[42px] w-[128px] bg-[#23a8cd] rounded-[39px] flex items-center ml-[0px] justify-center whitespace-nowrap">
+              {/* <li className="h-[42px] w-[128px] bg-[#23a8cd] rounded-[30px] flex items-center ml-[0px] justify-center whitespace-nowrap">
                 <Link
                   target="_black"
                   href="https://mail.zoho.com/zm/"
@@ -438,7 +438,7 @@ function Nav1() {
                 >
                   Check Email
                 </Link>
-              </li>
+              </li> */}
             </ul>
           </div>
         </div>

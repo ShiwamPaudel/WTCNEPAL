@@ -62,13 +62,13 @@ const NewsBlock = () => {
               </div>
             </div>
             <div className="flex items-center justify-end pr-[11px]">
-              <div className="w-[109px] h-[38px] bg-[#007EC5] hover:bg-[#007EC5]/[0.8] rounded-sm  mt-[15px] group">
+              <div className="w-[120px] h-[38px] bg-[#007EC5] hover:bg-[#007EC5]/[0.8] rounded-sm  mt-[15px] group">
                 <p className="font-IBM font-normal text-sm leading-[18px] text-[#FBFCFC] py-[10px] pl-[13px] flex flex-row cursor-pointer">
                   Read More
                   <img
                     src="/../assets/arrow.png"
                     alt="avatar"
-                    className="w-[5px] h-[10px] ml-[10px] mt-[5px] group-hover:translate-x-[5px] transition duration-200 ease-out"
+                    className="w-[19px] h-[17px] ml-[10px]  filter brightness-200 contrast-200  group-hover:translate-x-[5px] transition duration-200 ease-out"
                   />
                 </p>
               </div>
