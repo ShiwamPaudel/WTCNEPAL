@@ -87,7 +87,7 @@ function Requestcall({ faq }: any) {
                     type="text"
                     className="border-[1px] border-solid pl-[14px] border-[#EDEDED] w-full h-[56px] mt-[8px] inputfield"
                   />
-                  <div className=" h-[56px]  mt-[40px]  bg-[#1CABD3] hover:bg-[#1CABD3]/[0.8] rounded-sm">
+                  <div className=" h-[56px]  mt-[40px]  bg-[#1CABD3] hover:bg-cyan-400 rounded-sm cursor-pointer transition-all duration-500 ease-in-out">
                     <div className="flex items-center justify-center pb-2">
                       <button
                         type="submit"

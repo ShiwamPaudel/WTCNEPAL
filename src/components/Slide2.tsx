@@ -12,12 +12,12 @@ import { imageUrl } from "@/utils/imageUrl";
 function SampleNextArrow(props: any) {
   const { className, style, onClick } = props;
   return (
-    <div className="absolute hidden md:block top-[65%] right-[50%] translate-x-[-50%] z-50">
+    <div className="absolute hidden md:block top-[50%] right-7 z-50">
       <img
-        src="/../assets/arrow2.png"
+        src="/../assets/arrow.png"
         alt=""
         onClick={onClick}
-        className="rotate-180 cursor-pointer opacity-[0.5] hover:opacity-100"
+        className="w-12 h-12 cursor-pointer opacity-[0.5] hover:opacity-100"
       />
     </div>
   );
@@ -26,11 +26,11 @@ function SampleNextArrow(props: any) {
 function SamplePrevArrow(props: any) {
   const { className, style, onClick } = props;
   return (
-    <div className="absolute top-[65%] hidden md:block left-[51%] translate-x-[-50%] z-50">
+    <div className=" absolute top-[50%] hidden md:block left-7 z-50">
       <img
-        src="/../assets/arrow2.png"
+        src="/../assets/arrow.png"
         alt=""
-        className=" cursor-pointer "
+        className="w-12 h-12 rotate-180 cursor-pointer opacity-[0.5] hover:opacity-100"
         onClick={onClick}
       />
     </div>
