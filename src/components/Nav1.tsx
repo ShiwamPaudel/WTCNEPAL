@@ -207,7 +207,7 @@ function Nav1() {
                 className="relative px-[1px] py-[5px]"
               >
                 <Link
-                  href="/brand-product/BioSystems"
+                  href=""
                   className="cursor-pointer hover-text-border font-semibold hover:text-[#23a8cd] transition-colors duration-300 ease-out"
                 >
                   Products
@@ -404,14 +404,6 @@ function Nav1() {
                   News & Events
                 </Link>
               </li>
-              {/* <li>
-                <Link
-                  href="/gallery"
-                  className=" font-semibold hover:text-[#23a8cd] transition-colors duration-300 ease-out"
-                >
-                  Gallery
-                </Link>
-              </li> */}
 
               <li>
                 <Link
@@ -421,24 +413,15 @@ function Nav1() {
                   Careers
                 </Link>
               </li>
-              <li>
+              <li className="h-[42px] w-[128px] bg-[#23a8cd] rounded-[19px] cursor-pointer flex items-center ml-[0px] justify-center whitespace-nowrap hover:bg-cyan-400">
                 <Link
                   href="/contact"
-                  className="px-[1px] py-[5px] hover-text-border font-semibold relative overflow-hidden hover:text-[#23a8cd] transition-colors duration-300 ease-out"
+                  className="px-[1px] py-[5px] font-semibold relative overflow-hidden hover:text-white text-white transition-colors duration-300 ease-out"
                 >
                   Contact
                 </Link>
               </li>
-              {/* <li className="h-[42px] w-[128px] bg-[#23a8cd] rounded-[30px] flex items-center ml-[0px] justify-center whitespace-nowrap">
-                <Link
-                  target="_black"
-                  href="https://mail.zoho.com/zm/"
-                  className="text-white text-[15px] leading-[18.15px] font-semibold"
-                  passHref
-                >
-                  Check Email
-                </Link>
-              </li> */}
+
             </ul>
           </div>
         </div>

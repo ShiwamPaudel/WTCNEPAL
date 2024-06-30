@@ -14,7 +14,7 @@ const BootomFooter = ({ data }: any) => {
             target="_blank"
             className="text-[#23A8CD]"
           >
-            Supreme IT Solutions
+            Under Maintainance
           </Link>
         </p>
         {data?.map((item: any, index: number) => (
