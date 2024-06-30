@@ -20,7 +20,7 @@ const AboutUs = () => {
         {customer?.map((item: any, index: number) => (
           <div className="md:flex my-8 items-center">
             <div className="basis-[55%] mt-[40px] md:mt-0 flex flex-col items-center justify-center ">
-              <div className="bg-white/70 p-8 rounded-r-[36px]">
+              <div className="bg-white p-8 rounded-r-[20px]">
                 <img
                   src={imageUrl(
                     `${item?.attributes?.image?.data?.attributes?.url}`

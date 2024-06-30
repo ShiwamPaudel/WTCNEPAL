@@ -43,14 +43,15 @@ const ProductDetail = () => {
   const items: TabsProps["items"] = [
     {
       key: "1",
-      label: `Features`,
-      children: <div>{Parse(`${product?.attributes?.features}`)}</div>,
-    },
-    {
-      key: "2",
       label: `Overview`,
       children: <div>{Parse(`${product?.attributes?.overview}`)}</div>,
     },
+    {
+      key: "2",
+      label: `Features`,
+      children: <div>{Parse(`${product?.attributes?.features}`)}</div>,
+    },
+   
     {
       key: "3",
       label: `Specifications`,

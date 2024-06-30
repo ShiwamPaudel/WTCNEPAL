@@ -5,6 +5,7 @@ import { InfinitySpin, ThreeDots } from "react-loader-spinner";
 import { Skeleton } from "antd";
 import { useRouter } from "next/router";
 import { imageUrl } from "@/utils/imageUrl";
+
 const Products = () => {
   const [limit, setLimit] = useState(8);
   const [isLoading3, setIsLoading3] = useState(true);
@@ -15,30 +16,27 @@ const Products = () => {
   useEffect(() => {
     let getProduct = async () => {
       let product = await axios.get(
-        `${BaseUrl}/products?populate=*&pagination[start]=0&pagination[limit]=${limit}`
+        `${BaseUrl}/products?populate=*&pagination[start]=0&pagination[limit]=${limit}&sort=rank:asc`
       );
-      //  let list=    product.data.data.slice(0,8)
       setProduct(product.data.data);
       setIsLoading3(false);
     };
     getProduct();
   }, [limit]);
-  // console.log(product);
 
   const handleClick = (item: any) => {
     router.push(`/product-single/${item.id}`);
-    // console.log(item);
   };
 
   const handleLimit = () => {
     setLimit(limit + 8);
     setIsLoading3(true);
   };
-  // console.log(limit);
+
   return (
     <>
       {product ? (
-        <div className="container 2xl:max-w-[1180px] xl:px-20 2xl:px-0   mx-auto py-10 px-[15px] md:px-0">
+        <div className="container 2xl:max-w-[1180px] xl:px-20 2xl:px-0 mx-auto py-10 px-[15px] md:px-0">
           <div className="flex items-center justify-center gap-[8px] flex-col">
             <h2 className="text-[#7A8A9E] text-[13px] leading-[15.23px] font-medium ">
               PRODUCTS
@@ -53,7 +51,7 @@ const Products = () => {
               <div
                 onClick={() => handleClick(item)}
                 key={index}
-                className="border cursor-pointer flex  flex-col  items-center md:justify-end justify-center  py-4 "
+                className="border cursor-pointer flex flex-col items-center md:justify-end justify-center py-4"
               >
                 <div className="md:h-[200px] h-[150px] flex items-center justify-center">
                   <img
@@ -64,15 +62,14 @@ const Products = () => {
                     className="cursor-pointer hover:scale-[105%] transition duration-300 ease-out h-[100%] w-[80%] object-contain"
                   />
                 </div>
-                <h2 className=" text-[#003760] text-[16px] text-center leading-[20.08px] font-semibold">
+                <h2 className="text-[#003760] text-[16px] text-center leading-[20.08px] font-semibold">
                   {item?.attributes?.title}
                 </h2>
               </div>
             ))}
           </div>
 
-          <div className="flex items-center justify-center ">
-            {/* <button onClick={handleLimit} className="h-[50px] w-[130px] bg-[#23A8CD] flex items-center justify-center text-white text-[16px] rounded-[4px]"> Load More</button> */}
+          <div className="flex items-center justify-center">
             {isLoading3 ? (
               <ThreeDots
                 height="80"
@@ -80,14 +77,12 @@ const Products = () => {
                 radius="9"
                 color="#4fa94d"
                 ariaLabel="three-dots-loading"
-                wrapperStyle={{}}
-                // wrapperClassName=""
                 visible={true}
               />
             ) : (
               <button
                 onClick={handleLimit}
-                className="h-[50px] text-[17px] font-semibold bg-[#23a8cd] hover:bg-cyan-400 w-[140px] flex items-center justify-center text-white text-[16px] rounded-[8px] border  transition-all duration-500 ease-in-out"
+                className="h-[50px] text-[17px] font-semibold bg-[#23a8cd] hover:bg-cyan-400 w-[140px] flex items-center justify-center text-white text-[16px] rounded-[8px] border transition-all duration-500 ease-in-out"
               >
                 Load More
               </button>
