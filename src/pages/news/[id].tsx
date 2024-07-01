@@ -53,19 +53,19 @@ const SingleNews = () => {
 
       <div className="container px-[15px] md:px-0 flex-wrap md:flex-nowrap 2xl:max-w-[1180px] xl:px-20 2xl:px-0   flex gap-[40px] mx-auto py-[80px] ">
         <div className="md:basis-[70%]  border p-[20px]">
-          <div className="h-[300px]">
+          <div className="h-auto">
             <img
               src={imageUrl(
                 `${news?.attributes?.image?.data?.attributes?.url}`
               )}
               // src={news?.attributes?.image?.data?.attributes?.url}
               alt=""
-              className="h-[100%] w-full object-cover"
+              className="w-full object-contain"
             />
           </div>
           <div className="flex flex-row mt-[17px] ml-[20px] md:ml-[5px] "></div>
 
-          <div className="font-IBM font-normal text-[16px]  leading-[24px] text-[#505056] pt-[11px] pl-[20px] pr-[11px] md:pl-[5px] md:pr-[0px] ">
+          <div className="font-Poppins font-normal text-[16px]  leading-[24px] text-[#505056] pt-[11px] pl-[20px] pr-[11px] md:pl-[5px] md:pr-[0px] ">
             {Parse(`${news?.attributes?.description}`)}
           </div>
         </div>
