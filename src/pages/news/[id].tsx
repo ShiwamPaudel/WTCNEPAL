@@ -8,39 +8,45 @@ import axios from "axios";
 import Item from "antd/es/list/Item";
 import { imageUrl } from "@/utils/imageUrl";
 import Head from "next/head";
+import { title } from "process";
 
 const SingleNews = () => {
   const router = useRouter();
   const id = router.query.id;
 
-  console.log(id);
   const [news, setNews] = useState<any>(null);
   const [forRecentPost, setForRecentPost] = useState<any>(null);
-  const [banner, setBanner] = useState<any>(null);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     if (!id) return;
 
-    let getNews = async () => {
-      let news = await axios.get(`${BaseUrl}/news-and-events/${id}?populate=*`);
-      let response = await axios.get(`${BaseUrl}/news-and-events/?populate=*`);
+    const getNews = async () => {
+      try {
+        const newsResponse = await axios.get(`${BaseUrl}/news-and-events/${id}?populate=*`);
+        const recentPostsResponse = await axios.get(`${BaseUrl}/news-and-events/?populate=*`);
 
-      // let response = await axios.get(
-      //   `${BaseUrl}/news-banner?populate=*&?sort=rank:asc`
-      // );
-      // setBanner(response.data.data);
-      setForRecentPost(response?.data.data);
-      setNews(news?.data.data);
-      setIsLoading(false);
+        setNews(newsResponse?.data.data);
+        setForRecentPost(recentPostsResponse?.data.data);
+        setIsLoading(false);
+      } catch (error) {
+        console.error("Error fetching news data:", error);
+      }
     };
+
     getNews();
   }, [id]);
+
+  useEffect(() => {
+    if (news) {
+      document.title = news.attributes.title || "News & Events";
+    }
+  }, [news]);
 
   return (
     <>
       <Head>
-        <title>News & Events</title>
+        <title>{news ? news.attributes.title : "News & Events"}</title>
         <link rel="icon" href="/../assets/favicon.png" />
       </Head>
       {/* <AboutBanner testimonial={banner} /> */}
