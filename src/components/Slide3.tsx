@@ -7,7 +7,7 @@ function Slide3({data,slide,height,style}:any) {
     dots: false,
     infinite: true,
     autoplay: true,
-    autoplaySpeed: 3000,
+    autoplaySpeed: 7000,
     speed: 500,
     slidesToShow: slide,
     slidesToScroll: 2,

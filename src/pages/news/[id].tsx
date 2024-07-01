@@ -8,58 +8,64 @@ import axios from "axios";
 import Item from "antd/es/list/Item";
 import { imageUrl } from "@/utils/imageUrl";
 import Head from "next/head";
+import { title } from "process";
 
 const SingleNews = () => {
   const router = useRouter();
   const id = router.query.id;
 
-  console.log(id);
   const [news, setNews] = useState<any>(null);
   const [forRecentPost, setForRecentPost] = useState<any>(null);
-  const [banner, setBanner] = useState<any>(null);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     if (!id) return;
 
-    let getNews = async () => {
-      let news = await axios.get(`${BaseUrl}/news-and-events/${id}?populate=*`);
-      let response = await axios.get(`${BaseUrl}/news-and-events/?populate=*`);
+    const getNews = async () => {
+      try {
+        const newsResponse = await axios.get(`${BaseUrl}/news-and-events/${id}?populate=*`);
+        const recentPostsResponse = await axios.get(`${BaseUrl}/news-and-events/?populate=*`);
 
-      // let response = await axios.get(
-      //   `${BaseUrl}/news-banner?populate=*&?sort=rank:asc`
-      // );
-      // setBanner(response.data.data);
-      setForRecentPost(response?.data.data);
-      setNews(news?.data.data);
-      setIsLoading(false);
+        setNews(newsResponse?.data.data);
+        setForRecentPost(recentPostsResponse?.data.data);
+        setIsLoading(false);
+      } catch (error) {
+        console.error("Error fetching news data:", error);
+      }
     };
+
     getNews();
   }, [id]);
+
+  useEffect(() => {
+    if (news) {
+      document.title = news.attributes.title || "News & Events";
+    }
+  }, [news]);
 
   return (
     <>
       <Head>
-        <title>News & Events</title>
+        <title>{news ? news.attributes.title : "News & Events"}</title>
         <link rel="icon" href="/../assets/favicon.png" />
       </Head>
       {/* <AboutBanner testimonial={banner} /> */}
 
       <div className="container px-[15px] md:px-0 flex-wrap md:flex-nowrap 2xl:max-w-[1180px] xl:px-20 2xl:px-0   flex gap-[40px] mx-auto py-[80px] ">
         <div className="md:basis-[70%]  border p-[20px]">
-          <div className="h-[300px]">
+          <div className="h-auto">
             <img
               src={imageUrl(
                 `${news?.attributes?.image?.data?.attributes?.url}`
               )}
               // src={news?.attributes?.image?.data?.attributes?.url}
               alt=""
-              className="h-[100%] w-full object-cover"
+              className="w-full object-contain"
             />
           </div>
           <div className="flex flex-row mt-[17px] ml-[20px] md:ml-[5px] "></div>
 
-          <div className="font-IBM font-normal text-[16px]  leading-[24px] text-[#505056] pt-[11px] pl-[20px] pr-[11px] md:pl-[5px] md:pr-[0px] ">
+          <div className="font-Poppins font-normal text-[16px]  leading-[24px] text-[#505056] pt-[11px] pl-[20px] pr-[11px] md:pl-[5px] md:pr-[0px] ">
             {Parse(`${news?.attributes?.description}`)}
           </div>
         </div>
