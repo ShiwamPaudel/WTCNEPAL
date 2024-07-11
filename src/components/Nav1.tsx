@@ -161,7 +161,7 @@ function Nav1() {
             </Link>
           </div>
           <div className="">
-            <ul className="flex flex-row items-center gap-[20px] font-extrabold text-[14px] uppercase leading-[14.52px] text-[#000000]">
+            <ul className="flex flex-row items-center gap-[20px] font-semibold text-[14px] uppercase leading-[14.52px] text-[#000000]">
               <li>
                 <Link
                   href="/"
