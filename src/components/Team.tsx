@@ -10,18 +10,15 @@ const Team = () => {
   useEffect(() => {
     let getTestimonial = async () => {
       let [teamMember, teamData] = await Promise.all([
-        axios.get(`${BaseUrl}/team-members?populate=*&?sort=rank:asc`),
-        axios.get(`${BaseUrl}/out-teams?populate=*&?sort=rank:asc`),
+        axios.get(`${BaseUrl}/team-members?populate=*&sort=rank:asc`),
+        axios.get(`${BaseUrl}/out-teams?populate=*&sort=rank:asc`),
       ]);
-      // let response = await axios.get(`${BaseUrl}/team-members?populate=*`)
-      // let response2 = await axios.get(`${BaseUrl}/testimonial-section?populate=*`)
       setTestimonial(teamMember.data.data);
       setTestimonial2(teamData.data.data);
     };
     getTestimonial();
   }, []);
 
-  // console.log(testimonial2)
   return (
     <div className="container 2xl:max-w-[1180px] xl:px-20 2xl:px-0   mx-auto pt-[20px] px-[15px] md:0">
       {testimonial2?.map((item: any, index: number) => (
@@ -51,10 +48,10 @@ const Team = () => {
               />
             </div>
             <div className="py-[20px] pl-[15px] space-y-[5px] group-hover:bg-[#1CABD3] transition-colors duration-300 ease-out">
-              <h1 className="text-[21px] font-normal leading-[25px] group-hover:text-white ">
+              <h1 className="text-[21px] font-semibold leading-[25px] group-hover:text-white ">
                 {item?.attributes?.name}
               </h1>
-              <p className="text-[16px] font-thin leading-[24px] group-hover:text-white">
+              <p className="text-[16px] font-normal leading-[24px] group-hover:text-white">
                 {item?.attributes?.position}
               </p>
             </div>
