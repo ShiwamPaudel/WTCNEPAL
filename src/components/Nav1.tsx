@@ -161,11 +161,11 @@ function Nav1() {
             </Link>
           </div>
           <div className="">
-            <ul className="flex flex-row items-center font-[inter] gap-[20px] font-normal text-[14px] uppercase leading-[14.52px] text-[#000000]">
+            <ul className="flex flex-row items-center gap-[20px] font-semibold text-[14px] uppercase leading-[14.52px] text-[#000000]">
               <li>
                 <Link
                   href="/"
-                  className="px-[1px] py-[5px] hover-text-border font-semibold relative overflow-hidden hover:text-[#23a8cd] transition-colors duration-150 ease-out px-"
+                  className="px-[1px] py-[5px] hover-text-border relative overflow-hidden hover:text-[#23a8cd] transition-colors duration-150 ease-out px-"
                 >
                   Home
                 </Link>
@@ -185,13 +185,13 @@ function Nav1() {
                 {about && (
                   <div className="absolute top-[12px] left-[-60px]   w-[199px] h-[126px] z-40 space-y-[10px]">
                     <div className="  absolute top-[27px] h-[100%] w-full ">
-                      <li className="hover-text-borderB relative overflow-hidden text-[14px] border-b-[0.5px] border-b-[white]/[0.5] hover:text-[#0000CC] bg-[#23a8cd] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer">
+                      <li className="hover-text-borderB relative overflow-hidden text-[12px] border-b-[0.5px] border-b-[white]/[0.5] hover:text-[#0000CC] bg-[#23a8cd] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer">
                         <Link href="/about">About Web Trading</Link>
                       </li>
-                      <li className="text-[14px] border-b-[0.5px] border-b-[white]/[0.5]  bg-[#23a8cd] text-white py-[20px] px-[15px] hover:text-[#0000CC] transition-colors duration-300 ease-out font-semibold whitespace-pre cursor-pointer">
+                      <li className="text-[12px] border-b-[0.5px] border-b-[white]/[0.5]  bg-[#23a8cd] text-white py-[20px] px-[15px] hover:text-[#0000CC] transition-colors duration-300 ease-out font-semibold whitespace-pre cursor-pointer">
                         <Link href="/director">Meet our Director</Link>
                       </li>
-                      <li className="text-[14px]  border-b-[0.5px] border-b-[white]/[0.5]  bg-[#23a8cd] text-white py-[20px] px-[15px] hover:text-[#0000CC] transition-colors duration-300 ease-out font-semibold whitespace-pre cursor-pointer">
+                      <li className="text-[12px]  border-b-[0.5px] border-b-[white]/[0.5]  bg-[#23a8cd] text-white py-[20px] px-[15px] hover:text-[#0000CC] transition-colors duration-300 ease-out font-semibold whitespace-pre cursor-pointer">
                         <Link href="/team">Our Team</Link>
                       </li>
                       <li className="text-[14px] hidden bg-[#23a8cd] text-white py-[20px] px-[15px] hover:text-[#0000CC] transition-colors duration-300 ease-out font-semibold whitespace-pre cursor-pointer">
@@ -337,15 +337,7 @@ function Nav1() {
                                             {item?.attributes?.title}
                                           </Link>
                                         </li>
-                                        {/* {sub2 && (
-        <div className="absolute top-[5px] left-[100%]    w-[199px] h-[126px] z-40 space-y-[10px]">
-          <div className="  absolute top-[0px] h-[100%] w-full ">
-            <li className="text-[15px] border-b-[0.5px] capitalize border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#23a8cd] text-white py-[10px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer">
-              <Link href="/about">BioSystems</Link>
-            </li>
-          </div>
-        </div>
-      )} */}
+                                        
                                       </>
                                     )
                                   )}

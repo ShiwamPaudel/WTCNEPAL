@@ -66,15 +66,14 @@ export default function App({ Component, pageProps }: AppProps) {
     };
   }, []);
   return (
-    <>
-      <Nav1 />
+    <div className={poppins.className}>
+      <Nav1/>
       <div>
       <Component {...pageProps} />
       <FooterTop />
       <Footer footer={footer} />
       <BootomFooter data={footer} />
       </div>
-    </>
+    </div>
   );
 }
-

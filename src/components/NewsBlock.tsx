@@ -41,7 +41,7 @@ const NewsBlock = () => {
               />
             </div>
             <div className="hidden flex-row mt-[17px] ml-[20px] md:ml-[5px] ">
-              <p className="font-IBM font-normal text-xs leading-[16px] text-[ #848385]  border-r-[1px] border-solid border-[#000000] pr-[8px] text-[#848385]">
+              <p className="font-Poppins font-normal text-xs leading-[16px] text-[ #848385]  border-r-[1px] border-solid border-[#000000] pr-[8px] text-[#848385]">
                 {item?.date}
               </p>
               <img
@@ -49,21 +49,21 @@ const NewsBlock = () => {
                 alt="avatar"
                 className="w-[9px] h-[7px] ml-[8px] pt-[4px]"
               />
-              <p className="font-IBM font-normal text-xs leading-[16px] text-[#848385] pl-[5px]pt-[4px] ">
+              <p className="font-Poppins font-normal text-xs leading-[16px] text-[#848385] pl-[5px]pt-[4px] ">
                 {item?.time}
               </p>
             </div>
-            <h2 className="font-IBM hidden font-medium text-[27px] md:text-[28px] leading-[36px] text-[#0D1250] pt-[11px] pl-[20px] md:pl-[5px] ">
+            <h2 className="font-Poppins hidden font-medium text-[27px] md:text-[28px] leading-[36px] text-[#0D1250] pt-[11px] pl-[20px] md:pl-[5px] ">
               {item?.title}
             </h2>
             <div className="h-[109px] overflow-hidden text-justify">
-              <div className=" font-normal text-[15px] leading-[24px] font-inter text-[#505056] pt-[11px] pl-[20px] pr-[11px] md:pl-[5px] md:pr-[0px] md:max-w-[378px]">
+              <div className="text-[15px] leading-[24px] text-[#505056] pt-[11px] pl-[20px] pr-[11px] md:pl-[5px] md:pr-[0px] md:max-w-[378px]">
                 {Parse(`${item?.attributes?.description}`)}
               </div>
             </div>
             <div className="flex items-center justify-end pr-[11px]">
-              <div className="w-[120px] h-[38px] bg-[#007EC5] hover:bg-[#007EC5]/[0.8] rounded-sm  mt-[15px] group">
-                <p className="font-IBM font-normal text-sm leading-[18px] text-[#FBFCFC] py-[10px] pl-[13px] flex flex-row cursor-pointer">
+              <div className="w-[140px] h-[38px] bg-[#007EC5] hover:bg-[#007EC5]/[0.8] rounded-sm  mt-[15px] group">
+                <p className="font-normal text-sm leading-[18px] text-[#FBFCFC] py-[10px] pl-[13px] flex flex-row cursor-pointer">
                   Read More
                   <img
                     src="/../assets/arrow.png"
