@@ -77,7 +77,7 @@ export default function Home() {
         <HomeSlider />
         <AboutUs />
         <Customers />
-        <Products />
+        <Products  />
         <Requestcall faq={faq} />
         <News />
       </>

@@ -65,7 +65,7 @@ export default function App({ Component, pageProps }: AppProps) {
       <div>
       <Component {...pageProps} />
       <FooterTop />
-      <Footer data={footer} />
+      <Footer />
       <BootomFooter data={footer} />
       </div>
     </div>
