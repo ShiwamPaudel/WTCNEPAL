@@ -2,8 +2,10 @@ import Image from "next/image";
 import Head from "next/head";
 import { Inter } from "next/font/google"; //Fonts
 import { Poppins } from "next/font/google";
+import BrandSlider from "@/components/BrandSlider";
 import HomeSlider from "@/components/HomeSlider";
 import Customers from "@/components/Customers";
+import PartnerSlider from "@/components/PartnerSlider";
 import AboutUs from "@/components/AboutUs";
 import Testimonial from "@/components/Testimonial";
 import PartneredUniverities from "@/components/PartneredUniverities";
@@ -78,6 +80,8 @@ export default function Home() {
         <AboutUs />
         <Customers />
         <Products  />
+        {/* <PartnerSlider /> */}
+        <BrandSlider />
         <Requestcall faq={faq} />
         <News />
       </>
