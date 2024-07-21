@@ -11,11 +11,6 @@ const index = () => {
 
   useEffect(() => {
     let getTestimonial = async () => {
-      // let response = await axios.get(
-      //   `${BaseUrl}/team-banner?populate=*&?sort=rank:asc`
-      // );
-      // let response2 = await axios.get(`${BaseUrl}/testimonial-section?populate=*`)
-      // setTestimonial(response.data.data);
     };
     getTestimonial();
   }, []);
@@ -25,7 +20,6 @@ const index = () => {
         <title>Our Team</title>
         <link rel="icon" href="/../assets/favicon.png" />
       </Head>
-      {/* <AboutBanner testimonial={testimonial} /> */}
       <Team/>
     </div>
   );
