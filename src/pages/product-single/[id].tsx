@@ -90,10 +90,9 @@ const ProductDetail = () => {
       data: values,
     });
     // console.log(submit);
-    if (submit) {
-      window.location.href =
-        "https://www.dmsnepal.com/brochure?brochure=products/wNR0XuhUdDYoxCXir1VQ5r6RnAUFk80AbZca8TQd.pdf";
-    } else {
+    if (product?.attributes?.Brochure?.data?.length) {
+      const brochureUrl = product.attributes.Brochure.data[0].attributes.url;
+      window.location.href = `${brochureUrl}`;
     }
   };
   return (
@@ -105,7 +104,7 @@ const ProductDetail = () => {
       ) : (
         <>
           <Modal
-            title="Please provide your details to download the brochure."
+            title="PLEASE FILL DETAILS TO DOWNLOAD BROCHURE"
             centered
             open={modal2Open}
             footer={false}
@@ -235,9 +234,7 @@ const ProductDetail = () => {
         </>
       )}
 
-      {/* {product?.map((item: any, index: number) => ( */}
-
-      {/* ))} */}
+      {/* {product?.map((item: any, index: number) => ())} */}
     </>
   );
 };
