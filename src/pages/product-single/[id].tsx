@@ -104,7 +104,7 @@ const ProductDetail = () => {
       ) : (
         <>
           <Modal
-            title="PLEASE FILL DETAILS TO DOWNLOAD BROCHURE"
+            title="PLEASE FILL THE DETAILS TO DOWNLOAD BROCHURE"
             centered
             open={modal2Open}
             footer={false}
@@ -117,7 +117,7 @@ const ProductDetail = () => {
                 onChange={formik.handleChange}
                 value={formik.values.name}
                 type="text"
-                placeholder="Enter your Name"
+                placeholder="Your Name"
                 required
                 className="border h-[35px] pl-[15px] w-full"
               />
@@ -126,7 +126,7 @@ const ProductDetail = () => {
                 onChange={formik.handleChange}
                 value={formik.values.email}
                 type="email"
-                placeholder="Enter your Email"
+                placeholder="Email Address"
                 required
                 className="border h-[35px] pl-[15px] w-full"
               />
@@ -135,7 +135,7 @@ const ProductDetail = () => {
                 onChange={formik.handleChange}
                 value={formik.values.mobile}
                 type="text"
-                placeholder="Enter your cell number"
+                placeholder="Phone Number"
                 required
                 className="border h-[35px] pl-[15px] w-full"
               />
@@ -144,14 +144,14 @@ const ProductDetail = () => {
                 onChange={formik.handleChange}
                 value={formik.values.company_name}
                 type="text"
-                placeholder="Enter your company name"
+                placeholder="Organization's Name"
                 className="border h-[35px] pl-[15px] w-full"
               />
               <textarea
                 name="message"
                 onChange={formik.handleChange}
                 value={formik.values.message}
-                placeholder="Enter your message"
+                placeholder="Write a comment"
                 className="border h-[75px] pl-[15px] w-full"
               />
               <button
