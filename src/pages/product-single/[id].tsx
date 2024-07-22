@@ -92,7 +92,7 @@ const ProductDetail = () => {
     // console.log(submit);
     if (product?.attributes?.Brochure?.data?.length) {
       const brochureUrl = product.attributes.Brochure.data[0].attributes.url;
-      window.location.href = `${brochureUrl}`;
+      window.location.href = `https://admin.dmsnepal.com${brochureUrl}`;
     }
   };
   return (
@@ -156,7 +156,7 @@ const ProductDetail = () => {
               />
               <button
                 type="submit"
-                className="h-[35px] w-[100px] bg-blue-700 flex items-center justify-center text-white rounded-[4px]"
+                className="h-[35px] w-[100px] bg-blue-700 flex items-center justify-center text-white rounded-[4px] transition duration-300 ease-in-out hover:bg-blue-800 hover:shadow-lg"
               >
                 Submit
               </button>
@@ -216,7 +216,7 @@ const ProductDetail = () => {
                       {product?.attributes?.Brochure?.data?.length && (
                         <button
                           onClick={() => setModal2Open(true)}
-                          className="h-[38px] p-[10px] bg-[#23a8cd] hover:bg-[#23a8cd] w-[180px] flex items-center justify-center text-white text-[16px] leading-[21.6px] rounded-[4px] "
+                          className="h-[38px] p-[10px] bg-[#23a8cd] w-[180px] flex items-center justify-center text-white text-[16px] leading-[21.6px] rounded-[4px] transition duration-300 ease-in-out hover:bg-[#1e97b8] hover:shadow-lg"
                         >
                           Download Brochure
                         </button>
