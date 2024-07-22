@@ -19,7 +19,7 @@ const sliderSettings = {
   slidesToShow: 6, // Show 6 slides at a time
   slidesToScroll: 1,
   autoplay: true,
-  autoplaySpeed: 1000,
+  autoplaySpeed: 2000,
 };
 
 const brands: Brand[] = [
@@ -33,10 +33,9 @@ const brands: Brand[] = [
   { name: 'Brand 8', image: '/assets/Partners/newster.png', url: '' },
   { name: 'Brand 9', image: '/assets/Partners/nihonkohden.png', url: '' },
   { name: 'Brand 10', image: '/assets/Partners/Myrlogo.png', url: '' },
-  { name: 'Brand 11', image: '/assets/Partners/ramsons.png', url: '' },
+  { name: 'Brand 11', image: '/assets/Partners/Ecotex.png', url: '' },
   { name: 'Brand 12', image: '/assets/Partners/bison.jpg', url: '' },
   { name: 'Brand 13', image: '/assets/Partners/dermaindia.jpg', url: '' },
-  // Add more brands if needed
 ];
 
 const BrandSlider: React.FC = () => {
@@ -46,16 +45,17 @@ const BrandSlider: React.FC = () => {
         <div
           key={index}
           onClick={() => window.location.href = brand.url}
-          style={{ cursor: 'pointer', padding: '0 10px' }}
+          style={{ cursor: 'pointer', padding: '10px 15px' }}
         >
           <img
             src={brand.image}
             alt={brand.name}
             style={{ 
+              gap: '100px',
               width: '100%',
-              height: '100px', // Fixed height to maintain uniformity
-              objectFit: 'contain', // Ensure images fit within the fixed height
-              display: 'block', // Remove inline spacing issues
+              height: '100px', 
+              objectFit: 'contain', 
+              display: 'block', 
              }}
           />
         </div>
