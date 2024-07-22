@@ -92,7 +92,7 @@ const ProductDetail = () => {
     // console.log(submit);
     if (product?.attributes?.Brochure?.data?.length) {
       const brochureUrl = product.attributes.Brochure.data[0].attributes.url;
-      window.location.href = `${brochureUrl}`;
+      window.location.href = `https://admin.dmsnepal.com${brochureUrl}`;
     }
   };
   return (
@@ -104,7 +104,7 @@ const ProductDetail = () => {
       ) : (
         <>
           <Modal
-            title="PLEASE FILL DETAILS TO DOWNLOAD BROCHURE"
+            title="PLEASE FILL THE DETAILS TO DOWNLOAD BROCHURE"
             centered
             open={modal2Open}
             footer={false}
@@ -117,7 +117,7 @@ const ProductDetail = () => {
                 onChange={formik.handleChange}
                 value={formik.values.name}
                 type="text"
-                placeholder="Enter your Name"
+                placeholder="Your Name"
                 required
                 className="border h-[35px] pl-[15px] w-full"
               />
@@ -126,7 +126,7 @@ const ProductDetail = () => {
                 onChange={formik.handleChange}
                 value={formik.values.email}
                 type="email"
-                placeholder="Enter your Email"
+                placeholder="Email Address"
                 required
                 className="border h-[35px] pl-[15px] w-full"
               />
@@ -135,7 +135,7 @@ const ProductDetail = () => {
                 onChange={formik.handleChange}
                 value={formik.values.mobile}
                 type="text"
-                placeholder="Enter your cell number"
+                placeholder="Phone Number"
                 required
                 className="border h-[35px] pl-[15px] w-full"
               />
@@ -144,19 +144,19 @@ const ProductDetail = () => {
                 onChange={formik.handleChange}
                 value={formik.values.company_name}
                 type="text"
-                placeholder="Enter your company name"
+                placeholder="Organization's Name"
                 className="border h-[35px] pl-[15px] w-full"
               />
               <textarea
                 name="message"
                 onChange={formik.handleChange}
                 value={formik.values.message}
-                placeholder="Enter your message"
+                placeholder="Write a comment"
                 className="border h-[75px] pl-[15px] w-full"
               />
               <button
                 type="submit"
-                className="h-[35px] w-[100px] bg-blue-700 flex items-center justify-center text-white rounded-[4px]"
+                className="h-[35px] w-[100px] bg-blue-700 flex items-center justify-center text-white rounded-[4px] transition duration-300 ease-in-out hover:bg-blue-800 hover:shadow-lg"
               >
                 Submit
               </button>
@@ -216,7 +216,7 @@ const ProductDetail = () => {
                       {product?.attributes?.Brochure?.data?.length && (
                         <button
                           onClick={() => setModal2Open(true)}
-                          className="h-[38px] p-[10px] bg-[#23a8cd] hover:bg-[#23a8cd] w-[180px] flex items-center justify-center text-white text-[16px] leading-[21.6px] rounded-[4px] "
+                          className="h-[38px] p-[10px] bg-[#23a8cd] w-[180px] flex items-center justify-center text-white text-[16px] leading-[21.6px] rounded-[4px] transition duration-300 ease-in-out hover:bg-[#1e97b8] hover:shadow-lg"
                         >
                           Download Brochure
                         </button>
