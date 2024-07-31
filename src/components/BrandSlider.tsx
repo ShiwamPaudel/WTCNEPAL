@@ -32,10 +32,7 @@ const brands: Brand[] = [
   { name: 'Brand 7', image: '/assets/Partners/BioSystems.png', url: '' },
   { name: 'Brand 8', image: '/assets/Partners/newster.png', url: '' },
   { name: 'Brand 9', image: '/assets/Partners/nihonkohden.png', url: '' },
-  { name: 'Brand 10', image: '/assets/Partners/Myrlogo.png', url: '' },
   { name: 'Brand 11', image: '/assets/Partners/Ecotex.png', url: '' },
-  { name: 'Brand 12', image: '/assets/Partners/bison.jpg', url: '' },
-  { name: 'Brand 13', image: '/assets/Partners/dermaindia.jpg', url: '' },
 ];
 
 const BrandSlider: React.FC = () => {
