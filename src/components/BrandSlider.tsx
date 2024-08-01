@@ -21,15 +21,15 @@ const sliderSettings = {
 
 const brands: Brand[] = [
   { name: 'Brand 1', image: '/assets/Partners/DiaSorin.png', url: 'https://int.diasorin.com/en' },
-  { name: 'Brand 2', image: '/assets/Partners/Asclepion.png', url: 'https://asclepion.com/' },
+  { name: 'Brand 2', image: '/assets/Partners/asclepion.png', url: 'https://asclepion.com/' },
   { name: 'Brand 3', image: '/assets/Partners/eppedorf.png', url: 'https://www.eppendorf.com/bd-en/' },
   { name: 'Brand 4', image: '/assets/Partners/diversey.png', url: 'https://diversey.com/en' },
   { name: 'Brand 5', image: '/assets/Partners/isens.jpg', url: 'https://i-sens.com/' },
   { name: 'Brand 6', image: '/assets/Partners/avantor.png', url: 'https://www.avantorsciences.com/global/en/' },
   { name: 'Brand 7', image: '/assets/Partners/BioSystems.png', url: '' },
-  { name: 'Brand 8', image: '/assets/Partners/Newster.png', url: '' },
+  { name: 'Brand 8', image: '/assets/Partners/newster.png', url: '' },
   { name: 'Brand 9', image: '/assets/Partners/Nihon Kohden.png', url: '' },
-  { name: 'Brand 11', image: '/assets/Partners/ECOTEX.png', url: '' },
+  { name: 'Brand 11', image: '/assets/Partners/ecotex.png', url: '' },
 ];
 
 const BrandSlider: React.FC = () => {
