@@ -29,7 +29,7 @@ const brands: Brand[] = [
   { name: 'Brand 7', image: '/assets/Partners/BioSystems.png', url: '' },
   { name: 'Brand 8', image: '/assets/Partners/newster.png', url: '' },
   { name: 'Brand 9', image: '/assets/Partners/Nihon Kohden.png', url: '' },
-  { name: 'Brand 11', image: '/assets/Partners/ecotex.png', url: '' },
+  { name: 'Brand 10', image: '/assets/Partners/ecotex.png', url: '' },
 ];
 
 const BrandSlider: React.FC = () => {
