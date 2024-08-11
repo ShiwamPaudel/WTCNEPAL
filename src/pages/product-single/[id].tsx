@@ -92,7 +92,8 @@ const ProductDetail = () => {
     // console.log(submit);
     if (product?.attributes?.Brochure?.data?.length) {
       const brochureUrl = product.attributes.Brochure.data[0].attributes.url;
-      window.location.href = `https://admin.dmsnepal.com${brochureUrl}`;
+      // window.location.href = `https://admin.dmsnepal.com${brochureUrl}`;
+      window.location.href = `https://admin.wtcnepal.com${brochureUrl}`;
     }
   };
   return (
