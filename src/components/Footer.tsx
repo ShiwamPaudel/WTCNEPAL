@@ -28,7 +28,7 @@ const Footer: React.FC = () => {
           <h4>Customer</h4>
           <ul>
             <li><a href="">FAQ</a></li>
-            <li><a href="">Inquiry</a></li>
+            <li><a href="/contact">Inquiry</a></li>
           </ul>
         </div>
         <div className={styles.column}>

@@ -63,8 +63,8 @@ const JobListing = (props: Props) => {
               className="bg-white  border shadow-md border-[#EFEFEF] py-[20px] px-[27px] cursor-pointer hover:shadow-lg transform hover:scale-[102%] transition-all duration-300 ease-out rounded-[4px]"
               key={index}
             >
-              {/* <h1 className='text-[#16243D] text-[19px] leading-[30.4px] font-medium tracking-[0.02em] mt-[10px]'>{item?.attributes.Title}</h1> */}
-              {/* <div className='grid grid-cols-2 gap-[10px] my-[10px]'>
+              <h1 className='text-[#16243D] text-[19px] leading-[30.4px] font-medium tracking-[0.02em] mt-[10px]'>{item?.attributes.Title}</h1>
+              <div className='grid grid-cols-2 gap-[10px] my-[10px]'>
                                     <div className='border p-[5px]'>
                                         <p className='font-bold'>Company:</p>
                                         <p className='text-[#1295EF] text-[15px] leading-[24px] font-medium mb-[10px]'>{item?.attributes.company_name}</p>
@@ -91,7 +91,7 @@ const JobListing = (props: Props) => {
                                         <p className='font-bold'>Last Date:</p>
                                         <p className='text-[#1295EF] text-[15px] leading-[24px] font-medium mb-[10px]'>{item?.attributes.last_date}</p>
                                     </div>
-                                </div> */}
+                                </div>
               <div className="flex items-center gap-[25px]">
                 <div className="basis-[20%]">
                   <img
