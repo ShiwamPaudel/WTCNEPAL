@@ -165,7 +165,7 @@ function Nav1() {
               <li>
                 <Link
                   href="/"
-                  className="px-[1px] py-[5px] hover-text-border relative overflow-hidden hover:text-[#23a8cd] transition-colors duration-150 ease-out px-"
+                  className="px-[1px] py-[5px] hover-text-border relative overflow-hidden hover:text-[#23a8cd] transition-colors duration-150 ease-out"
                 >
                   Home
                 </Link>
