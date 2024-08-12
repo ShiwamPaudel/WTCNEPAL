@@ -204,7 +204,7 @@ function Nav1() {
               <li
                 onMouseEnter={handleProduct}
                 onMouseLeave={handleProductHide}
-                className="relative px-[1px] py-[5px]"
+                className="relative px-[1px] py-[5px] cursor-pointer"
               >
                 <Link
                   href=""
