@@ -14,6 +14,7 @@ import { useFormik } from "formik";
 import ReactPlayer from "react-player";
 import { Breadcrumb } from "antd";
 import { imageUrl } from "@/utils/imageUrl";
+import Head from "next/head";
 
 const ProductDetail = () => {
   const router = useRouter();
@@ -98,6 +99,9 @@ const ProductDetail = () => {
   };
   return (
     <>
+    <Head>
+        <title>{product ? product.attributes.title + '- Details': 'Product Detail'}</title>
+      </Head>
       {isLoading ? (
         <div className="container max-w-[1180px] mx-auto flex items-center justify-center">
           <InfinitySpin width="200" color="#4fa94d" />
