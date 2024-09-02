@@ -11,7 +11,7 @@ import { useRouter } from "next/router";
 import { Skeleton } from "antd";
 import { imageUrl } from "@/utils/imageUrl";
 
-function SampleNextArrow(props: any) {
+function SamplePrevArrow(props: any) {
   const { className, style, onClick } = props;
   return (
     <div className="absolute hidden md:block top-[105%] right-[50%] translate-x-[-50%]  z-50">
@@ -25,7 +25,7 @@ function SampleNextArrow(props: any) {
   );
 }
 
-function SamplePrevArrow(props: any) {
+function SampleNextArrow(props: any) {
   const { className, style, onClick } = props;
   return (
     <div className="absolute top-[105%] hidden md:block left-[52%] translate-x-[-50%] z-50">
