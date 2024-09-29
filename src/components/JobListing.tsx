@@ -14,42 +14,18 @@ const JobListing = (props: Props) => {
   useEffect(() => {
     let getJobs = async () => {
       let response = await axios.get(
-        `${BaseUrl}/gsfgs?populate=*&?sort=rank:asc`
+        '${BaseUrl}/api/gsfg/populate=*&?sort=rank:asc'
       );
-      // let response2 = await axios.get(`${BaseUrl}/testimonial-section?populate=*`)
       setJob(response.data.data);
     };
     getJobs();
   }, []);
-
-  // console.log(job, "jobs");
-
   const handleClick = (item: any) => {
-    // router.push(``)
     router.push(`/careers/${item.id}`);
-    // console.log(item.id)
   };
   return (
     <div className="  pt-[60px] pb-[72px]" id="job">
-      {/* this is for modal */}
-      {/* <Modal
-                title=""
-                centered
-                open={open}
-                onOk={() => setOpen(false)}
-                onCancel={() => setOpen(false)}
-                width={800}
-                footer={false}
-            >
-                <div className='mt-[28px]'>
-                    {
-
-
-                        // <img src={`${imgUrl}${content?.attributes?.image?.data?.attributes?.url}`} className='w-full' alt="" />
-
-                    }
-                </div>
-            </Modal> */}
+      
       <div className="container mx-auto ">
         <div>
           <h1 className="text-[#16243D] md:text-[36px] text-[26px] md:leading-[57.66px] leading-[41.6px] tracking-[0.02em] font-normal text-center">
