@@ -9,7 +9,8 @@ const Footer: React.FC = () => {
         <div className={styles.column}>
           <p>DMS House - 148, Kumari Marga, Tripureshwor, Kathmandu</p>
           <br />
-          <p>01 - 5362654 / 5319205</p>
+          <p>01 - 536 2654 / 410 0634</p>
+          <p>01 - 597 1654 (Sales / Service Inquiries)</p>
           <p><a href="mailto:info@wtcnepal.com">info@wtcnepal.com</a></p>
           <div className={styles.social}>
             <a href="https://www.facebook.com/WTC.Pvt.Ltd"><img src="assets/facebook.png" alt="Facebook" /></a>
