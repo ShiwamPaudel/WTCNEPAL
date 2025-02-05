@@ -134,7 +134,7 @@ function Nav1() {
     <>
       {/* responsive navbar  */}
       <div className="container flex mx-auto lg:hidden ">
-        <div className=" flex flex-row justify-between items-center  px-[15px] md:px-0 ">
+        <div className="flex justify-between items-center  px-[15px] md:px-0 ">
           <div className="w-[115px] h-auto ">
             <Link href="/">
               <img
