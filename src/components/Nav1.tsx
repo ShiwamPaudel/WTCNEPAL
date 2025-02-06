@@ -133,9 +133,10 @@ function Nav1() {
   return (
     <>
       {/* responsive navbar  */}
-      <div className="container flex mx-auto lg:hidden ">
-        <div className="flex justify-between items-center  px-[15px] md:px-0 ">
-          <div className="w-[115px] h-auto ">
+      <div className="container mx-auto lg:hidden">
+        <div className="flex justify-between items-center px-[15px] md:px-0 w-full">
+          {/* Logo on the left */}
+          <div className="w-[115px] h-auto">
             <Link href="/">
               <img
                 src="/../assets/logo.png"
@@ -144,9 +145,14 @@ function Nav1() {
               />
             </Link>
           </div>
-          <Dramenu categories={categories} />
+
+          {/* Hamburger menu on the right */}
+          <div>
+            <Dramenu categories={categories} />
+          </div>
         </div>
       </div>
+
 
       <div className={`bg-cyan ${fix ? "nav" : ""}`}>
         <div className="container flex justify-between xl:px-10 items-center py-[5px] lg:flex 2xl:max-w-[1180px] mx-auto font-semibold hidden lg:flex-row ">
