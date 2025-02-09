@@ -315,10 +315,10 @@ function Dramenu({ categories }: any) {
             )}
           </li>
           <li>
-            <Link href="/">News & Events</Link>
+            <Link href="/news">News & Events</Link>
           </li>
           <li>
-            <Link href="">Carrers</Link>
+            <Link href="/careers">Carrers</Link>
           </li>
           <li>
             <Link href="/contact">Contact Us</Link>
