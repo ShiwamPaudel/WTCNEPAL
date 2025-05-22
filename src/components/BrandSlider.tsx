@@ -55,15 +55,15 @@ const BrandSlider: React.FC = () => {
         <div
           key={index}
           onClick={() => window.location.href = brand.url}
-          style={{ cursor: 'pointer', padding: '10px 15px' }}
+          style={{ cursor: 'pointer', padding: '1px 1px' }}
         >
           <img
             src={brand.image}
             alt={brand.name}
             style={{ 
               gap: '10px',
-              width: '100%',
-              height: '100px', 
+              width: '100px',
+              height: '100%', 
               objectFit: 'contain', 
               display: 'block', 
              }}
