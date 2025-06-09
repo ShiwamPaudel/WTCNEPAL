@@ -40,12 +40,25 @@ function Slide2() {
   // Hardcoded images array
   const hardcodedImages = [
     {
-<<<<<<< src/components/Slide2.tsx
-      url: "",
-=======
-      url: "",
+      url: "./assets/GB/Home Banner.gif",
       description: "",
-    }
+    },
+    {
+      url: "./assets/GB/NihonKohdenHomeBanner.gif",
+      description: "",
+    },
+    {
+      url: "./assets/GB/BA200.gif",
+      description: "",
+    },
+    {
+      url: "./assets/GB/Liaison XL.gif",
+      description: "",
+    },
+    {
+      url: "./assets/GB/DIS5B.gif",
+      description: "",
+    },
   ];
 
   const settings = {
@@ -107,4 +120,3 @@ function Slide2() {
 }
 
 export default Slide2;
-//Remove
