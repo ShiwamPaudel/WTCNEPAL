@@ -104,4 +104,4 @@ function Slide2() {
 }
 
 export default Slide2;
-//Remove
+//Remo
