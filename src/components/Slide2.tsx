@@ -40,9 +40,12 @@ function Slide2() {
   // Hardcoded images array
   const hardcodedImages = [
     {
+<<<<<<< src/components/Slide2.tsx
+      url: "",
+=======
       url: "",
       description: "",
-    },
+    }
   ];
 
   const settings = {
