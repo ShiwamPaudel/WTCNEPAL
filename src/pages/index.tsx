@@ -19,7 +19,7 @@ import Partnered1 from "@/components/Partnerned1";
 import { useState, useEffect } from "react";
 import { BaseUrl } from "./api/global";
 import axios from "axios";
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const inter = Poppins({
@@ -62,8 +62,10 @@ export default function Home() {
     fetchData();
   }, []);
 
-  // Chatbase script integration
+  // Chatbase Integration
   useEffect(() => {
+    if (typeof window === "undefined") return;
+
     const existingScript = document.getElementById("m7oqdvaihYHu8iKv2Z4Vd");
     if (!existingScript) {
       const script = document.createElement("script");
@@ -73,26 +75,24 @@ export default function Home() {
       document.body.appendChild(script);
     }
 
-    if (
-      typeof window !== "undefined" &&
-      !(window as any).chatbaseInitialized
-    ) {
-      (window as any).chatbase = (...args: any[]) => {
-        if (!(window as any).chatbase.q) {
-          (window as any).chatbase.q = [];
+    if (!(window as any).chatbaseInitialized) {
+      const chatbaseFunc = (...args: any[]) => {
+        if (!(window as any).chatbaseQueue) {
+          (window as any).chatbaseQueue = [];
         }
-        (window as any).chatbase.q.push(args);
+        (window as any).chatbaseQueue.push(args);
       };
 
-      (window as any).chatbase = new Proxy(window.chatbase, {
+      const chatbaseProxy = new Proxy(chatbaseFunc, {
         get(target, prop) {
           if (prop === "q") {
-            return target.q;
+            return (window as any).chatbaseQueue;
           }
           return (...args: any[]) => target(prop, ...args);
         },
       });
 
+      (window as any).chatbase = chatbaseProxy;
       (window as any).chatbaseInitialized = true;
     }
   }, []);
@@ -114,7 +114,7 @@ export default function Home() {
       </Head>
 
       <>
-        {/* WhatsApp Bubble (optional, currently commented out) */}
+        {/* Optional WhatsApp bubble */}
         {/* <a
           href="https://wa.me/+9779851036184"
           className="whatsapp_float"
