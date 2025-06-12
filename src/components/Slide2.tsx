@@ -40,7 +40,7 @@ function Slide2() {
   // Hardcoded images array
   const hardcodedImages = [
     {
-      url: "",
+      url: "assets/GB/LiaisonXL_Banner.gif",
       description: "",
     },
   ];
