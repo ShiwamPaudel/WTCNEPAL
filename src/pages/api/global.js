@@ -1,1 +1,2 @@
-export const BaseUrl = "https://admin.wtcnepal.com/api";
+const BaseUrl = "https://admin.wtcnepal.com/api";
+module.exports = { BaseUrl };
