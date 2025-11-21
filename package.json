@@ -38,5 +38,19 @@
     "autoprefixer": "^10.4.14",
     "postcss": "^8.4.23",
     "tailwindcss": "^3.3.2"
-  }
+  },
+  "description": "This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).",
+  "main": "next.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/supremeitonline/dmsnepalweb-2023.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://gitlab.com/supremeitonline/dmsnepalweb-2023/issues"
+  },
+  "homepage": "https://gitlab.com/supremeitonline/dmsnepalweb-2023#readme"
 }
