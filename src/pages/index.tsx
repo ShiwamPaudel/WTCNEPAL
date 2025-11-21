@@ -1,9 +1,11 @@
 import Image from "next/image";
 import Head from "next/head";
+import { Inter } from "next/font/google"; //Fonts
 import { Poppins } from "next/font/google";
 import BrandSlider from "@/components/BrandSlider";
 import HomeSlider from "@/components/HomeSlider";
 import Customers from "@/components/Customers";
+import PartnerSlider from "@/components/PartnerSlider";
 import AboutUs from "@/components/AboutUs";
 import Testimonial from "@/components/Testimonial";
 import PartneredUniverities from "@/components/PartneredUniverities";
@@ -19,24 +21,10 @@ import Partnered1 from "@/components/Partnerned1";
 import { useState, useEffect } from "react";
 import { BaseUrl } from "./api/global";
 import axios from "axios";
-import { ToastContainer } from "react-toastify";
+import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-const inter = Poppins({
-  subsets: ["latin"],
-  weight: [
-    "100",
-    "200",
-    "300",
-    "400",
-    "500",
-    "600",
-    "700",
-    "800",
-    "900",
-  ],
-  preload: true,
-});
+const inter = Poppins({ subsets: ["latin"], weight:["100", "200", "300", "400", "500", "600", "700", "800", "900"], preload:true });
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -61,41 +49,7 @@ export default function Home() {
 
     fetchData();
   }, []);
-
-  // Chatbase Integration
-  useEffect(() => {
-    if (typeof window === "undefined") return;
-
-    const existingScript = document.getElementById("m7oqdvaihYHu8iKv2Z4Vd");
-    if (!existingScript) {
-      const script = document.createElement("script");
-      script.src = "https://www.chatbase.co/embed.min.js";
-      script.id = "m7oqdvaihYHu8iKv2Z4Vd";
-      script.setAttribute("domain", "www.chatbase.co");
-      document.body.appendChild(script);
-    }
-
-    if (!(window as any).chatbaseInitialized) {
-      const chatbaseFunc = (...args: any[]) => {
-        if (!(window as any).chatbaseQueue) {
-          (window as any).chatbaseQueue = [];
-        }
-        (window as any).chatbaseQueue.push(args);
-      };
-
-      const chatbaseProxy = new Proxy(chatbaseFunc, {
-        get(target, prop) {
-          if (prop === "q") {
-            return (window as any).chatbaseQueue;
-          }
-          return (...args: any[]) => target(prop, ...args);
-        },
-      });
-
-      (window as any).chatbase = chatbaseProxy;
-      (window as any).chatbaseInitialized = true;
-    }
-  }, []);
+  const cacheKey = "cachedData";
 
   return (
     <>
@@ -112,23 +66,21 @@ export default function Home() {
           href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"
         />
       </Head>
-
       <>
-        {/* Optional WhatsApp bubble */}
-        {/* <a
+        <a
           href="https://wa.me/+9779851036184"
           className="whatsapp_float"
           target="_blank"
           rel="noopener noreferrer"
         >
           <i className="fa fa-whatsapp whatsapp-icon"></i>
-        </a> */}
-
+        </a>
         <ToastContainer />
         <HomeSlider />
         <AboutUs />
         <Customers />
-        <Products />
+        <Products  />
+        {/* <PartnerSlider /> */}
         <BrandSlider />
         <Requestcall faq={faq} />
         <News />
@@ -136,3 +88,4 @@ export default function Home() {
     </>
   );
 }
+
