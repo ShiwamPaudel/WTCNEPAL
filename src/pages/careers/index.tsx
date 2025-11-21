@@ -1,5 +1,5 @@
 import AboutBanner from "@/components/AboutBanner";
-import HardcodedJobListing from "@/components/JobListing";
+import JobListing from "@/components/JobListing"; // Fixed import name
 import React from "react";
 import Head from "next/head";
 
@@ -12,7 +12,7 @@ const CareersPage = () => {
       </Head>
       <div className="container mx-auto 2xl:max-w-[1180px] xl:px-20 2xl:px-0">
         <AboutBanner />
-        <HardcodedJobListing />
+        <JobListing /> {/* Fixed component name */}
       </div>
     </>
   );

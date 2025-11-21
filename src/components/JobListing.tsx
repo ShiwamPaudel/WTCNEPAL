@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 
-const HardcodedJobListing = () => {
+const JobListing = () => {
   // Hardcoded job data
   const hardcodedJobs = [
     {
@@ -61,4 +61,4 @@ const HardcodedJobListing = () => {
   );
 };
 
-export default HardcodedJobListing;
+export default JobListing;
