@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Dramenu from "./Dramenu";
-import { BaseUrl } from "@/pages/api/global";
+// import { BaseUrl } from "@/pages/api/global";
+import { BaseUrl } from "@/utils/global.mjs";
+
 import axios from "axios";
 // import { useRouter } from "next/router";
 function Nav1() {

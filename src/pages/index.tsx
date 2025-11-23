@@ -19,7 +19,9 @@ import BootomFooter from "@/components/BootomFooter";
 import Nav1 from "@/components/Nav1";
 import Partnered1 from "@/components/Partnerned1";
 import { useState, useEffect } from "react";
-import { BaseUrl } from "./api/global";
+// import { BaseUrl } from "./api/global";
+import { BaseUrl } from "@/utils/global.mjs";
+
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";

@@ -1,4 +1,6 @@
-import { BaseUrl } from "@/pages/api/global";
+// import { BaseUrl } from "@/pages/api/global";
+import { BaseUrl } from "@/utils/global";
+
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 // import Parse from "html-react-parser"

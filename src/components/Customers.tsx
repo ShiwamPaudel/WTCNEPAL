@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { BaseUrl } from "@/pages/api/global";
+// import { BaseUrl } from "@/pages/api/global";
+import { BaseUrl } from "@/utils/global.mjs";
+
 import parse from "html-react-parser";
 
 import { imageUrl } from "@/utils/imageUrl";

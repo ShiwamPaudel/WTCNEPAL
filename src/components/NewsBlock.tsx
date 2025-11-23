@@ -1,4 +1,6 @@
-import { BaseUrl } from "@/pages/api/global";
+// import { BaseUrl } from "@/pages/api/global";
+import { BaseUrl } from "@/utils/global.mjs";
+
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
