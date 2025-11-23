@@ -3,7 +3,6 @@ import axios from "axios";
 import { Button, Modal } from "antd";
 import { BaseUrl } from "@/pages/api/global";
 import { useRouter } from "next/router";
-// import { Router } from 'next/router';
 
 type Props = {};
 
