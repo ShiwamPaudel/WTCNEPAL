@@ -110,7 +110,7 @@ const SingleJob = () => {
       const result = await response.json();
 
       if (response.ok) {
-        alert("Application submitted successfully! We will contact you soon.");
+        alert("Application submitted successfully!");
         setIsModalOpen(false);
         (e.target as HTMLFormElement).reset();
       } else {
