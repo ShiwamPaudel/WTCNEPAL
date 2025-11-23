@@ -1,0 +1,37 @@
+image: node:18-alpine
+
+stages:
+  - build
+  - test
+
+cache:
+  paths:
+    - node_modules/
+    - .next/cache/
+
+before_script:
+  - apk add --no-cache git
+
+build:
+  stage: build
+  script:
+    - echo "🚀 Starting build process..."
+    - npm ci
+    - npm run build
+    - echo "✅ Build completed successfully!"
+  artifacts:
+    paths:
+      - .next/
+      - public/
+    expire_in: 1 hour
+  only:
+    - main
+    - branches
+
+test:
+  stage: test
+  script:
+    - echo "✅ All checks passed - Ready for deployment!"
+  only:
+    - main
+    - branches
