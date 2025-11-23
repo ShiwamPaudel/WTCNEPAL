@@ -1,3 +1,4 @@
+import { BaseUrl } from "@/utils/global.mjs";
 import { useRouter } from "next/router";
 import React, { useState } from "react";
 
@@ -8,53 +9,53 @@ const SingleJob = () => {
 
   const jobDetails: any = {
     "1": {
-      title: "Frontend Developer",
+      title: "Sales & Marketing Officer",
       company_name: "Web Trading Concern Pvt. Ltd.",
-      deadline: "2024-07-14",
-      job_location: "Kathmandu, Nepal",
+      deadline: "2025-12-31",
+      job_location: "Tripureshwor, Kathmandu, Nepal",
       employment_type: "Full-time",
       salary: "Negotiable",
-      education_level: "Bachelor's in Computer Science",
+      education_level: "Bachelor's Degree",
       job_description: `
         <h3>Responsibilities:</h3>
         <ul>
-          <li>Develop responsive web applications using React/Next.js</li>
-          <li>Collaborate with design and backend teams</li>
-          <li>Write clean, maintainable code</li>
-          <li>Participate in code reviews</li>
+          <li>Promote and sell medical equipment to hospitals, clinics, and healthcare professionals.</li>
+          <li>Identify potential clients and generate leads through market research and networking.</li>
+          <li>Prepare sales presentations, proposals, and quotations.</li>
+          <li>Maintain and update client records and sales reports.</li>
         </ul>
       `,
       job_specification: `
         <h3>Technical Skills:</h3>
         <ul>
-          <li>React.js & Next.js</li>
-          <li>TypeScript</li>
-          <li>HTML5, CSS3, JavaScript</li>
+          <li>Client Relationship Management</li>
+          <li>Sales & Negotiation Skills</li>
+          <li>Market Awarness & Product Knowledge</li>
         </ul>
       `
     },
     "2": {
-      title: "Backend Developer",
-      company_name: "Tech Solutions Inc.",
-      deadline: "2024-07-20", 
-      job_location: "Remote",
+      title: "Storekeeper",
+      company_name: "Web Trading Concern Pvt. Ltd.",
+      deadline: "2025-12-31", 
+      job_location: "On-Site",
       employment_type: "Full-time",
-      salary: "Rs. 50,000 - Rs. 80,000",
-      education_level: "Bachelor's in Computer Science",
+      salary: "Negotiable",
+      education_level: "Intermediate",
       job_description: `
         <h3>Responsibilities:</h3>
         <ul>
-          <li>Design and develop RESTful APIs</li>
-          <li>Create database schemas and optimize queries</li>
-          <li>Implement authentication and authorization</li>
+          <li>Receive, inspect, and store incoming medical equipment and supplies.</li>
+          <li>Maintain accurate inventory records and update stock movement regularly.</li>
+          <li>Ensure proper storage conditions for sensitive medical equipment.</li>
         </ul>
       `,
       job_specification: `
         <h3>Technical Skills:</h3>
         <ul>
-          <li>Node.js & Express.js</li>
-          <li>MongoDB/PostgreSQL</li>
-          <li>REST API design</li>
+          <li>-</li>
+          <li>-</li>
+          <li>-</li>
         </ul>
       `
     }
@@ -73,37 +74,54 @@ const SingleJob = () => {
     );
   }
 
-const handleSubmit = async (e: React.FormEvent) => {
-  e.preventDefault();
-  const formData = new FormData(e.target as HTMLFormElement);
-  
-  try {
-    const response = await fetch('/api/submit-application', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        name: formData.get('name'),
-        email: formData.get('email'),
-        mobile: formData.get('mobile'),
-        message: formData.get('message'),
-        jobPosition: job.title,
-        // For file upload, you'd need multipart form data
-      })
-    });
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    const formData = new FormData(e.target as HTMLFormElement);
+    const resumeFile = formData.get('resume') as File;
 
-    if (response.ok) {
-      alert("Application submitted successfully!");
-      setIsModalOpen(false);
-      (e.target as HTMLFormElement).reset();
-    } else {
-      alert("Failed to submit application. Please try again.");
+    // Validate file
+    if (!resumeFile || resumeFile.size === 0) {
+      alert("Please upload your resume");
+      return;
     }
-  } catch (error) {
-    alert("Network error. Please try again.");
-  }
-};
+
+    // Create FormData for Strapi (required for file uploads)
+    const strapiFormData = new FormData();
+    strapiFormData.append('data', JSON.stringify({
+      Name: formData.get('name'),
+      Email: formData.get('email'),
+      Mobile: formData.get('mobile'),
+      Message: formData.get('message'),
+      jobPosition: job.title,
+      rank: 0 // Default value as per your Strapi collection
+    }));
+
+    // Append the resume file with the correct field name
+    strapiFormData.append('files.Resume', resumeFile);
+
+    try {
+      // Use the correct Strapi endpoint for your collection
+      const response = await fetch(`${BaseUrl}/sc-xcs`, {
+        method: 'POST',
+        // Don't set Content-Type header when using FormData - browser will set it automatically with boundary
+        body: strapiFormData
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        alert("Application submitted successfully! We will contact you soon.");
+        setIsModalOpen(false);
+        (e.target as HTMLFormElement).reset();
+      } else {
+        console.error('Strapi error:', result);
+        alert(`Failed to submit application: ${result.error?.message || 'Please try again.'}`);
+      }
+    } catch (error) {
+      console.error('Application error:', error);
+      alert("Network error. Please try again.");
+    }
+  };
 
   return (
     <div className="container mx-auto max-w-4xl p-6">
@@ -151,14 +169,50 @@ const handleSubmit = async (e: React.FormEvent) => {
           <div className="bg-white p-6 rounded-lg max-w-md w-full">
             <h2 className="text-xl font-bold mb-4">Apply for {job.title}</h2>
             <form onSubmit={handleSubmit} className="space-y-4">
-              <input type="text" placeholder="Name*" required className="w-full p-2 border rounded" />
-              <input type="email" placeholder="Email*" required className="w-full p-2 border rounded" />
-              <input type="tel" placeholder="Phone*" required className="w-full p-2 border rounded" />
-              <textarea placeholder="Message" className="w-full p-2 border rounded h-20" />
-              <input type="file" required className="w-full" />
+              <input 
+                name="name" 
+                type="text" 
+                placeholder="Name*" 
+                required 
+                className="w-full p-2 border rounded" 
+              />
+              <input 
+                name="email" 
+                type="email" 
+                placeholder="Email*" 
+                required 
+                className="w-full p-2 border rounded" 
+              />
+              <input 
+                name="mobile" 
+                type="tel" 
+                placeholder="Phone*" 
+                required 
+                className="w-full p-2 border rounded" 
+              />
+              <textarea 
+                name="message" 
+                placeholder="Message" 
+                className="w-full p-2 border rounded h-20" 
+              />
+              <input 
+                name="resume" 
+                type="file" 
+                required 
+                accept=".pdf,.doc,.docx" 
+                className="w-full" 
+              />
               <div className="flex gap-4">
-                <button type="submit" className="flex-1 bg-blue-600 text-white p-2 rounded">Submit</button>
-                <button type="button" onClick={() => setIsModalOpen(false)} className="flex-1 bg-gray-500 text-white p-2 rounded">Cancel</button>
+                <button type="submit" className="flex-1 bg-blue-600 text-white p-2 rounded">
+                  Submit
+                </button>
+                <button 
+                  type="button" 
+                  onClick={() => setIsModalOpen(false)} 
+                  className="flex-1 bg-gray-500 text-white p-2 rounded"
+                >
+                  Cancel
+                </button>
               </div>
             </form>
           </div>

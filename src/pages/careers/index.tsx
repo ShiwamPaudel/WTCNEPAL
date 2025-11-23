@@ -3,23 +3,23 @@ import Head from "next/head";
 
 const CareersPage = () => {
   const jobs = [
-    { 
-      id: 1, 
-      title: "Frontend Developer", 
-      company_name: "Web Trading Concern Pvt. Ltd.", 
-      job_location: "Kathmandu, Nepal",
+    {
+      id: 1,
+      title: "Sales & Marketing Officer",
+      company_name: "Web Trading Concern Pvt. Ltd.",
+      deadline: "2025-12-31",
+      job_location: "Tripureshwor, Kathmandu, Nepal",
       employment_type: "Full-time",
-      salary: "Negotiable",
-      deadline: "2024-07-14"
+      salary: "Negotiable"
     },
-    { 
-      id: 2, 
-      title: "Backend Developer", 
-      company_name: "Tech Solutions Inc.", 
-      job_location: "Remote",
-      employment_type: "Full-time", 
-      salary: "Rs. 50,000 - Rs. 80,000",
-      deadline: "2024-07-20"
+    {
+      id: 2,
+      title: "Storekeeper",
+      company_name: "Web Trading Concern Pvt. Ltd.",
+      deadline: "2025-12-31",
+      job_location: "Tripureshwor, Kathmandu, Nepal",
+      employment_type: "Full-time",
+      salary: "Negotiable"
     }
   ];
 

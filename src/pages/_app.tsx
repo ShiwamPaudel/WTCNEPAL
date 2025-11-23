@@ -7,7 +7,9 @@ import "@/styles/globals.css";
 import type { AppProps } from "next/app";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { BaseUrl } from "./api/global";
+// import { BaseUrl } from "./api/global";
+import { BaseUrl } from "@/utils/global.mjs";
+
 import { Button, Modal } from "antd";
 
 import { Poppins } from 'next/font/google';
