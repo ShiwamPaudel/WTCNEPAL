@@ -3,11 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "engines": {
-    "node": ">=18.17.0"
+    "node": "20.x"
   },
   "scripts": {
     "dev": "next dev",
-    "build": "next build ",
+    "build": "LD_PRELOAD=/lib/x86_64-linux-gnu/libatomic.so.1 next build",
     "start": "next start",
     "lint": "next lint"
   },
@@ -34,7 +34,7 @@
     "react-toastify": "^9.1.2",
     "react-whatsapp-chat-widget": "^1.1.6",
     "slick-carousel": "^1.8.1",
-    "typescript": "5.0.4",
+    "typescript": "^5.9.3",
     "use-count-up": "^3.0.1"
   },
   "devDependencies": {
