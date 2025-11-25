@@ -7,12 +7,12 @@
   },
   "scripts": {
     "dev": "next dev",
-    "build": "LD_PRELOAD=/lib/x86_64-linux-gnu/libatomic.so.1 next build",
+    "build": "next build --no-lint",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
-    "@next/font": "^14.2.4",
+    
     "@types/node": "18.16.3",
     "@types/react": "18.2.2",
     "@types/react-dom": "18.2.3",
