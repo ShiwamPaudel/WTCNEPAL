@@ -1,7 +1,9 @@
 import React from "react";
 import { useFormik } from "formik";
 import axios from "axios";
-import { BaseUrl } from "@/pages/api/global";
+// import { BaseUrl } from "@/pages/api/global";
+import { BaseUrl } from "@/utils/global.mjs";
+
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Collape from "./Collape";

@@ -30,6 +30,10 @@ const index = () => {
     <>
     <Head>
       <title>ABOUT WEB TRADING</title>
+      <meta name="description" content="Welcome to WTC Nepal." />
+        <meta property="og:title" content="Home - WTC Nepal" />
+        <meta property="og:description" content="Welcome to WTC Nepal. Your gateway to Healthcare Equipment solutions." />
+        <meta property="og:url" content="https://wtcnepal.com" />
       <link rel="icon" href="/../assets/favicon.png" />
       <link
       rel="stylesheet"

@@ -2,7 +2,7 @@ import AboutBanner from "@/components/AboutBanner";
 import { useRouter } from "next/router";
 import React, { useState, useEffect } from "react";
 import { HiOutlineSearch } from "react-icons/hi";
-import { BaseUrl } from "../api/global";
+import { BaseUrl } from "@/utils/global.mjs";
 import Parse from "html-react-parser";
 import axios from "axios";
 import Item from "antd/es/list/Item";

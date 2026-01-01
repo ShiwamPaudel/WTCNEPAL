@@ -87,10 +87,10 @@ function Dramenu({ categories }: any) {
       <Drawer placement="right" onClose={onClose} open={open}>
         <ul className="flex flex-col items-start pl-[0px] justify-start gap-[25px] font-[inter] font-normal text-[16px] leading-[14.52px] text-[#000000]">
           <li className="text-start">
-            <Link href="/">HOME</Link>
+            <Link href="/">Home</Link>
           </li>
           <li onClick={handleClick}>
-            <Link href="/about">COMPANY</Link>
+            <Link href="/about">Company</Link>
             {about && (
               <div className="    w-[199px] pt-[10px] z-40 border-t-[1px] mt-[8px]">
                 <div className="     h-[100%] w-full space-y-[8px]">
@@ -110,11 +110,8 @@ function Dramenu({ categories }: any) {
               </div>
             )}
           </li>
-          <li>
-            <Link href="/">NEWS & EVENT</Link>
-          </li>
           <li onClick={handleProduct}>
-            <Link href="/">PRODUCT CATEGORY</Link>
+            <Link href="/">Products</Link>
             {product && (
               <div className="   w-[250px] mt-[10px]  z-40 space-y-[10px]">
                 <div className="bg-white  border-t-[1px] pt-[10px] space-y-[8px]    h-[100%] w-full ">
@@ -318,16 +315,13 @@ function Dramenu({ categories }: any) {
             )}
           </li>
           <li>
-            {/* <Link href="/gallery">GALLERY</Link> */}
+            <Link href="/news">News & Events</Link>
           </li>
           <li>
-            <Link href="">CAREER</Link>
+            <Link href="/careers">Carrers</Link>
           </li>
           <li>
-            <Link href="">CHECK MAIL</Link>
-          </li>
-          <li>
-            <Link href="/contact">CONTACT US</Link>
+            <Link href="/contact">Contact Us</Link>
           </li>
         </ul>
       </Drawer>

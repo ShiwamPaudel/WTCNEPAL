@@ -2,22 +2,24 @@
   "name": "my-project",
   "version": "0.1.0",
   "private": true,
-  "engines": {
-    "node": "20.x"
-  },
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build ",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
+    "@next/font": "^14.2.4",
+    "@types/node": "18.16.3",
     "@types/react": "18.2.2",
     "@types/react-dom": "18.2.3",
     "antd": "^5.4.6",
     "axios": "^1.4.0",
+    "eslint": "8.39.0",
+    "eslint-config-next": "13.3.4",
     "formik": "^2.2.9",
     "html-react-parser": "^3.0.16",
+    "next": "^13.5.6",
     "react": "18.2.0",
     "react-countup": "^6.4.2",
     "react-dom": "18.2.0",
@@ -28,17 +30,27 @@
     "react-toastify": "^9.1.2",
     "react-whatsapp-chat-widget": "^1.1.6",
     "slick-carousel": "^1.8.1",
-    "typescript": "^5.9.3",
+    "typescript": "5.0.4",
     "use-count-up": "^3.0.1"
   },
   "devDependencies": {
-    "@types/node": "24.10.1",
     "@types/react-slick": "^0.23.10",
     "autoprefixer": "^10.4.14",
-    "eslint": "^9.39.1",
-    "eslint-config-next": "^16.0.4",
-    "next": "^16.0.4",
     "postcss": "^8.4.23",
     "tailwindcss": "^3.3.2"
-  }
+  },
+  "description": "This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).",
+  "main": "next.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/supremeitonline/dmsnepalweb-2023.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://gitlab.com/supremeitonline/dmsnepalweb-2023/issues"
+  },
+  "homepage": "https://gitlab.com/supremeitonline/dmsnepalweb-2023#readme"
 }

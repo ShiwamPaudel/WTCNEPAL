@@ -1,10 +1,13 @@
-import { BaseUrl } from "@/pages/api/global";
+// import { BaseUrl } from "@/pages/api/global";
+import { BaseUrl } from "@/utils/global.mjs";
+
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { InfinitySpin, ThreeDots } from "react-loader-spinner";
 import { Skeleton } from "antd";
 import { useRouter } from "next/router";
 import { imageUrl } from "@/utils/imageUrl";
+
 
 const Products = () => {
   const [limit, setLimit] = useState(8);

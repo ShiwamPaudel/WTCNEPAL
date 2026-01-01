@@ -1,29 +1,69 @@
-import AboutBanner from "@/components/AboutBanner";
-import JobListing from "@/components/JobListing";
 import React from "react";
 import Head from "next/head";
 
-const index = () => {
-  return (<>
- <Head>
-    <title>Careers</title>
-    <link rel="icon" href="/../assets/favicon.png" />
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-    />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"/>
-  </Head>
-    <div className="container mx-auto 2xl:max-w-[1180px] xl:px-20 2xl:px-0  ">
-      {/* <AboutBanner/> */}
+const CareersPage = () => {
+  const jobs = [
+    {
+      id: 1,
+      title: "Sales & Marketing Officer",
+      company_name: "Web Trading Concern Pvt. Ltd.",
+      deadline: "2025-12-31",
+      job_location: "Tripureshwor, Kathmandu, Nepal",
+      employment_type: "Full-time",
+      salary: "Negotiable"
+    },
+    {
+      id: 2,
+      title: "Storekeeper",
+      company_name: "Web Trading Concern Pvt. Ltd.",
+      deadline: "2025-12-31",
+      job_location: "Tripureshwor, Kathmandu, Nepal",
+      employment_type: "Full-time",
+      salary: "Negotiable"
+    }
+  ];
 
-      <JobListing />
-    </div>
+  return (
+    <>
+      <Head>
+        <title>Careers - Join Our Team</title>
+        <link rel="icon" href="/../assets/favicon.png" />
+      </Head>
+      <div className="container mx-auto 2xl:max-w-[1180px] xl:px-20 2xl:px-0 p-8">
+        <h1 className="text-3xl font-bold mb-8">Career Opportunities</h1>
+        <div className="space-y-6">
+          {jobs.map((job) => (
+            <div key={job.id} className="border p-6 rounded-lg shadow-sm">
+              <div className="flex justify-between items-start">
+                <div>
+                  <h3 className="text-xl font-semibold text-[#23A8CD]">
+                    <a href={`/careers/${job.id}`} className="hover:underline">
+                      {job.title}
+                    </a>
+                  </h3>
+                  <p className="text-gray-600 mt-1">
+                    {job.company_name} • {job.job_location} • {job.employment_type}
+                  </p>
+                  <p className="text-green-600 font-medium mt-1">Salary: {job.salary}</p>
+                </div>
+                <div className="text-right">
+                  <p className="text-sm text-gray-500">
+                    Deadline: {new Date(job.deadline).toLocaleDateString()}
+                  </p>
+                  <a 
+                    href={`/careers/${job.id}`}
+                    className="inline-block mt-2 px-4 py-2 bg-[#23A8CD] text-white rounded hover:bg-[#1c8db0]"
+                  >
+                    Apply Now
+                  </a>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
     </>
   );
-
-
 };
 
-export default index;
+export default CareersPage;

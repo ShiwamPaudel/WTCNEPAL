@@ -3,7 +3,9 @@ import News from "@/components/News";
 import NewsBlock from "@/components/NewsBlock";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { BaseUrl } from "@/pages/api/global";
+// import { BaseUrl } from "@/pages/api/global";
+import { BaseUrl } from "@/utils/global.mjs";
+
 import Head from "next/head";
 
 const index = () => {

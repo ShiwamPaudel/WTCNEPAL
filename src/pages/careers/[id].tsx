@@ -1,313 +1,223 @@
+import { BaseUrl } from "@/utils/global.mjs";
 import { useRouter } from "next/router";
-import React, { useEffect, useState } from "react";
-import axios from "axios";
-import { BaseUrl } from "../api/global";
-import Parse from "html-react-parser";
-import { useFormik } from "formik";
-import { Button, Modal } from "antd";
-import { UploadOutlined } from "@ant-design/icons";
-import type { UploadProps } from "antd";
-import { message, Upload } from "antd";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import React, { useState } from "react";
 
 const SingleJob = () => {
   const router = useRouter();
-  const id = router.query.id;
-  // console.log(id);
-  const [product, setProduct] = useState<any>(null);
-
-  useEffect(() => {
-    let getProduct = async () => {
-      let product = await axios.get(`${BaseUrl}/gsfgs/${id}?populate=*`);
-      //  let list=    product.data.data.slice(0,8)
-      setProduct(product.data.data);
-      //   setIsLoading(false);
-      //   setIsLoading2(false)
-    };
-    getProduct();
-  }, [id]);
-  // console.log(product, "hello");
-
+  const { id } = router.query;
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const showModal = () => {
-    setIsModalOpen(true);
-  };
-
-  const handleOk = () => {
-    setIsModalOpen(false);
-  };
-
-  const handleCancel = () => {
-    setIsModalOpen(false);
-  };
-
-  interface FormValues {
-    Name: string;
-    Email: string;
-    Mobile: string;
-    Message: string;
-    Resume: File | ""; // Specify the data type as File or null
-  }
-  const formData = new FormData();
-  const formik = useFormik<FormValues>({
-    initialValues: {
-      Name: "",
-      Email: "",
-      Mobile: "",
-      Message: "",
-      Resume: "",
+  const jobDetails: any = {
+    "1": {
+      title: "Sales & Marketing Officer",
+      company_name: "Web Trading Concern Pvt. Ltd.",
+      deadline: "2025-12-31",
+      job_location: "Tripureshwor, Kathmandu, Nepal",
+      employment_type: "Full-time",
+      salary: "Negotiable",
+      education_level: "Bachelor's Degree",
+      job_description: `
+        <h3>Responsibilities:</h3>
+        <ul>
+          <li>Promote and sell medical equipment to hospitals, clinics, and healthcare professionals.</li>
+          <li>Identify potential clients and generate leads through market research and networking.</li>
+          <li>Prepare sales presentations, proposals, and quotations.</li>
+          <li>Maintain and update client records and sales reports.</li>
+        </ul>
+      `,
+      job_specification: `
+        <h3>Technical Skills:</h3>
+        <ul>
+          <li>Client Relationship Management</li>
+          <li>Sales & Negotiation Skills</li>
+          <li>Market Awarness & Product Knowledge</li>
+        </ul>
+      `
     },
-
-    onSubmit: (values) => {
-      // alert(JSON.stringify(values, null, 2));
-
-      // handleSubmit(values);
-
-      // let data ={
-      //   Name:values.Name,
-      //   Email:values.Email,
-      //   Mobile:values.Mobile,
-      //   Message:values.Message,
-
-      // }
-      formData.append("data", JSON.stringify(values));
-      formData.append("files.Resume", values.Resume);
-
-      // console.log(formData);
-
-      handleSubmit(values);
-    },
-  });
-
-  const handleSingleFile = (e: any) => {
-    let file = e.target.files;
-    // console.log(file[0]);
-    // console.log(file)
-
-    // formik.setFieldValue("Resume", file[0]);
-    formData.append("files.Resume", file[0]);
-    // console.log(formData);
-  };
-
-  const handleSubmit = async (values: any) => {
-    // console.log(formData);
-    let submit = await axios.post(`${BaseUrl}/sc-xcs`, formData, {
-      headers: { "Content-type": "multipart/form-data" },
-    });
-
-    if (submit) {
-      toast.success("Applied Successfully!");
-      router.push("/careers");
+    "2": {
+      title: "Storekeeper",
+      company_name: "Web Trading Concern Pvt. Ltd.",
+      deadline: "2025-12-31", 
+      job_location: "On-Site",
+      employment_type: "Full-time",
+      salary: "Negotiable",
+      education_level: "Intermediate",
+      job_description: `
+        <h3>Responsibilities:</h3>
+        <ul>
+          <li>Receive, inspect, and store incoming medical equipment and supplies.</li>
+          <li>Maintain accurate inventory records and update stock movement regularly.</li>
+          <li>Ensure proper storage conditions for sensitive medical equipment.</li>
+        </ul>
+      `,
+      job_specification: `
+        <h3>Technical Skills:</h3>
+        <ul>
+          <li>-</li>
+          <li>-</li>
+          <li>-</li>
+        </ul>
+      `
     }
-    // console.log(submit);
   };
 
-  // formData.append("data",values)
+  const job = jobDetails[id as string];
 
-  // for resume upload
-  const props: UploadProps = {
-    name: "file",
-    action: "https://www.mocky.io/v2/5cc8019d300000980a055e76",
-    headers: {
-      authorization: "authorization-text",
-    },
-    onChange(info) {
-      if (info.file.status !== "uploading") {
-        // console.log(info.file, info.fileList);
-        formik.setFieldValue("Resume", info.file);
+  if (!job) {
+    return (
+      <div className="container mx-auto p-8">
+        <h1>Job not found</h1>
+        <button onClick={() => router.push('/careers')} className="mt-4 px-4 py-2 bg-blue-600 text-white rounded">
+          Back to Careers
+        </button>
+      </div>
+    );
+  }
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    const formData = new FormData(e.target as HTMLFormElement);
+    const resumeFile = formData.get('resume') as File;
+
+    // Validate file
+    if (!resumeFile || resumeFile.size === 0) {
+      alert("Please upload your resume");
+      return;
+    }
+
+    // Create FormData for Strapi (required for file uploads)
+    const strapiFormData = new FormData();
+    strapiFormData.append('data', JSON.stringify({
+      Name: formData.get('name'),
+      Email: formData.get('email'),
+      Mobile: formData.get('mobile'),
+      Message: formData.get('message'),
+      jobPosition: job.title,
+      rank: 0 // Default value as per your Strapi collection
+    }));
+
+    // Append the resume file with the correct field name
+    strapiFormData.append('files.Resume', resumeFile);
+
+    try {
+      // Use the correct Strapi endpoint for your collection
+      const response = await fetch(`${BaseUrl}/sc-xcs`, {
+        method: 'POST',
+        // Don't set Content-Type header when using FormData - browser will set it automatically with boundary
+        body: strapiFormData
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        alert("Application submitted successfully!");
+        setIsModalOpen(false);
+        (e.target as HTMLFormElement).reset();
+      } else {
+        console.error('Strapi error:', result);
+        alert(`Failed to submit application: ${result.error?.message || 'Please try again.'}`);
       }
-      if (info.file.status === "done") {
-        message.success(`${info.file.name} file uploaded successfully`);
-      } else if (info.file.status === "error") {
-        message.error(`${info.file.name} file upload failed.`);
-      }
-    },
+    } catch (error) {
+      console.error('Application error:', error);
+      alert("Network error. Please try again.");
+    }
   };
 
-  // const router = useRouter()
   return (
-    <div className="container mx-auto 2xl:max-w-[1180px] xl:px-20 2xl:px-0   pb-[50px]">
-      <ToastContainer />
-      {/* modal popup */}
-      <Modal
-        width={700}
-        title="Details"
-        centered
-        open={isModalOpen}
-        footer={false}
-        onOk={() => setIsModalOpen(false)}
-        onCancel={() => setIsModalOpen(false)}
+    <div className="container mx-auto max-w-4xl p-6">
+      <button 
+        onClick={() => router.push('/careers')}
+        className="mb-6 px-4 py-2 text-blue-600 hover:text-blue-800"
       >
-        <form onSubmit={formik.handleSubmit} className="space-y-[15px] ">
-          <input
-            name="Name"
-            onChange={formik.handleChange}
-            value={formik.values.Name}
-            type="text"
-            placeholder="Enter your Name*"
-            required
-            className="border h-[35px] pl-[15px] w-full"
-          />
-          <input
-            name="Email"
-            onChange={formik.handleChange}
-            value={formik.values.Email}
-            type="email"
-            placeholder="Enter your Email*"
-            required
-            className="border h-[35px] pl-[15px] w-full"
-          />
-          <input
-            name="Mobile"
-            onChange={formik.handleChange}
-            value={formik.values.Mobile}
-            type="text"
-            placeholder="Enter your cell number*"
-            required
-            className="border h-[35px] pl-[15px] w-full"
-          />
-          {/* <input name="company_name" onChange={formik.handleChange} value={formik.values.company_name} type="text" placeholder="Enter your company name"  className="border h-[35px] pl-[15px] w-full" /> */}
-          <textarea
-            name="Message"
-            onChange={formik.handleChange}
-            value={formik.values.Message}
-            placeholder="Enter your message"
-            className="border h-[75px] pl-[15px] pt-[10px] w-full"
-          />
-          <div className="pt-[0px]">
-            {/* <Upload {...props}>
-    <Button icon={<UploadOutlined />}>Upload your CV</Button>
-  </Upload> */}
-            {/* <label htmlFor="">Upload your CV</label> */}
-            <input
-              type="file"
-              name="Resume"
-              onChange={(event: any) => {
-                formik.setFieldValue("Resume", event.currentTarget.files[0]);
-              }}
-            />
-          </div>
-
-          <button
-            type="submit"
-            className="h-[35px] w-[100px] bg-blue-700 flex items-center justify-center text-white rounded-[4px]"
-          >
-            Submit
-          </button>
-        </form>
-      </Modal>
-      <h1 className="text-[20px] font-semibold ">
-        {product?.attributes?.Title}
-      </h1>
-      <div className="border w-[60%] mt-[15px] p-[10px]">
-        <div className="border-b-[1px] pb-[5px]">
-          <h2 className="text-[#23A8CD]">Basic Job Information</h2>
-        </div>
-        <div>
-          <div className="pt-[10px]">
-            {product?.attributes?.company_name && (
-              <h2>
-                Company Name:{" "}
-                <span className="font-semibold">
-                  {product?.attributes?.company_name
-                    ? product?.attributes?.company_name
-                    : "Null"}
-                </span>
-              </h2>
-            )}
-
-            {product?.attributes?.No_of_Vacancy && (
-              <h2>
-                No of Vacancy:{" "}
-                <span className="font-semibold">
-                  {product?.attributes?.No_of_Vacancy
-                    ? product?.attributes?.No_of_Vacancy
-                    : "Null"}
-                </span>
-              </h2>
-            )}
-
-            {product?.attributes?.education_level && (
-              <h2>
-                Education Level:{" "}
-                <span className="font-semibold">
-                  {product?.attributes?.education_level
-                    ? product?.attributes?.education_level
-                    : "Null"}
-                </span>
-              </h2>
-            )}
-
-            {product?.attributes?.address && (
-              <h2>
-                Job Location:{" "}
-                <span className="font-semibold">
-                  {product?.attributes?.address
-                    ? product?.attributes?.address
-                    : "Null"}
-                </span>
-              </h2>
-            )}
-
-            {product?.attributes?.Deadline && (
-              <h2>
-                Deadline:{" "}
-                <span className="font-semibold">
-                  {product?.attributes?.Deadline
-                    ? product?.attributes?.Deadline
-                    : "Null"}
-                </span>
-              </h2>
-            )}
-
-            {product?.attributes?.Professional_Skill_Required && (
-              <h2>
-                Professional Skill Required :{" "}
-                <span className="font-semibold">
-                  {product?.attributes?.Professional_Skill_Required
-                    ? product?.attributes?.Professional_Skill_Required
-                    : "Null"}
-                </span>
-              </h2>
-            )}
-
-            {product?.attributes?.Employment_Type && (
-              <h2>
-                Employment Type :{" "}
-                <span className="font-semibold">
-                  {product?.attributes?.Employment_Type
-                    ? product?.attributes?.Employment_Type
-                    : "Null"}
-                </span>
-              </h2>
-            )}
-          </div>
-        </div>
-      </div>
-      <div className="mt-[20px] border p-[10px] w-[60%]">
-        <h1 className="border-b-[1px] pb-[5px] text-[#23A8CD]">
-          Job Description
-        </h1>
-        <div className="pt-[10px]">
-          {Parse(`${product?.attributes?.Job_description}`)}
-        </div>
-      </div>
-      <div className="mt-[20px] border p-[10px] w-[60%]">
-        <h1 className="border-b-[1px] pb-[5px] text-[#23A8CD]">
-          Job Specification
-        </h1>
-        <div className="pt-[10px]">
-          {Parse(`${product?.attributes?.Job_specification}`)}
-        </div>
-      </div>
-      <button
-        onClick={showModal}
-        className="mt-[20px] h-[50px] w-[180px] bg-[#23A8CD] flex items-center justify-center text-white font-inter"
-      >
-        Appy Now
+        ← Back to Careers
       </button>
+
+      <h1 className="text-3xl font-bold mb-2">{job.title}</h1>
+      <p className="text-gray-600 mb-6">{job.company_name}</p>
+      
+      <div className="border rounded-lg p-6 mb-6">
+        <h2 className="text-xl font-semibold text-[#23A8CD] mb-4">Basic Job Information</h2>
+        <div className="grid md:grid-cols-2 gap-4">
+          <p><strong>Company Name:</strong> {job.company_name}</p>
+          <p><strong>Job Location:</strong> {job.job_location}</p>
+          <p><strong>Employment Type:</strong> {job.employment_type}</p>
+          <p><strong>Salary:</strong> {job.salary}</p>
+          <p><strong>Education Level:</strong> {job.education_level}</p>
+          <p><strong>Deadline:</strong> {new Date(job.deadline).toLocaleDateString()}</p>
+        </div>
+      </div>
+
+      <div className="border rounded-lg p-6 mb-6">
+        <h2 className="text-xl font-semibold text-[#23A8CD] mb-4">Job Description</h2>
+        <div dangerouslySetInnerHTML={{ __html: job.job_description }} />
+      </div>
+
+      <div className="border rounded-lg p-6 mb-6">
+        <h2 className="text-xl font-semibold text-[#23A8CD] mb-4">Job Specification</h2>
+        <div dangerouslySetInnerHTML={{ __html: job.job_specification }} />
+      </div>
+
+      <button
+        onClick={() => setIsModalOpen(true)}
+        className="px-6 py-3 bg-[#23A8CD] text-white rounded hover:bg-[#1c8db0]"
+      >
+        Apply Now
+      </button>
+
+      {isModalOpen && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
+          <div className="bg-white p-6 rounded-lg max-w-md w-full">
+            <h2 className="text-xl font-bold mb-4">Apply for {job.title}</h2>
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <input 
+                name="name" 
+                type="text" 
+                placeholder="Name*" 
+                required 
+                className="w-full p-2 border rounded" 
+              />
+              <input 
+                name="email" 
+                type="email" 
+                placeholder="Email*" 
+                required 
+                className="w-full p-2 border rounded" 
+              />
+              <input 
+                name="mobile" 
+                type="tel" 
+                placeholder="Phone*" 
+                required 
+                className="w-full p-2 border rounded" 
+              />
+              <textarea 
+                name="message" 
+                placeholder="Message" 
+                className="w-full p-2 border rounded h-20" 
+              />
+              <input 
+                name="resume" 
+                type="file" 
+                required 
+                accept=".pdf,.doc,.docx" 
+                className="w-full" 
+              />
+              <div className="flex gap-4">
+                <button type="submit" className="flex-1 bg-blue-600 text-white p-2 rounded">
+                  Submit
+                </button>
+                <button 
+                  type="button" 
+                  onClick={() => setIsModalOpen(false)} 
+                  className="flex-1 bg-gray-500 text-white p-2 rounded"
+                >
+                  Cancel
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

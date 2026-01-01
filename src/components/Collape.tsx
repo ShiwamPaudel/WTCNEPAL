@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 
-import { BaseUrl } from "@/pages/api/global";
+// import { BaseUrl } from "@/pages/api/global";
+import { BaseUrl } from "@/utils/global.mjs";
+
 import axios from "axios";
 import { PlusOutlined, MinusOutlined } from "@ant-design/icons";
 import { Collapse, theme } from "antd";
