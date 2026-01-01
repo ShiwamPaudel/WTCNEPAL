@@ -7,7 +7,7 @@ import PartneredUniverities from "@/components/PartneredUniverities";
 import Testimonial from "@/components/Testimonial";
 import React,{useState,useEffect} from 'react'
 import axios from 'axios'
-import { BaseUrl } from '@/pages/api/global'
+import { BaseUrl } from "@/utils/global.mjs";
 import Item from 'antd/es/list/Item'
 
 const index = () => {

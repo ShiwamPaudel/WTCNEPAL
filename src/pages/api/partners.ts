@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { BaseUrl } from '../api/global';
+import { BaseUrl } from "@/utils/global.mjs";
 
 export interface Partner {
   id: number;

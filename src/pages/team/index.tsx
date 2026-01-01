@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 // import { BaseUrl } from "@/pages/api/global";
-import { BaseUrl } from "@/utils/global";
+import { BaseUrl } from "@/utils/global.mjs";
 
 import Head from "next/head";
 

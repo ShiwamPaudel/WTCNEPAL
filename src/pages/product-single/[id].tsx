@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Tabs } from "antd";
 import type { TabsProps } from "antd";
-import { BaseUrl } from "../api/global";
+import { BaseUrl } from "@/utils/global.mjs";
 import axios from "axios";
 import { useRouter } from "next/router";
 import Parse from "html-react-parser";

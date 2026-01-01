@@ -5,7 +5,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import axios from "axios";
-import { BaseUrl } from "../pages/api/global";
+import { BaseUrl } from "@/utils/global.mjs";
 import { useRouter } from "next/router";
 // import CountUp from "react-countup";
 import { Skeleton } from "antd";
