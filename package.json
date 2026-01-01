@@ -48,7 +48,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
+  "type": "module",
   "bugs": {
     "url": "https://gitlab.com/supremeitonline/dmsnepalweb-2023/issues"
   },
