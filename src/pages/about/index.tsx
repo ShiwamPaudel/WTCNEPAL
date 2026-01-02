@@ -35,16 +35,6 @@ const index = () => {
         <meta property="og:description" content="Welcome to WTC Nepal. Your gateway to Healthcare Equipment solutions." />
         <meta property="og:url" content="https://wtcnepal.com" />
       <link rel="icon" href="/../assets/favicon.png" />
-      <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-      crossOrigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"
-    />
     </Head>
     <a
         href="https://wa.me/+9779851140881"
@@ -52,7 +42,7 @@ const index = () => {
         target="_blank"
         rel="noopener noreferrer"
       >
-        <i className="fa fa-whatsapp whatsapp-icon"></i>
+        <svg xmlns="http://www.w3.org/2000/svg" className="whatsapp-icon" viewBox="0 0 24 24" fill="#ffffff"><path d="M20.52 3.48A11.78 11.78 0 0012 0C5.37 0 .08 5.29.08 11.92c0 2.1.54 4.16 1.57 5.96L0 24l6.3-1.63A11.91 11.91 0 0012 23.84c6.63 0 11.92-5.29 11.92-11.92a11.78 11.78 0 00-3.4-8.44zM12 20.1c-1.7 0-3.36-.45-4.8-1.3l-.34-.21-3.74.97.99-3.65-.22-.37A8.32 8.32 0 013.7 12.02C3.7 7.36 7.35 3.7 12 3.7S20.3 7.36 20.3 12.02 16.65 20.1 12 20.1z"/></svg>
       </a>
       <AboutBanner testimonial={testimonial}/>
       <AboutUs />

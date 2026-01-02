@@ -47,7 +47,7 @@ const NewsBlock = () => {
                 {item?.date}
               </p>
               <img
-                src="/../assets/Vectoreye.svg"
+                src="/../assets/more.png"
                 alt="avatar"
                 className="w-[9px] h-[7px] ml-[8px] pt-[4px]"
               />

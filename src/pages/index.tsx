@@ -51,6 +51,47 @@ export default function Home() {
 
     fetchData();
   }, []);
+
+  // Load Chatbase embed script on client side (replaces previous WhatsApp floating anchor)
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+
+    try {
+      if ((window as any).chatbase && (window as any).chatbase('getState') === 'initialized') return;
+    } catch (e) {
+      // ignore
+    }
+
+    if (!(window as any).chatbase || typeof (window as any).chatbase !== 'function') {
+      (window as any).chatbase = (...args: any[]) => {
+        if (!(window as any).chatbase.q) (window as any).chatbase.q = [];
+        (window as any).chatbase.q.push(args);
+      };
+      (window as any).chatbase = new Proxy((window as any).chatbase, {
+        get(target: any, prop: string) {
+          if (prop === 'q') return target.q;
+          return (...args: any[]) => (target as any)(prop, ...args);
+        },
+      });
+    }
+
+    const onLoad = () => {
+      if (document.getElementById('m7oqdvaihYHu8iKv2Z4Vd')) return;
+      const script = document.createElement('script');
+      script.src = 'https://www.chatbase.co/embed.min.js';
+      script.id = 'm7oqdvaihYHu8iKv2Z4Vd';
+      (script as any).domain = 'www.chatbase.co';
+      document.body.appendChild(script);
+    };
+
+    if (document.readyState === 'complete') {
+      onLoad();
+    } else {
+      window.addEventListener('load', onLoad);
+      return () => window.removeEventListener('load', onLoad);
+    }
+  }, []);
+
   const cacheKey = "cachedData";
 
   return (
@@ -58,26 +99,8 @@ export default function Home() {
       <Head>
         <title>Web Trading Concern Pvt. Ltd.</title>
         <link rel="icon" href="/../assets/favicon.png" />
-        <link
-          rel="stylesheet"
-          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-          crossOrigin="anonymous"
-        />
-        <link
-          rel="stylesheet"
-          href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"
-        />
       </Head>
       <>
-        <a
-          href="https://wa.me/+9779851036184"
-          className="whatsapp_float"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <i className="fa fa-whatsapp whatsapp-icon"></i>
-        </a>
         <ToastContainer />
         <HomeSlider />
         <AboutUs />

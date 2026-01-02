@@ -40,7 +40,7 @@ function Nav1() {
     (item: any, index: number) => item.attributes.salect_category === "main"
   );
 
-  console.log(mainCategory,"filtering main category")
+
 
   let subCategory = categories?.filter(
     (item: any, index: number) =>
@@ -127,9 +127,14 @@ function Nav1() {
     }
   };
 
-  if (typeof window !== "undefined") {
-    window.addEventListener("scroll", stickyTop);
-  }
+  // Register scroll listener with proper effect and cleanup
+  useEffect(() => {
+    const onScroll = () => stickyTop();
+    if (typeof window !== "undefined") {
+      window.addEventListener("scroll", onScroll);
+      return () => window.removeEventListener("scroll", onScroll);
+    }
+  }, []);
 
   // const isActive = (path: string) => {
   //   return router.pathname === path;
@@ -144,7 +149,7 @@ function Nav1() {
           <div className="w-[115px] h-auto">
             <Link href="/">
               <img
-                src="/../assets/logo.png"
+                src="/assets/logo.png"
                 alt="avatar"
                 className="w-full h-full object-contain"
               />
@@ -159,13 +164,13 @@ function Nav1() {
       </div>
 
 
-      <div className={`bg-cyan ${fix ? "nav" : ""}`}>
-        <div className="container flex justify-between xl:px-10 items-center py-[5px] lg:flex 2xl:max-w-[1180px] mx-auto font-semibold hidden lg:flex-row ">
+      <div className={`${fix ? "nav" : "bg-cyan"}`}>
+        <div className="container hidden lg:flex justify-between xl:px-10 items-center py-[5px] 2xl:max-w-[1180px] mx-auto font-semibold lg:flex-row">
           {/* xl:px-20 2xl:px-0 */}
           <div className="w-[137px] h-auto ">
             <Link href="/">
               <img
-                src="/../assets/logo.png"
+                src="/assets/logo.png"
                 alt="avatar"
                 className="w-full h-full object-contain"
               />
@@ -217,12 +222,14 @@ function Nav1() {
   onClick={handleProduct} // Toggle main menu on click
   className="relative px-[1px] py-[5px] cursor-pointer"
 >
-  <Link
-    href=""
+  <button
+    onClick={handleProduct}
     className="cursor-pointer hover-text-border font-semibold hover:text-[#23a8cd] transition-colors duration-300 ease-out"
+    aria-expanded={product}
+    aria-controls="products-menu"
   >
     Products
-  </Link>
+  </button>
 
   {product && (
     <div className="absolute top-[12px] left-[-84px] w-[250px] h-auto z-[9999] space-y-[10px]">
