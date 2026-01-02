@@ -228,7 +228,7 @@ function Nav1() {
     aria-expanded={product}
     aria-controls="products-menu"
   >
-    Products
+    PRODUCTS
   </button>
 
   {product && (
