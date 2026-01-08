@@ -5,7 +5,7 @@ const CareersPage = () => {
   const jobs = [
     {
       id: 1,
-      title: "Sales & Marketing Officer",
+      title: "Business Development Officer",
       company_name: "Web Trading Concern Pvt. Ltd.",
       deadline: "2026-02-28",
       job_location: "Tripureshwor, Kathmandu, Nepal",
@@ -14,6 +14,15 @@ const CareersPage = () => {
     },
     {
       id: 2,
+      title: "Sales & Marketing Officer",
+      company_name: "Web Trading Concern Pvt. Ltd.",
+      deadline: "2026-02-28",
+      job_location: "Tripureshwor, Kathmandu, Nepal",
+      employment_type: "Full-time",
+      salary: "Negotiable"
+    },
+    {
+      id: 3,
       title: "Storekeeper",
       company_name: "Web Trading Concern Pvt. Ltd.",
       deadline: "2026-02-28",

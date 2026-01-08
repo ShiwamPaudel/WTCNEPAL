@@ -9,6 +9,35 @@ const SingleJob = () => {
 
   const jobDetails: any = {
     "1": {
+      title: "Business Development Officer",
+      company_name: "Web Trading Concern Pvt. Ltd.",
+      deadline: "2026-02-28",
+      job_location: "Tripureshwor, Kathmandu, Nepal",
+      employment_type: "Full-time",
+      salary: "Negotiable",
+      education_level: "Bachelor's / Master's Degree",
+      job_description: `
+        <h3>Responsibilities:</h3>
+        <ul>
+          <li>Provide administrative and operational support to the sales team to facilitate business growth.</li>
+          <li>Support the preparation, documentation, submission, and follow-up of tenders and bids.</li>
+          <li>Coordinate with internal departments to collect required technical, commercial, and compliance documents for tender submissions.</li>
+          <li>Maintain accurate records related to tenders, sales activities, marketing initiatives, and client correspondence.</li>
+          <li>Ensure adherence to company policies, tender requirements, and applicable healthcare regulations.</li>
+        </ul>
+      `,
+      job_specification: `
+        <h3>Technical Skills:</h3>
+        <ul>
+          <li>•	Strong organizational and documentation skills.</li>
+          <li>•	Effective written and verbal communication abilities.</li>
+          <li>•	Ability to work collaboratively within cross-functional teams.</li>
+          <li>•	Basic knowledge of the healthcare or medical devices industry (preferable).</li>
+          <li>•	Proficiency in Microsoft Office applications.</li>
+        </ul>
+      `
+    },
+    "2": {
       title: "Sales & Marketing Officer",
       company_name: "Web Trading Concern Pvt. Ltd.",
       deadline: "2026-02-28",
@@ -34,7 +63,7 @@ const SingleJob = () => {
         </ul>
       `
     },
-    "2": {
+    "3": {
       title: "Storekeeper",
       company_name: "Web Trading Concern Pvt. Ltd.",
       deadline: "2026-02-28", 
