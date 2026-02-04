@@ -53,10 +53,6 @@ function Slide2() {
       url: "./assets/GB/Liaison XL.gif",
       description: "",
     },
-    {
-      url: "./assets/GB/DIS5B.gif",
-      description: "",
-    },
   ];
 
   const settings = {
