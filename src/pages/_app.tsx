@@ -2,6 +2,7 @@ import BootomFooter from "@/components/BootomFooter";
 import Footer from '../components/Footer';
 import Nav1 from "@/components/Nav1";
 import FooterTop from "@/components/FooterTop";
+import OverlayBanner from "@/components/OverlayBanner";
 import type { AppProps } from "next/app";
 import { useEffect, useState } from "react";
 import axios from "axios";
@@ -46,7 +47,7 @@ export default function App({ Component, pageProps }: AppProps) {
   };
 
   useEffect(() => {
-    const delay = 3000; 
+    const delay = 3000;
 
     const timer = setTimeout(() => {
       showModal();
@@ -58,12 +59,13 @@ export default function App({ Component, pageProps }: AppProps) {
   }, []);
   return (
     <div className={poppins.className}>
-      <Nav1/>
+      <OverlayBanner />
+      <Nav1 />
       <div>
-      <Component {...pageProps} />
-      <FooterTop />
-      <Footer />
-      <BootomFooter data={footer} />
+        <Component {...pageProps} />
+        <FooterTop />
+        <Footer />
+        <BootomFooter data={footer} />
       </div>
     </div>
   );

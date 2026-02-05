@@ -12,6 +12,7 @@
 body {
   font-family: 'Poppins', sans-serif;
 }
+
 html {
   scroll-behavior: smooth;
 }
@@ -26,15 +27,20 @@ html {
   border-radius: 5px;
   transition: 0.9s ease-out;
 }
+
 .hover-text-border::after {
   content: '';
   position: absolute;
   bottom: 0;
-  right: 0; /* Start from the right side */
+  right: 0;
+  /* Start from the right side */
   width: 0;
-  height: 2px; /* Adjust the thickness of the border as needed */
-  background-color: #23a8cd; /* Color of the border */
-  transition: width 0.3s ease-out, left 0.3s ease-out; /* Transition properties */
+  height: 2px;
+  /* Adjust the thickness of the border as needed */
+  background-color: #23a8cd;
+  /* Color of the border */
+  transition: width 0.3s ease-out, left 0.3s ease-out;
+  /* Transition properties */
 }
 
 .hover-text-border:hover::after {
@@ -49,7 +55,7 @@ html {
   bottom: 0;
   right: 0;
   width: 0;
-  height: 2px; 
+  height: 2px;
   background-color: white;
   transition: width 0.3s ease-out, right 0.3s ease-out;
 }
@@ -94,6 +100,7 @@ html {
   box-shadow: 2px 2px 3px #999;
   z-index: 100;
 }
+
 /* .whatsapp-icon {
     margin-top: 16px;
   } */
@@ -210,6 +217,7 @@ html {
 .ant-collapse-header {
   padding: 0px !important;
 }
+
 .ant-collapse-header-text {
   padding-left: 28px;
   font-weight: 500;
@@ -271,6 +279,7 @@ html {
   color: gray;
   /* margin-right: 20px; */
 }
+
 .arrowback {
   color: red;
   font-size: 20px;
@@ -290,6 +299,7 @@ html {
   background: url("/assets/contact_form.png");
   background-size: cover;
 }
+
 .service_box {
   box-shadow: 0px 2px 30px rgba(0, 0, 0, 0.05);
   border-radius: 5px;
@@ -372,18 +382,20 @@ font-size: 12px;
 .pop.ant-modal .ant-modal-content {
   padding: 0px !important;
 }
+
 .pop.ant-modal .ant-modal-close-x {
   color: white !important;
   position: absolute !important;
   right: 0px !important;
   top: 0px !important;
 }
+
 /* :where(.css-dev-only-do-not-override-yp8pcc).ant-modal .ant-modal-content */
-.custom-bg{
-background-image: url("/../assets/news.jpg");
-background-repeat: no-repeat;
-background-size: cover;
-background-attachment: fixed;
+.custom-bg {
+  background-image: url("/../assets/news.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 
 }
 
@@ -394,14 +406,216 @@ background-attachment: fixed;
 }
 
 .hover-content {
-  top: 100%; 
+  top: 100%;
   width: 100%;
   height: 100%;
   background-color: rgb(0, 0, 0);
   opacity: 60%;
-  transition: top 0.5s; 
+  transition: top 0.5s;
 }
-.card:hover .hover-content  {
-top: 0;
-transition: top 0.6s; 
+
+.card:hover .hover-content {
+  top: 0;
+  transition: top 0.6s;
+}
+
+/* Silver Jubilee Button Animations */
+@keyframes shimmer {
+  0% {
+    background-position: -200% center;
+  }
+
+  100% {
+    background-position: 200% center;
+  }
+}
+
+@keyframes border-shimmer {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes glow-pulse {
+
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(192, 192, 192, 0.5),
+      0 0 30px rgba(255, 255, 255, 0.4),
+      inset 0 0 10px rgba(255, 255, 255, 0.3);
+  }
+
+  50% {
+    box-shadow: 0 0 35px rgba(192, 192, 192, 0.8),
+      0 0 50px rgba(255, 255, 255, 0.6),
+      inset 0 0 20px rgba(255, 255, 255, 0.5);
+  }
+}
+
+@keyframes silver-drop {
+  0% {
+    top: 100%;
+    opacity: 1;
+    transform: translateX(-50%) scaleY(1);
+  }
+
+  50% {
+    opacity: 0.8;
+    transform: translateX(-50%) scaleY(1.5);
+  }
+
+  100% {
+    top: 250%;
+    opacity: 0;
+    transform: translateX(-50%) scaleY(2);
+  }
+}
+
+.silver-btn {
+  position: relative;
+  background: linear-gradient(110deg,
+      #a8a8a8 0%,
+      #d8d8d8 20%,
+      #ffffff 40%,
+      #d8d8d8 60%,
+      #a8a8a8 80%,
+      #ffffff 100%);
+  background-size: 200% 100%;
+  animation: shimmer 2.5s linear infinite, glow-pulse 2s ease-in-out infinite;
+  border: 3px solid #c0c0c0;
+  background-clip: padding-box;
+  overflow: visible;
+  z-index: 1;
+  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.5);
+}
+
+.silver-btn::before {
+  content: '';
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  right: -3px;
+  bottom: -3px;
+  background: linear-gradient(90deg,
+      #808080,
+      #c0c0c0,
+      #ffffff,
+      #c0c0c0,
+      #808080,
+      #ffffff,
+      #c0c0c0);
+  background-size: 300% 300%;
+  border-radius: 19px;
+  z-index: -1;
+  animation: border-shimmer 3s ease infinite;
+  filter: brightness(1.3);
+}
+
+/* Multiple silver droplets */
+.silver-btn::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 25%;
+  width: 8px;
+  height: 25px;
+  background: linear-gradient(to bottom,
+      rgba(169, 169, 169, 1),
+      rgba(128, 128, 128, 0.9),
+      rgba(105, 105, 105, 0.6),
+      transparent);
+  border-radius: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  pointer-events: none;
+  filter: blur(0.5px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.silver-btn .drop-1,
+.silver-btn .drop-2,
+.silver-btn .drop-3,
+.silver-btn .drop-4 {
+  content: '';
+  position: absolute;
+  top: 100%;
+  width: 8px;
+  height: 25px;
+  background: linear-gradient(to bottom,
+      rgba(169, 169, 169, 1),
+      rgba(128, 128, 128, 0.9),
+      rgba(105, 105, 105, 0.6),
+      transparent);
+  border-radius: 50%;
+  opacity: 0;
+  pointer-events: none;
+  filter: blur(0.5px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.silver-btn .drop-1 {
+  left: 15%;
+  animation-delay: 0s;
+}
+
+.silver-btn .drop-2 {
+  left: 40%;
+  animation-delay: 0.2s;
+}
+
+.silver-btn .drop-3 {
+  left: 65%;
+  animation-delay: 0.4s;
+}
+
+.silver-btn .drop-4 {
+  left: 85%;
+  animation-delay: 0.6s;
+}
+
+.silver-btn:hover {
+  animation: shimmer 1.2s linear infinite, glow-pulse 1s ease-in-out infinite;
+  transform: scale(1.08);
+  border-color: #a8a8a8;
+}
+
+.silver-btn:hover::before {
+  animation: border-shimmer 1.5s ease infinite;
+  filter: brightness(1.6);
+}
+
+.silver-btn:hover::after {
+  animation: silver-drop 1s ease-in infinite;
+}
+
+.silver-btn:hover .drop-1,
+.silver-btn:hover .drop-2,
+.silver-btn:hover .drop-3,
+.silver-btn:hover .drop-4 {
+  animation: silver-drop 1s ease-in infinite;
+}
+
+/* Overlay Banner Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease-out;
 }

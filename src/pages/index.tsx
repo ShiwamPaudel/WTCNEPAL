@@ -5,19 +5,10 @@ import { Poppins } from "next/font/google";
 import BrandSlider from "@/components/BrandSlider";
 import HomeSlider from "@/components/HomeSlider";
 import Customers from "@/components/Customers";
-import PartnerSlider from "@/components/PartnerSlider";
+import Products from "@/components/Products";
 import AboutUs from "@/components/AboutUs";
-import Testimonial from "@/components/Testimonial";
-import PartneredUniverities from "@/components/PartneredUniverities";
-import Partnered from "@/components/Partnered";
-import Asked from "@/components/Asked";
 import Requestcall from "@/components/Requestcall";
 import News from "@/components/News";
-import Footer from "@/components/Footer";
-import Products from "@/components/Products";
-import BootomFooter from "@/components/BootomFooter";
-import Nav1 from "@/components/Nav1";
-import Partnered1 from "@/components/Partnerned1";
 import { useState, useEffect } from "react";
 // import { BaseUrl } from "./api/global";
 import { BaseUrl } from "@/utils/global.mjs";
@@ -26,7 +17,7 @@ import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-const inter = Poppins({ subsets: ["latin"], weight:["100", "200", "300", "400", "500", "600", "700", "800", "900"], preload:true });
+const inter = Poppins({ subsets: ["latin"], weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"], preload: true });
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -105,8 +96,7 @@ export default function Home() {
         <HomeSlider />
         <AboutUs />
         <Customers />
-        <Products  />
-        {/* <PartnerSlider /> */}
+        <Products />
         <BrandSlider />
         <Requestcall faq={faq} />
         <News />

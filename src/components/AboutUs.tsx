@@ -1,12 +1,9 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-// import CountUp from "react-countup";
 import { CountUp } from "use-count-up";
-import Link from "next/link";
-// import { BaseUrl } from "@/pages/api/global";
 import { BaseUrl } from "@/utils/global.mjs";
 import parse from "html-react-parser";
-import { Button, Modal } from "antd";
+import { Modal } from "antd";
 import { useFormik } from "formik";
 import { imageUrl } from "@/utils/imageUrl";
 const AboutUs = () => {
@@ -125,36 +122,7 @@ const AboutUs = () => {
             <div className="w-full">
               {parse(`${item?.attributes?.description}`)}
             </div>
-            {/* <div className="grid md:grid-cols-3 gap-[34px] mt-[40px]">
-              <div className="about_box bg-[#007EC5]/[0.05] cursor-pointer hover:scale-[105%] transition duration-300 ease-out">
-                <h2 className="text-[#007EC5] text-[44.8px] leading-[67.2px]">
-                  
-                  <CountUp end={100} enableScrollSpy />
-                  <CountUp isCounting end={parseInt(item.attributes.Years_Experience)} duration={3.2} />
-                </h2>
-                <p className="text-[#434343] text-[16px] leading-[24px] font-semibold">
-                  Years Experience
-                </p>
-              </div>
-              <div className="about_box bg-[#00A023]/[0.05] cursor-pointer hover:scale-[105%] transition duration-300 ease-out">
-                <h2 className="text-[#00A023] text-[44.8px] leading-[67.2px]">
-                  <CountUp end={400} enableScrollSpy />+
-                  <CountUp isCounting end={parseInt(item.attributes.Customers)} duration={3.2} />+
-                </h2>
-                <p className="text-[#434343] text-[16px] leading-[24px] font-semibold">
-                  Customers{" "}
-                </p>
-              </div>
-              <div className="about_box bg-[#FF7F0A]/[0.05] cursor-pointer hover:scale-[105%] transition duration-300 ease-out">
-                <h2 className="text-[#FF7F0A] text-[44.8px] leading-[67.2px]">
-                  <CountUp end={98} enableScrollSpy />%
-                  <CountUp isCounting end={parseInt(item.attributes.Repeated_Customers)} duration={3.2} />%
-                </h2>
-                <p className="text-[#434343] text-[16px] leading-[24px] font-semibold">
-                  Repeated Customers{" "}
-                </p>
-              </div>
-            </div> */}
+
           </div>
           <div className="basis-[45%] mt-[40px] md:mt-0 flex flex-col items-center justify-center ">
             <div>

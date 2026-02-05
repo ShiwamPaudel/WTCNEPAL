@@ -217,195 +217,195 @@ function Nav1() {
                   </div>
                 )}
               </li>
-              
+
               <li
-  onClick={handleProduct} // Toggle main menu on click
-  className="relative px-[1px] py-[5px] cursor-pointer"
->
-  <button
-    onClick={handleProduct}
-    className="cursor-pointer hover-text-border font-semibold hover:text-[#23a8cd] transition-colors duration-300 ease-out"
-    aria-expanded={product}
-    aria-controls="products-menu"
-  >
-    PRODUCTS
-  </button>
-
-  {product && (
-    <div className="absolute top-[12px] left-[-84px] w-[250px] h-auto z-[9999] space-y-[10px]">
-      <div className="bg-white absolute top-[27px] h-auto w-full">
-        {mainCategory?.map((item: any, index: any) => (
-          <div key={index}>
-            <li
-              onClick={(e) => {
-                e.stopPropagation(); // Prevent event from bubbling up
-                handleSubmenu(index);
-              }}
-              className="text-[14px] relative border-b-[0.5px] capitalize border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#23a8cd] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer"
-            >
-              <Link href="/">{item?.attributes?.title}</Link>
-            </li>
-
-            {/* Render submenu if the parent item is active */}
-            {sub === 0 && index === 0 && ( // First submenu
-              <div className="absolute top-[-10px] left-[100%] border-l-2 border-transparent w-[90%] h-auto z-40 space-y-[10px]">
-                <div className="bg-white w-full absolute top-[10px] h-auto">
-                  {subCategory?.map((subItem: any, subIndex: any) => (
-                    <div key={subIndex}>
-                      <li
-                        onClick={(e) => {
-                          e.stopPropagation(); // Prevent event from bubbling up
-                          handleSubmenu2(subIndex);
-                        }}
-                        className="text-[15px] relative capitalize border-b-[0.5px] border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#23a8cd] text-white py-[10px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer"
-                      >
-                        <Link href="/">{subItem?.attributes?.title}</Link>
-                      </li>
-
-                      {/* Render nested submenu if the submenu item is active */}
-                      {sub2 === subIndex && (
-                        <div className="absolute left-[100%] border-l-2 border-transparent w-[54%] h-auto z-40 space-y-[10px]">
-                          <div className="-mt-[40%] absolute top-0 h-auto w-full">
-                            {subItem.attributes.brand_name && (
-                              <>
-                                <li className="text-[15px] whitespace-pre w-full border-b-[0.5px] capitalize border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#23a8cd] text-white py-[10px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer">
-                                  <Link
-                                    href={`/brand-product/${subItem.attributes.brand_name}`}
-                                  >
-                                    {subItem.attributes.brand_name}
-                                  </Link>
-                                </li>
-                                {subItem?.attributes?.brand_name2 && (
-                                  <li className="text-[15px] border-b-[0.5px] capitalize border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#23a8cd] text-white py-[10px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer">
-                                    <Link
-                                      href={`/brand-product/${subItem?.attributes?.brand_name2}`}
-                                    >
-                                      {subItem?.attributes?.brand_name2}
-                                    </Link>
-                                  </li>
-                                )}
-                              </>
-                            )}
-                          </div>
-                        </div>
-                      )}
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )}
-
-            
-            
-            {sub === 1 && index === 1 && ( // Second submenu
-  <div className="absolute top-0 left-[100%] border-l-2 border-transparent w-[90%] h-auto z-40 space-y-[10px]">
-    <div className="bg-white w-full h-auto">
-      {secondCategory?.map((subItem: any, subIndex: any) => (
-        <div key={subIndex}>
-          <li
-            onClick={(e) => {
-              e.stopPropagation(); // Prevent event from bubbling up
-              handleList2(subIndex);
-            }}
-            className="text-[15px] relative capitalize border-b-[0.5px] border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#23a8cd] text-white py-[10px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer"
-          >
-            <Link href="/">{subItem?.attributes?.title}</Link>
-          </li>
-
-          {/* Render nested submenu if the submenu item is active */}
-          {list2 === subIndex && (
-            <div className="absolute left-[100%] top-0 border-l-2 border-transparent w-[54%] h-auto z-40 space-y-[10px]">
-              <div className="bg-white w-full h-auto">
-                {subItem.attributes.brand_name && (
-                  <>
-                    <li className="text-[15px] whitespace-pre w-full border-b-[0.5px] capitalize border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#23a8cd] text-white py-[10px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer">
-                      <Link
-                        href={`/brand-product/${subItem.attributes.brand_name}`}
-                      >
-                        {subItem.attributes.brand_name}
-                      </Link>
-                    </li>
-                    {subItem?.attributes?.brand_name2 && (
-                      <li className="text-[15px] border-b-[0.5px] capitalize border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#23a8cd] text-white py-[10px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer">
-                        <Link
-                          href={`/brand-product/${subItem?.attributes?.brand_name2}`}
-                        >
-                          {subItem?.attributes?.brand_name2}
-                        </Link>
-                      </li>
-                    )}
-                  </>
-                )}
-              </div>
-            </div>
-          )}
-        </div>
-      ))}
-    </div>
-  </div>
-)}
-
-
-            {sub === 2 && index === 2 && ( // Third submenu
-              <div className="absolute top-[115px] left-[100%] border-l-2 border-transparent w-[90%] h-auto z-40 space-y-[10px]">
-                <div
-                  onClick={handleSubmenu2}
-                  className="absolute top-[10px] h-auto w-full"
+                onClick={handleProduct} // Toggle main menu on click
+                className="relative px-[1px] py-[5px] cursor-pointer"
+              >
+                <button
+                  onClick={handleProduct}
+                  className="cursor-pointer hover-text-border font-semibold hover:text-[#23a8cd] transition-colors duration-300 ease-out"
+                  aria-expanded={product}
+                  aria-controls="products-menu"
                 >
-                  {thirdCategory?.map((item: any, index: number) => (
-                    <div key={index}>
-                      <li className="text-[15px] relative capitalize border-b-[0.5px] border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#23a8cd] text-white py-[10px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer">
-                        <Link
-                          href={`/brand-product/${item?.attributes?.title}`}
-                        >
-                          {item?.attributes?.title}
-                        </Link>
-                      </li>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )}
+                  PRODUCTS
+                </button>
 
-            {sub === 3 && index === 3 && ( // Fourth submenu
-              <div className="absolute top-[185px] left-[100%] border-l-2 border-transparent w-[90%] h-auto z-40 space-y-[10px]">
-                <div className="absolute top-[10px] h-auto w-full">
-                  {fourthCategory?.map((item: any, index: number) => (
-                    <div key={index}>
-                      <li
-                        onClick={(e) => {
-                          e.stopPropagation(); // Prevent event from bubbling up
-                          handlelist4(index);
-                        }}
-                        className="text-[15px] relative capitalize border-b-[0.5px] border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#23a8cd] text-white py-[10px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer"
-                      >
-                        <Link href="/">{item?.attributes?.title}</Link>
-                      </li>
-                      {list4 === index && (
-                        <div className="absolute left-[100%] border-l-2 border-transparent w-[55%] h-auto z-40 space-y-[10px]">
-                          <div className="mt-[-35px] absolute top-0 h-auto w-full">
-                            <li className="text-[15px] border-b-[0.5px] capitalize border-b-[white]/[0.3] whitespace-nowrap hover:text-[#0000CC] bg-[#23a8cd] text-white py-[10px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer">
-                              <Link
-                                href={`/brand-product/${item?.attributes?.brand_name}`}
+                {product && (
+                  <div className="absolute top-[12px] left-[-84px] w-[250px] h-auto z-[9999] space-y-[10px]">
+                    <div className="bg-white absolute top-[27px] h-auto w-full">
+                      {mainCategory?.map((item: any, index: any) => (
+                        <div key={index}>
+                          <li
+                            onClick={(e) => {
+                              e.stopPropagation(); // Prevent event from bubbling up
+                              handleSubmenu(index);
+                            }}
+                            className="text-[14px] relative border-b-[0.5px] capitalize border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#23a8cd] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer"
+                          >
+                            <Link href="/">{item?.attributes?.title}</Link>
+                          </li>
+
+                          {/* Render submenu if the parent item is active */}
+                          {sub === 0 && index === 0 && ( // First submenu
+                            <div className="absolute top-[-10px] left-[100%] border-l-2 border-transparent w-[90%] h-auto z-40 space-y-[10px]">
+                              <div className="bg-white w-full absolute top-[10px] h-auto">
+                                {subCategory?.map((subItem: any, subIndex: any) => (
+                                  <div key={subIndex}>
+                                    <li
+                                      onClick={(e) => {
+                                        e.stopPropagation(); // Prevent event from bubbling up
+                                        handleSubmenu2(subIndex);
+                                      }}
+                                      className="text-[15px] relative capitalize border-b-[0.5px] border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#23a8cd] text-white py-[10px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer"
+                                    >
+                                      <Link href="/">{subItem?.attributes?.title}</Link>
+                                    </li>
+
+                                    {/* Render nested submenu if the submenu item is active */}
+                                    {sub2 === subIndex && (
+                                      <div className="absolute left-[100%] border-l-2 border-transparent w-[54%] h-auto z-40 space-y-[10px]">
+                                        <div className="-mt-[40%] absolute top-0 h-auto w-full">
+                                          {subItem.attributes.brand_name && (
+                                            <>
+                                              <li className="text-[15px] whitespace-pre w-full border-b-[0.5px] capitalize border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#23a8cd] text-white py-[10px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer">
+                                                <Link
+                                                  href={`/brand-product/${subItem.attributes.brand_name}`}
+                                                >
+                                                  {subItem.attributes.brand_name}
+                                                </Link>
+                                              </li>
+                                              {subItem?.attributes?.brand_name2 && (
+                                                <li className="text-[15px] border-b-[0.5px] capitalize border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#23a8cd] text-white py-[10px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer">
+                                                  <Link
+                                                    href={`/brand-product/${subItem?.attributes?.brand_name2}`}
+                                                  >
+                                                    {subItem?.attributes?.brand_name2}
+                                                  </Link>
+                                                </li>
+                                              )}
+                                            </>
+                                          )}
+                                        </div>
+                                      </div>
+                                    )}
+                                  </div>
+                                ))}
+                              </div>
+                            </div>
+                          )}
+
+
+
+                          {sub === 1 && index === 1 && ( // Second submenu
+                            <div className="absolute top-0 left-[100%] border-l-2 border-transparent w-[90%] h-auto z-40 space-y-[10px]">
+                              <div className="bg-white w-full h-auto">
+                                {secondCategory?.map((subItem: any, subIndex: any) => (
+                                  <div key={subIndex}>
+                                    <li
+                                      onClick={(e) => {
+                                        e.stopPropagation(); // Prevent event from bubbling up
+                                        handleList2(subIndex);
+                                      }}
+                                      className="text-[15px] relative capitalize border-b-[0.5px] border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#23a8cd] text-white py-[10px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer"
+                                    >
+                                      <Link href="/">{subItem?.attributes?.title}</Link>
+                                    </li>
+
+                                    {/* Render nested submenu if the submenu item is active */}
+                                    {list2 === subIndex && (
+                                      <div className="absolute left-[100%] top-0 border-l-2 border-transparent w-[54%] h-auto z-40 space-y-[10px]">
+                                        <div className="bg-white w-full h-auto">
+                                          {subItem.attributes.brand_name && (
+                                            <>
+                                              <li className="text-[15px] whitespace-pre w-full border-b-[0.5px] capitalize border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#23a8cd] text-white py-[10px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer">
+                                                <Link
+                                                  href={`/brand-product/${subItem.attributes.brand_name}`}
+                                                >
+                                                  {subItem.attributes.brand_name}
+                                                </Link>
+                                              </li>
+                                              {subItem?.attributes?.brand_name2 && (
+                                                <li className="text-[15px] border-b-[0.5px] capitalize border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#23a8cd] text-white py-[10px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer">
+                                                  <Link
+                                                    href={`/brand-product/${subItem?.attributes?.brand_name2}`}
+                                                  >
+                                                    {subItem?.attributes?.brand_name2}
+                                                  </Link>
+                                                </li>
+                                              )}
+                                            </>
+                                          )}
+                                        </div>
+                                      </div>
+                                    )}
+                                  </div>
+                                ))}
+                              </div>
+                            </div>
+                          )}
+
+
+                          {sub === 2 && index === 2 && ( // Third submenu
+                            <div className="absolute top-[115px] left-[100%] border-l-2 border-transparent w-[90%] h-auto z-40 space-y-[10px]">
+                              <div
+                                onClick={handleSubmenu2}
+                                className="absolute top-[10px] h-auto w-full"
                               >
-                                {item?.attributes?.brand_name}
-                              </Link>
-                            </li>
-                          </div>
+                                {thirdCategory?.map((item: any, index: number) => (
+                                  <div key={index}>
+                                    <li className="text-[15px] relative capitalize border-b-[0.5px] border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#23a8cd] text-white py-[10px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer">
+                                      <Link
+                                        href={`/brand-product/${item?.attributes?.title}`}
+                                      >
+                                        {item?.attributes?.title}
+                                      </Link>
+                                    </li>
+                                  </div>
+                                ))}
+                              </div>
+                            </div>
+                          )}
+
+                          {sub === 3 && index === 3 && ( // Fourth submenu
+                            <div className="absolute top-[185px] left-[100%] border-l-2 border-transparent w-[90%] h-auto z-40 space-y-[10px]">
+                              <div className="absolute top-[10px] h-auto w-full">
+                                {fourthCategory?.map((item: any, index: number) => (
+                                  <div key={index}>
+                                    <li
+                                      onClick={(e) => {
+                                        e.stopPropagation(); // Prevent event from bubbling up
+                                        handlelist4(index);
+                                      }}
+                                      className="text-[15px] relative capitalize border-b-[0.5px] border-b-[white]/[0.3] hover:text-[#0000CC] bg-[#23a8cd] text-white py-[10px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer"
+                                    >
+                                      <Link href="/">{item?.attributes?.title}</Link>
+                                    </li>
+                                    {list4 === index && (
+                                      <div className="absolute left-[100%] border-l-2 border-transparent w-[55%] h-auto z-40 space-y-[10px]">
+                                        <div className="mt-[-35px] absolute top-0 h-auto w-full">
+                                          <li className="text-[15px] border-b-[0.5px] capitalize border-b-[white]/[0.3] whitespace-nowrap hover:text-[#0000CC] bg-[#23a8cd] text-white py-[10px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer">
+                                            <Link
+                                              href={`/brand-product/${item?.attributes?.brand_name}`}
+                                            >
+                                              {item?.attributes?.brand_name}
+                                            </Link>
+                                          </li>
+                                        </div>
+                                      </div>
+                                    )}
+                                  </div>
+                                ))}
+                              </div>
+                            </div>
+                          )}
                         </div>
-                      )}
+                      ))}
                     </div>
-                  ))}
-                </div>
-              </div>
-            )}
-          </div>
-        ))}
-      </div>
-    </div>
-  )}
+                  </div>
+                )}
               </li>
-              
+
 
               <li>
                 <Link
@@ -430,6 +430,19 @@ function Nav1() {
                   className="px-[1px] py-[5px] font-semibold relative overflow-hidden hover:text-white text-white transition-colors duration-300 ease-out"
                 >
                   Contact
+                </Link>
+              </li>
+              <li className="silver-btn ml-[15px] h-[42px] px-6 rounded-[19px] cursor-pointer flex items-center justify-center whitespace-nowrap transition-all duration-300">
+                <span className="drop-1"></span>
+                <span className="drop-2"></span>
+                <span className="drop-3"></span>
+                <span className="drop-4"></span>
+                <Link
+                  href="https://silverjubileewtc25.vercel.app"
+                  target="_blank"
+                  className="font-bold text-[#2c2c2c] tracking-wide relative text-shadow-sm"
+                >
+                  ✨ Silver Jubilee
                 </Link>
               </li>
 

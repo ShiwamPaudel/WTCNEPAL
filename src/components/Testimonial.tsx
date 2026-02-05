@@ -1,10 +1,5 @@
-// import React,{useState,useEffect} from 'react'
-// import axios from 'axios'
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import Test2 from "./Test2";
-// import Slide from './Slide'
-// import { BaseUrl } from "@/pages/api/global";
 import { BaseUrl } from "@/utils/global.mjs";
 
 import { Skeleton } from "antd";
@@ -41,9 +36,7 @@ const Testimonial = () => {
                 Patient Care with Advanced Medical Technology
               </p>
             </div>
-            {/* <div className="basis-[60%] mt-[92px] mb-[82px] md:ml-[23px] ">
-              <Test2 testimonial={testimonial} />
-            </div> */}
+
           </div>
         </div>
       ) : (
