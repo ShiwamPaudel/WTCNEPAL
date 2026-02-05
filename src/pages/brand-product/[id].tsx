@@ -1,5 +1,5 @@
-// import { BaseUrl } from "@/pages/api/global";
 import { BaseUrl } from "@/utils/global.mjs";
+import Meta from "@/components/Meta";
 
 import React, { useState, useEffect } from "react";
 import axios from "axios";
@@ -44,6 +44,11 @@ const Brand = () => {
 
   return (
     <>
+      <Meta
+        title={`${query} | Medical Equipment Nepal`}
+        description={`Explore high-quality ${query} solutions from Web Trading Concern. We provide the best ${query} in Nepal with full technical support and maintenance.`}
+        keywords={`${query} in Nepal, ${query} Supplier Nepal, Best ${query} Nepal`}
+      />
       {product ? (
         <div className="container 2xl:max-w-[1180px] xl:px-20 2xl:px-0   mx-auto pb-[111px] pt-[80px] px-[15px] md:px-0">
           <div className="flex items-center justify-center gap-[8px] flex-col">

@@ -55,13 +55,14 @@ const BrandSlider: React.FC = () => {
           <img
             src={brand.image}
             alt={brand.name}
-            style={{ 
+            loading="lazy"
+            style={{
               gap: '10px',
               width: '100px',
-              height: '100%', 
-              objectFit: 'contain', 
-              display: 'block', 
-             }}
+              height: '100%',
+              objectFit: 'contain',
+              display: 'block',
+            }}
           />
         </div>
       ))}

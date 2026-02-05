@@ -12,6 +12,7 @@ import News from "@/components/News";
 import { useState, useEffect } from "react";
 // import { BaseUrl } from "./api/global";
 import { BaseUrl } from "@/utils/global.mjs";
+import Meta from "@/components/Meta";
 
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
@@ -85,12 +86,57 @@ export default function Home() {
 
   const cacheKey = "cachedData";
 
+  const schema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://wtcnepal.com/#organization",
+        "name": "Web Trading Concern Pvt. Ltd.",
+        "url": "https://wtcnepal.com",
+        "logo": "https://wtcnepal.com/assets/logo.png",
+        "sameAs": [
+          "https://www.facebook.com/wtcnepal",
+          "https://www.linkedin.com/company/web-trading-concern/"
+        ]
+      },
+      {
+        "@type": "LocalBusiness",
+        "parentOrganization": { "@id": "https://wtcnepal.com/#organization" },
+        "name": "Web Trading Concern Pvt. Ltd.",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Nakhkhu",
+          "addressLocality": "Lalitpur",
+          "addressRegion": "Kathmandu",
+          "postalCode": "44700",
+          "addressCountry": "NP"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 27.6548,
+          "longitude": 85.3056
+        },
+        "telephone": "+977-1-5210100",
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Sunday"],
+            "opens": "09:00",
+            "closes": "18:00"
+          }
+        ]
+      }
+    ]
+  };
+
   return (
     <>
-      <Head>
-        <title>Web Trading Concern Pvt. Ltd.</title>
-        <link rel="icon" href="/../assets/favicon.png" />
-      </Head>
+      <Meta
+        title="Medical Equipment Service Provider | Web Trading Concern Pvt. Ltd."
+        description="WTC Nepal is the leading distributor of hospital & lab equipment in Nepal. We offer high-quality Diagnostic Equipment, Disinfection & Sterilization Solutions, dermatology solutions with nationwide service."
+        schema={schema}
+      />
       <>
         <ToastContainer />
         <HomeSlider />

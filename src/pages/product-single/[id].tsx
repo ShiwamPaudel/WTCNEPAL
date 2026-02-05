@@ -14,7 +14,7 @@ import { useFormik } from "formik";
 import ReactPlayer from "react-player";
 import { Breadcrumb } from "antd";
 import { imageUrl } from "@/utils/imageUrl";
-import Head from "next/head";
+import Meta from "@/components/Meta";
 
 const ProductDetail = () => {
   const router = useRouter();
@@ -52,7 +52,7 @@ const ProductDetail = () => {
       label: `Features`,
       children: <div>{Parse(`${product?.attributes?.features}`)}</div>,
     },
-   
+
     {
       key: "3",
       label: `Specifications`,
@@ -97,11 +97,38 @@ const ProductDetail = () => {
       window.location.href = `https://admin.wtcnepal.com${brochureUrl}`;
     }
   };
+  const productSchema = product ? {
+    "@context": "https://schema.org/",
+    "@type": "Product",
+    "name": product.attributes.title,
+    "image": imageUrl(product.attributes.image?.data?.attributes?.url),
+    "description": product.attributes.overview?.replace(/<[^>]*>?/gm, '').substring(0, 160),
+    "brand": {
+      "@type": "Brand",
+      "name": product.attributes.brand_name?.data?.attributes?.title || "WTC Nepal"
+    }
+  } : null;
+
+  const breadcrumbs = [
+    { name: "Home", item: "https://wtcnepal.com/" },
+    {
+      name: product?.attributes?.select_product_category || "Category",
+      item: `https://wtcnepal.com/brand-product/${product?.attributes?.select_product_category}`
+    },
+    {
+      name: product?.attributes?.title || "Product",
+      item: `https://wtcnepal.com/product-single/${id}`
+    }
+  ];
+
   return (
     <>
-    <Head>
-        <title>{product ? product.attributes.title + '- Details': 'Product Detail'}</title>
-      </Head>
+      <Meta
+        title={`${product?.attributes?.title || 'Product'} | Medical Equipment Nepal`}
+        description={product?.attributes?.overview?.replace(/<[^>]*>?/gm, '').substring(0, 160) || "High-quality medical equipment from Web Trading Concern Nepal."}
+        schema={productSchema}
+        breadcrumbs={breadcrumbs}
+      />
       {isLoading ? (
         <div className="container max-w-[1180px] mx-auto flex items-center justify-center">
           <InfinitySpin width="200" color="#4fa94d" />

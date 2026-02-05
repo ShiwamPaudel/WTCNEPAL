@@ -61,7 +61,8 @@ const Products = () => {
                     src={imageUrl(
                       `${item?.attributes?.image?.data?.attributes?.url}`
                     )}
-                    alt=""
+                    alt={item?.attributes?.title || ""}
+                    loading="lazy"
                     className="cursor-pointer hover:scale-[105%] transition duration-300 ease-out h-[100%] w-[80%] object-contain"
                   />
                 </div>

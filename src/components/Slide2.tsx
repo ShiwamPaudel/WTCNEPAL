@@ -97,7 +97,8 @@ function Slide2() {
             <img
               src={item.url}
               className="w-full h-[100%] object-cover"
-              alt=""
+              alt={item.description || "Banner Image"}
+              loading={index === 0 ? "eager" : "lazy"}
             />
             <div className="md:flex items-center gap-[92px] text-white 2xl:pl-[180px] xl:pl-[80px] absolute left-[50%] transform translate-x-[-50%] bottom-[10%]">
               <div className="w-full">
