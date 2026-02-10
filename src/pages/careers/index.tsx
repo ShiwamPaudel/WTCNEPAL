@@ -23,6 +23,15 @@ const CareersPage = () => {
     },
     {
       id: 3,
+      title: "Service Engineer- Eastern Region",
+      company_name: "Web Trading Concern Pvt. Ltd.",
+      deadline: "2026-03-28",
+      job_location: "Biratnagar & Neighbouring Area, Nepal",
+      employment_type: "Full-time",
+      salary: "Negotiable"
+    },
+    {
+      id: 4,
       title: "Storekeeper",
       company_name: "Web Trading Concern Pvt. Ltd.",
       deadline: "2026-02-28",

@@ -63,7 +63,33 @@ const SingleJob = () => {
         </ul>
       `
     },
+    
     "3": {
+      title: "Service Engineer- Eastern Region",
+      company_name: "Web Trading Concern Pvt. Ltd.",
+      deadline: "2026-03-28",
+      job_location: "Biratnagar & Neighbouring Area, Nepal",
+      employment_type: "Full-time",
+      salary: "Negotiable",
+      education_level: "Bachelor's Degree",
+      job_description: `
+        <h3>Responsibilities:</h3>
+        <ul>
+          <li>Receive and respond to breakdown calls directly from customers, providing timely assistance and resolving equipment issues efficiently.</li>
+          <li>Maintain accurate records of service activities for spare parts and repairs.</li>
+          <li>Assist in installing and setting up new equipment, ensuring proper configuration and functionality.</li>
+        </ul>
+      `,
+      job_specification: `
+        <h3>Technical Skills:</h3>
+        <ul>
+          <li>Bachelor's degree in Biomedical Engineering, Electrical Engineering or Related Field..</li>
+          <li>Prior Experience in Equipment Maintenance and Preventive Maintenance Preferred.</li>
+          <li>Knowledge of Engineering practices.</li>
+        </ul>
+      `
+    },
+    "4": {
       title: "Storekeeper",
       company_name: "Web Trading Concern Pvt. Ltd.",
       deadline: "2026-02-28", 
