@@ -1,0 +1,17 @@
+
+> my-project@0.1.0 build
+> next build
+
+   Skipping linting
+   Checking validity of types ...
+Failed to compile.
+
+./src/components/Meta.tsx:2:10
+Type error: Module '"next-seo"' has no exported member 'NextSeo'.
+
+[0m [90m 1 | [39m[36mimport[39m [33mReact[39m [36mfrom[39m [32m'react'[39m[33m;[39m[0m
+[0m[31m[1m>[22m[39m[90m 2 | [39m[36mimport[39m { [33mNextSeo[39m[33m,[39m [33mArticleJsonLd[39m[33m,[39m [33mBreadcrumbJsonLd[39m } [36mfrom[39m [32m'next-seo'[39m[33m;[39m[0m
+[0m [90m   | [39m         [31m[1m^[22m[39m[0m
+[0m [90m 3 | [39m[36mimport[39m [33mHead[39m [36mfrom[39m [32m'next/head'[39m[33m;[39m[0m
+[0m [90m 4 | [39m[0m
+[0m [90m 5 | [39m[36minterface[39m [33mMetaProps[39m {[0m

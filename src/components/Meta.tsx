@@ -1,5 +1,6 @@
-import Head from 'next/head';
 import React from 'react';
+import { NextSeo, ArticleJsonLd, BreadcrumbJsonLd } from 'next-seo';
+import Head from 'next/head';
 
 interface MetaProps {
     title?: string;
@@ -29,56 +30,65 @@ const Meta: React.FC<MetaProps> = ({
     breadcrumbs
 }) => {
     const fullTitle = title.includes("WTC") ? title : `${title} | WTC Nepal`;
-
-    const breadcrumbSchema = breadcrumbs ? {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": breadcrumbs.map((crumb, index) => ({
-            "@type": "ListItem",
-            "position": index + 1,
-            "name": crumb.name,
-            "item": crumb.item
-        }))
-    } : null;
-
-    const finalSchemas = [schema, breadcrumbSchema].filter(Boolean);
+    const resolvedOgImage = ogImage.startsWith('/') ? `https://wtcnepal.com${ogImage}` : ogImage;
 
     return (
-        <Head>
-            {/* Primary Meta Tags */}
-            <title>{fullTitle}</title>
-            <meta name="title" content={fullTitle} />
-            <meta name="description" content={description} />
-            <meta name="keywords" content={keywords} />
-            <meta name="robots" content={robots} />
-            {canonical && <link rel="canonical" href={canonical} />}
-
-            {/* Open Graph / Facebook */}
-            <meta property="og:type" content="website" />
-            <meta property="og:url" content={ogUrl} />
-            <meta property="og:title" content={ogTitle || fullTitle} />
-            <meta property="og:description" content={ogDescription || description} />
-            <meta property="og:image" content={ogImage} />
-
-            {/* Twitter */}
-            <meta property="twitter:card" content="summary_large_image" />
-            <meta property="twitter:url" content={ogUrl} />
-            <meta property="twitter:title" content={ogTitle || fullTitle} />
-            <meta property="twitter:description" content={ogDescription || description} />
-            <meta property="twitter:image" content={ogImage} />
-
-            {/* Favicon */}
-            <link rel="icon" href="/assets/favicon.png" />
-
-            {/* JSON-LD Schema */}
-            {finalSchemas.map((s, i) => (
-                <script
-                    key={i}
-                    type="application/ld+json"
-                    dangerouslySetInnerHTML={{ __html: JSON.stringify(s) }}
+        <>
+            <NextSeo
+                title={fullTitle}
+                description={description}
+                canonical={canonical || ogUrl}
+                openGraph={{
+                    url: ogUrl,
+                    title: ogTitle || fullTitle,
+                    description: ogDescription || description,
+                    images: [
+                        {
+                            url: resolvedOgImage,
+                            alt: fullTitle,
+                        },
+                    ],
+                    site_name: 'Web Trading Concern Pvt. Ltd., Nepal',
+                }}
+                twitter={{
+                    handle: '@wtcnepal',
+                    site: '@wtcnepal',
+                    cardType: 'summary_large_image',
+                }}
+                additionalMetaTags={[
+                    {
+                        name: 'keywords',
+                        content: keywords,
+                    },
+                    {
+                        name: 'robots',
+                        content: robots,
+                    }
+                ]}
+            />
+            {breadcrumbs && (
+                <BreadcrumbJsonLd
+                    itemListElements={breadcrumbs.map((crumb, index) => ({
+                        position: index + 1,
+                        name: crumb.name,
+                        item: crumb.item,
+                    }))}
                 />
-            ))}
-        </Head>
+            )}
+            {/* Custom Schema Injection if needed */}
+            {schema && (
+                <Head>
+                    <script
+                        type="application/ld+json"
+                        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+                    />
+                </Head>
+            )}
+            {/* General Favicon */}
+            <Head>
+                <link rel="icon" href="/assets/favicon.png" />
+            </Head>
+        </>
     );
 };
 

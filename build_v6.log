@@ -1,0 +1,56 @@
+
+> my-project@0.1.0 build
+> next build
+
+   Skipping linting
+   Checking validity of types ...
+   Creating an optimized production build ...
+Browserslist: caniuse-lite is outdated. Please run:
+  npx browserslist@latest --update-db
+  Why you should do it regularly: https://github.com/browserslist/browserslist#browsers-data-updating
+ ✓ Compiled successfully
+   Collecting page data ...
+   Generating static pages (0/16) ...
+showImage data   ... ?  false
+   Generating static pages (4/16) 
+   Generating static pages (8/16) 
+   Generating static pages (12/16) 
+null
+ ✓ Generating static pages (16/16) 
+   Finalizing page optimization ...
+   Collecting build traces ...
+
+Route (pages)                              Size     First Load JS
+┌ ○ / (983 ms)                             17.2 kB         273 kB
+├   └ css/e53c8f1a895dacea.css             3.11 kB
+├   /_app                                  0 B             172 kB
+├ ○ /404                                   182 B           173 kB
+├ ○ /about (651 ms)                        2.65 kB         219 kB
+├ λ /api/hello                             0 B             172 kB
+├ λ /api/partners                          0 B             172 kB
+├ λ /brand-product/[id]                    1.37 kB         182 kB
+├ ○ /careers (594 ms)                      1 kB            173 kB
+├ ○ /careers/[id] (459 ms)                 2.89 kB         175 kB
+├ ○ /contact                               8.27 kB         192 kB
+├   └ css/45ccd052f26a170a.css             2.19 kB
+├ ○ /director (648 ms)                     1.08 kB         188 kB
+├ ○ /gallery (439 ms)                      712 B           177 kB
+├ ○ /gallery/[image] (544 ms)              1.42 kB         178 kB
+├ ○ /news (640 ms)                         1.66 kB         185 kB
+├ ○ /news/[id] (590 ms)                    1.73 kB         185 kB
+├ ○ /privacy-policy (514 ms)               1.32 kB         174 kB
+├ λ /product-single/[id]                   81.8 kB         338 kB
+├   └ css/4df78f2cd73d6b26.css             1.13 kB
+├ ○ /service (523 ms)                      1.85 kB         174 kB
+├ ○ /team (450 ms)                         1.13 kB         174 kB
+└ ○ /terms-and-conditions (480 ms)         1.21 kB         174 kB
++ First Load JS shared by all              176 kB
+  ├ chunks/framework-467b11a89995b152.js   45.4 kB
+  ├ chunks/main-75bdb96a41ba80f4.js        33.1 kB
+  ├ chunks/pages/_app-292662bb9b2752fe.js  93 kB
+  ├ chunks/webpack-21c828b96ad33382.js     1.03 kB
+  └ css/d681e4e90e3ab205.css               3.27 kB
+
+λ  (Server)  server-side renders at runtime (uses getInitialProps or getServerSideProps)
+○  (Static)  automatically rendered as static HTML (uses no initial props)
+

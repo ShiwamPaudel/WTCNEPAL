@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -81,10 +82,11 @@ const BrandSlider: React.FC = () => {
               onClick={() => window.open(brand.url, '_blank')}
               className="group cursor-pointer bg-white w-40 h-24 mx-auto rounded-xl shadow-sm border border-gray-100 flex items-center justify-center transition-all duration-300 hover:shadow-xl hover:border-red-400 hover:scale-110"
             >
-              <img
+              <Image
                 src={brand.image}
                 alt={brand.name}
-                loading="lazy"
+                width={160}
+                height={96}
                 className="max-w-[50%] max-h-[50%] object-contain filter grayscale group-hover:grayscale-0 transition-all duration-700 opacity-80 group-hover:opacity-100"
               />
             </div>

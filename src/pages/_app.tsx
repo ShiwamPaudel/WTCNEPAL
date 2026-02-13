@@ -1,5 +1,6 @@
 import BootomFooter from "@/components/BootomFooter";
 import Footer from '../components/Footer';
+import { DefaultSeo } from 'next-seo';
 import Nav1 from "@/components/Nav1";
 import FooterTop from "@/components/FooterTop";
 import OverlayBanner from "@/components/OverlayBanner";
@@ -59,6 +60,29 @@ export default function App({ Component, pageProps }: AppProps) {
   }, []);
   return (
     <div className={poppins.className}>
+      <DefaultSeo
+        title="Web Trading Concern Pvt. Ltd. | Best Medical Equipment in Nepal"
+        description="Web Trading Concern (WTC) Nepal is a leading distributor of medical, hospital, and laboratory equipment in Nepal. Official distributor of Diasorin, Biocartis, and more."
+        openGraph={{
+          type: 'website',
+          locale: 'en_US',
+          url: 'https://wtcnepal.com/',
+          site_name: 'Web Trading Concern Nepal',
+          images: [
+            {
+              url: 'https://wtcnepal.com/assets/logo.png',
+              width: 800,
+              height: 600,
+              alt: 'WTC Nepal Logo',
+            },
+          ],
+        }}
+        twitter={{
+          handle: '@wtcnepal',
+          site: '@wtcnepal',
+          cardType: 'summary_large_image',
+        }}
+      />
       <OverlayBanner />
       <Nav1 />
       <div>
