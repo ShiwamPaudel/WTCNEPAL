@@ -10,63 +10,88 @@ interface Brand {
 }
 
 const sliderSettings = {
-  dots: true,
+  dots: false,
   infinite: true,
-  speed: 500,
-  slidesToShow: 6,
-  slidesToScroll: 4,
+  speed: 4000,
+  slidesToShow: 9,
+  slidesToScroll: 1,
   autoplay: true,
-  autoplaySpeed: 2000,
+  autoplaySpeed: 0,
+  cssEase: 'linear',
+  arrows: false,
+  pauseOnHover: false,
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 4,
+      }
+    },
+    {
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 3,
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 2,
+      }
+    }
+  ]
 };
 
 const brands: Brand[] = [
-  { name: 'Brand 1', image: '/assets/Partners/DiaSorin.png', url: 'https://int.diasorin.com/en' },
-  { name: 'Brand 2', image: '/assets/Partners/BioSystems.png', url: 'https://biosystems.global/' },
-  { name: 'Brand 3', image: '/assets/Partners/eppendorf.png', url: 'https://www.eppendorf.com/us-en/' },
-  { name: 'Brand 4', image: '/assets/Partners/iSens.png', url: 'https://i-sens.com/' },
-  { name: 'Brand 5', image: '/assets/Partners/Neomedica.png', url: 'https://neomedica.rs/' },
-  { name: 'Brand 6', image: '/assets/Partners/Gesan.png', url: 'https://www.gesanproduction.it/en/' },
-  { name: 'Brand 7', image: '/assets/Partners/Drawray.png', url: 'https://en.szdrawray.com/' },
-  { name: 'Brand 8', image: '/assets/Partners/Biocartis.png', url: 'https://www.biocartis.com/en' },
-  { name: 'Brand 9', image: '/assets/Partners/Avantor.png', url: 'https://www.avantorsciences.com/global/' },
-  { name: 'Brand 11', image: '/assets/Partners/ecosteryl.png', url: 'https://www.ecosteryl.com/en/' },
-  { name: 'Brand 12', image: '/assets/Partners/Diversey.png', url: 'https://diversey.com/en' },
-  { name: 'Brand 13', image: '/assets/Partners/Taski.png', url: 'https://taski.com/' },
-  { name: 'Brand 17', image: '/assets/Partners/Hakerman.png', url: 'https://hakerman.com/en/' },
-  { name: 'Brand 18', image: '/assets/Partners/Newster.png', url: 'https://www.newstergroup.com/' },
-  { name: 'Brand 19', image: '/assets/Partners/Nihon Kohden.png', url: 'https://www.nihonkohden.com/index.html' },
-  { name: 'Brand 20', image: '/assets/Partners/Asclepion.png', url: 'https://asclepion.com/en/' },
-  { name: 'Brand 21', image: '/assets/Partners/Nesa World.png', url: 'https://nesa.world/' },
-  { name: 'Brand 22', image: '/assets/Partners/Bison.png', url: 'http://www.bisonmedical.com/?c=137&ckattempt=1' },
-  { name: 'Brand 23', image: '/assets/Partners/DermaIndia.png', url: 'https://dermaindia.in/' },
-  { name: 'Brand 25', image: '/assets/Partners/SIUI.png', url: 'http://www.siui.com/ax0/index.html' },
-  { name: 'Brand 26', image: '/assets/Partners/GMT.png', url: 'https://geomitraa.com/' }
+  { name: 'DiaSorin', image: '/assets/Partners/DiaSorin.png', url: 'https://int.diasorin.com/en' },
+  { name: 'BioSystems', image: '/assets/Partners/BioSystems.png', url: 'https://biosystems.global/' },
+  { name: 'Eppendorf', image: '/assets/Partners/eppendorf.png', url: 'https://www.eppendorf.com/us-en/' },
+  { name: 'iSens', image: '/assets/Partners/iSens.png', url: 'https://i-sens.com/' },
+  { name: 'Neomedica', image: '/assets/Partners/Neomedica.png', url: 'https://neomedica.rs/' },
+  { name: 'Gesan', image: '/assets/Partners/Gesan.png', url: 'https://www.gesanproduction.it/en/' },
+  { name: 'Drawray', image: '/assets/Partners/Drawray.png', url: 'https://en.szdrawray.com/' },
+  { name: 'Biocartis', image: '/assets/Partners/Biocartis.png', url: 'https://www.biocartis.com/en' },
+  { name: 'Ecosteryl', image: '/assets/Partners/ecosteryl.png', url: 'https://www.ecosteryl.com/en/' },
+  { name: 'Diversey', image: '/assets/Partners/Diversey.png', url: 'https://diversey.com/en' },
+  { name: 'Taski', image: '/assets/Partners/Taski.png', url: 'https://taski.com/' },
+  { name: 'Hakerman', image: '/assets/Partners/Hakerman.png', url: 'https://hakerman.com/en/' },
+  { name: 'Newster', image: '/assets/Partners/Newster.png', url: 'https://www.newstergroup.com/' },
+  { name: 'Sterilmed', image: '/assets/Partners/Sterilmed.png', url: 'https://www.sterilmed.tr/' },
+  { name: 'Nihon Kohden', image: '/assets/Partners/Nihon Kohden.png', url: 'https://www.nihonkohden.com/index.html' },
+  { name: 'Asclepion', image: '/assets/Partners/Asclepion.png', url: 'https://asclepion.com/en/' },
+  { name: 'Nesa World', image: '/assets/Partners/Nesa World.png', url: 'https://nesa.world/' },
+  { name: 'Bison', image: '/assets/Partners/Bison.png', url: 'http://www.bisonmedical.com/?c=137&ckattempt=1' },
+  { name: 'DermaIndia', image: '/assets/Partners/DermaIndia.png', url: 'https://dermaindia.in/' },
+  { name: 'GMT', image: '/assets/Partners/GMT.png', url: 'https://geomitraa.com/' }
 ];
 
 const BrandSlider: React.FC = () => {
   return (
-    <Slider {...sliderSettings}>
-      {brands.map((brand, index) => (
-        <div
-          key={index}
-          onClick={() => window.location.href = brand.url}
-          style={{ cursor: 'pointer', padding: '1px 1px' }}
-        >
-          <img
-            src={brand.image}
-            alt={brand.name}
-            loading="lazy"
-            style={{
-              gap: '10px',
-              width: '100px',
-              height: '100%',
-              objectFit: 'contain',
-              display: 'block',
-            }}
-          />
-        </div>
-      ))}
-    </Slider>
+    <div className="py-10 bg-gray-50/50 overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 mb-8 text-center">
+        <h2 className="text-3xl font-bold text-gray-800 relative inline-block">
+          Our Global Partners
+          <span className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-12 h-1 bg-red-600 rounded-full"></span>
+        </h2>
+      </div>
+      <Slider {...sliderSettings} className="brand-slider">
+        {brands.map((brand, index) => (
+          <div key={index} className="px-4 outline-none">
+            <div
+              onClick={() => window.open(brand.url, '_blank')}
+              className="group cursor-pointer bg-white w-40 h-24 mx-auto rounded-xl shadow-sm border border-gray-100 flex items-center justify-center transition-all duration-300 hover:shadow-xl hover:border-red-400 hover:scale-110"
+            >
+              <img
+                src={brand.image}
+                alt={brand.name}
+                loading="lazy"
+                className="max-w-[50%] max-h-[50%] object-contain filter grayscale group-hover:grayscale-0 transition-all duration-700 opacity-80 group-hover:opacity-100"
+              />
+            </div>
+          </div>
+        ))}
+      </Slider>
+    </div>
   );
 };
 
