@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { CountUp } from "use-count-up";
 import { BaseUrl } from "@/utils/global.mjs";
 import parse from "html-react-parser";
 import { Modal } from "antd";
 import { useFormik } from "formik";
 import { imageUrl } from "@/utils/imageUrl";
+
 const AboutUs = () => {
   const [about, setAbout] = useState<any>(null);
 
@@ -123,9 +123,30 @@ const AboutUs = () => {
               {parse(`${item?.attributes?.description}`)}
             </div>
 
+            <div className="grid grid-cols-2 gap-6 mt-8">
+              {[
+                { number: "25", label: "Years of Experience" },
+                { number: "1400 +", label: "Installations" },
+                { number: "7", label: "Provinces Reached" },
+                { number: "25 +", label: "Global Partners" },
+              ].map((stat, index) => (
+                <div
+                  key={index}
+                  className="p-4 rounded-xl bg-white border border-gray-100 shadow-sm transition-all duration-300 hover:shadow-lg hover:border-blue-200 hover:-translate-y-1 group"
+                >
+                  <h3 className="text-3xl font-bold text-blue-600 mb-1 group-hover:scale-110 origin-left transition-transform duration-300">
+                    {stat.number}
+                  </h3>
+                  <p className="text-sm font-semibold text-gray-500 uppercase tracking-wide group-hover:text-gray-700 transition-colors">
+                    {stat.label}
+                  </p>
+                </div>
+              ))}
+            </div>
+
           </div>
-          <div className="basis-[45%] mt-[40px] md:mt-0 flex flex-col items-center justify-center ">
-            <div>
+          <div className="basis-[45%] mt-[40px] md:mt-0 flex flex-col items-center justify-center">
+            <div className="mb-8">
               <img
                 src={imageUrl(
                   `${item?.attributes?.image?.data?.attributes?.url}`
