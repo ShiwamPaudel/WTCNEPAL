@@ -13,15 +13,17 @@ const Footer: React.FC = () => {
           <p>01 - 597 1654 (Service Inquiries)</p>
           <p><a href="mailto:info@wtcnepal.com">info@wtcnepal.com</a></p>
           <div className={styles.social}>
-            <a href="https://www.facebook.com/WTC.Pvt.Ltd"><img src="assets/facebook.png" alt="Facebook" /></a>
+            <a href="https://www.facebook.com/WebTradingConcernPvtLtd"><img src="assets/facebook.png" alt="Facebook" /></a>
+            <a href="https://www.instagram.com/wtc_nepal/"><img src="assets/instagram.png" alt="Instagram" /></a>
             <a href="https://www.linkedin.com/company/web-trading-concern-pvt-ltd/"><img src="assets/linkedin.png" alt="LinkedIn" /></a>
+            <a href="https://www.youtube.com/@WTCNepal"><img src="assets/youtube.png" alt="Youtube" /></a>
           </div>
         </div>
         <div className={styles.column}>
           <h4>Quick Links</h4>
           <ul>
             <li><Link href="/about">About us</Link></li>
-            <li><a href="">Our products</a></li>
+            <li><a href="">Our Products</a></li>
             <li><Link href="/contact">Contact us</Link></li>
           </ul>
         </div>

@@ -42,7 +42,7 @@ function Slide2() {
   // Hardcoded images array
   const hardcodedImages = [
     {
-      url: "./assets/GB/NihonKohdenHomeBanner.gif",
+      url: "./assets/GB/Liaison XL.gif",
       description: "",
     },
     {
@@ -50,7 +50,7 @@ function Slide2() {
       description: "",
     },
     {
-      url: "./assets/GB/Liaison XL.gif",
+      url: "./assets/mainbanner3.jpg",
       description: "",
     },
   ];

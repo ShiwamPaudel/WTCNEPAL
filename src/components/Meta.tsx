@@ -18,8 +18,8 @@ interface MetaProps {
 
 const Meta: React.FC<MetaProps> = ({
     title = "Web Trading Concern Pvt. Ltd. | Best Medical Equipment Service Provider & Supplier in Nepal",
-    description = "Web Trading Concern (WTC) Nepal is a leading distributor of medical, hospital, and laboratory equipment in Nepal.",
-    keywords = "Medical Equipment Nepal, Hospital Equipment Supplier Nepal, Laboratory Equipment Nepal, Biochemistry Analyzer Nepal, Hematology Analyzer Nepal, Medical Equipment Service Nepal",
+    description = "Web Trading Concern Pvt. Ltd. (WTC) is a leading distributor of medical, hospital, and laboratory equipment in Nepal.",
+    keywords = "Medical Equipment Nepal, Hospital Equipment Supplier Nepal, Laboratory Equipment Nepal, Biochemistry Analyzer Nepal, Hematology Analyzer Nepal, Medical Equipment Service Nepal, Dermatology Equipment in Nepal, Best Dermatology Equipment Supplier in Kathmandu, Diversey in Nepal, Diversey Chemicals in Nepal, Taski Machines in Nepal, Taski Chemicals in Nepal, Virex in Nepal, Housekeeping Chemicals in Nepal, Newster Nepal, Diversey Nepal",
     ogTitle,
     ogDescription,
     ogImage = "/assets/logo.png", // Default logo
