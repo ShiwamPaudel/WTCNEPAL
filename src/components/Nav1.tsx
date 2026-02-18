@@ -432,7 +432,7 @@ function Nav1() {
                   Contact
                 </Link>
               </li>
-              <li className="silver-btn ml-[15px] h-[42px] px-6 rounded-[19px] cursor-pointer flex items-center justify-center whitespace-nowrap transition-all duration-300">
+              {/* <li className="silver-btn ml-[15px] h-[42px] px-6 rounded-[19px] cursor-pointer flex items-center justify-center whitespace-nowrap transition-all duration-300">
                 <span className="drop-1"></span>
                 <span className="drop-2"></span>
                 <span className="drop-3"></span>
@@ -444,7 +444,7 @@ function Nav1() {
                 >
                   ✨ Silver Jubilee
                 </Link>
-              </li>
+              </li> */}
 
             </ul>
           </div>

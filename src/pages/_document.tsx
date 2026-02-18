@@ -5,8 +5,9 @@ export default function Document() {
     <Html lang="en">
       <Head>
         <link rel="stylesheet" href="/tailwind.css" />
+        <link rel="icon" href="/favicon.ico" />
       </Head>
-   
+
       <body>
         <Main />
         <NextScript />

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { createProductSlug } from "@/utils/slugify";
 // import { IoIosArrowForward } from "react-icons/io";
 // import { IoIosArrowBack } from "react-icons/io";
 import Slider from "react-slick";
@@ -111,7 +112,7 @@ function RelatedProducts({ setIsLoading2 }: any) {
 
   // console.log(product);
   const handleClick = (item: any) => {
-    router.push(`/product-single/${item.id}`);
+    router.push(`/product-single/${createProductSlug(item.attributes.title, item.id)}`);
     setIsLoading2(true);
     // console.log(item);
   };

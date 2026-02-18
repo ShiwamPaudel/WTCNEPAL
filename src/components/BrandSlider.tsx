@@ -57,7 +57,7 @@ const brands: Brand[] = [
   { name: 'Taski', image: '/assets/Partners/Taski.png', url: 'https://taski.com/' },
   { name: 'Hakerman', image: '/assets/Partners/Hakerman.png', url: 'https://hakerman.com/en/' },
   { name: 'Newster', image: '/assets/Partners/newster.png', url: 'https://www.newstergroup.com/' },
-  { name: 'Sterilmed', image: '/assets/Partners/Sterilmed.png', url: 'https://www.sterilmed.tr/' },
+  { name: 'Sterilmed', image: '/assets/Partners/Sterilmed.png', url: 'https://www.sterilmed.com.tr/' },
   { name: 'Nihon Kohden', image: '/assets/Partners/Nihon Kohden.png', url: 'https://www.nihonkohden.com/index.html' },
   { name: 'Asclepion', image: '/assets/Partners/asclepion.png', url: 'https://asclepion.com/en/' },
   { name: 'Nesa World', image: '/assets/Partners/Nesa World.png', url: 'https://nesa.world/' },
@@ -71,7 +71,7 @@ const BrandSlider: React.FC = () => {
     <div className="py-10 bg-gray-50/50 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 mb-8 text-center">
         <h2 className="text-3xl font-bold text-gray-800 relative inline-block">
-          Our Global Partners
+          OUR GLOBAL PARTNERS
           <span className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-12 h-1 bg-red-600 rounded-full"></span>
         </h2>
       </div>

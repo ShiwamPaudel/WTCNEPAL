@@ -17,6 +17,14 @@ export default {
         sans: ['Poppins', 'sans-serif'],
         poppins: ['Poppins', 'sans-serif'],
       },
+      keyframes: {
+        shine: {
+          '100%': { left: '125%' },
+        },
+      },
+      animation: {
+        shine: 'shine 1s',
+      },
     },
   },
   plugins: [],

@@ -1,5 +1,5 @@
-// import { BaseUrl } from "@/pages/api/global";
 import { BaseUrl } from "@/utils/global.mjs";
+import { createProductSlug } from "@/utils/slugify";
 
 import React, { useState, useEffect } from "react";
 import axios from "axios";
@@ -28,7 +28,7 @@ const Products = () => {
   }, [limit]);
 
   const handleClick = (item: any) => {
-    router.push(`/product-single/${item.id}`);
+    router.push(`/product-single/${createProductSlug(item.attributes.title, item.id)}`);
   };
 
   const handleLimit = () => {
