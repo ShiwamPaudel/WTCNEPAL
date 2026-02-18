@@ -45,14 +45,6 @@ function Slide2() {
       url: "./assets/GB/Liaison XL.gif",
       description: "",
     },
-    {
-      url: "./assets/GB/BA200.gif",
-      description: "",
-    },
-    {
-      url: "./assets/mainbanner3.jpg",
-      description: "",
-    },
   ];
 
   const settings = {
