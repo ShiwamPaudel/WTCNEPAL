@@ -39,7 +39,10 @@ const Brand = ({ filteredBrans, brandName, error }: BrandProps) => {
     "Nesa World": { logo: "/assets/Partners/Nesa World.png", url: "https://nesa.world/" },
     "Bison": { logo: "/assets/Partners/Bison.png", url: "http://www.bisonmedical.com/?c=137&ckattempt=1" },
     "DermaIndia": { logo: "/assets/Partners/DermaIndia.png", url: "https://dermaindia.in/" },
-    "GMT": { logo: "/assets/Partners/GMT.png", url: "https://geomitraa.com/" }
+    "GMT": { logo: "/assets/Partners/GMT.png", url: "https://geomitraa.com/" },
+    "eDiagnosis": { logo: "/assets/Partners/eDiagnosis.png", url: "https://www.ediagnosis.com.cn/" },
+    "Meling": { logo: "/assets/Partners/Meling.png", url: "https://www.melingbiomedical.com/" },
+    "Avantor": { logo: "/assets/Partners/Avantor.png", url: "https://www.avantorsciences.com/" }
   };
 
   // Helper to find brand data case-insensitively
