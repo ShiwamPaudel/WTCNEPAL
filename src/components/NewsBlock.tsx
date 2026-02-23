@@ -14,7 +14,7 @@ const NewsBlock = () => {
 
   useEffect(() => {
     let getNews = async () => {
-      let response = await axios.get(`${BaseUrl}/news-and-events/?populate=*`);
+      let response = await axios.get(`${BaseUrl}/news-and-events/?populate=*&sort=rank:asc`);
       // let response2 = await axios.get(`${BaseUrl}/testimonial-section?populate=*`)
       setNews(response.data.data);
     };

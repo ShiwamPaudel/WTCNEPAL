@@ -34,28 +34,47 @@ const Team = () => {
         </div>
       ))}
 
-      <div className="grid md:grid-cols-4 grid-cols-1 px-[00px] my-20 gap-[30px] ">
+      <div className="grid md:grid-cols-4 grid-cols-1 px-[0px] my-20 gap-[30px]">
         {testimonial?.map((item: any, index: number) => (
-          <div
-            key={index}
-            className="border cursor-pointer group rounded-[3px] hover:scale-[103%] transition duration-150 ease-out"
-          >
-            <div className="h-[288px]">
-              <img
-                src={imageUrl(
-                  `${item?.attributes?.image?.data?.attributes?.url}`
-                )}
-                className="h-[100%] w-full object-cover"
-                alt=""
-              />
-            </div>
-            <div className="py-[20px] pl-[15px] space-y-[5px] group-hover:bg-[#1CABD3] transition-colors duration-300 ease-out">
-              <h1 className="text-[21px] font-semibold leading-[25px] group-hover:text-white ">
-                {item?.attributes?.name}
-              </h1>
-              <p className="text-[16px] font-normal leading-[24px] group-hover:text-white">
-                {item?.attributes?.position}
-              </p>
+          <div key={index} className="flip-card">
+            <div className="flip-card-inner">
+              {/* Front Side */}
+              <div className="flip-card-front">
+                <div className="h-[288px]">
+                  <img
+                    src={imageUrl(
+                      `${item?.attributes?.image?.data?.attributes?.url}`
+                    )}
+                    className="h-full w-full object-cover"
+                    alt={item?.attributes?.name}
+                  />
+                </div>
+                <div className="py-[20px] pl-[15px] text-left space-y-[5px]">
+                  <h1 className="text-[21px] font-semibold leading-[25px]">
+                    {item?.attributes?.name}
+                  </h1>
+                  <p className="text-[16px] font-normal leading-[24px]">
+                    {item?.attributes?.position}
+                  </p>
+                </div>
+              </div>
+
+              {/* Back Side */}
+              <div className="flip-card-back">
+                <h1 className="text-[21px] font-semibold leading-[25px] mb-2">
+                  {item?.attributes?.name}
+                </h1>
+                <p className="text-[14px] font-medium leading-[20px] mb-4 opacity-90">
+                  {item?.attributes?.position}
+                </p>
+                <div className="text-[14px] font-normal leading-[22px] overflow-y-auto max-h-[220px]">
+                  {item?.attributes?.details || (
+                    <p className="italic opacity-80">
+                      ...
+                    </p>
+                  )}
+                </div>
+              </div>
             </div>
           </div>
         ))}
