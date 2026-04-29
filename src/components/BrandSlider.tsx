@@ -48,9 +48,6 @@ const brands: Brand[] = [
   { name: 'BioSystems', image: '/assets/Partners/BioSystems.png', url: 'https://biosystems.global/' },
   { name: 'Eppendorf', image: '/assets/Partners/eppendorf.png', url: 'https://www.eppendorf.com/us-en/' },
   { name: 'iSens', image: '/assets/Partners/iSens.png', url: 'https://i-sens.com/' },
-  { name: 'Neomedica', image: '/assets/Partners/Neomedica.png', url: 'https://neomedica.rs/' },
-  { name: 'Gesan', image: '/assets/Partners/Gesan.png', url: 'https://www.gesanproduction.it/en/' },
-  { name: 'Drawray', image: '/assets/Partners/Drawray.png', url: 'https://en.szdrawray.com/' },
   { name: 'Biocartis', image: '/assets/Partners/Biocartis.png', url: 'https://www.biocartis.com/en' },
   { name: 'Ecosteryl', image: '/assets/Partners/ecosteryl.png', url: 'https://www.ecosteryl.com/en/' },
   { name: 'Diversey', image: '/assets/Partners/Diversey.png', url: 'https://diversey.com/en' },
@@ -63,7 +60,6 @@ const brands: Brand[] = [
   { name: 'Nesa World', image: '/assets/Partners/Nesa World.png', url: 'https://nesa.world/' },
   { name: 'Bison', image: '/assets/Partners/Bison.png', url: 'http://www.bisonmedical.com/?c=137&ckattempt=1' },
   { name: 'DermaIndia', image: '/assets/Partners/DermaIndia.png', url: 'https://dermaindia.in/' },
-  { name: 'GMT', image: '/assets/Partners/GMT.png', url: 'https://geomitraa.com/' }
 ];
 
 const BrandSlider: React.FC = () => {
